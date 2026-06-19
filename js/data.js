@@ -10,6 +10,14 @@ const EMPRESAS_SLUGS = [
   'apollo-informatica',
   'beliva-consultores',
   'casquinha-company',
+  'francis-casmeticos',
+  'green-leaf-mozambique',
+  'juca-e-services-sociedade',
+  'mimos-da-chris',
+  'moz-vetsu',
+  'mozagro-business',
+  'natural-pharm',
+  'NeLIA-S0-FRESCOS',
 ];
 
 /**

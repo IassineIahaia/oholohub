@@ -232,23 +232,6 @@ async function renderizarPerfilEmpresa() {
             </div>
           </div>
 
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-headline-md" style="margin-bottom: var(--space-md);">Estatísticas</div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
-              <div>
-                <div class="text-headline-lg" style="color: var(--color-primary); font-size:28px;">${stats.exp || '—'}</div>
-                <div class="text-label-sm text-muted">${labels[0] || 'Anos de Experiência'}</div>
-              </div>
-              <div>
-                <div class="text-headline-lg" style="color: var(--color-primary); font-size:28px;">${stats.extra || '—'}</div>
-                <div class="text-label-sm text-muted">${labels[3] || 'Clientes Activos'}</div>
-              </div>
-              <div style="grid-column: 1 / -1;">
-                <div class="text-headline-lg" style="color: var(--color-primary); font-size:28px;">${stats.vendas || '—'}</div>
-                <div class="text-label-sm text-muted">${labels[2] || 'Volume de Vendas'}</div>
-              </div>
-            </div>
-          </div>
 
           ${contactos.email ? `<a href="mailto:${contactos.email}" class="btn btn-primary" style="width:100%; height:48px;">Pedir Orçamento</a>` : ''}
         </aside>
