@@ -138,7 +138,7 @@ function cardEmpresaHTML(empresa) {
 
   return `
     <a href="empresa.html?id=${empresa.slug}" class="card">
-      <div style="position:relative; height:160px; background-color: var(--color-surface-container);">
+      <div style="position:relative; height:240px; background-color: var(--color-surface-container);">
         <img ${coverComFallback(empresa.slug)} alt="${empresa.nome}" style="width:100%; height:100%; object-fit:cover;">
         <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="position:absolute; top: var(--space-sm); left: var(--space-sm);">${empresa.industria || "Empresa"}</span>
       </div>
