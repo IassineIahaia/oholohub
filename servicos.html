@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços — B2B Mozambique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════ -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">B2B Mozambique</a>
+
+      <nav class="navbar-links">
+        <a href="explore.html">Explorar</a>
+        <a href="servicos.html" class="active">Serviços</a>
+        <a href="#">Categorias</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contacto</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="#" class="text-label-md">Entrar</a>
+        <a href="#" class="btn btn-primary">Registar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════
+         CABEÇALHO + BUSCA
+    ══════════════════════════════════════════════════════ -->
+    <section style="padding: var(--space-xl) 0 var(--space-lg);">
+      <div class="container">
+        <p class="text-label-sm text-muted" style="margin-bottom: var(--space-sm);">
+          <a href="index.html">Marketplace</a> &nbsp;›&nbsp; Services
+        </p>
+        <h1 class="text-headline-lg" style="margin-bottom: var(--space-sm);">
+          Discover Mozambican<br><span style="color: var(--color-primary);">Industry Excellence</span>
+        </h1>
+        <p class="text-body-lg text-muted" style="max-width:640px; margin-bottom: var(--space-lg);">
+          Browse verified B2B services from top-tier Mozambican enterprises. From consultoria financeira a logística especializada.
+        </p>
+
+        <form style="display:flex; gap: var(--space-sm); flex-wrap:wrap;">
+          <input type="text" class="input-field" style="flex:1; min-width:240px;" placeholder="What service are you looking for?">
+          <select class="input-field" style="width:200px;">
+            <option>All Mozambique</option>
+            <option>Nampula</option>
+            <option>Maputo</option>
+            <option>Sofala</option>
+          </select>
+          <button type="submit" class="btn btn-primary" style="height:48px;">Find Services</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         BROWSE BY CATEGORY
+    ══════════════════════════════════════════════════════ -->
+    <section style="padding: var(--space-lg) 0;">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: var(--space-lg); flex-wrap:wrap; gap: var(--space-sm);">
+          <div>
+            <h2 class="text-headline-lg">Browse by Category</h2>
+            <p class="text-body-md text-muted">Specialized solutions for every sector</p>
+          </div>
+          <a href="#" class="text-label-md" style="color: var(--color-primary);">View All Categories →</a>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-md);">
+
+          <a href="#" class="card" style="position:relative; height:220px; overflow:hidden; background-color: var(--color-tertiary); display:flex; align-items:flex-end;">
+            <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));"></div>
+            <div style="position:relative; padding: var(--space-lg); color:#fff;">
+              <span class="badge" data-categoria-badge="Finanças & Compliance" style="background-color: rgba(255,255,255,0.2); color:#fff; margin-bottom: var(--space-sm);">0 Empresas</span>
+              <div class="text-headline-md">Contabilidade &amp; Fiscalidade</div>
+              <p class="text-body-md" style="color: rgba(255,255,255,0.8);">Relatórios financeiros e conformidade tributária.</p>
+            </div>
+          </a>
+
+          <a href="#" class="card" style="position:relative; height:220px; overflow:hidden; background-color: var(--color-primary); display:flex; align-items:flex-end;">
+            <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));"></div>
+            <div style="position:relative; padding: var(--space-lg); color:#fff;">
+              <span class="badge" data-categoria-badge="Finanças & Fintech" style="background-color: rgba(255,255,255,0.2); color:#fff; margin-bottom: var(--space-sm);">0 Empresas</span>
+              <div class="text-headline-md">Auditoria</div>
+              <p class="text-body-md" style="color: rgba(255,255,255,0.8);">Auditoria financeira, fiscal e interna.</p>
+            </div>
+          </a>
+
+          <a href="#" class="card" style="position:relative; height:220px; overflow:hidden; background-color: #1a1a1a; display:flex; align-items:flex-end;">
+            <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));"></div>
+            <div style="position:relative; padding: var(--space-lg); color:#fff;">
+              <span class="badge" data-categoria-badge="Logística & Supply Chain" style="background-color: rgba(255,255,255,0.2); color:#fff; margin-bottom: var(--space-sm);">0 Empresas</span>
+              <div class="text-headline-md">Logística</div>
+              <p class="text-body-md" style="color: rgba(255,255,255,0.8);">Transporte, despachos aduaneiros e materiais.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FEATURED SERVICES
+    ══════════════════════════════════════════════════════ -->
+    <section style="padding: var(--space-xxl) 0;">
+      <div class="container">
+        <div style="margin-bottom: var(--space-lg);">
+          <h2 class="text-headline-lg">Featured Services</h2>
+          <p class="text-body-md text-muted">Serviços verificados com alta avaliação de desempenho</p>
+        </div>
+
+        <div id="servicos-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-md);">
+          <p class="text-body-md text-muted">A carregar serviços...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════════════════════ -->
+    <section style="padding-bottom: var(--space-xxl);">
+      <div class="container">
+        <div style="background-color: var(--color-primary); border-radius: var(--radius-xl); padding: var(--space-xxl) var(--space-lg); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: var(--space-lg);">
+          <div>
+            <h2 class="text-headline-lg" style="color: var(--color-on-primary); margin-bottom: var(--space-sm);">Ready to scale your business impact?</h2>
+            <p class="text-body-md" style="color: rgba(255,255,255,0.85); max-width:480px;">Junte-se às empresas Moçambicanas verificadas e encontre novos parceiros todos os dias.</p>
+          </div>
+          <div style="display:flex; gap: var(--space-md); flex-wrap:wrap;">
+            <a href="#" class="btn" style="background-color:#fff; color: var(--color-primary);">Get Started Free</a>
+            <a href="#" class="btn btn-ghost-inverse">Schedule a Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="navbar-brand" style="margin-bottom: var(--space-sm);">B2B Mozambique</div>
+          <p class="text-body-md text-muted">The premier digital destination for corporate excellence and trade across Mozambican borders.</p>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">SERVICES</div>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <li><a href="#" class="text-body-md">Accounting &amp; Tax</a></li>
+            <li><a href="#" class="text-body-md">Auditing</a></li>
+            <li><a href="#" class="text-body-md">Consulting</a></li>
+            <li><a href="#" class="text-body-md">Logistics</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">RESOURCES</div>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <li><a href="#" class="text-body-md">Mozambique Business Guide</a></li>
+            <li><a href="#" class="text-body-md">Market Analysis</a></li>
+            <li><a href="#" class="text-body-md">Trade Compliance</a></li>
+            <li><a href="#" class="text-body-md">Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">LEGAL</div>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <li><a href="#" class="text-body-md">Privacy Policy</a></li>
+            <li><a href="#" class="text-body-md">Terms of Service</a></li>
+            <li><a href="#" class="text-body-md">Cookies Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 B2B Mozambique. Connecting Excellence Across Borders.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    inicializarServicos();
+  </script>
+
+</body>
+</html>

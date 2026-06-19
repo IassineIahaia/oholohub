@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — B2B Mozambique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════ -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">B2B Mozambique</a>
+
+           <nav class="navbar-links">
+        <a href="index.html" class="active">Início</a>
+        <a href="explore.html">Explorar</a>
+        <!-- <a href="servicos.html">Serviços</a>
+        <a href="#">Categorias</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contacto</a> -->
+      </nav>
+
+      <!-- <div class="navbar-actions">
+        <a href="#" class="text-label-md">Login</a>
+        <a href="#" class="btn btn-primary">Register</a>
+      </div> -->
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       CABEÇALHO DA PÁGINA
+  ══════════════════════════════════════════════════════ -->
+  <main>
+    <section style="padding: var(--space-xl) 0 var(--space-lg);">
+      <div class="container">
+        <h1 class="text-headline-lg" style="margin-bottom: var(--space-sm);">Explore Mozambique's Business Ecosystem</h1>
+        <p class="text-body-lg text-muted">Connect with verified partners, logistics leaders, and industrial enterprises across all provinces.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         GRID: FILTROS + RESULTADOS
+    ══════════════════════════════════════════════════════ -->
+    <section style="padding-bottom: var(--space-xxl);">
+      <div class="container" style="display:grid; grid-template-columns: 260px 1fr; gap: var(--space-lg); align-items:start;">
+
+        <!-- ── Sidebar de filtros ── -->
+        <aside style="display:flex; flex-direction:column; gap: var(--space-md);">
+
+          <div class="card" style="padding: var(--space-lg);">
+            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">STATUS</div>
+            <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+              <input type="checkbox" id="filter-verified">
+              <span class="text-body-md">Verified Only</span>
+            </label>
+          </div>
+
+          <div class="card" style="padding: var(--space-lg);">
+            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">INDUSTRY</div>
+            <div style="display:flex; flex-direction:column; gap: var(--space-sm);">
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="Logística & Supply Chain">
+                <span class="text-body-md">Logística &amp; Supply Chain</span>
+              </label>
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="Agricultura, pecuária e natureza">
+                <span class="text-body-md">Agricultura</span>
+              </label>
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="Finanças & Fintech">
+                <span class="text-body-md">Finanças &amp; Fintech</span>
+              </label>
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="Comunicação e tecnologia">
+                <span class="text-body-md">Comunicação &amp; Tecnologia</span>
+              </label>
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="BDS e ensino">
+                <span class="text-body-md">BDS &amp; Ensino</span>
+              </label>
+              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
+                <input type="checkbox" class="filter-industria" value="Construção">
+                <span class="text-body-md">Construção</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="card" style="padding: var(--space-lg);">
+            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">PROVINCE</div>
+            <select id="filter-provincia" class="input-field" style="height:44px;">
+              <option value="">All Provinces</option>
+              <option>Maputo Cidade</option>
+              <option>Maputo</option>
+              <option>Gaza</option>
+              <option>Inhambane</option>
+              <option>Sofala</option>
+              <option>Manica</option>
+              <option>Tete</option>
+              <option>Zambézia</option>
+              <option>Nampula</option>
+              <option>Cabo Delgado</option>
+              <option>Niassa</option>
+            </select>
+          </div>
+
+        </aside>
+
+        <!-- ── Resultados ── -->
+        <div>
+          <div id="empresas-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
+            <p class="text-body-md text-muted">A carregar empresas...</p>
+          </div>
+
+          <p id="empty-msg" class="text-body-md text-muted" style="display:none; text-align:center; padding: var(--space-xl) 0;">
+            Nenhuma empresa encontrada com estes filtros.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="navbar-brand" style="margin-bottom: var(--space-sm);">B2B Mozambique</div>
+          <p class="text-body-md text-muted">Connecting Mozambican excellence with the global market through trust and transparency.</p>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">PLATFORM</div>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <li><a href="explore.html" class="text-body-md">Explore Marketplace</a></li>
+            <li><a href="#" class="text-body-md">Verified Suppliers</a></li>
+            <li><a href="#" class="text-body-md">Mozambique Business Guide</a></li>
+            <li><a href="#" class="text-body-md">Pricing Plans</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">SUPPORT</div>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <li><a href="#" class="text-body-md">Help Center</a></li>
+            <li><a href="#" class="text-body-md">Terms of Service</a></li>
+            <li><a href="#" class="text-body-md">Privacy Policy</a></li>
+            <li><a href="#" class="text-body-md">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">CONNECT</div>
+          <div style="display:flex; gap: var(--space-sm);">
+            <a href="#" class="text-body-md">🌐</a>
+            <a href="#" class="text-body-md">✉️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 B2B Mozambique. Connecting Excellence Across Borders.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    inicializarExplore();
+  </script>
+
+</body>
+</html>

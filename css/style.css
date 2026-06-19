@@ -1,0 +1,487 @@
+/* ============================================================
+   B2B MOZAMBIQUE — DESIGN TOKENS
+   Baseado em DESIGN.md (Premium Mozambican B2B)
+   ============================================================ */
+
+:root {
+  /* Cores — superfícies */
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+
+  /* Cores — texto sobre superfície */
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #3f4944;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+  --color-outline: #6f7974;
+  --color-outline-variant: #bec9c3;
+
+  /* Cores — primária (Mozambican Emerald) */
+  --color-primary: #004c3a;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #00664f;
+  --color-on-primary-container: #90e1c4;
+  --color-inverse-primary: #85d6b9;
+
+  /* Cores — secundária */
+  --color-secondary: #5f5e5e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e2dfde;
+  --color-on-secondary-container: #636262;
+
+  /* Cores — terciária */
+  --color-tertiary: #344459;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #4b5b71;
+  --color-on-tertiary-container: #c2d3ed;
+
+  /* Cores — erro */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Background geral */
+  --color-background: #f7f9fb;
+  --color-on-background: #191c1e;
+
+  /* Tipografia */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --display-lg-size: 48px;
+  --display-lg-weight: 600;
+  --display-lg-line: 56px;
+  --display-lg-spacing: -0.02em;
+
+  --headline-lg-size: 32px;
+  --headline-lg-weight: 600;
+  --headline-lg-line: 40px;
+  --headline-lg-spacing: -0.02em;
+
+  --headline-lg-mobile-size: 24px;
+  --headline-lg-mobile-weight: 600;
+  --headline-lg-mobile-line: 32px;
+  --headline-lg-mobile-spacing: -0.01em;
+
+  --headline-md-size: 24px;
+  --headline-md-weight: 500;
+  --headline-md-line: 32px;
+  --headline-md-spacing: -0.01em;
+
+  --body-lg-size: 18px;
+  --body-lg-weight: 400;
+  --body-lg-line: 28px;
+
+  --body-md-size: 16px;
+  --body-md-weight: 400;
+  --body-md-line: 24px;
+
+  --label-md-size: 14px;
+  --label-md-weight: 500;
+  --label-md-line: 20px;
+  --label-md-spacing: 0.01em;
+
+  --label-sm-size: 12px;
+  --label-sm-weight: 600;
+  --label-sm-line: 16px;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Espaçamento (grid 8px / 4px) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-xxl: 80px;
+
+  --container-max: 1280px;
+  --gutter: 24px;
+  --margin-mobile: 16px;
+  --margin-desktop: 48px;
+
+  /* Sombras (Soft Ambient Shadows) */
+  --shadow-level-1: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-level-2: 0px 10px 40px rgba(0, 0, 0, 0.08);
+
+  /* Borda padrão de cards (Level 1) */
+  --border-card: 1px solid #e2e8f0;
+}
+
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-line);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: var(--body-md-size);
+}
+
+/* ============================================================
+   LAYOUT — CONTAINER
+   ============================================================ */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--margin-desktop);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--margin-mobile);
+  }
+}
+
+/* ============================================================
+   TIPOGRAFIA — CLASSES UTILITÁRIAS
+   ============================================================ */
+.text-display-lg {
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  line-height: var(--display-lg-line);
+  letter-spacing: var(--display-lg-spacing);
+}
+
+.text-headline-lg {
+  font-size: var(--headline-lg-size);
+  font-weight: var(--headline-lg-weight);
+  line-height: var(--headline-lg-line);
+  letter-spacing: var(--headline-lg-spacing);
+}
+
+@media (max-width: 768px) {
+  .text-headline-lg {
+    font-size: var(--headline-lg-mobile-size);
+    font-weight: var(--headline-lg-mobile-weight);
+    line-height: var(--headline-lg-mobile-line);
+    letter-spacing: var(--headline-lg-mobile-spacing);
+  }
+}
+
+.text-headline-md {
+  font-size: var(--headline-md-size);
+  font-weight: var(--headline-md-weight);
+  line-height: var(--headline-md-line);
+  letter-spacing: var(--headline-md-spacing);
+}
+
+.text-body-lg {
+  font-size: var(--body-lg-size);
+  font-weight: var(--body-lg-weight);
+  line-height: var(--body-lg-line);
+}
+
+.text-body-md {
+  font-size: var(--body-md-size);
+  font-weight: var(--body-md-weight);
+  line-height: var(--body-md-line);
+}
+
+.text-label-md {
+  font-size: var(--label-md-size);
+  font-weight: var(--label-md-weight);
+  line-height: var(--label-md-line);
+  letter-spacing: var(--label-md-spacing);
+}
+
+.text-label-sm {
+  font-size: var(--label-sm-size);
+  font-weight: var(--label-sm-weight);
+  line-height: var(--label-sm-line);
+}
+
+.text-muted {
+  color: var(--color-on-surface-variant);
+}
+
+/* ============================================================
+   COMPONENTES — BOTÕES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--label-md-size);
+  font-weight: var(--label-md-weight);
+  letter-spacing: var(--label-md-spacing);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-container);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.btn-ghost-inverse {
+  background-color: transparent;
+  color: var(--color-on-primary);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-ghost-inverse:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   COMPONENTES — CARD
+   ============================================================ */
+.card {
+  background-color: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-level-1);
+  overflow: hidden;
+}
+
+/* ============================================================
+   COMPONENTES — BADGE / CHIP
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--label-sm-size);
+  font-weight: var(--label-sm-weight);
+  line-height: var(--label-sm-line);
+}
+
+.badge-success {
+  background-color: rgba(0, 102, 79, 0.1);
+  color: var(--color-primary);
+}
+
+/* Variantes por categoria/indústria — usadas nos cards de empresa */
+.badge-ind-financas {
+  background-color: rgba(0, 76, 58, 0.85);
+  color: #ffffff;
+}
+
+.badge-ind-agricultura {
+  background-color: rgba(133, 214, 185, 0.9);
+  color: var(--color-primary);
+}
+
+.badge-ind-tecnologia {
+  background-color: rgba(52, 68, 89, 0.9);
+  color: #ffffff;
+}
+
+.badge-ind-ensino {
+  background-color: rgba(95, 94, 94, 0.85);
+  color: #ffffff;
+}
+
+.badge-ind-logistica {
+  background-color: rgba(186, 26, 26, 0.08);
+  color: #8a3a00;
+}
+
+.badge-ind-construcao {
+  background-color: rgba(63, 73, 68, 0.9);
+  color: #ffffff;
+}
+
+/* ============================================================
+   ÍCONES — wrapper para SVGs inline (substituem emojis)
+   ============================================================ */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: rgba(0, 76, 58, 0.08);
+  color: var(--color-primary);
+  font-size: 22px;
+}
+
+/* ============================================================
+   COMPONENTES — INPUT
+   ============================================================ */
+.input-field {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 102, 79, 0.15);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(247, 249, 251, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.navbar-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-md) var(--margin-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: var(--space-md) var(--margin-mobile);
+  }
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  font-size: var(--label-md-size);
+  font-weight: var(--label-md-weight);
+}
+
+.navbar-links a.active {
+  color: var(--color-primary);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: var(--color-surface-container-lowest);
+  border-top: 1px solid var(--color-outline-variant);
+  padding: var(--space-xxl) 0 var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+.footer-bottom {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-outline-variant);
+  font-size: var(--label-sm-size);
+  color: var(--color-on-surface-variant);
+}
