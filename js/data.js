@@ -8,7 +8,7 @@ const EMPRESAS_SLUGS = [
   'aguiar-consultores',
   'alva-consultores',
   'apollo-informatica',
-  'beliva-consultores',
+  // 'beliva-consultores',
   'casquinha-company',
   'francis-casmeticos',
   'green-leaf-mozambique',
