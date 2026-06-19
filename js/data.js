@@ -18,6 +18,9 @@ const EMPRESAS_SLUGS = [
   'mozagro-business',
   'natural-pharm',
   'NeLIA-S0-FRESCOS',
+  'nutrinatural',
+  'omega3-maninguefish',
+  'network-telecommunications',
 ];
 
 /**
