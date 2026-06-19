@@ -205,7 +205,7 @@ async function renderizarPerfilEmpresa() {
   root.innerHTML = `
     <!-- COVER + LOGO -->
     <section>
-      <div style="width:100%; height:280px; background-color: var(--color-surface-container); overflow:hidden;">
+      <div style="width:100%; height:350px; background-color: var(--color-surface-container); overflow:hidden;">
         <img ${coverComFallback(slug)} alt="Capa ${empresa.nome}" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <div class="container" style="position:relative;">
@@ -240,7 +240,7 @@ async function renderizarPerfilEmpresa() {
 
           <h2 class="text-headline-lg" style="margin-bottom: var(--space-lg);">Os Nossos Serviços</h2>
 
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-md);">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: var(--space-md);">
             ${servicos
               .map(
                 (s, i) => `
