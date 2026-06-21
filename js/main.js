@@ -363,10 +363,6 @@ async function renderizarPerfilEmpresa() {
           <div class="card" style="padding: var(--space-lg);">
             <div class="text-headline-md" style="margin-bottom: var(--space-md);">Dados da Empresa</div>
             <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-outline-variant);">
-              <span class="text-body-md text-muted">NUIT</span>
-              <span class="text-body-md" style="font-weight:600;">${empresa.nuit || "—"}</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-outline-variant);">
               <span class="text-body-md text-muted">Fundação</span>
               <span class="text-body-md" style="font-weight:600;">${empresa.fundacao || "—"}</span>
             </div>
@@ -376,8 +372,7 @@ async function renderizarPerfilEmpresa() {
             </div>
           </div>
 
-
-          ${contactos.email ? `<a href="mailto:${contactos.email}" class="btn btn-primary" style="width:100%; height:48px;">Pedir Orçamento</a>` : ""}
+          <button type="button" class="btn btn-primary" style="width:100%; height:48px;" onclick="abrirModalAgendamento('${slug}')">Agendar Reunião B2B</button>
         </aside>
 
       </div>
@@ -742,3 +737,194 @@ function inicializarHeroSlider() {
 }
 
 document.addEventListener("DOMContentLoaded", inicializarHeroSlider);
+
+/* ============================================================
+   MODAL — AGENDAR REUNIÃO B2B
+   Disponível em qualquer página (basta ter data.js + main.js
+   incluídos). Envia o pedido por email via FormSubmit, sem
+   necessitar de backend próprio.
+   ============================================================ */
+const AGENDAMENTO_EMAIL_DESTINO = "iassineiahaiait@gmail.com";
+const AGENDAMENTO_HORARIOS = [
+  "08:00", "08:30", "09:00", "09:30", "10:00", "10:30",
+  "11:00", "11:30", "12:00", "13:00", "13:30", "14:00",
+  "14:30", "15:00", "15:30", "16:00", "16:30", "17:00",
+];
+
+let _empresasParaAgendamentoCache = null;
+
+async function _obterEmpresasParaAgendamento() {
+  if (!_empresasParaAgendamentoCache) {
+    _empresasParaAgendamentoCache = await carregarTodasEmpresas();
+  }
+  return _empresasParaAgendamentoCache;
+}
+
+function _escListenerAgendamento(ev) {
+  if (ev.key === "Escape") fecharModalAgendamento();
+}
+
+function fecharModalAgendamento() {
+  const overlay = document.getElementById("modal-agendamento-overlay");
+  if (overlay) overlay.remove();
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", _escListenerAgendamento);
+}
+
+/**
+ * Abre o modal de agendamento de reunião B2B.
+ * @param {string} [slugPreSelecionado] - se vier de uma página de empresa,
+ *   pré-selecciona essa empresa no formulário.
+ */
+async function abrirModalAgendamento(slugPreSelecionado = "") {
+  fecharModalAgendamento(); // evita sobrepor 2 modais
+
+  const overlay = document.createElement("div");
+  overlay.id = "modal-agendamento-overlay";
+  overlay.className = "modal-overlay";
+  overlay.innerHTML = `
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-agendamento-titulo">
+      <button type="button" class="modal-close" aria-label="Fechar">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+      </button>
+
+      <div style="text-align:center; margin-bottom: var(--space-lg);">
+        <h2 id="modal-agendamento-titulo" class="text-headline-md">Agende a Sua Reunião B2B</h2>
+        <p class="text-body-md text-muted" style="margin-top: var(--space-xs);">Marque uma reunião com as empresas do OHOLO Hub.</p>
+      </div>
+
+      <form id="form-agendamento" style="display:flex; flex-direction:column; gap: var(--space-md);">
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-empresa">Empresa</label>
+          <select id="agendamento-empresa" class="input-field" required>
+            <option value="" disabled selected>A carregar empresas...</option>
+          </select>
+        </div>
+
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-data">Data</label>
+          <input type="date" id="agendamento-data" class="input-field" required>
+        </div>
+
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-hora">Hora</label>
+          <select id="agendamento-hora" class="input-field" required>
+            <option value="" disabled selected>Seleccionar hora</option>
+            ${AGENDAMENTO_HORARIOS.map((h) => `<option value="${h}">${h}</option>`).join("")}
+          </select>
+        </div>
+
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-local">Local</label>
+          <input type="text" id="agendamento-local" class="input-field" value="Stand OHOLO Hub (FENA)">
+        </div>
+
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-mensagem">Mensagem (opcional)</label>
+          <textarea id="agendamento-mensagem" class="input-field"></textarea>
+        </div>
+
+        <p id="agendamento-erro" class="text-body-md" style="color: var(--color-error); display:none;"></p>
+
+        <button type="submit" id="agendamento-submit" class="btn btn-primary" style="width:100%; height:48px; text-transform:uppercase; letter-spacing:0.04em;">Agendar Reunião</button>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  document.body.style.overflow = "hidden";
+  document.addEventListener("keydown", _escListenerAgendamento);
+
+  overlay.addEventListener("click", (ev) => {
+    if (ev.target === overlay) fecharModalAgendamento();
+  });
+  overlay.querySelector(".modal-close").addEventListener("click", fecharModalAgendamento);
+
+  // Data mínima = hoje (não deixar marcar reuniões no passado)
+  const inputData = overlay.querySelector("#agendamento-data");
+  inputData.min = new Date().toISOString().split("T")[0];
+
+  // Popular o select de empresas
+  const selectEmpresa = overlay.querySelector("#agendamento-empresa");
+  try {
+    const empresas = await _obterEmpresasParaAgendamento();
+    selectEmpresa.innerHTML = `<option value="" disabled ${slugPreSelecionado ? "" : "selected"}>Seleccionar empresa</option>`;
+    empresas
+      .slice()
+      .sort((a, b) => (a.nome || "").localeCompare(b.nome || ""))
+      .forEach((emp) => {
+        const opt = document.createElement("option");
+        opt.value = emp.slug;
+        opt.textContent = emp.nome;
+        if (emp.slug === slugPreSelecionado) opt.selected = true;
+        selectEmpresa.appendChild(opt);
+      });
+  } catch (err) {
+    console.error("Erro ao carregar empresas para agendamento:", err);
+    selectEmpresa.innerHTML = `<option value="" disabled selected>Não foi possível carregar empresas</option>`;
+  }
+
+  overlay.querySelector("#form-agendamento").addEventListener("submit", _submeterAgendamento);
+}
+
+async function _submeterAgendamento(ev) {
+  ev.preventDefault();
+  const overlay = document.getElementById("modal-agendamento-overlay");
+  if (!overlay) return;
+
+  const btn = overlay.querySelector("#agendamento-submit");
+  const erro = overlay.querySelector("#agendamento-erro");
+  erro.style.display = "none";
+
+  const selectEmpresa = overlay.querySelector("#agendamento-empresa");
+  const nomeEmpresa = selectEmpresa.options[selectEmpresa.selectedIndex]?.textContent || "";
+  const data = overlay.querySelector("#agendamento-data").value;
+  const hora = overlay.querySelector("#agendamento-hora").value;
+  const local = overlay.querySelector("#agendamento-local").value.trim();
+  const mensagem = overlay.querySelector("#agendamento-mensagem").value.trim();
+
+  if (!selectEmpresa.value || !data || !hora) {
+    erro.textContent = "Por favor preencha a empresa, a data e a hora.";
+    erro.style.display = "block";
+    return;
+  }
+
+  const textoOriginal = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "A agendar...";
+
+  try {
+    const resp = await fetch(`https://formsubmit.co/ajax/${AGENDAMENTO_EMAIL_DESTINO}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `Nova Reunião B2B — ${nomeEmpresa}`,
+        Empresa: nomeEmpresa,
+        Data: data,
+        Hora: hora,
+        Local: local,
+        Mensagem: mensagem || "—",
+        _template: "table",
+      }),
+    });
+
+    if (!resp.ok) throw new Error("Falha no envio do formulário");
+
+    overlay.querySelector(".modal-card").innerHTML = `
+      <div style="text-align:center; padding: var(--space-lg) 0;">
+        <div class="icon-circle" style="margin: 0 auto var(--space-md); width:56px; height:56px;">
+          <span class="icon" style="width:28px; height:28px;"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+        </div>
+        <h2 class="text-headline-md" style="margin-bottom: var(--space-xs);">Reunião agendada!</h2>
+        <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">Recebemos o seu pedido. A nossa equipa entrará em contacto para confirmar os detalhes.</p>
+        <button type="button" class="btn btn-primary" onclick="fecharModalAgendamento()">Fechar</button>
+      </div>
+    `;
+  } catch (err) {
+    console.error("Erro ao agendar reunião:", err);
+    btn.disabled = false;
+    btn.textContent = textoOriginal;
+    erro.textContent = "Não foi possível enviar o pedido. Tente novamente.";
+    erro.style.display = "block";
+  }
+}

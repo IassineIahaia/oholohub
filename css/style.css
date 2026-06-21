@@ -995,3 +995,76 @@ html, body {
     display: none;
   }
 }
+
+/* ============================================================
+   MODAL — AGENDAR REUNIÃO B2B
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(10, 14, 18, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  animation: modal-fade-in 0.15s ease;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-level-2);
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container-low);
+  transition: background-color 0.15s ease;
+}
+
+.modal-close:hover {
+  background-color: var(--color-surface-container);
+}
+
+.modal-close .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-field label {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+textarea.input-field {
+  height: 90px;
+  padding-top: var(--space-sm);
+  resize: vertical;
+}
+
+@media (max-width: 480px) {
+  .modal-card {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
