@@ -33,6 +33,40 @@ function inicializarToggleFiltros() {
 
 document.addEventListener("DOMContentLoaded", inicializarToggleFiltros);
 
+/**
+ * Liga qualquer formulário de pesquisa marcado com [data-search-form] para
+ * redireccionar para explore.html?q=... em vez de recarregar a página
+ * sem fazer nada. Usado na home e em servicos.html.
+ */
+function inicializarFormulariosPesquisa() {
+  document.querySelectorAll("[data-search-form]").forEach((form) => {
+    form.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      const input = form.querySelector("[data-search-input]");
+      const provinciaSel = form.querySelector("[data-search-provincia]");
+      const termo = input ? input.value.trim() : "";
+
+      const params = new URLSearchParams();
+      if (termo) params.set("q", termo);
+      if (provinciaSel && provinciaSel.value && !/all/i.test(provinciaSel.value)) {
+        params.set("provincia", provinciaSel.value);
+      }
+
+      window.location.href = `explore.html${params.toString() ? "?" + params.toString() : ""}`;
+    });
+  });
+
+  // Badges/categorias clicáveis (ex: hero da home) também filtram a explore.
+  document.querySelectorAll("[data-search-tag]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const termo = el.getAttribute("data-search-tag");
+      window.location.href = `explore.html?q=${encodeURIComponent(termo)}`;
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", inicializarFormulariosPesquisa);
+
 /* ============================================================
    ÍCONES SVG (substituem emojis — consistência visual com Inter)
    ============================================================ */
@@ -434,14 +468,21 @@ async function actualizarStatsHome() {
 // ── Guardar todas as empresas em memória depois do 1º carregamento,
 //    para os filtros não terem de voltar a fazer fetch sempre que mudam ──
 let _empresasCache = null;
+let _paginaActual = 1;
+const ITEMS_POR_PAGINA = 6;
 
 /**
- * Aplica os filtros activos (verified, indústria[], província) e
- * re-renderiza o grid #empresas-grid.
+ * Aplica os filtros activos (texto, verified, indústria[], província) e
+ * re-renderiza o grid #empresas-grid, paginado a ITEMS_POR_PAGINA.
+ * @param {boolean} resetarPagina - se true, volta à página 1 (usado quando os filtros mudam)
  */
-function aplicarFiltrosExplore() {
+function aplicarFiltrosExplore(resetarPagina = true) {
   if (!_empresasCache) return;
+  if (resetarPagina) _paginaActual = 1;
 
+  const termo = (document.getElementById("filter-search")?.value || "")
+    .trim()
+    .toLowerCase();
   const verifiedOnly = document.getElementById("filter-verified")?.checked;
   const provinciaSel = document.getElementById("filter-provincia")?.value || "";
   const industriasSel = Array.from(
@@ -461,28 +502,114 @@ function aplicarFiltrosExplore() {
     ) {
       return false;
     }
+    if (termo) {
+      const alvo = [
+        empresa.nome,
+        empresa.industria,
+        empresa.descricao,
+        empresa.provincia,
+        ...(empresa.servicos || []).map((s) => s.nome),
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      if (!alvo.includes(termo)) return false;
+    }
     return true;
   });
 
   const grid = document.getElementById("empresas-grid");
   const emptyMsg = document.getElementById("empty-msg");
+  const totalPaginas = Math.max(
+    1,
+    Math.ceil(filtradas.length / ITEMS_POR_PAGINA),
+  );
+  if (_paginaActual > totalPaginas) _paginaActual = totalPaginas;
 
   if (filtradas.length === 0) {
     grid.innerHTML = "";
     if (emptyMsg) emptyMsg.style.display = "block";
   } else {
-    grid.innerHTML = filtradas.map(cardEmpresaHTML).join("");
+    const inicio = (_paginaActual - 1) * ITEMS_POR_PAGINA;
+    const pagina = filtradas.slice(inicio, inicio + ITEMS_POR_PAGINA);
+    grid.innerHTML = pagina.map(cardEmpresaHTML).join("");
     if (emptyMsg) emptyMsg.style.display = "none";
   }
+
+  renderizarPaginacaoExplore(filtradas.length, totalPaginas);
+}
+
+/**
+ * Renderiza os controlos de paginação (Anterior / números / Seguinte)
+ * no container #explore-paginacao, com base no nº total de resultados.
+ */
+function renderizarPaginacaoExplore(totalItens, totalPaginas) {
+  const container = document.getElementById("explore-paginacao");
+  if (!container) return;
+
+  if (totalItens === 0 || totalPaginas <= 1) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const botoes = [];
+
+  botoes.push(
+    `<button type="button" class="btn btn-secondary" data-pagina="${_paginaActual - 1}" ${_paginaActual === 1 ? "disabled" : ""} style="padding: var(--space-sm) var(--space-md);">‹ Anterior</button>`,
+  );
+
+  for (let p = 1; p <= totalPaginas; p++) {
+    const activo = p === _paginaActual;
+    botoes.push(
+      `<button type="button" class="btn ${activo ? "btn-primary" : "btn-secondary"}" data-pagina="${p}" style="min-width:40px; padding: var(--space-sm); ${activo ? "" : ""}">${p}</button>`,
+    );
+  }
+
+  botoes.push(
+    `<button type="button" class="btn btn-secondary" data-pagina="${_paginaActual + 1}" ${_paginaActual === totalPaginas ? "disabled" : ""} style="padding: var(--space-sm) var(--space-md);">Seguinte ›</button>`,
+  );
+
+  container.innerHTML = botoes.join("");
+
+  container.querySelectorAll("[data-pagina]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const novaPagina = parseInt(btn.getAttribute("data-pagina"), 10);
+      if (Number.isNaN(novaPagina) || novaPagina < 1 || novaPagina > totalPaginas) return;
+      _paginaActual = novaPagina;
+      aplicarFiltrosExplore(false);
+      document.getElementById("empresas-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 }
 
 /**
  * Ponto de entrada do explore.html: carrega as empresas, faz o
  * primeiro render, e liga os filtros para re-renderizarem ao mudar.
+ * Lê os parâmetros "q" (texto) e "industria" da URL para pré-aplicar
+ * filtros vindos de outras páginas (ex: pesquisa da home).
  */
 async function inicializarExplore() {
   _empresasCache = await carregarTodasEmpresas();
+
+  const termoUrl = obterParamDaUrl("q");
+  const industriaUrl = obterParamDaUrl("industria");
+  const provinciaUrl = obterParamDaUrl("provincia");
+
+  const inputSearch = document.getElementById("filter-search");
+  if (inputSearch && termoUrl) inputSearch.value = termoUrl;
+
+  if (industriaUrl) {
+    document.querySelectorAll(".filter-industria").forEach((el) => {
+      if (el.value === industriaUrl) el.checked = true;
+    });
+  }
+
+  const selectProvincia = document.getElementById("filter-provincia");
+  if (selectProvincia && provinciaUrl) selectProvincia.value = provinciaUrl;
+
   aplicarFiltrosExplore();
+
+  inputSearch?.addEventListener("input", aplicarFiltrosExplore);
 
   document
     .getElementById("filter-verified")

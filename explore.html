@@ -61,6 +61,14 @@
           <div class="explore-filters-body" style="display:flex; flex-direction:column; gap: var(--space-md);">
 
           <div class="card" style="padding: var(--space-lg);">
+            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">PESQUISAR</div>
+            <div style="position:relative;">
+              <span style="position:absolute; left: var(--space-md); top:50%; transform:translateY(-50%); color: var(--color-on-surface-variant); width:16px; height:16px;" class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+              <input type="text" id="filter-search" class="input-field" style="padding-left: 38px; height:44px;" placeholder="Nome, indústria ou serviço...">
+            </div>
+          </div>
+
+          <div class="card" style="padding: var(--space-lg);">
             <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">STATUS</div>
             <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
               <input type="checkbox" id="filter-verified">
@@ -128,6 +136,8 @@
           <p id="empty-msg" class="text-body-md text-muted" style="display:none; text-align:center; padding: var(--space-xl) 0;">
             Nenhuma empresa encontrada com estes filtros.
           </p>
+
+          <div id="explore-paginacao" style="display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap; margin-top: var(--space-xl);"></div>
         </div>
 
       </div>

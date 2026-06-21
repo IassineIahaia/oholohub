@@ -49,21 +49,21 @@
           A ponte que liga empresas globais aos serviços locais mais fiáveis, sectores industriais em crescimento e parceiros comerciais verificados em Moçambique.
         </p>
 
-        <form class="hero-search-form" style="display:flex; gap: var(--space-sm); max-width: 600px; margin: 0 auto var(--space-md);">
+        <form class="hero-search-form" data-search-form style="display:flex; gap: var(--space-sm); max-width: 600px; margin: 0 auto var(--space-md);">
           <div style="position:relative; flex:1;">
             <span style="position:absolute; left: var(--space-md); top:50%; transform:translateY(-50%); color: var(--color-on-surface-variant); width:18px; height:18px;" class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
-            <input type="text" class="input-field" style="padding-left: 42px;" placeholder="Procurar por indústria, serviço ou nome da empresa...">
+            <input type="text" data-search-input class="input-field" style="padding-left: 42px;" placeholder="Procurar por indústria, serviço ou nome da empresa...">
           </div>
           <button type="submit" class="btn btn-primary" style="height:48px;">Procurar</button>
         </form>
 
         <div style="display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap;">
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Agricultura</span>
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Energia</span>
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Logística</span>
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Finanças &amp; Fintech</span>
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Construção</span>
-          <span class="badge" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Turismo</span>
+          <span class="badge" data-search-tag="Agricultura" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Agricultura</span>
+          <span class="badge" data-search-tag="Energia" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Energia</span>
+          <span class="badge" data-search-tag="Logística" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Logística</span>
+          <span class="badge" data-search-tag="Finanças" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Finanças &amp; Fintech</span>
+          <span class="badge" data-search-tag="Construção" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Construção</span>
+          <span class="badge" data-search-tag="Turismo" style="cursor:pointer; background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">Turismo</span>
         </div>
       </div>
     </section>

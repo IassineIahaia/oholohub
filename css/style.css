@@ -291,6 +291,11 @@ input, select, textarea {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 /* ============================================================
    COMPONENTES — CARD
    ============================================================ */
@@ -591,7 +596,7 @@ html, body {
 @media (max-width: 600px) {
   .stats-row {
     gap: var(--space-lg) !important;
-    justify-content: space-between !important;
+    /* justify-content: space-between !important; */
   }
 }
 

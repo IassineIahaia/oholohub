@@ -75,3 +75,11 @@ function obterIdDaUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get('id');
 }
+
+/**
+ * Lê qualquer parâmetro da URL actual (ex: obterParamDaUrl('q')).
+ */
+function obterParamDaUrl(nome) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(nome) || '';
+}
