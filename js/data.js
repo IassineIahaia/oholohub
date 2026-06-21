@@ -21,6 +21,16 @@ const EMPRESAS_SLUGS = [
   'nutrinatural',
   'omega3-maninguefish',
   'network-telecommunications',
+  // 'SSP-SU',
+  'WATCH-ME-SU',
+  'Versatil-Arquitectos',
+  'TOPOLAND',
+  'Studio-7-Artes',
+  'SNS-TransporteLogistica-Consultoria-SULDA',
+  'SABORES-DO-CAMPO',
+  'Owani',
+  'Opuha-Tourism-Trips',
+  'SSP-SU',
 ];
 
 /**

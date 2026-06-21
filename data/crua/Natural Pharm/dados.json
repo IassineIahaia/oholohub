@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-18T06:00:59.588Z",
+    "pastaId": "17NUFfBhcN-AE19T8TBqQTUqMb8jzgn_o",
+    "pastaUrl": "https://drive.google.com/drive/folders/17NUFfBhcN-AE19T8TBqQTUqMb8jzgn_o"
+  },
+  "empresa": {
+    "nome": "Natural Pharm",
+    "descricao": "Natural Pharm é uma empresa moçambicana dedicada à produção e comercialização de cosméticos naturais, fundada em Agosto de 2023 pelas farmacêuticas Idalina Agostinho Aiúba e Márcia Mariano Mussa com o intuito de unir a beleza natural, ciência e resultados. A empresa nasceu da necessidade de oferecer alternativas mais saudáveis, seguras e sustentáveis para os cuidados da pele e do cabelo, utilizando matérias-primas de origem vegetal cuidadosamente selecionadas.\nAlém da promoção da saúde e bem-estar, a Natural Pharm também contribui para a valorização dos recursos naturais locais e para a redução das perdas pós-colheita de plantas, sementes, frutos e óleos vegetais que muitas vezes são desperdiçados devido a falta de processamento adequado. Através da transformação dessas matérias-primas em cosméticos naturais de valor agregado, a empresa incentiva o aproveitamento sustentável dos recursos agrícolas e naturais, gerando renda, reduzindo desperdícios e promovendo a economia circular.\nEMPREENDEDORES: Idalina Agostinho Aúba; Márcia  Mariano Mussa.\nLOCALIZAÇÃO: Provincia de Nampula, distrito de Nampula-Cidade.",
+    "badges": [],
+    "nuit": "Em processo",
+    "fundacao": "2023",
+    "funcionarios": "",
+    "industria": "Cosmética e bem-estar",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "naturalpharm4@gmail.com",
+      "telefone": "850792738",
+      "website": "https://naturalpharm.vercel.app",
+      "linkedin": "Em processo",
+      "twitter": "Em processo"
+    },
+    "servicos": [
+      {
+        "nome": "Óleos estimulantes de crescimento capilar",
+        "descricao": "O Óleo vithair e Naturaw, são óleos  feitos com activos naturais contendo propriedades estimulantes do crescimento capilar saudável e promovendo  fortalecimento dos fios, aumento do volume capilar, evita quebras e queda de cabelo excessiva.",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Argilas Faciais",
+        "descricao": "As argilas faciais da  Natural Pharm apresentam várias cores e cada uma com sua finalidade na rotina de skincare.\n Rejuvenescendo a pele, deixando a pele macia e com aspecto saudável.",
+        "imagemBase64": null
+      }
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "75 unidades por mês",
+      "vendas": "16000 mts por mês",
+      "extra": "Mais de 40 clientes fixos ",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

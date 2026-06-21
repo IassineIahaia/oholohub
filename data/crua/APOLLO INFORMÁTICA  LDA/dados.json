@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T12:46:02.797Z",
+    "pastaId": "1oBzrpsEmQ5h8f07UsS3hgN261GN-SrGP",
+    "pastaUrl": "https://drive.google.com/drive/folders/1oBzrpsEmQ5h8f07UsS3hgN261GN-SrGP"
+  },
+  "empresa": {
+    "nome": "APOLLO INFORMÁTICA,  LDA",
+    "descricao": "APOLLO INFORMÁTICA, LDA é  uma empresa vocacionada na venda de Bens(material informático) prestação  de serviços de manutenção e reparação,  venda de consumíveis e serviço  grafico.",
+    "badges": [],
+    "nuit": "401 050 396",
+    "fundacao": "2019",
+    "funcionarios": "",
+    "industria": "Comunicação e tecnologia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@apolloinformatica.co.mz",
+      "telefone": "874300042",
+      "website": "apollo informatica",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Venda de material  informatico",
+        "descricao": "Maquinas copiadora e impressoras,  computadores,  acessórios,  consumiveis\nServiços: Manutenção e reparação de material informático, produção de livros fiscais, personalização de carimbo Pre-Tintado,  estampagem de camisetes chavinas , bones...."
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "Limitado",
+      "vendas": "3000,000,00mt",
+      "extra": "",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

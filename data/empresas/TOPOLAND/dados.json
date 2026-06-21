@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T18:17:38.096Z",
+    "pastaId": "1jPlFxiOTEGeWIJixkb6euFO5Ir6psqbZ",
+    "pastaUrl": "https://drive.google.com/drive/folders/1jPlFxiOTEGeWIJixkb6euFO5Ir6psqbZ"
+  },
+  "empresa": {
+    "nome": "TOPOLAND LDA",
+    "descricao": "TOPOLAND Serviços e Consultoria Lda é uma empresa de direito privado, fundada em Outubro de 2023, sediada na Cidade de Nampula, no Bairro de Muatala-Zona do Paiol.\n\nA TOPOLAND é uma empresa constituída por técnicos qualificados e devidamente certificados, que actuam em diversas áreas técnicas da topografia e cartografia. O nosso objectivo é compreender as necessidades dos clientes, fornecendo-lhes serviços que vão ao encontro das suas necessidades, primando pelo maior grau de qualidade e satisfação do cliente. A nossa principal missão é solidificar uma fiel parceria com os nossos clientes. Pautando num excelente atendimento, resolvendo os problemas o mais rapidamente possível. \n\nLevando soluções para cada actividade que desenvolvemos com qualidade, segurança e menor custo possível. A nossa proposta é oferecer aos nossos clientes um modelo contratual flexível e sustentável. Proporcionando ao cliente contratar pacotes de serviços de acordo com suas necessidades, gerando uma economia significativa quando equiparado com os preços praticado pelo mercado actual.\n\nConcretamente actuamos na prestação de Serviços e Consultoria no ramo da Topografia e Cartografia, GIS, Urbanismo e Meio Ambiente, Arbitragem de Conflitos de Terra, Turismo, Fornecimento de Equipamentos Topográficos e Softwares, Implantação de Projectos, Cálculo de Volume, Demarcação, Parcelamento, Levantamento Plano Altimétrico e Mapeamento/Cadastro.\n\nMISSÃO\nOferecer serviços de alta qualidade que atendam às necessidades e às\nexpectativas dos clientes, comprometendo-nos a fornecer soluções precisas e\ninovadoras, utilizando tecnologia de ponta e nossa equipe para criar mapas\nprecisos e informações geoespaciais confiáveis que impulsionam o\ndesenvolvimento e a tomada de decisões informadas.\n\nVISÃO\nUm futuro onde cada ponto no mapa é mais do que uma coordenada, é uma\nhistória esperando para ser contada, uma oportunidade esperando para ser\nexplorada, onde os mapas não apenas representam geografia, mas também\nsão ferramentas poderosas para promover o desenvolvimento sustentável, a\nequidade social e a preservação ambiental.\n\nVALORES\n Confiabilidade;\n� Excelência;\n� Eficácia;\n� Integridade;\n�Eficiência;\n� Precisão;\n� Sustentabilidade.",
+    "badges": [],
+    "nuit": "401 692 861",
+    "fundacao": "2013",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@topoland.co.mz",
+      "telefone": "872615829",
+      "website": "www.topoland.co.mz",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Regularização Fundiária e Ambiental",
+        "descricao": "• Obtenção de DUAT e Licença de Construção.\n• Obtenção de Licença Ambiental para as diversas categorias.\n• Obtenção de terrenos e/ou parcelas ao nível da província.\n• Delimitações Comunitárias.\n• Consultas públicas.\n• Arbitragem de Conflitos de Terra"
+      },
+      {
+        "nome": "Planeamento Territorial e Urbano",
+        "descricao": "• Elaboração e implementação de planos de pormenor.\n• GIS, Urbanismo e Meio Ambiente.\n• Implantação de Projectos."
+      },
+      {
+        "nome": "Projetos de Construção e Engenharia",
+        "descricao": "• Elaboração e implementação de projectos de obras\npúblicas e privadas.\n• Engenharia Topográfica e Cartográfica."
+      },
+      {
+        "nome": "Levantamentos, Medições e Mapeamentos",
+        "descricao": "• Levantamento Plano Altimétrico.\n• Batimetria e Cálculo de Volume.\n• Mapeamento / Cadastro.\n• Demarcação e Parcelamento.\n• Estudo Geofísicos."
+      },
+      {
+        "nome": "Infraestrutura e Sinalização",
+        "descricao": "• Fornecimento e implantação de marcos de betão\n(conforme especificações).\n• Fornecimento e implantação de placas de\nidentificação.\n• Fornecimento e implantação de postes para\nafiação (corrente elétrica e outros)."
+      },
+      {
+        "nome": "Equipamentos e Tecnologias",
+        "descricao": "Fornecimento de equipamentos topográficos e\nsoftwares"
+      },
+      {
+        "nome": "Formação e Capacitação",
+        "descricao": "• Formação e capacitação em matérias ligadas a\nTopografia e Cartografia (elaboração de mapas,\ncurvas de nível, uso de equipamentos como Total\nStation, GPS, Nível, Teodolito, e aplicativos como\nViewRanger GPS, Google Maps, QGIS, ArcMAP,\n ArcGIS)."
+      }
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "6 Servicos/Mes",
+      "vendas": "1.000000",
+      "extra": "25 Clientes Activos",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

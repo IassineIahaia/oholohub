@@ -289,7 +289,7 @@ async function renderizarPerfilEmpresa() {
 // ── Helper: gerar HTML de 1 card de serviço (usado em servicos.html) ──
 function cardServicoHTML({ empresa, servico, index }) {
   return `
-    <a href="empresa.html?id=${empresa.slug}" class="card">
+    <a href="empresa?id=${empresa.slug}" class="card">
       <div style="height:340px; background-color: var(--color-surface-container);">
         <img ${imgComFallback(empresa.slug, `servico_${index + 1}`)} alt="${servico.nome || "Serviço"}" style="width:100%; height:100%; object-fit:cover;">
       </div>

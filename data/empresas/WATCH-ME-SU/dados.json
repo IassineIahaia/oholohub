@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T22:53:26.676Z",
+    "pastaId": "1BnlHhO5q3e7tJqAgHdq7-S0mXjnGkkms",
+    "pastaUrl": "https://drive.google.com/drive/folders/1BnlHhO5q3e7tJqAgHdq7-S0mXjnGkkms"
+  },
+  "empresa": {
+    "nome": "WATCH ME, SU, LDA.",
+    "descricao": "WATCH ME é uma empresa audiovisual especializada na criação de conteúdos visuais inovadores , oferecendo soluções integradas para comunicação em eventos e projectos de desenvolvimento. \nTransformar ideias historias e projectos em conteúdos audiovisuais impactantes que inspiram e conectam pessoas.",
+    "badges": [],
+    "nuit": "401736050",
+    "fundacao": "2022",
+    "funcionarios": "",
+    "industria": "Comunicação e tecnologia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "watchme.moz@gmail.com",
+      "telefone": "+258847704416",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Produção de Vídeos",
+        "descricao": "Produzimos vídeos institucionais, corporativos, promocionais, documentários, reportagens, conteúdos para redes sociais, cobertura de eventos e campanhas de comunicação. Cuidamos de todo processo, desde o planeamento e roteiro até à filmagem, edição e pós-produção. Garantimos a comunicação visual eficaz, capaz de fortalecer a imagem institucional e criar maior envolvimento do público-alvo."
+      },
+      {
+        "nome": "Transmissão de Eventos",
+        "descricao": "Realizamos transmissões ao vivo de conferências, seminários, workshops, lançamentos, eventos culturais, desportivos e corporativos através de plataformas digitais como Facebook, YouTube, Instagram e sites institucionais."
+      },
+      {
+        "nome": "Animações Motion Graphics",
+        "descricao": "Desenvolvemos animações gráficas dinámicas para apresentar informações, produtos, serviços, dados estatísticos e campanhas de sensibilização de forma criativa, moderna e de fácil compreenção. As animações incluem elementos gráficos, textos animados, infograficos e identidade visual personalizada."
+      }
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "4 anos de Experiência ",
+        "Prestação de serviços para 17 organizações ",
+        "N/A",
+        "Prestamos serviços de forma recorrente para 10 organizações "
+      ]
+    }
+  }
+}

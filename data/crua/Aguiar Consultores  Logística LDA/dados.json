@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T14:09:14.409Z",
+    "pastaId": "16DCEE4Y7VTDt0oNskOjjZIY8-aSV_Fgv",
+    "pastaUrl": "https://drive.google.com/drive/folders/16DCEE4Y7VTDt0oNskOjjZIY8-aSV_Fgv"
+  },
+  "empresa": {
+    "nome": "Aguiar Consultores & Logística, LDA",
+    "descricao": "A Aguiar Consultores e Logística é uma empresa consolidada em Nampula, dedicada à prestação de serviços de consultoria nas áreas de contabilidade, fiscalidade, auditoria e logística. Situada na Av. Francisco Manyanga, ao lado da Mesquita Fátima, desde 2021 a empresa possui 5 anos de experiência e se destaca pela excelência e confiabilidade nos serviços prestados, atendendo uma crescente demanda de empresas que buscam otimizar seus processos administrativos e operacionais.\nNosso objetivo é oferecer soluções inovadoras e personalizadas que permitam aos nossos clientes atingir seus objectivos empresariais com maior eficiência, proporcionando uma gestão financeira robusta e estratégica, além de garantir a conformidade fiscal e tributária. A empresa foca também no atendimento a diferentes setores e portes de empresas, com uma abordagem transparente, ética e comprometida com o bem-estar social e a sustentabilidade.\nA Aguiar Consultores e Logística busca ser a principal referência em serviços de consultoria e logística em Nampula, impactando positivamente o desenvolvimento econômico da região. Com um portfólio que inclui serviços especializados e uma equipe altamente qualificada, a empresa planeja expandir suas operações, agregando valor aos seus serviços e consolidando sua posição no mercado.\nEsses dois pontos estabelecem claramente a missão e o potencial da Aguiar Consultores e Logística, proporcionando uma visão estratégica e detalhada do que a empresa oferece e das oportunidades que ela representa no mercado.",
+    "badges": [],
+    "nuit": "401147969",
+    "fundacao": "2021",
+    "funcionarios": "",
+    "industria": "Finanças & Fintech",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "aguiarconsultores.lda@gmail.com",
+      "telefone": "+258875171616",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "CONTABILIDADE",
+        "descricao": "• Processamento contabilístico;  \n• Preparação de relatórios financeiros de acordo NIRF ́s bem como exigíveis em \ncada sector de actividade;  \n• Preenchimento dos Livros obrigatórios;  \n• Reporting."
+      },
+      {
+        "nome": "FISCALIDADE",
+        "descricao": "• Planeamento fiscal;  \n• Revisão dos procedimentos fiscais;  \n• Assessoria Fiscal Permanente;  \n• Imposto de Rendimentos das Pessoas Colectivas;  \n• Imposto de Rendimentos das pessoas Singulares; \n• Imposto sobre valor acrescentado;  \n• Contencioso tributário."
+      },
+      {
+        "nome": "AUDITORIA",
+        "descricao": "• Auditoria às Demonstrações Financeiras;  \n• Auditoria Fiscal (compliance);  \n• Auditoria Interna."
+      },
+      {
+        "nome": "CONSULTORIA",
+        "descricao": "• Gestão de recursos humanos; \n• Assessoria ao expatriado;  \n• Assessoria legal (societário);  \n• Transação e reestruturação;  \n• Prestação de Contas (ONGs);  \n• Alinhamento de projectos;  \n• Análise de viabilidade;  \n• Gestão de Projectos."
+      },
+      {
+        "nome": "LOGISTICA",
+        "descricao": "• Aluguer de Viaturas;  \n• Transporte de Cargas; \n• Despechos Aduaneiros; \n• Fornecimento dos seguintes materiais (Informático, Escritório, Limpeza e \nGéneros alimentícios)."
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "10.000.000,00",
+      "extra": "60",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}
