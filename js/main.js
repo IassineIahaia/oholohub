@@ -232,7 +232,7 @@ function cardEmpresaExploreHTML(empresa) {
         <div class="explore-card-logo-frame">
           <img ${imgComFallback(empresa.slug, "logo")} alt="Logo ${empresa.nome}" class="explore-card-logo">
         </div>
-        
+        ${verificada ? `<span class="explore-card-verified" title="Empresa verificada">${icone("check")}</span>` : ""}
       </div>
       <div class="explore-card-body">
         <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="margin-bottom: var(--space-sm);">${empresa.industria || "Empresa"}</span>
@@ -247,12 +247,20 @@ function cardEmpresaExploreHTML(empresa) {
 }
 
 // ── Renderizar grid de empresas num container (explore.html / index.html) ──
-async function renderizarGridEmpresas(containerId, { limite = null } = {}) {
+// { limite } — corta as N primeiras (ordem de EMPRESAS_SLUGS)
+// { slugs }  — mostra exactamente estas empresas, pela ordem dada
+async function renderizarGridEmpresas(containerId, { limite = null, slugs = null } = {}) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   let empresas = await carregarTodasEmpresas();
-  if (limite) empresas = empresas.slice(0, limite);
+
+  if (slugs && slugs.length > 0) {
+    const porSlug = new Map(empresas.map((e) => [e.slug, e]));
+    empresas = slugs.map((s) => porSlug.get(s)).filter(Boolean);
+  } else if (limite) {
+    empresas = empresas.slice(0, limite);
+  }
 
   if (empresas.length === 0) {
     container.innerHTML =
@@ -260,7 +268,7 @@ async function renderizarGridEmpresas(containerId, { limite = null } = {}) {
     return;
   }
 
-  container.innerHTML = empresas.map(cardEmpresaHTML).join("");
+  container.innerHTML = empresas.map(cardEmpresaExploreHTML).join("");
 }
 
 // ── Renderizar perfil completo de 1 empresa (empresa.html) ──
