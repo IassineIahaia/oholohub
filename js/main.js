@@ -2,6 +2,37 @@
    B2B MOZAMBIQUE — RENDERIZAÇÃO DINÂMICA
    ============================================================ */
 
+/* ── Navbar mobile: abre/fecha o menu hamburger (todas as páginas) ── */
+function inicializarNavbarMobile() {
+  const toggle = document.querySelector(".navbar-toggle");
+  const links = document.querySelector(".navbar-links");
+  if (!toggle || !links) return;
+
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("is-open");
+  });
+
+  // fechar o menu ao clicar num link (mobile)
+  links.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => links.classList.remove("is-open"));
+  });
+}
+
+document.addEventListener("DOMContentLoaded", inicializarNavbarMobile);
+
+/* ── Explore: abre/fecha o painel de filtros no telemóvel ── */
+function inicializarToggleFiltros() {
+  const toggle = document.querySelector(".explore-filters-toggle");
+  const body = document.querySelector(".explore-filters-body");
+  if (!toggle || !body) return;
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("is-open");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", inicializarToggleFiltros);
+
 /* ============================================================
    ÍCONES SVG (substituem emojis — consistência visual com Inter)
    ============================================================ */
@@ -138,7 +169,7 @@ function cardEmpresaHTML(empresa) {
 
   return `
     <a href="empresa.html?id=${empresa.slug}" class="card">
-      <div style="position:relative; height:240px; background-color: var(--color-surface-container);">
+      <div class="card-cover" style="position:relative; height:240px; background-color: var(--color-surface-container);">
         <img ${coverComFallback(empresa.slug)} alt="${empresa.nome}" style="width:100%; height:100%; object-fit:cover;">
         <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="position:absolute; top: var(--space-sm); left: var(--space-sm);">${empresa.industria || "Empresa"}</span>
       </div>
@@ -205,13 +236,12 @@ async function renderizarPerfilEmpresa() {
   root.innerHTML = `
     <!-- COVER + LOGO -->
     <section>
-      <div style="width:100%; height:350px; background-color: var(--color-surface-container); overflow:hidden;">
+      <div class="empresa-cover">
         <img ${coverComFallback(slug)} alt="Capa ${empresa.nome}" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <div class="container" style="position:relative;">
         <div style="display:flex; align-items:flex-end; gap: var(--space-lg); margin-top:-48px; padding-bottom: var(--space-lg); flex-wrap:wrap;">
-          <img ${imgComFallback(slug, "logo")} alt="Logo ${empresa.nome}"
-               style="width:120px; height:120px; border-radius: var(--radius-lg); object-fit:cover; border: 4px solid var(--color-surface-container-lowest); background:#fff; box-shadow: var(--shadow-level-2);">
+          <img ${imgComFallback(slug, "logo")} alt="Logo ${empresa.nome}" class="empresa-logo">
           <div style="padding-bottom: var(--space-xs);">
             <h1 class="text-headline-lg">${empresa.nome}</h1>
             <p class="text-body-md text-muted" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("pin")} ${empresa.provincia || ""}</p>
@@ -221,8 +251,8 @@ async function renderizarPerfilEmpresa() {
     </section>
 
     <!-- DETALHES -->
-    <section style="padding-bottom: var(--space-xxl);">
-      <div class="container" style="display:grid; grid-template-columns: 1fr 320px; gap: var(--space-lg); align-items:start;">
+    <section class="section-pad-xxl" style="padding-bottom: var(--space-xxl);">
+      <div class="container empresa-layout">
 
         <div>
           <div style="display:flex; gap: var(--space-sm); margin-bottom: var(--space-lg); flex-wrap:wrap;">
@@ -240,12 +270,12 @@ async function renderizarPerfilEmpresa() {
 
           <h2 class="text-headline-lg" style="margin-bottom: var(--space-lg);">Os Nossos Serviços</h2>
 
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: var(--space-md);">
+          <div class="empresa-servicos-grid">
             ${servicos
               .map(
                 (s, i) => `
               <div class="card">
-                <div style="height:340px; background-color: var(--color-surface-container);">
+                <div class="card-cover" style="height:340px; background-color: var(--color-surface-container);">
                   <img ${imgComFallback(slug, `servico_${i + 1}`)} alt="${s.nome || "Serviço"}" style="width:100%; height:100%; object-fit:cover;">
                 </div>
                 <div style="padding: var(--space-lg);">
@@ -290,7 +320,7 @@ async function renderizarPerfilEmpresa() {
 function cardServicoHTML({ empresa, servico, index }) {
   return `
     <a href="empresa?id=${empresa.slug}" class="card">
-      <div style="height:340px; background-color: var(--color-surface-container);">
+      <div class="card-cover" style="height:340px; background-color: var(--color-surface-container);">
         <img ${imgComFallback(empresa.slug, `servico_${index + 1}`)} alt="${servico.nome || "Serviço"}" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <div style="padding: var(--space-lg);">

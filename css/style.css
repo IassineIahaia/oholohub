@@ -485,3 +485,225 @@ input, select, textarea {
   font-size: var(--label-sm-size);
   color: var(--color-on-surface-variant);
 }
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   RESPONSIVIDADE GLOBAL
+   ============================================================ */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ── Navbar mobile: hamburger + menu deslizante ── */
+.navbar-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-on-surface);
+  flex-shrink: 0;
+}
+
+.navbar-toggle .icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--color-surface-container-lowest);
+    border-bottom: 1px solid var(--color-outline-variant);
+    box-shadow: var(--shadow-level-2);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .navbar-links.is-open {
+    max-height: 70vh;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .navbar-links a {
+    padding: var(--space-md) var(--margin-mobile);
+    border-bottom: 1px solid var(--color-outline-variant);
+    width: 100%;
+  }
+
+  .navbar-inner {
+    position: relative;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-actions a.text-label-md {
+    display: none;
+  }
+
+  .navbar-actions .btn {
+    padding: var(--space-xs) var(--space-md);
+    font-size: 13px;
+  }
+}
+
+/* ── Hero: garantir que o título grande encolhe no telemóvel ── */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: var(--headline-lg-mobile-size) !important;
+    line-height: var(--headline-lg-mobile-line) !important;
+    letter-spacing: var(--headline-lg-mobile-spacing) !important;
+  }
+
+  .hero-search-form {
+    flex-direction: column;
+  }
+
+  .hero-search-form button {
+    width: 100%;
+  }
+}
+
+/* ── Stats: reduzir espaçamento entre números no telemóvel ── */
+@media (max-width: 600px) {
+  .stats-row {
+    gap: var(--space-lg) !important;
+    justify-content: space-between !important;
+  }
+}
+
+/* ── Explore: sidebar de filtros colapsa para cima do grid ── */
+.explore-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .explore-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-layout aside {
+    order: -1;
+  }
+
+  .explore-filters-toggle {
+    display: flex !important;
+  }
+
+  .explore-filters-body {
+    display: none;
+  }
+
+  .explore-filters-body.is-open {
+    display: flex;
+  }
+}
+
+.explore-filters-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* ── Perfil da empresa: sidebar colapsa, capa e logo encolhem ── */
+.empresa-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .empresa-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-layout aside {
+    order: 2;
+  }
+}
+
+.empresa-cover {
+  width: 100%;
+  height: 350px;
+  background-color: var(--color-surface-container);
+  overflow: hidden;
+}
+
+.empresa-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 4px solid var(--color-surface-container-lowest);
+  background: #fff;
+  box-shadow: var(--shadow-level-2);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .empresa-cover {
+    height: 180px;
+  }
+
+  .empresa-logo {
+    width: 84px;
+    height: 84px;
+    margin-top: -32px;
+  }
+}
+
+.empresa-servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--space-md);
+}
+
+@media (max-width: 480px) {
+  .empresa-servicos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Cards de listagem: imagens de capa não devem encolher demais ── */
+@media (max-width: 480px) {
+  .card-cover {
+    height: 200px !important;
+  }
+}
+
+/* ── CTA final e secções genéricas: respiro menor no telemóvel ── */
+@media (max-width: 600px) {
+  .section-pad-xxl {
+    padding-top: var(--space-xl) !important;
+    padding-bottom: var(--space-xl) !important;
+  }
+}
