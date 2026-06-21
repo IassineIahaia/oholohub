@@ -89,6 +89,7 @@ const ICONES = {
     '<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14h.01"/></svg>',
   briefcase:
     '<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>',
+  check: '<svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>',
 };
 
 function icone(nome, classeExtra = "") {
@@ -218,6 +219,33 @@ function cardEmpresaHTML(empresa) {
   `;
 }
 
+// ── Helper: gerar HTML de 1 card de empresa para o EXPLORE.HTML —
+//    aqui o destaque visual é a LOGO (pequena, centrada, em moldura),
+//    em vez da foto de capa, para um layout mais "directório de marcas" ──
+function cardEmpresaExploreHTML(empresa) {
+  const nServicos = (empresa.servicos || []).length;
+  const verificada = empresa.badges && empresa.badges.length > 0;
+
+  return `
+    <a href="empresa.html?id=${empresa.slug}" class="card explore-card">
+      <div class="explore-card-top">
+        <div class="explore-card-logo-frame">
+          <img ${imgComFallback(empresa.slug, "logo")} alt="Logo ${empresa.nome}" class="explore-card-logo">
+        </div>
+        
+      </div>
+      <div class="explore-card-body">
+        <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="margin-bottom: var(--space-sm);">${empresa.industria || "Empresa"}</span>
+        <div class="text-headline-md" style="margin-bottom: var(--space-xs);">${empresa.nome}</div>
+        <p class="text-body-md text-muted" style="margin-bottom: var(--space-md);">
+          ${resumir(empresa.descricao, 90)}
+        </p>
+        <span class="text-label-sm explore-card-meta">${icone("pin")} ${empresa.provincia || "Moçambique"} &nbsp;·&nbsp; ${nServicos} serviço${nServicos === 1 ? "" : "s"}</span>
+      </div>
+    </a>
+  `;
+}
+
 // ── Renderizar grid de empresas num container (explore.html / index.html) ──
 async function renderizarGridEmpresas(containerId, { limite = null } = {}) {
   const container = document.getElementById(containerId);
@@ -255,7 +283,7 @@ async function renderizarPerfilEmpresa() {
     return;
   }
 
-  document.title = `${empresa.nome} — B2B Mozambique`;
+  document.title = `${empresa.nome} — OHOLO Hub`;
 
   const contactos = empresa.contactos || {};
   const stats = empresa.stats || {};
@@ -532,7 +560,7 @@ function aplicarFiltrosExplore(resetarPagina = true) {
   } else {
     const inicio = (_paginaActual - 1) * ITEMS_POR_PAGINA;
     const pagina = filtradas.slice(inicio, inicio + ITEMS_POR_PAGINA);
-    grid.innerHTML = pagina.map(cardEmpresaHTML).join("");
+    grid.innerHTML = pagina.map(cardEmpresaExploreHTML).join("");
     if (emptyMsg) emptyMsg.style.display = "none";
   }
 
@@ -623,3 +651,87 @@ async function inicializarExplore() {
     .querySelectorAll(".filter-industria")
     .forEach((el) => el.addEventListener("change", aplicarFiltrosExplore));
 }
+
+
+/* ============================================================
+   HERO SLIDER (carrossel de imagens na home)
+   ============================================================ */
+function inicializarHeroSlider() {
+  const slider = document.getElementById("hero-slider");
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll(".hero-slide"));
+  const dotsContainer = slider.querySelector(".hero-dots");
+  const btnPrev = slider.querySelector(".hero-arrow-prev");
+  const btnNext = slider.querySelector(".hero-arrow-next");
+
+  if (slides.length === 0) return;
+
+  let indiceAtual = slides.findIndex((s) => s.classList.contains("is-active"));
+  if (indiceAtual === -1) indiceAtual = 0;
+
+  let dots = [];
+  let intervaloAutoplay = null;
+  const DURACAO_AUTOPLAY = 6000;
+
+  // ── Gerar os dots dinamicamente ──
+  if (dotsContainer) {
+    dotsContainer.innerHTML = "";
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero-dot";
+      dot.setAttribute("aria-label", `Ir para o slide ${i + 1}`);
+      dot.addEventListener("click", () => irParaSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+    dots = Array.from(dotsContainer.querySelectorAll(".hero-dot"));
+  }
+
+  function actualizarUI() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === indiceAtual);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === indiceAtual);
+    });
+  }
+
+  function irParaSlide(indice) {
+    indiceAtual = (indice + slides.length) % slides.length;
+    actualizarUI();
+    reiniciarAutoplay();
+  }
+
+  function proximoSlide() {
+    irParaSlide(indiceAtual + 1);
+  }
+
+  function slideAnterior() {
+    irParaSlide(indiceAtual - 1);
+  }
+
+  function iniciarAutoplay() {
+    intervaloAutoplay = setInterval(proximoSlide, DURACAO_AUTOPLAY);
+  }
+
+  function pararAutoplay() {
+    if (intervaloAutoplay) clearInterval(intervaloAutoplay);
+  }
+
+  function reiniciarAutoplay() {
+    pararAutoplay();
+    iniciarAutoplay();
+  }
+
+  btnPrev?.addEventListener("click", slideAnterior);
+  btnNext?.addEventListener("click", proximoSlide);
+
+  slider.addEventListener("mouseenter", pararAutoplay);
+  slider.addEventListener("mouseleave", iniciarAutoplay);
+
+  actualizarUI();
+  iniciarAutoplay();
+}
+
+document.addEventListener("DOMContentLoaded", inicializarHeroSlider);
