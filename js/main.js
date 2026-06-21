@@ -232,7 +232,6 @@ function cardEmpresaExploreHTML(empresa) {
         <div class="explore-card-logo-frame">
           <img ${imgComFallback(empresa.slug, "logo")} alt="Logo ${empresa.nome}" class="explore-card-logo">
         </div>
-        ${verificada ? `<span class="explore-card-verified" title="Empresa verificada">${icone("check")}</span>` : ""}
       </div>
       <div class="explore-card-body">
         <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="margin-bottom: var(--space-sm);">${empresa.industria || "Empresa"}</span>

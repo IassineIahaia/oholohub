@@ -27,6 +27,7 @@ const EMPRESAS_SLUGS = [
   'TOPOLAND',
   'Studio-7-Artes',
   'SNS-TransporteLogistica-Consultoria-SULDA',
+  'UMcanto-arquitetura-paisagismo',
   'SABORES-DO-CAMPO',
   'Owani',
   'Opuha-Tourism-Trips',
