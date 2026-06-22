@@ -795,6 +795,16 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
 
       <form id="form-agendamento" style="display:flex; flex-direction:column; gap: var(--space-md);">
         <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-nome">O Seu Nome</label>
+          <input type="text" id="agendamento-nome" class="input-field" placeholder="Nome completo" required>
+        </div>
+
+        <div class="modal-field">
+          <label class="text-label-sm text-muted" for="agendamento-telefone">Número de Telefone</label>
+          <input type="tel" id="agendamento-telefone" class="input-field" placeholder="+258 8X XXX XXXX" required>
+        </div>
+
+        <div class="modal-field">
           <label class="text-label-sm text-muted" for="agendamento-empresa">Empresa</label>
           <select id="agendamento-empresa" class="input-field" required>
             <option value="" disabled selected>A carregar empresas...</option>
@@ -845,6 +855,8 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
   inputData.min = new Date().toISOString().split("T")[0];
 
   // Popular o select de empresas
+  const nome = overlay.querySelector("#agendamento-nome").value.trim();
+  const telefone = overlay.querySelector("#agendamento-telefone").value.trim();
   const selectEmpresa = overlay.querySelector("#agendamento-empresa");
   try {
     const empresas = await _obterEmpresasParaAgendamento();
@@ -876,6 +888,8 @@ async function _submeterAgendamento(ev) {
   const erro = overlay.querySelector("#agendamento-erro");
   erro.style.display = "none";
 
+  const nome = overlay.querySelector("#agendamento-nome").value.trim();
+  const telefone = overlay.querySelector("#agendamento-telefone").value.trim();
   const selectEmpresa = overlay.querySelector("#agendamento-empresa");
   const nomeEmpresa = selectEmpresa.options[selectEmpresa.selectedIndex]?.textContent || "";
   const data = overlay.querySelector("#agendamento-data").value;
@@ -883,8 +897,8 @@ async function _submeterAgendamento(ev) {
   const local = overlay.querySelector("#agendamento-local").value.trim();
   const mensagem = overlay.querySelector("#agendamento-mensagem").value.trim();
 
-  if (!selectEmpresa.value || !data || !hora) {
-    erro.textContent = "Por favor preencha a empresa, a data e a hora.";
+  if (!nome || !telefone || !selectEmpresa.value || !data || !hora) {
+    erro.textContent = "Por favor preencha o nome, telefone, empresa, data e hora.";
     erro.style.display = "block";
     return;
   }
@@ -899,6 +913,8 @@ async function _submeterAgendamento(ev) {
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
         _subject: `Nova Reunião B2B — ${nomeEmpresa}`,
+        Nome: nome,
+        Telefone: telefone,
         Empresa: nomeEmpresa,
         Data: data,
         Hora: hora,
