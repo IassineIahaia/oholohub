@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T11:51:58.589Z",
+    "pastaId": "1EVA4UVatA7AOE4hQplhh7rLsRzibwLsH",
+    "pastaUrl": "https://drive.google.com/drive/folders/1EVA4UVatA7AOE4hQplhh7rLsRzibwLsH"
+  },
+  "empresa": {
+    "nome": "Juca e Services Sociedade unipessoal Limitada",
+    "descricao": "A empresa está vocacionada em Consultoria, Prestação de Serviços, Fornecimento e Comercialização de Produtos Agrícolas e Aluguer de Viaturas (outros meios de transporte).\nConsultoria: Legalização de Empresas (Actividades Especializadas de Apoio administrativo), Organização de Processos Empresariais e Individuais, Actividades de Consultoria para os Negócios e a Gestão, Actividades de Consultoria e Programação Informática, e Agronegócio.\nPrestação de serviços: \n\tReparação e manutenção de equipamento eléctrico e Instalação eléctrica;   \n\t(Digitação, impressão, cópia, scanner, encadernação de projectos, monografias/ Dissertações/ Teses, montagem de cameras, alarmes, campainhas);\n\tGestão e exploração de equipamento informático; \n\tEstudos de mercados e sondagens de opinião; \n\tOutro fornecimento de Recursos Humanos;  \n\tOutras Actividades de Serviços Pessoais N. E. (Frios, Serralharia, Carpintaria, Estabelecimento, Fornecimento de Equipamento de Escritório).\nFornecimento e Comercialização de Produtos Agrícolas:\n\tComércio por grosso de Cereais, Sementes, Leguminosas, Oleaginosas e Alimentos para Animais;\n\tComércio por grosso de Matérias Agrícolas e Têxteis, Animais Vivos e Produtos Semi-Acabados;\n\tComércio por grosso de Produtos Alimentares e Tabaco;\n\tComércio por grosso de Outros Produtos Alimentares e N.E (Não Específicos).       \nMissão\n“Existimos para fortalecer empresas”\nSer a empresa de maior credibilidade do mercado de movimentação de materiais, oferecendo as melhores soluções aos nossos clientes, e levar a melhor experiência de serviços pessoais a estudantes, educadores, profissionais criativos e consumidores de todo País através dos seus serviços.\nVisão\n“Ser a melhor empresa de consultoria e de prestação de serviços do País”\nConsolidar nossa inquestionável qualidade global dos produtos e serviços, em uma posição de líder de mercado e provando que serviços de qualidade não precisa ser intimidadora para aqueles que não são experts na área.\nvalores\nPara os valores serem seguidos dentro da empresa, eles precisam atender a certos critérios, como:\n•\tClareza e objetividade, permitindo a compreensão de todos;\n•\tConhecimento público para toda a organização, cliente e sociedade;\n•\tSer seguido obrigatoriamente à risca por todos dentro da empresa.\nComo:\n•\tSatisfação do cliente – Ele é a razão de ser do negócio;\n•\tValorização e respeito às pessoas – São elas o grande diferencial que torna tudo possível;\n•\tBusca da excelência – Levando a máxima qualidade para todos os consumidores;\n•\tPreocupação com o meio ambiente – Deixando um mundo melhor para nossos descendentes;\n•\tResponsabilidade social – Ajudar no combate às desigualdades de classes.",
+    "badges": [],
+    "nuit": "401299165",
+    "fundacao": "2021",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "jpilica@gmail.com",
+      "telefone": "+258866373508",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Prestacao de Servicos",
+        "descricao": "Consultoria: Legalização de Empresas (Actividades Especializadas de Apoio administrativo), Organização de Processos Empresariais e Individuais, Actividades de Consultoria para os Negócios e a Gestão, Actividades de Consultoria e Programação Informática, e Agronegócio."
+      },
+      {
+        "nome": "Fornecimento e Comercialização de Produtos Agrícolas:",
+        "descricao": "\tComércio por grosso de Cereais, Sementes, Leguminosas, Oleaginosas e Alimentos para Animais;\n\tComércio por grosso de Matérias Agrícolas e Têxteis, Animais Vivos e Produtos Semi-Acabados;\n\tComércio por grosso de Produtos Alimentares e Tabaco;\n\tComércio por grosso de Outros Produtos Alimentares e N.E (Não Específicos)."
+      }
+    ],
+    "stats": {
+      "exp": "6",
+      "producao": "10000Kg/ Mes",
+      "vendas": "50000Kg",
+      "extra": "10",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

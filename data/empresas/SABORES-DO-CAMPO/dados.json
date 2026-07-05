@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T14:33:50.887Z",
+    "pastaId": "1tGRz5axtEWtdN0Al35-dms9uJZC96UDA",
+    "pastaUrl": "https://drive.google.com/drive/folders/1tGRz5axtEWtdN0Al35-dms9uJZC96UDA"
+  },
+  "empresa": {
+    "nome": "SABORES DO CAMPO",
+    "descricao": "Em uma empresa do ramo de Agro-processameento, que produz e comercializa vários enriquecidas",
+    "badges": [],
+    "nuit": "",
+    "fundacao": "2020",
+    "funcionarios": "",
+    "industria": "Comércio e alimentação",
+    "provincia": "Niassa",
+    "contactos": {
+      "email": "saboresdocampo.geral@gmail.com",
+      "telefone": "861787300",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/in/sabores-do-campo-65914a378?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Processamento",
+        "descricao": "Processamento de farinhas de Multimisturas, Mexoeira, Mapira, Mandioca, Batata-doce, Feijão-Nhemba"
+      },
+      {
+        "nome": "Comercialização de produtos",
+        "descricao": "Vendemos em supermercados, feiras de exposição, programas de nutrição"
+      }
+    ],
+    "stats": {
+      "exp": "8",
+      "producao": "10000",
+      "vendas": "1000000",
+      "extra": "",
+      "labels": [
+        "8 anos",
+        "10000 toneladas anuais",
+        "1000000",
+        "Active Clients"
+      ]
+    }
+  }
+}

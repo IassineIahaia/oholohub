@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T20:19:48.890Z",
+    "pastaId": "1RFSaYb8ci39ZLAmZyrrQKZy4Z2tsye94",
+    "pastaUrl": "https://drive.google.com/drive/folders/1RFSaYb8ci39ZLAmZyrrQKZy4Z2tsye94"
+  },
+  "empresa": {
+    "nome": "Casquinha Company",
+    "descricao": "Processamos frutas nativas e exóticas oriundas das comunidades locais, sem adição de substâncias químicas. Esse processamento é mínimo, garantindo desse modo a manutenção das vitaminas e nutrientes.",
+    "badges": [
+      "Verified Enterprise",
+      "Top Rated 2025"
+    ],
+    "nuit": "",
+    "fundacao": "2019",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@casquinhacompany.com",
+      "telefone": "+258865009756",
+      "website": "",
+      "linkedin": "casquinhacompany",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Sumos, geleias e Castanhas de caju",
+        "descricao": "Produto 100% natural"
+      },
+      {
+        "nome": "Frutella",
+        "descricao": "Geleias 100% Naturais"
+      },
+      {
+        "nome": "Máximo",
+        "descricao": "Castanhas de caju temperadas"
+      },
+      {
+        "nome": "Sumos",
+        "descricao": "Sumos naturais e organicos"
+      }
+    ],
+    "stats": {
+      "exp": "7",
+      "producao": "5000",
+      "vendas": "70000 por mes",
+      "extra": "47",
+      "labels": [
+        "7",
+        "5000 unites per month",
+        "70000 per month",
+        "47"
+      ]
+    }
+  }
+}

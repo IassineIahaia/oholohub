@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T14:24:06.040Z",
+    "pastaId": "1tTmlXQy5wY_Pw_jLx3-N8aJ4FiiNlktz",
+    "pastaUrl": "https://drive.google.com/drive/folders/1tTmlXQy5wY_Pw_jLx3-N8aJ4FiiNlktz"
+  },
+  "empresa": {
+    "nome": "Beliva Consultores Lda",
+    "descricao": "Eabsdbfpreash",
+    "badges": [],
+    "nuit": "401331670",
+    "fundacao": "2020",
+    "funcionarios": "",
+    "industria": "BDS e ensino",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "belivaconsultores@gmail.com",
+      "telefone": "+258 871044422",
+      "website": "www.belivacosultores.com",
+      "linkedin": "https://www.linkedin.com/in/dilmannhantumbo/",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Serviços de Design Gráfico",
+        "descricao": "sp"
+      },
+      {
+        "nome": "Gestão de Marcas",
+        "descricao": "kafwleuibfºefwycfbedwe"
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "5000",
+      "vendas": "360000",
+      "extra": "",
+      "labels": [
+        "Marketing e Tecnologia",
+        "Adaptadado ao contexto nacional",
+        "Serviços Agil",
+        "Active Clients"
+      ]
+    }
+  }
+}

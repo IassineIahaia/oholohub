@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T19:59:24.015Z",
+    "pastaId": "1k3bTVkdfuhIoIqJS8ipDrL8r7I7EsDAQ",
+    "pastaUrl": "https://drive.google.com/drive/folders/1k3bTVkdfuhIoIqJS8ipDrL8r7I7EsDAQ"
+  },
+  "empresa": {
+    "nome": "Mozagro Business",
+    "descricao": "A MozAgro Business é uma empresa moçambicana de agronegócio dedicada à transformação dos sistemas alimentares através da assistência técnica, ligação ao mercado, agregação de valor e desenvolvimento de cadeias agrícolas inclusivas. Fundada com o propósito de melhorar os rendimentos dos pequenos produtores, a empresa atua na comercialização, processamento e embalagem de produtos agrícolas, bem como na prestação de serviços de consultoria e intermediação comercial para agricultores, cooperativas, compradores e parceiros do setor agrícola.",
+    "badges": [
+      "Verified Enterprise",
+      "Top Rated 2024",
+      "Top Rated 2025"
+    ],
+    "nuit": "401724011",
+    "fundacao": "2021",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "Chauquealberto82@gmail.com",
+      "telefone": "+258848137225",
+      "website": "",
+      "linkedin": "https://mz.linkedin.com/company/mozagro-business",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Consultoria agraria",
+        "descricao": "A macadâmia é uma noz nobre de origem australiana, conhecida pelo seu sabor amanteigado. Ela serve principalmente como alimento nutritivo na gastronomia (doces e salgados) e matéria-prima para óleos e cosméticos, oferecendo benefícios como proteção cardíaca, controle do colesterol e saciedade"
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "2000",
+      "vendas": "",
+      "extra": "100",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

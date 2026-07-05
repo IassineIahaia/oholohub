@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T18:31:53.784Z",
+    "pastaId": "178RKjMVbuMhBwnvHf25uAwhFETs2GqLP",
+    "pastaUrl": "https://drive.google.com/drive/folders/178RKjMVbuMhBwnvHf25uAwhFETs2GqLP"
+  },
+  "empresa": {
+    "nome": "Green Leaf Mozambique",
+    "descricao": "Green Leaf Mozambique é uma empresa moçambicana dedicada a produção, processamento e comercialização de moringa e seus derivados, assim como processamento de manjericão, e venda de diversos produtos verdes. Trabalhamos para oferecer qualidade, inovação e confiança aos clientes.",
+    "badges": [],
+    "nuit": "",
+    "fundacao": "2025",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "bicheadamo@gmail.com",
+      "telefone": "842468184",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Temperos de moringa",
+        "descricao": "Tempero natural produzido a partir de folhas de moringa cuidadosamente processadas, combinadas com piripíri e sal selecionado. Ideal para realçar o sabor de carnes, peixe, frango, legumes e outros pratos. Além do sabor único, oferece nutrientes essenciais provenientes da moringa, tornando as refeições mais saudáveis e saborosas.\n\nBenefícios:\n✔ Rico em nutrientes naturais\n✔ Realça o sabor dos alimentos\n✔ Alternativa aos temperos industrializados\n✔ Fácil de utilizar no dia a dia"
+      },
+      {
+        "nome": "Chá Aromatizado de Moringa",
+        "descricao": "Uma combinação equilibrada entre a moringa e ervas aromáticas naturais, proporcionando uma bebida saudável, refrescante e nutritiva. Pode ser consumido quente ou frio em qualquer momento do dia.\nBenefícios:\n✔ Rico em antioxidantes\n✔ Auxilia no bem-estar geral\n✔ Sabor agradável e natural\n✔ Contribui para hábitos alimentares saudáveis"
+      },
+      {
+        "nome": "Farinha de Milho Fortificada com Moringa",
+        "descricao": "Farinha enriquecida com moringa para aumentar o valor nutricional das refeições tradicionais. Indicada para preparação de xima, papas, bolos e outros alimentos, contribuindo para uma alimentação mais equilibrada.\nBenefícios:\n✔ Maior valor nutricional\n✔ Rica em vitaminas e minerais\n✔ Ideal para famílias e crianças\n✔ Contribui para a segurança alimentar",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Tempero de Manjericão",
+        "descricao": "Tempero natural produzido a partir de folhas selecionadas de manjericão seco e moído, ideal para dar aroma e sabor especial a carnes, peixes, massas, molhos, sopas e saladas.\nBenefícios:\n✔ Aroma intenso e agradável\n✔ Realça naturalmente o sabor dos alimentos\n✔ Produto natural e sem aditivos artificiais\n✔ Versátil para diversas receitas"
+      }
+    ],
+    "stats": {
+      "exp": "1",
+      "producao": "100kg por mês ",
+      "vendas": "5000mt por mês ",
+      "extra": "",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

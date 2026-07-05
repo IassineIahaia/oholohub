@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T21:32:50.799Z",
+    "pastaId": "1DzAHO1585gjCRvg2YrQFZiZQUPr9fBWk",
+    "pastaUrl": "https://drive.google.com/drive/folders/1DzAHO1585gjCRvg2YrQFZiZQUPr9fBWk"
+  },
+  "empresa": {
+    "nome": "Francis Cosmeticos",
+    "descricao": "A Francis Cosméticos é uma empresa moçambicana dedicada à criação de produtos de beleza e higiene inspirados nos recursos naturais de Moçambique. Proprietária das marcas Mussiro e Coconut, a empresa combina tradição ancestral, ingredientes autênticos e padrões modernos de qualidade para oferecer cosméticos eficazes, seguros e diferenciados. A sua atuação visa valorizar a riqueza natural e cultural de Moçambique, transformando-a em produtos de consumo com elevado valor agregado.",
+    "badges": [
+      "Verified Enterprise"
+    ],
+    "nuit": "",
+    "fundacao": "2025",
+    "funcionarios": "",
+    "industria": "Cosmética e bem-estar",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "ranciscosmeticos.comercial@gmail.com",
+      "telefone": "+258 87 807 9234",
+      "website": "https://franciscosmeticos.lovable.app",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Mascara Facial de Mussiro + Coco",
+        "descricao": "Combina o poder clareador do mussiro com a hidratação profunda do coco. Ideal para peles que buscam brilho e maciez"
+      },
+      {
+        "nome": "Mascara Facial de Mussiro + Amendoas",
+        "descricao": "Focada na elasticidade e suavidade, deixando o rosto com um toque acetinado e rejuvenescido."
+      },
+      {
+        "nome": "Mascara Facial de Mussiro + Abacate",
+        "descricao": "Uma fórmula nutritiva e revitalizante, rica em vitaminas para devolver a vitalidade à pele cansada."
+      },
+      {
+        "nome": "Mascara Facial de Mussiro + Argila Preta",
+        "descricao": "Ação detox profunda. Remove impurezas e controla a oleosidade, unindo a tradição do mussiro à purificação da argila."
+      },
+      {
+        "nome": "Sabão de Mussiro + Coco + Limão",
+        "descricao": "Desenvolvido para o banho, este sabão une as propriedades clareadoras do mussiro ao frescor do limão e à hidratação do coco, proporcionando uma limpeza revigorante."
+      }
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "500/mes",
+      "vendas": "480 000",
+      "extra": "5 Revendedores Activos ( Maputo, Chimoio, Quelimane, Nampula, Cuamba)",
+      "labels": [
+        "Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

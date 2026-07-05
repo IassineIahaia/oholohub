@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-21T05:23:24.808Z",
+    "pastaId": "1UQmDoY866pocF0BJGTl4yeQYitwuZpGG",
+    "pastaUrl": "https://drive.google.com/drive/folders/1UQmDoY866pocF0BJGTl4yeQYitwuZpGG"
+  },
+  "empresa": {
+    "nome": "Owani, Lda",
+    "descricao": "A OWANI é uma marca moçambicana dedicada à valorização da identidade nacional através do agroprocessamento de alimentos tradicionais, de experiências gastronómicas e de brindes e ofertas inspirados na cultura, nos produtos locais e nos sabores de Moçambique.",
+    "badges": [],
+    "nuit": "401165878",
+    "fundacao": "2020",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@owani.co.mz",
+      "telefone": "+258862832990",
+      "website": "www.owani.co.mz",
+      "linkedin": "https://www.linkedin.com/company/owani-lda/",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Agroprocessamento",
+        "descricao": "Farinhas tradicionais, cereais, leguminosas, snacks, castanhas, frutas desidratadas, misturas alimentares e produtos de valor acrescentado."
+      },
+      {
+        "nome": "Gastronomia Tradicional Moçambicana",
+        "descricao": "Catering e menus de degustação."
+      },
+      {
+        "nome": "Cabazes, Brindes e Ofertas com Identidade Local",
+        "descricao": "Cabazes corporativos, presentes institucionais, kits temáticos, lembranças e ofertas personalizadas feitos com produtos moçambicanos."
+      },
+      {
+        "nome": "Acessórios tradicionais de cozinha",
+        "descricao": "Panelas e formas de barro, colheres de pau, tábuas, cestos e outros artigos inspirados na cultura moçambicana."
+      },
+      {
+        "nome": "Produtos Pesqueiros",
+        "descricao": "Peixe seco\nProdutos do mar transformados\nEspecialidades locais"
+      },
+      {
+        "nome": "Aves defumadas",
+        "descricao": "Galinhas cafreais e patos defumados artesanalmente"
+      },
+      {
+        "nome": "Sobremesas tradicionais",
+        "descricao": "Sobremesas tradicionais diversas inspiradas no litoral norte de Moçambique e reinterpretadas."
+      },
+      {
+        "nome": "Zowani Experience",
+        "descricao": "Eventos gastronómicos e experiências culturais."
+      },
+      {
+        "nome": "Ingredientes para cozinha tradicional",
+        "descricao": "Ingredientes diversos usados na gastronomia  tradicional"
+      },
+      {
+        "nome": "Doces e snacks tradicionais",
+        "descricao": "Doces tradicionais diversos"
+      }
+    ],
+    "stats": {
+      "exp": "6",
+      "producao": "5000 + un de produtos diversos",
+      "vendas": "",
+      "extra": "+ 100 clientes activos ",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

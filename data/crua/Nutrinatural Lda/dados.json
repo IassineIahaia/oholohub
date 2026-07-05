@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T18:17:49.113Z",
+    "pastaId": "1CJfwWg8OGnqZdK70vgNMDoerVAXFMLfX",
+    "pastaUrl": "https://drive.google.com/drive/folders/1CJfwWg8OGnqZdK70vgNMDoerVAXFMLfX"
+  },
+  "empresa": {
+    "nome": "Nutrinatural Lda.",
+    "descricao": "A Nutrinatural Lda. e umaempreda mocambicana de direito privado guiada pela sustentabilidade, inovação e excelência. Acreditamos em empoderar comunidades, proteger o meio ambiente e oferecer soluções naturais que promovem saúde e bem-estar. O nosso compromisso é unir pessoas e natureza para criar um mundo mais saudável e sustentável",
+    "badges": [],
+    "nuit": "400944105",
+    "fundacao": "2018",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "comercial@nutrinatural.com",
+      "telefone": "+258878060985",
+      "website": "www.nutrinatural.co.mz",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "",
+        "descricao": "",
+        "imagemBase64": null
+      }
+    ],
+    "stats": {
+      "exp": "8",
+      "producao": "4 ton/mes",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

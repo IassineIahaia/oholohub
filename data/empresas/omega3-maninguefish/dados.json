@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-18T10:03:14.753Z",
+    "pastaId": "1ZjjNDlcKK63zv0_vtJLY7wVlrhvt9E1B",
+    "pastaUrl": "https://drive.google.com/drive/folders/1ZjjNDlcKK63zv0_vtJLY7wVlrhvt9E1B"
+  },
+  "empresa": {
+    "nome": "Ômega3 Maninguefish",
+    "descricao": "Ômega3 é uma empresa, vocacionada no comercio de mariscos diverso, no Mercado Nacional e International. Baseada na cidade de Nampula e com operações principals no Distrito de Mogincual, a empresa tem se evidenciado no mercado, tanto que fechou acordos com uma grande empresa em Dubai- EAU, em Nelspruit -Africa. Focado na Expansão para o Mercado Europeu, tem vindo a melhorar cada vez mais os seus padrões de qualidade de produção e está procurando investidores para equipar a nova fabrica de processamento baseada em Mogincual. \n\nPara mais informação, contactem nos e façam as vossas encomendas.",
+    "badges": [
+      "Verified Enterprise",
+      "Top Rated 2024",
+      "Top Rated 2025"
+    ],
+    "nuit": "401416668",
+    "fundacao": "2022",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "osvaldosimao87@gmail.com",
+      "telefone": "840632515",
+      "website": "https://www.instagram.com/omega3_maninguefish?igsh=cjYyMDMyamZzNWlq",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Fornecimento de Mariscos a retalho no Mercado Domestico",
+        "descricao": "Venda de Mariscos diversos para singulars e colectivos a novel Nacional, de forma directa e atravês de revendedores/distribuidores autorizados.",
+        "imagemBase64": null
+      }
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "Fornecimento de Mariscos a Grosso para o Mercado internacional/Exportação",
+      "vendas": "BDS e desenvolvimento Local",
+      "extra": "10t/mes",
+      "labels": [
+        "10 milhões/ano",
+        "20",
+        "2",
+        "100t/ano"
+      ]
+    }
+  }
+}

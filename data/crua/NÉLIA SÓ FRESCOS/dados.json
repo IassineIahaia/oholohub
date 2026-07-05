@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-18T18:12:43.373Z",
+    "pastaId": "11wdzyBXNrlRQuQZrlKt_T-Bl9AMYx6iU",
+    "pastaUrl": "https://drive.google.com/drive/folders/11wdzyBXNrlRQuQZrlKt_T-Bl9AMYx6iU"
+  },
+  "empresa": {
+    "nome": "NÉLIA SÓ FRESCOS",
+    "descricao": "NÉLIA SÓ FRESCOS\n\nMISSÃO \n\nProduzir, processar e comercializar produtos agropecuários e mariscos de elevada qualidade, garantindo frescura, segurança alimentar e satisfação dos clientes, contribuindo para a valorização da produção local, geração de renda e desenvolvimento sustentável das comunidades.\n\nVISÃO \n\nSer uma empresa de referência em Moçambique no processamento e comercialização de produtos agropecuários e mariscos, reconhecida pela qualidade, inovação, confiança e compromisso com a segurança alimentar e o desenvolvimento económico local.\n\nVALORES \n\nQualidade: compromisso com produtos frescos e de excelência.\n\nIntegridade: atuação ética, transparente e responsável.\n\nCompromisso com o cliente: foco na satisfação e fidelização dos consumidores.\n\nInovação: melhoria contínua dos processos de produção, conservação e comercialização.\n\nSustentabilidade: uso responsável dos recursos naturais e valorização da produção local.\n\nSegurança Alimentar: rigor na higiene, conservação e manuseamento dos produtos.\n\nResponsabilidade Social: contribuição para o desenvolvimento das comunidades e dos produtores locais.\n\n\nMERCADOS QUE SERVE \n\nA NÉLIA SÓ FRESCOS atende diversos segmentos do mercado, nomeadamente:\n\nFamílias e consumidores finais;\n\nMercados e feiras locais;\n\nSupermercados e minimercados;\n\nHotéis, restaurantes e estabelecimentos de catering;\n\nCantinas, escolas e instituições públicas e privadas;\n\nEmpresas de distribuição alimentar;\n\nCompradores grossistas e retalhistas.\n\n\nDIFERENCIAL COMPETITIVO \n\nA NÉLIA SÓ FRESCOS distingue-se pela combinação de produtos frescos, processamento de qualidade, rigor na conservação e ligação direta aos produtores e pescadores locais, garantindo alimentos mais frescos, seguros e com melhor relação qualidade-preço. A empresa aposta ainda na agregação de valor através do processamento adequado dos produtos agropecuários e mariscos, reduzindo perdas pós-colheita e oferecendo soluções práticas e confiáveis para os seus clientes.\n\nSlogan\n\n\"Do campo e do mar para a sua mesa, sempre frescos.\"",
+    "badges": [],
+    "nuit": "120373285",
+    "fundacao": "2021",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "neliasofrescos007@gmail.com",
+      "telefone": "+258847379629",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Matapa (folhas de mandioqueira)- Ntikwa",
+        "descricao": "Matapa processada pronta pra ser cozida."
+      },
+      {
+        "nome": "Couve recortada",
+        "descricao": "Couve recortada bem fininha pronta para ser cozida."
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "10 toneladas",
+      "vendas": "500000 MZN",
+      "extra": "800 clientes",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

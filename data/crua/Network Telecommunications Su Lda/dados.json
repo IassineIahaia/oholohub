@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T10:51:26.412Z",
+    "pastaId": "1hIM0AvNdB3Wqb1tZZXpNbl1kTLvq5BYQ",
+    "pastaUrl": "https://drive.google.com/drive/folders/1hIM0AvNdB3Wqb1tZZXpNbl1kTLvq5BYQ"
+  },
+  "empresa": {
+    "nome": "Network Telecommunications Su, Lda",
+    "descricao": "Fornecimento de equipamentos de Informática, Telecomunicação, Eletrônica, Sistemas de Segurança eletrônica, Automação.\n\nPrestação de Serviços: Redes de computadores, Sistemas de Segurança, instalação, Montagem e Manutenção de redes de computadores, Sistemas eletrônicos, Automação.",
+    "badges": [],
+    "nuit": "401689672",
+    "fundacao": "2023",
+    "funcionarios": "",
+    "industria": "Comunicação e tecnologia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@networktelecommz.com",
+      "telefone": "845836770",
+      "website": "www.networktelecommz.com",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Montagem de sistema, de Segurança Cerca electrica",
+        "descricao": "Fornecimento de equipamentos de Informática, Telecomunicação, Eletrônica, Sistemas de Segurança eletrônica, Automação.\n\nPrestação de Serviços: Redes de computadores, Sistemas de Segurança, instalação, Montagem e Manutenção de redes de computadores, Sistemas eletrônicos, Automação."
+      },
+      {
+        "nome": "Montagem de uma antena Starlink para serviços de internet",
+        "descricao": "Montagem de uma antena Starlink para serviços de internet"
+      }
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "2.500,000,00",
+      "vendas": "100000000",
+      "extra": "",
+      "labels": [
+        "3",
+        "100000000",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

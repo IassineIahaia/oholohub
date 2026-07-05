@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T21:49:20.929Z",
+    "pastaId": "1sbs5GOq_lMSmefywwgpEmPSfNUN-P6VG",
+    "pastaUrl": "https://drive.google.com/drive/folders/1sbs5GOq_lMSmefywwgpEmPSfNUN-P6VG"
+  },
+  "empresa": {
+    "nome": "Natural Pharm",
+    "descricao": "Natural Pharm é uma empresa moçambicana dedicada à produção e comercialização de cosméticos naturais, fundada em Agosto de 2023 pelas farmacêuticas Idalina Agostinho Aiúba e Márcia Mariano Mussa com o intuito de unir a beleza natural, ciência e resultados. A empresa nasceu da necessidade de oferecer alternativas mais saudáveis, seguras e sustentáveis para os cuidados da pele e do cabelo, utilizando matérias-primas de origem vegetal cuidadosamente selecionadas.\nAlém da promoção da saúde e bem-estar, a Natural Pharm também contribui para a valorização dos recursos naturais locais e para a redução das perdas pós-colheita de plantas, sementes, frutos e óleos vegetais que muitas vezes são desperdiçados devido a falta de processamento adequado. Através da transformação dessas matérias-primas em cosméticos naturais de valor agregado, a empresa incentiva o aproveitamento sustentável dos recursos agrícolas e naturais, gerando renda, reduzindo desperdícios e promovendo a economia circular.\nEMPREENDEDORES: Idalina Agostinho Aúba; Márcia  Mariano Mussa.\nLOCALIZAÇÃO: Provincia de Nampula, distrito de Nampula-Cidade.\nEMAIL: naturalpharm4@gmail.com\nCONTACTOS: +258850792738 \n                          +258865220196",
+    "badges": [],
+    "nuit": "",
+    "fundacao": "",
+    "funcionarios": "",
+    "industria": "",
+    "provincia": "",
+    "contactos": {
+      "email": "",
+      "telefone": "",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Óleo vithair",
+        "descricao": "Óleo vithair, é um óleo com feito com activos contendo propriedades estimulantes do crescimento capilar e o fortalecimento dos fios."
+      },
+      {
+        "nome": "Argilas faciais",
+        "descricao": "A natural Pharm apresenta várias cores de argila e cada uma com sua finalidade na rotina de skincare, rejuvenescendo, deixando a pele macia e com aspecto saudável."
+      }
+    ],
+    "stats": {
+      "exp": "",
+      "producao": "Produção mensal: 75  potes em média e 60 potes vendidos",
+      "vendas": "Uma estimativa de 100.000 .mts por ano",
+      "extra": "50 clientes fixos",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

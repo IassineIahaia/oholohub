@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-18T04:40:48.445Z",
+    "pastaId": "1UPYj9WHzZU8WGdslh1P0QbzlkwR3Rhxm",
+    "pastaUrl": "https://drive.google.com/drive/folders/1UPYj9WHzZU8WGdslh1P0QbzlkwR3Rhxm"
+  },
+  "empresa": {
+    "nome": "Moz-Vet,SU LDA",
+    "descricao": "MOZ-VET SU, LDA\nConsultoria e Prestação de Serviços Veterinários\n\nQuem Somos\n\nA MOZ-VET SU, LDA é uma empresa moçambicana especializada em Consultoria e Prestação de Serviços Veterinários, vocacionada para promover a saúde animal, o aumento da produtividade pecuária e o fortalecimento do setor agropecuário em Moçambique.\n\nA empresa atua com profissionalismo, responsabilidade e compromisso, oferecendo soluções técnicas adaptadas às necessidades dos produtores, instituições públicas, privadas e organizações de desenvolvimento rural.\n\nMissão\n\nPrestar serviços veterinários e de consultoria agropecuária com elevados padrões de qualidade, promovendo a saúde animal, a segurança alimentar e o desenvolvimento sustentável das comunidades.\n\nVisão\n\nSer uma empresa de referência nacional em consultoria e prestação de serviços veterinários, reconhecida pela excelência técnica, inovação e impacto positivo no desenvolvimento da pecuária moçambicana.\n\nValores\n\n* Ética profissional;\n* Excelência técnica;\n* Responsabilidade;\n* Inovação;\n* Transparência;\n* Compromisso com o cliente;\n* Bem-estar animal;\n* Sustentabilidade.\n\nÁreas de Atuação\n\nA MOZ-VET SU, LDA desenvolve atividades nas seguintes áreas:\n\nServiços Veterinários\n* Consultas veterinárias;\n* Diagnóstico e tratamento de doenças;\n* Cirurgias veterinárias;\n* Vacinação animal;\n* Desparasitação;\n* Assistência sanitária em explorações pecuárias.\n\nConsultoria Agropecuária\n* Gestão e planeamento de explorações pecuárias;\n* Maneio de bovinos, caprinos, ovinos, suínos e aves;\n* Programas de biossegurança;\n* Melhoramento genético;\n* Formulação de projetos agropecuários.\n\nFormação e Capacitação\n* Treinamento de produtores;\n* Formação de técnicos agropecuários;\n* Capacitação em saúde e produção animal;\n* Educação sanitária.\n\nInspeção e Segurança Alimentar\n* Inspeção higiossanitária de carnes;\n* Inspeção ante mortem e post mortem;\n* Educação em higiene alimentar;\n* Acompanhamento de matadouros e unidades de processamento.\n\nPúblico-Alvo\n* Pequenos produtores;\n* Médios e grandes produtores pecuários;\n* Associações e cooperativas;\n* Instituições de ensino;\n* Organizações não-governamentais;\n* Empresas agropecuárias;\n* Projetos de desenvolvimento rural.\n\nCompromisso\nA MOZ-VET SU, LDA assume o compromisso de disponibilizar serviços de elevada qualidade, contribuindo para o aumento da produtividade animal, prevenção de doenças, segurança alimentar e melhoria das condições de vida das comunidades rurais.",
+    "badges": [],
+    "nuit": "401724710",
+    "fundacao": "2022",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Zambézia",
+    "contactos": {
+      "email": "canagomes3@gmail.com",
+      "telefone": "+258861692558",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Serviços Veterinários",
+        "descricao": "* Consultas veterinárias;\n* Diagnóstico e tratamento de doenças;\n* Cirurgias veterinárias;\n* Vacinação animal;\n* Desparasitação;\n* Assistência sanitária em explorações pecuárias."
+      },
+      {
+        "nome": "Consultoria Agropecuária",
+        "descricao": "* Gestão e planeamento de explorações pecuárias;\n* Maneio de bovinos, caprinos, ovinos, suínos e aves;\n* Programas de biossegurança;\n* Melhoramento genético;\n* Formulação de projetos agropecuários."
+      },
+      {
+        "nome": "Formação e Capacitação",
+        "descricao": "* Treinamento de produtores;\n* Formação de técnicos agropecuários;\n* Capacitação em saúde e produção animal;\n* Educação sanitária"
+      }
+    ],
+    "stats": {
+      "exp": "7",
+      "producao": "",
+      "vendas": ">100/ano",
+      "extra": "",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

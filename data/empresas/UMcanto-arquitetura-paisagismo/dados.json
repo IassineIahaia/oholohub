@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T18:56:09.460Z",
+    "pastaId": "1aTeTW3KPAZFxc6bJ1gxJhIKnwXad9CSm",
+    "pastaUrl": "https://drive.google.com/drive/folders/1aTeTW3KPAZFxc6bJ1gxJhIKnwXad9CSm"
+  },
+  "empresa": {
+    "nome": "UMcanto Arquitetura e Paisagismo",
+    "descricao": "A UMcanto Arquitetura e Paisagismo é uma empresa moçambicana especializada em arquitetura, planeamento físico e design de paisagens, focada na criação de espaços exteriores funcionais, estéticos e sustentáveis. A sua missão é valorizar os espaços construídos e naturais, promovendo bem-estar, conforto e sustentabilidade através de soluções de jardins personalizados e adaptados ao clima local. A empresa atende principalmente proprietários de residências de médio e alto padrão, promotores imobiliários, instituições educativas e empresas que procuram valorizar os seus espaços exteriores. Atua no mercado de arquitetura e paisagismo, oferecendo serviços como projetos de jardins, consultoria paisagística, levantamentos de campo, acompanhamento de obra e manutenção de espaços verdes. Também desenvolve produtos como projetos completos de jardins, planos de plantação, guias de manutenção e soluções de irrigação sustentável, sempre com foco em baixa manutenção e eficiência hídrica.",
+    "badges": [],
+    "nuit": "402011297",
+    "fundacao": "2022",
+    "funcionarios": "",
+    "industria": "Construção",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "umcantoarquiteturapaisagismo@gmail.com",
+      "telefone": "877192518",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/company/umcanto-arqutetura-e-paisagismo/",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Criação de projetos paisagísticos",
+        "descricao": "O serviço de criação de projetos paisagísticos consiste no desenvolvimento completo de soluções para espaços exteriores, desde a análise do terreno até a proposta final de desenho do jardim. Inclui o levantamento de campo, estudo das condições do local (clima, solo, insolação e uso do espaço), definição do conceito do projeto e elaboração do desenho técnico com a organização dos diferentes elementos como plantas, caminhos, áreas de estar e sistemas de irrigação. O objetivo é criar jardins funcionais, esteticamente equilibrados e adaptados ao contexto do cliente, promovendo conforto, sustentabilidade e baixa necessidade de manutenção."
+      },
+      {
+        "nome": "Montagem de jardins",
+        "descricao": "O serviço de montagem de jardins consiste na execução prática do projeto paisagístico no terreno, transformando o desenho técnico em um espaço verde real e funcional. Envolve a preparação do solo, correção e melhoria das condições de plantio, marcação dos espaços conforme o projeto, plantação de espécies vegetais, instalação de elementos decorativos e, quando necessário, implementação de sistemas de irrigação. Este serviço garante que todas as etapas sejam realizadas com precisão técnica e cuidado estético, assegurando que o jardim final esteja alinhado ao projeto original, seja funcional, sustentável e adaptado às condições climáticas e de manutenção do cliente."
+      },
+      {
+        "nome": "Manutenção de jardins",
+        "descricao": "O serviço de manutenção de jardins consiste no acompanhamento e cuidado contínuo dos espaços verdes, garantindo que o jardim se mantenha saudável, organizado e esteticamente equilibrado ao longo do tempo. Inclui atividades como poda de plantas, corte de relva, limpeza de áreas verdes, controlo de pragas, adubação, reposição de plantas quando necessário e verificação do sistema de irrigação. Este serviço assegura a longevidade do jardim, preserva a sua qualidade estética e funcional e adapta os cuidados às necessidades específicas de cada estação do ano e do tipo de vegetação existente."
+      },
+      {
+        "nome": "Venda de plantas, vasos e terra vegetal",
+        "descricao": "O serviço de venda de plantas, vasos e terra vegetal consiste no fornecimento de materiais essenciais para a criação e manutenção de jardins e espaços verdes. Inclui a disponibilização de plantas ornamentais e adaptadas ao clima local, vasos de diferentes tamanhos, estilos e materiais, bem como terra vegetal de qualidade adequada para o desenvolvimento saudável das plantas. Este serviço garante ao cliente acesso a produtos selecionados de forma técnica e estética, facilitando a montagem de jardins mais harmoniosos, funcionais e sustentáveis, seja para projetos residenciais, institucionais ou corporativos."
+      }
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "5 manutencoes\\mes",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

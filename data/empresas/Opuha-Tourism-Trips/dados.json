@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T18:52:16.761Z",
+    "pastaId": "1QUIpCE6aU6Okg_LcWJIwSgJExx__EQDQ",
+    "pastaUrl": "https://drive.google.com/drive/folders/1QUIpCE6aU6Okg_LcWJIwSgJExx__EQDQ"
+  },
+  "empresa": {
+    "nome": "Opuha Tourism Trips",
+    "descricao": "A Opuha Tourism Trips é uma agência de turismo de experiência e receptivo localizada em Moçambique, dedicada a conectar viajantes à essência cultural, histórica e natural do país através de roteiros exclusivos, imersivos e sob medida.\nO diferencial da agência está na materialização de momentos únicos, unindo o turismo de descoberta a activações sensoriais marcantes — como a incorporação de gastronomia local e mixologia premium em suas vivências.\nCom um olhar apurado para a sustentabilidade e o desenvolvimento local, a Opuha  Tourism Trips transforma viagens em experiências sofisticadas e autênticas, posicionando-se como uma marca inovadora no cenário do turismo moçambicano.",
+    "badges": [],
+    "nuit": "",
+    "fundacao": "2025",
+    "funcionarios": "",
+    "industria": "Turismo",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "opuhatourismtrips@gmail.com",
+      "telefone": "+258 865800484",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Viagens e Excursões de Turismo",
+        "descricao": "Roteiros de Imersão e Descoberta com Itinerários personalizados com Foco em Desfruto de ambientes Turisticos tendo em conta narrativa histórica, arquictetura, patrimônio e contato genuíno com a natureza."
+      }
+    ],
+    "stats": {
+      "exp": "1",
+      "producao": "15",
+      "vendas": "90 Turistas ",
+      "extra": "15 Clientes Activos",
+      "labels": [
+        "",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

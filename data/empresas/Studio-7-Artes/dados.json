@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T23:44:42.398Z",
+    "pastaId": "1Dc82Mhv6eiO2Ye6uqbXxXUtjBEDWtzoe",
+    "pastaUrl": "https://drive.google.com/drive/folders/1Dc82Mhv6eiO2Ye6uqbXxXUtjBEDWtzoe"
+  },
+  "empresa": {
+    "nome": "Studio 7 Artes",
+    "descricao": "A empresa 7 Artes, se enquadra no ramo do design gráfico e publicidade, onde fazemos a criação de elementos visuais com fim de impulsionar as vendas de diversas empresas e pequenos empreendedores. Elaboramos cartazes, logotipos, folhetos, cartões de visitas entre outros elementos visuais, fazemos a reprodução dos mesmo, e auxiliamos no processo de divulgação por meio da gestão de redes sociais.",
+    "badges": [],
+    "nuit": "401730125",
+    "fundacao": "2020",
+    "funcionarios": "",
+    "industria": "Comunicação e tecnologia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "cleydepamela@gmail.com",
+      "telefone": "845815230",
+      "website": "http://www.7artes.studio/",
+      "linkedin": "https://www.linkedin.com/in/cleyde-pamela-4634942b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Design gráfico",
+        "descricao": "Criamos soluções visuais que comunicam a identidade da sua marca de forma profissional e impactante. Desenvolvemos logotipos, identidades visuais, cartões de visita, flyers, banners, roll-ups, convites, embalagens, artes para redes sociais e diversos materiais gráficos personalizados para empresas, instituições e eventos."
+      },
+      {
+        "nome": "Personalização",
+        "descricao": "Personalizamos uma grande variedade de produtos para empresas, instituições e eventos, tornando cada peça única e memorável. Produzimos camisetes, chávenas, agendas, canetas, brindes, quadros, sacolas, material escolar, Bíblias, uniformes, entre outros, com acabamentos de qualidade e designs exclusivos que valorizam a sua marca ou ocasião especial."
+      },
+      {
+        "nome": "Impressão",
+        "descricao": "Oferecemos serviços de impressão com qualidade e excelente acabamento para materiais promocionais, institucionais e personalizados. Produzimos cartões de visita, flyers, brochuras, convites, certificados, banners, roll-ups, autocolantes, calendários, etiquetas, documentos e muito mais, garantindo soluções rápidas, profissionais e adaptadas às necessidades de cada cliente."
+      },
+      {
+        "nome": "Design de Interiores",
+        "descricao": "Desenvolvemos projetos de design de interiores para espaços residenciais, comerciais e institucionais, unindo funcionalidade, conforto e estética para transformar ambientes."
+      },
+      {
+        "nome": "Decoração para Eventos",
+        "descricao": "Desenvolvemos elementos decorativos personalizados para casamentos, conferências, feiras, aniversários e outras celebrações, tornando cada evento único e memorável."
+      },
+      {
+        "nome": "Convites e Papelaria Personalizada",
+        "descricao": "Produzimos convites para casamentos, graduações, aniversários e eventos corporativos, além de papelaria personalizada com designs exclusivos e acabamentos diferenciados"
+      }
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "100 unidades",
+      "vendas": "500 mil MT/amo",
+      "extra": "50 clientes",
+      "labels": [
+        "5 Anos",
+        "100 unidades/dia",
+        "500 mil MT/ ano",
+        "50 clientes"
+      ]
+    }
+  }
+}

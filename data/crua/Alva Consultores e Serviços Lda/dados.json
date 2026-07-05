@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-17T21:38:16.757Z",
+    "pastaId": "1-fX9AvHBkmZyx1oQPBoLsPbusIgkAbEP",
+    "pastaUrl": "https://drive.google.com/drive/folders/1-fX9AvHBkmZyx1oQPBoLsPbusIgkAbEP"
+  },
+  "empresa": {
+    "nome": "Alva Consultores e Serviços Lda",
+    "descricao": "QUEM SOMOS\nA Alva Consultores e Serviços é uma empresa especializada em consultoria  agropecuária, dedicada a apoiar produtores e empreendedores com soluções técnicas inovadoras e sustentáveis.\n\nMISSÃO\nPromover o desenvolvimento sustentável do agronegócio por meio de soluções técnicas inovadoras, consultoria especializada, capacitação profissional e gestão eficiente de projetos, transformando conhecimento em produtividade e resultados para os nossos clientes.\n\nDIFERENCIAL\nA Alva Consultores e Serviços diferencia-se pela combinação entre conhecimento técnico, inovação e acompanhamento personalizado. Oferecemos soluções práticas adaptadas à realidade de cada cliente, com foco na melhoria da produtividade, redução de custos, sustentabilidade e rentabilidade dos empreendimentos agropecuários.\n\nMERCADO QUE SERVE\nAtendemos produtores rurais, avicultores, agricultores, criadores de animais, empreendedores do agronegócio, cooperativas, associações, instituições de ensino, organizações e investidores que procuram soluções técnicas e estratégicas para desenvolver e fortalecer os seus negócios agropecuários.",
+    "badges": [],
+    "nuit": "402100801",
+    "fundacao": "2024",
+    "funcionarios": "",
+    "industria": "Agricultura, pecuária e natureza",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "alvacs771@gmail.com",
+      "telefone": "+258877550225",
+      "website": "",
+      "linkedin": "https://www.linkedin.com/in/alva-consultores-e-serviços-lda-alva-676708391?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Horticultora",
+        "descricao": "Prestamos assistência técnica e consultoria especializada na produção de hortícolas, apoiando produtores na implementação de boas práticas agrícolas, manejo de culturas, controlo de pragas e doenças, irrigação e aumento da produtividade para uma produção sustentável e rentável."
+      },
+      {
+        "nome": "Avicultura",
+        "descricao": "Oferecemos soluções completas para a criação de aves, desde a implantação de projetos avícolas até ao acompanhamento técnico das explorações. Atuamos na gestão da produção, biossegurança, nutrição, sanidade e melhoria dos índices produtivos."
+      },
+      {
+        "nome": "Produção Anima / Rações",
+        "descricao": "Desenvolvemos estratégias para otimizar a produção animal através de práticas sustentáveis e eficientes. Prestamos apoio na formulação e utilização de rações de qualidade, visando reduzir custos de produção e maximizar o desempenho dos animais."
+      },
+      {
+        "nome": "",
+        "descricao": "Disponibilizamos produtos vegetais e animais de qualidade para restaurantes, assegurando uma nutrição adequada e contribuindo para melhores resultados alimentares."
+      },
+      {
+        "nome": "Treinamentos Básicos",
+        "descricao": "Realizamos treinamentos, capacitações e formações técnicas voltadas para produtores, empreendedores, estudantes e profissionais do agronegócio. O nosso objetivo é transformar conhecimento em produtividade através da partilha de técnicas modernas e práticas de gestão eficientes."
+      },
+      {
+        "nome": "",
+        "descricao": "Fornecemos equipamentos e materiais essenciais para atividades agropecuárias, garantindo soluções modernas e adequadas às necessidades dos produtores, contribuindo para maior eficiência e produtividade no campo."
+      }
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "23 UR",
+      "vendas": "75.000,00",
+      "extra": "23 clien",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}

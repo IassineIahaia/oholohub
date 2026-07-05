@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresa — OHOLO Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════ -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">OHOLO HUB</a>
+        
+        <button class="navbar-toggle" type="button" aria-label="Abrir menu"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></button>
+      <nav class="navbar-links">
+          <a href="index.html" class="active">Início</a>
+          <a href="explore.html">Explorar</a>
+          <!-- <a href="servicos.html">Serviços</a>
+        <a href="#">Categorias</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contacto</a> -->
+        </nav>
+        <div class="navbar-actions">
+          <button type="button" class="btn btn-primary" onclick="abrirModalAgendamento()">
+            Agendar Reunião
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════════════════
+       CONTEÚDO GERADO DINAMICAMENTE PELO main.js
+       (ver renderizarPerfilEmpresa() em js/main.js)
+  ══════════════════════════════════════════════════════ -->
+    <main id="empresa-root">
+      <div class="container" style="padding: var(--space-xxl) 0">
+        <p class="text-body-md text-muted">A carregar empresa...</p>
+      </div>
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="navbar-brand" style="margin-bottom: var(--space-sm)">
+              OHOLO Hub
+            </div>
+            <p class="text-body-md text-muted">
+              Preparamos negócios. Conectamos mercados. Geramos impacto —
+              suportado pelo Projecto OHOLO.
+            </p>
+          </div>
+
+          <!-- <div>
+            <div
+              class="text-label-sm text-muted"
+              style="margin-bottom: var(--space-md)"
+            >
+              PLATAFORMA
+            </div>
+            <ul
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-sm);
+              "
+            >
+              <li>
+                <a href="explore.html" class="text-body-md"
+                  >Explorar o Marketplace</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-body-md">Fornecedores Verificados</a>
+              </li>
+              <li>
+                <a href="#" class="text-body-md"
+                  >Guia de Negócios em Moçambique</a
+                >
+              </li>
+              <li><a href="#" class="text-body-md">Planos e Preços</a></li>
+            </ul>
+          </div> -->
+<!-- 
+          <div>
+            <div
+              class="text-label-sm text-muted"
+              style="margin-bottom: var(--space-md)"
+            >
+              SUPORTE
+            </div>
+            <ul
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-sm);
+              "
+            >
+              <li><a href="#" class="text-body-md">Centro de Ajuda</a></li>
+              <li><a href="#" class="text-body-md">Termos de Serviço</a></li>
+              <li>
+                <a href="#" class="text-body-md">Política de Privacidade</a>
+              </li>
+              <li><a href="#" class="text-body-md">Contactar Suporte</a></li>
+            </ul>
+          </div> -->
+
+          <div>
+            <div
+              class="text-label-sm text-muted"
+              style="margin-bottom: var(--space-md)"
+            >
+              CONTACTO
+            </div>
+            <div style="display: flex; gap: var(--space-sm)">
+               <a
+                href="mailto:infomarketaccessmz@gmail.com"
+                class="text-body-md icon"
+                style="width: 18px; height: 18px"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2026 OHOLO Hub. Avança o Teu Negócio.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ══════════════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════════════ -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      renderizarPerfilEmpresa();
+    </script>
+  </body>
+</html>

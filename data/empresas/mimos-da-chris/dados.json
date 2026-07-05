@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "versao": "1.0",
+    "criadoEm": "2026-06-18T09:52:46.655Z",
+    "pastaId": "19WU7-7pF6KHzsYNiQglQMsQsAxXJyluC",
+    "pastaUrl": "https://drive.google.com/drive/folders/19WU7-7pF6KHzsYNiQglQMsQsAxXJyluC"
+  },
+  "empresa": {
+    "nome": "Mimos da Chris",
+    "descricao": "A Mimos da Chris é uma marca especializada na personalização de brindes e artigos para eventos corporativos, sociais e datas comemorativas. Com criatividade, dedicação e atenção aos detalhes, a empresa transforma ideias simples em recordações únicas e significativas, ajudando pessoas e organizações a celebrarem momentos especiais de forma memorável. A sua missão é proporcionar experiências através de produtos personalizados de qualidade, valorizando cada ocasião e superando as expectativas dos clientes.\n\nEntre os seus principais diferenciais destacam-se o atendimento personalizado, a criatividade aplicada a cada projeto, a qualidade dos produtos, o compromisso com os prazos e a capacidade de desenvolver peças exclusivas de acordo com as necessidades de cada cliente. A Mimos da Chris atua nos mercados corporativo, social e institucional, oferecendo soluções para empresas, escolas, universidades, organizações e particulares.\n\nO seu portfólio inclui quadros personalizados, buquês, agendas e canetas personalizadas, cartões de visita, autocolantes, convites, lembranças para eventos, brindes corporativos e diversos artigos promocionais. Mais do que vender produtos, a Mimos da Chris procura criar emoções e eternizar momentos",
+    "badges": [],
+    "nuit": "",
+    "fundacao": "2022",
+    "funcionarios": "",
+    "industria": "Comunicação e tecnologia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "mimos.da.chris.mz@gmail.com",
+      "telefone": "864117501",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "servicos": [
+      {
+        "nome": "Quadros personalizados",
+        "descricao": "A Mimos da Chris produz quadros personalizados para diversas ocasiões, como graduações, aniversários, casamentos, Dia dos Namorados, homenagens e datas comemorativas. Os quadros são desenvolvidos de acordo com a preferência do cliente, podendo incluir fotografias, mensagens, nomes, datas especiais e elementos decorativos exclusivos, tornando cada peça única e memorável."
+      },
+      {
+        "nome": "Buquê de rosas",
+        "descricao": "presentear em ocasiões especiais, como aniversários, graduações, pedidos de casamento, Dia dos Namorados e outras celebrações. Pode ser personalizado com diferentes cores, embalagens e mensagens."
+      },
+      {
+        "nome": "Eternização de Rosas",
+        "descricao": "Serviço que preserva rosas naturais para que mantenham a sua beleza e significado por muito mais tempo. Ideal para guardar recordações de momentos especiais e transformar flores em lembranças duradouras."
+      },
+      {
+        "nome": "Decoração de Caixas para Pres",
+        "descricao": "Personalização de caixas de presente com temas, cores, nomes, mensagens e elementos decorativos exclusivos, tornando a apresentação do presente ainda mais especial e elegante."
+      },
+      {
+        "nome": "Cartuxo Personalizado para Brindes de Festas Infantis",
+        "descricao": "Embalagens personalizadas para doces e pequenas lembranças distribuídas em festas infantis, desenvolvidas de acordo com o tema escolhido pelo cliente."
+      },
+      {
+        "nome": "Brindes para Festas",
+        "descricao": "Produção de lembranças personalizadas para aniversários, casamentos, graduações, chás de bebé e outros eventos, proporcionando aos convidados uma recordação única da celebração."
+      },
+      {
+        "nome": "Chocolates Personalizados",
+        "descricao": "Chocolates embalados com etiquetas, mensagens, fotografias ou temas personalizados para eventos, campanhas promocionais e datas comemorativas."
+      },
+      {
+        "nome": "Marcadores de Mesa",
+        "descricao": "Peças decorativas utilizadas para identificar mesas em eventos como casamentos, conferências, jantares e festas, podendo ser personalizadas com nomes, números ou temas específicos."
+      },
+      {
+        "nome": "Menus em Cartões",
+        "descricao": "Criação e impressão de menus personalizados em formato de cartão para eventos sociais e corporativos, combinando funcionalidade e elegância na apresentação dos pratos e bebidas"
+      },
+      {
+        "nome": "Quadro Personalizado de Bebé",
+        "descricao": "Quadro decorativo desenvolvido com informações especiais do bebé, como nome, data de nascimento, peso, altura e fotografias, eternizando um momento único da família."
+      },
+      {
+        "nome": "Fotografias Polaroid",
+        "descricao": "Impressão de fotografias no estilo Polaroid, ideais para decoração, lembranças, álbuns, murais e presentes personalizados."
+      },
+      {
+        "nome": "Autocolantes",
+        "descricao": "Produção de autocolantes personalizados para marcas, eventos, embalagens, brindes e identificação de produtos, com diferentes formatos e designs."
+      },
+      {
+        "nome": "Certificados",
+        "descricao": "Criação e personalização de certificados para cursos, formações, eventos, reconhecimentos e premiações, garantindo uma apresentação profissional."
+      },
+      {
+        "nome": "Caixa de Aperitivos",
+        "descricao": "Caixa personalizada contendo uma seleção de aperitivos, doces ou salgados, preparada para presentear em celebrações, encontros e momentos especiais."
+      },
+      {
+        "nome": "Cartões Personalizados para Negóci",
+        "descricao": "Desenvolvimento de cartões de visita personalizados que reforçam a identidade visual da marca, transmitindo profissionalismo e facilitando o contacto entre empresas e clientes."
+      }
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "100",
+      "vendas": "75",
+      "extra": "80",
+      "labels": [
+        "Years Experience",
+        "Production Volume",
+        "Sales Volume",
+        "Active Clients"
+      ]
+    }
+  }
+}
