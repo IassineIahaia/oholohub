@@ -53,9 +53,11 @@ const GALERIA_FOTOS = [
 
 /* ── VÍDEOS: acrescentar aqui conforme forem chegando ── */
 const GALERIA_VIDEOS = [
-  { url: "https://www.youtube.com/watch?v=DkR7Y3yKjTk", titulo: "OHOLO Hub — Avança o Teu Negócio" },
-  { url: "https://www.youtube.com/watch?v=NzG9zTX0Qfo", titulo: "OHOLO Hub — Avança o Teu Negócio" },
-  { url: "https://www.youtube.com/watch?v=dqSwAS0RzNw", titulo: "OHOLO Hub — Avança o Teu Negócio" },
+  { url: "https://www.youtube.com/watch?v=bZoAuyS0uzA&list=PLc5s6-f4bQ7o&index=1", titulo: "OHOLO Hub — Avança o Teu Negócio" },
+  { url: "https://www.youtube.com/watch?v=6erfr5xrIP4&list=PLc5s6-f4bQ7o&index=2", titulo: "OHOLO Hub — Versatil" },
+  { url: "https://www.youtube.com/watch?v=JzyEKOFziXA&list=PLc5s6-f4bQ7o&index=4", titulo: "OHOLO Hub — Owani" },
+  { url: "https://www.youtube.com/watch?v=yFUSWppGZFg&list=PLc5s6-f4bQ7o&index=5", titulo: "OHOLO Hub — B2B com o Instituto da Propriedade Industria" },
+  { url: "https://www.youtube.com/watch?v=mFBtQsESOwg&list=PLc5s6-f4bQ7o&index=6", titulo: "B2B com o Instituto para as Pequenas e Médias Empresas" },
 ];
 
 /* ── Ritmo do mosaico: a 1ª foto é sempre "tile-lg" (destaque).

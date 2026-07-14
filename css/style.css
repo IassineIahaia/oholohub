@@ -729,20 +729,31 @@ html, body {
   padding: var(--space-md) var(--space-lg);
 }
 
-/* ── Perfil da empresa: sidebar colapsa, capa e logo encolhem ── */
+/* ── Perfil da empresa: bloco de info (descrição+aside) + serviços full-width ── */
 .empresa-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+.empresa-info-row {
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: var(--space-lg);
   align-items: start;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
 }
 
 @media (max-width: 900px) {
-  .empresa-layout {
+  .empresa-info-row {
     grid-template-columns: 1fr;
+    padding: var(--space-lg);
   }
 
-  .empresa-layout aside {
+  .empresa-info-row aside {
     order: 2;
   }
 }
@@ -777,16 +788,33 @@ html, body {
   }
 }
 
-.empresa-servicos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: var(--space-md);
+.empresa-servicos-wrap {
+  width: 100%;
 }
 
-@media (max-width: 480px) {
+.empresa-servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .empresa-servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .empresa-servicos-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.btn-sm {
+  padding: var(--space-xs) var(--space-md);
+  height: auto;
+  font-size: var(--label-sm-size);
 }
 
 /* ── Cards de listagem: imagens de capa não devem encolher demais ── */

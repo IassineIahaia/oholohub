@@ -323,61 +323,110 @@ async function renderizarPerfilEmpresa() {
     <section class="section-pad-xxl" style="padding-bottom: var(--space-xxl);">
       <div class="container empresa-layout">
 
-        <div>
-          <div style="display:flex; gap: var(--space-sm); margin-bottom: var(--space-lg); flex-wrap:wrap;">
-            ${(empresa.badges || []).map((b) => `<span class="badge badge-success">✓ ${b}</span>`).join("")}
-            <span class="badge ${classeBadgeIndustria(empresa.industria)}">${empresa.industria || ""}</span>
+        <!-- BLOCO DE INFORMAÇÃO — descrição + aside juntos, como um único cartão -->
+        <div class="empresa-info-row">
+          <div>
+            <div style="display:flex; gap: var(--space-sm); margin-bottom: var(--space-lg); flex-wrap:wrap;">
+              ${(empresa.badges || []).map((b) => `<span class="badge badge-success">✓ ${b}</span>`).join("")}
+              <span class="badge ${classeBadgeIndustria(empresa.industria)}">${empresa.industria || ""}</span>
+            </div>
+
+            ${(() => {
+              const descEmpresaCompleta = empresa.descricao || "";
+              const descEmpresaCurta = resumir(descEmpresaCompleta, 250);
+              const empresaTemMais = descEmpresaCompleta.length > 250;
+              return `
+            <p class="text-body-lg empresa-desc" data-full="${encodeURIComponent(descEmpresaCompleta)}" data-resumo="${encodeURIComponent(descEmpresaCurta)}" style="margin-bottom: ${empresaTemMais ? "var(--space-sm)" : "var(--space-xl)"}; white-space: pre-line;">${descEmpresaCurta}</p>
+            ${empresaTemMais ? `<button type="button" class="btn btn-secondary btn-sm empresa-desc-toggle" style="margin-bottom: var(--space-xl);" onclick="toggleEmpresaDescricao(this)">Ler mais</button>` : ""}
+              `;
+            })()}
+
+            <div style="display:flex; gap: var(--space-lg); flex-wrap:wrap;">
+              ${contactos.email ? `<a href="mailto:${contactos.email}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("mail")} ${contactos.email}</a>` : ""}
+              ${contactos.telefone ? `<a href="tel:${contactos.telefone.replace(/\s/g, "")}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("phone")} ${contactos.telefone}</a>` : ""}
+              ${contactos.website ? `<a href="${contactos.website.startsWith("http") ? contactos.website : "#"}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("globe")} ${contactos.website}</a>` : ""}
+            </div>
           </div>
 
-          <p class="text-body-lg" style="margin-bottom: var(--space-xl); white-space: pre-line;">${empresa.descricao || ""}</p>
+          <!-- SIDEBAR -->
+          <aside style="display:flex; flex-direction:column; gap: var(--space-md);">
+            <div class="card" style="padding: var(--space-lg);">
+              <div class="text-headline-md" style="margin-bottom: var(--space-md);">Dados da Empresa</div>
+              <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-outline-variant);">
+                <span class="text-body-md text-muted">Fundação</span>
+                <span class="text-body-md" style="font-weight:600;">${empresa.fundacao || "—"}</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0;">
+                <span class="text-body-md text-muted">Província</span>
+                <span class="text-body-md" style="font-weight:600;">${empresa.provincia || "—"}</span>
+              </div>
+            </div>
 
-          <div style="display:flex; gap: var(--space-lg); flex-wrap:wrap; margin-bottom: var(--space-xxl);">
-            ${contactos.email ? `<a href="mailto:${contactos.email}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("mail")} ${contactos.email}</a>` : ""}
-            ${contactos.telefone ? `<a href="tel:${contactos.telefone.replace(/\s/g, "")}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("phone")} ${contactos.telefone}</a>` : ""}
-            ${contactos.website ? `<a href="${contactos.website.startsWith("http") ? contactos.website : "#"}" class="text-body-md" style="display:flex; align-items:center; gap: var(--space-xs);">${icone("globe")} ${contactos.website}</a>` : ""}
-          </div>
+            <button type="button" class="btn btn-primary" style="width:100%; height:48px;" onclick="abrirModalAgendamento('${slug}')">Agendar Reunião B2B</button>
+          </aside>
+        </div>
 
+        <!-- SERVIÇOS/PRODUTOS — ocupa a largura total do container, 3 por linha -->
+        <div class="empresa-servicos-wrap">
           <h2 class="text-headline-lg" style="margin-bottom: var(--space-lg);">Os Nossos Serviços</h2>
 
           <div class="empresa-servicos-grid">
             ${servicos
-              .map(
-                (s, i) => `
+              .map((s, i) => {
+                const descCompleta = s.descricao || "";
+                const descCurta = resumir(descCompleta, 150);
+                const temMais = descCompleta.length > 150;
+                return `
               <div class="card">
                 <div class="card-cover" style="height:340px; background-color: var(--color-surface-container);">
                   <img ${imgComFallback(slug, `servico_${i + 1}`)} alt="${s.nome || "Serviço"}" style="width:100%; height:100%; object-fit:cover;">
                 </div>
                 <div style="padding: var(--space-lg);">
                   <div class="text-headline-md" style="margin-bottom: var(--space-xs);">${s.nome || "Serviço"}</div>
-                  <p class="text-body-md text-muted" style="white-space: pre-line;">${s.descricao || ""}</p>
+                  <p class="text-body-lg servico-desc" data-full="${encodeURIComponent(descCompleta)}" data-resumo="${encodeURIComponent(descCurta)}" style="white-space: pre-line; margin-bottom: ${temMais ? "var(--space-sm)" : "0"};">${descCurta}</p>
+                  ${temMais ? `<button type="button" class="btn btn-secondary btn-sm servico-toggle" onclick="toggleServicoDescricao(this)">Ler mais</button>` : ""}
                 </div>
               </div>
-            `,
-              )
+            `;
+              })
               .join("")}
           </div>
         </div>
 
-        <!-- SIDEBAR -->
-        <aside style="display:flex; flex-direction:column; gap: var(--space-md);">
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-headline-md" style="margin-bottom: var(--space-md);">Dados da Empresa</div>
-            <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-outline-variant);">
-              <span class="text-body-md text-muted">Fundação</span>
-              <span class="text-body-md" style="font-weight:600;">${empresa.fundacao || "—"}</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; padding: var(--space-sm) 0;">
-              <span class="text-body-md text-muted">Província</span>
-              <span class="text-body-md" style="font-weight:600;">${empresa.provincia || "—"}</span>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-primary" style="width:100%; height:48px;" onclick="abrirModalAgendamento('${slug}')">Agendar Reunião B2B</button>
-        </aside>
-
       </div>
     </section>
   `;
+}
+
+// ── Expandir/recolher a descrição principal da empresa (botão "Ler mais") ──
+function toggleEmpresaDescricao(btn) {
+  const desc = btn.previousElementSibling;
+  const aberto = btn.dataset.aberto === "1";
+  if (aberto) {
+    desc.textContent = decodeURIComponent(desc.dataset.resumo);
+    btn.textContent = "Ler mais";
+    btn.dataset.aberto = "0";
+  } else {
+    desc.textContent = decodeURIComponent(desc.dataset.full);
+    btn.textContent = "Ler menos";
+    btn.dataset.aberto = "1";
+  }
+}
+
+// ── Expandir/recolher descrição de um serviço (botão "Ler mais") ──
+function toggleServicoDescricao(btn) {
+  const card = btn.closest(".card");
+  const desc = card.querySelector(".servico-desc");
+  const aberto = btn.dataset.aberto === "1";
+  if (aberto) {
+    desc.textContent = decodeURIComponent(desc.dataset.resumo);
+    btn.textContent = "Ler mais";
+    btn.dataset.aberto = "0";
+  } else {
+    desc.textContent = decodeURIComponent(desc.dataset.full);
+    btn.textContent = "Ler menos";
+    btn.dataset.aberto = "1";
+  }
 }
 
 // ── Helper: gerar HTML de 1 card de serviço (usado em servicos.html) ──
@@ -770,6 +819,76 @@ function fecharModalAgendamento() {
   document.body.style.overflow = "";
   document.removeEventListener("keydown", _escListenerAgendamento);
 }
+
+// ============================================================
+//  POPUP — Inscrições FECAD (Feira Económica de Cabo Delgado)
+//  Aparece uma vez por sessão, em todas as páginas.
+//  Para desligar temporariamente, comenta a chamada a
+//  agendarPopupFecad() no fundo deste ficheiro.
+// ============================================================
+const FECAD_POPUP_STORAGE_KEY = "fecad-popup-visto";
+const FECAD_FORM_URL = "https://oholohub.co.mz/fecad/"; // TODO: actualizar para o URL real do formulário FECAD
+
+function agendarPopupFecad({ delayMs = 1800 } = {}) {
+  try {
+    if (sessionStorage.getItem(FECAD_POPUP_STORAGE_KEY) === "1") return;
+  } catch (e) {
+    // sessionStorage indisponível (ex: modo privado) — mostra à mesma, sem bloquear
+  }
+  setTimeout(abrirPopupFecad, delayMs);
+}
+
+function abrirPopupFecad() {
+  if (document.getElementById("popup-fecad-overlay")) return;
+
+  try { sessionStorage.setItem(FECAD_POPUP_STORAGE_KEY, "1"); } catch (e) {}
+
+  const overlay = document.createElement("div");
+  overlay.id = "popup-fecad-overlay";
+  overlay.className = "modal-overlay";
+  overlay.innerHTML = `
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="popup-fecad-titulo" style="max-width:440px; text-align:center;">
+      <button type="button" class="modal-close" aria-label="Fechar">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+      </button>
+
+      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas</span>
+
+      <h2 id="popup-fecad-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">FECAD — Feira Económica de Cabo Delgado</h2>
+
+      <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">
+        O maior evento anual de exposição multissetorial da província, realizado habitualmente na cidade de Pemba.
+        Garante já o teu lugar — data a confirmar em breve.
+      </p>
+
+      <a href="${FECAD_FORM_URL}" class="btn btn-primary" style="width:100%; height:48px;">Inscrever a Minha Empresa →</a>
+      <button type="button" class="btn btn-secondary" style="width:100%; height:44px; margin-top: var(--space-sm);" onclick="fecharPopupFecad()">Talvez mais tarde</button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  document.body.style.overflow = "hidden";
+  document.addEventListener("keydown", _escListenerPopupFecad);
+
+  overlay.addEventListener("click", (ev) => {
+    if (ev.target === overlay) fecharPopupFecad();
+  });
+  overlay.querySelector(".modal-close").addEventListener("click", fecharPopupFecad);
+}
+
+function _escListenerPopupFecad(ev) {
+  if (ev.key === "Escape") fecharPopupFecad();
+}
+
+function fecharPopupFecad() {
+  const overlay = document.getElementById("popup-fecad-overlay");
+  if (!overlay) return;
+  overlay.remove();
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", _escListenerPopupFecad);
+}
+
+document.addEventListener("DOMContentLoaded", () => agendarPopupFecad());
 
 /**
  * Abre o modal de agendamento de reunião B2B.
