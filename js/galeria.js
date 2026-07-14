@@ -58,6 +58,17 @@ const GALERIA_VIDEOS = [
   { url: "https://www.youtube.com/watch?v=JzyEKOFziXA&list=PLc5s6-f4bQ7o&index=4", titulo: "OHOLO Hub — Owani" },
   { url: "https://www.youtube.com/watch?v=yFUSWppGZFg&list=PLc5s6-f4bQ7o&index=5", titulo: "OHOLO Hub — B2B com o Instituto da Propriedade Industria" },
   { url: "https://www.youtube.com/watch?v=mFBtQsESOwg&list=PLc5s6-f4bQ7o&index=6", titulo: "B2B com o Instituto para as Pequenas e Médias Empresas" },
+  { url: "https://www.youtube.com/watch?v=Ll6kNrhOj6k&list=PLc5s6-f4bQ7o&index=11", titulo: "BOHOLO Hub — Mimos da Cris" },
+  { url: "https://www.youtube.com/watch?v=maJjJjbrRy8&list=PLc5s6-f4bQ7o&index=7", titulo: "BOHOLO Hub — Alva Consultores" },
+  { url: "https://www.youtube.com/watch?v=0DSkytOhHfA&list=PLc5s6-f4bQ7o&index=8", titulo: "BOHOLO Hub — Sabores do Campo" },
+  { url: "https://www.youtube.com/watch?v=WflsNZj45Gc&list=PLc5s6-f4bQ7o&index=10", titulo: "BOHOLO Hub — Natural Pharm" },
+  { url: "https://www.youtube.com/watch?v=ImWPFJCGd7A&list=PLc5s6-f4bQ7o&index=12", titulo: "BOHOLO Hub — MarketAccess" },
+  { url: "https://www.youtube.com/watch?v=Ab6dL26o_pw&list=PLc5s6-f4bQ7o&index=13", titulo: "BOHOLO Hub — B2B Nedbank" },
+  { url: "https://www.youtube.com/watch?v=GYbtnLFakJQ&list=PLc5s6-f4bQ7o&index=14", titulo: "BOHOLO Hub — Watch Me" },
+  { url: "https://www.youtube.com/watch?v=LFJNH5Dnzhs&list=PLc5s6-f4bQ7o&index=15", titulo: "BOHOLO Hub — SSP Su" },
+  { url: "https://www.youtube.com/watch?v=jZXdcbPM4pA&list=PLc5s6-f4bQ7o&index=16", titulo: "BOHOLO Hub — Ômega 3" },
+  { url: "https://www.youtube.com/watch?v=W_T_v7OUPfM&list=PLc5s6-f4bQ7o&index=17", titulo: "BOHOLO Hub — Nutrivida" },
+  { url: "https://www.youtube.com/watch?v=XITOSbrL82I&list=PLc5s6-f4bQ7o&index=18", titulo: "BOHOLO Hub — Network Telecommunications" },
 ];
 
 /* ── Ritmo do mosaico: a 1ª foto é sempre "tile-lg" (destaque).
@@ -211,17 +222,21 @@ function fecharLightboxFoto() {
 }
 
 /* ============================================================
-   RENDER — VÍDEOS (YouTube)
+   RENDER — VÍDEOS (YouTube) — com paginação a partir de 5 vídeos
    ============================================================ */
+const VIDEOS_POR_PAGINA = 5;
+let _paginaVideoActual = 1;
+let _videosValidosCache = [];
+
 function renderizarGaleriaVideos() {
   const grid = document.getElementById("galeria-videos-grid");
   if (!grid) return;
 
-  const videosValidos = GALERIA_VIDEOS
+  _videosValidosCache = GALERIA_VIDEOS
     .map((v) => ({ ...v, id: extrairIdYoutube(v.url) }))
     .filter((v) => v.id);
 
-  if (videosValidos.length === 0) {
+  if (_videosValidosCache.length === 0) {
     grid.innerHTML = `
       <div class="galeria-vazio">
         <span class="icon-circle" style="margin: 0 auto var(--space-sm);">
@@ -229,11 +244,19 @@ function renderizarGaleriaVideos() {
         </span>
         <p class="text-body-md text-muted">Vídeos a caminho — em breve aqui.</p>
       </div>`;
+    const paginacao = document.getElementById("galeria-videos-paginacao");
+    if (paginacao) paginacao.innerHTML = "";
     return;
   }
 
-  grid.innerHTML = videosValidos.map((v, i) => `
-    <button type="button" class="galeria-item-video ${i === 0 ? "tile-lg" : ""}" data-indice="${i}">
+  const totalPaginas = Math.max(1, Math.ceil(_videosValidosCache.length / VIDEOS_POR_PAGINA));
+  if (_paginaVideoActual > totalPaginas) _paginaVideoActual = totalPaginas;
+
+  const inicio = (_paginaVideoActual - 1) * VIDEOS_POR_PAGINA;
+  const videosPagina = _videosValidosCache.slice(inicio, inicio + VIDEOS_POR_PAGINA);
+
+  grid.innerHTML = videosPagina.map((v, i) => `
+    <button type="button" class="galeria-item-video ${_paginaVideoActual === 1 && i === 0 ? "tile-lg" : ""}" data-indice="${inicio + i}">
       <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="${v.titulo || "Vídeo OHOLO Hub"}" loading="lazy" />
       <span class="galeria-video-play">
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>
@@ -242,8 +265,54 @@ function renderizarGaleriaVideos() {
     </button>
   `).join("");
 
-  grid.querySelectorAll(".galeria-item-video").forEach((btn, i) => {
-    btn.addEventListener("click", () => abrirModalVideo(videosValidos[i].id));
+  grid.querySelectorAll(".galeria-item-video").forEach((btn) => {
+    const indice = parseInt(btn.getAttribute("data-indice"), 10);
+    btn.addEventListener("click", () => abrirModalVideo(_videosValidosCache[indice].id));
+  });
+
+  renderizarPaginacaoVideos(_videosValidosCache.length, totalPaginas);
+}
+
+/**
+ * Renderiza os controlos de paginação (Anterior / números / Seguinte)
+ * para a galeria de vídeos, só aparece quando há mais de 5 vídeos.
+ */
+function renderizarPaginacaoVideos(totalItens, totalPaginas) {
+  const container = document.getElementById("galeria-videos-paginacao");
+  if (!container) return;
+
+  if (totalItens <= VIDEOS_POR_PAGINA || totalPaginas <= 1) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const botoes = [];
+
+  botoes.push(
+    `<button type="button" class="btn btn-secondary" data-pagina-video="${_paginaVideoActual - 1}" ${_paginaVideoActual === 1 ? "disabled" : ""} style="padding: var(--space-sm) var(--space-md);">‹ Anterior</button>`,
+  );
+
+  for (let p = 1; p <= totalPaginas; p++) {
+    const activo = p === _paginaVideoActual;
+    botoes.push(
+      `<button type="button" class="btn ${activo ? "btn-primary" : "btn-secondary"}" data-pagina-video="${p}" style="min-width:40px; padding: var(--space-sm);">${p}</button>`,
+    );
+  }
+
+  botoes.push(
+    `<button type="button" class="btn btn-secondary" data-pagina-video="${_paginaVideoActual + 1}" ${_paginaVideoActual === totalPaginas ? "disabled" : ""} style="padding: var(--space-sm) var(--space-md);">Seguinte ›</button>`,
+  );
+
+  container.innerHTML = botoes.join("");
+
+  container.querySelectorAll("[data-pagina-video]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const novaPagina = parseInt(btn.getAttribute("data-pagina-video"), 10);
+      if (Number.isNaN(novaPagina) || novaPagina < 1 || novaPagina > totalPaginas) return;
+      _paginaVideoActual = novaPagina;
+      renderizarGaleriaVideos();
+      document.getElementById("galeria-videos-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   });
 }
 
