@@ -547,6 +547,8 @@ input, select, textarea {
 }
 
 .navbar-actions {
+  flex-wrap: wrap;
+  justify-content: center;
   display: flex;
   align-items: center;
   gap: var(--space-md);
