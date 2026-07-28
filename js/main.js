@@ -821,74 +821,74 @@ function fecharModalAgendamento() {
 }
 
 // ============================================================
-//  POPUP — Inscrições FECAD (Feira Económica de Cabo Delgado)
+//  POPUP — Manifestação de Interesse FACIM 2026
 //  Aparece uma vez por sessão, em todas as páginas.
 //  Para desligar temporariamente, comenta a chamada a
-//  agendarPopupFecad() no fundo deste ficheiro.
+//  agendarPopupFacim() no fundo deste ficheiro.
 // ============================================================
-const FECAD_POPUP_STORAGE_KEY = "fecad-popup-visto";
-const FECAD_FORM_URL = "https://oholohub.co.mz/fecad/"; // TODO: actualizar para o URL real do formulário FECAD
+const FACIM_POPUP_STORAGE_KEY = "facim2026-popup-visto";
+const FACIM_FORM_URL = "https://form-fena.vercel.app/";
 
-function agendarPopupFecad({ delayMs = 1800 } = {}) {
+function agendarPopupFacim({ delayMs = 1800 } = {}) {
   try {
-    if (sessionStorage.getItem(FECAD_POPUP_STORAGE_KEY) === "1") return;
+    if (sessionStorage.getItem(FACIM_POPUP_STORAGE_KEY) === "1") return;
   } catch (e) {
     // sessionStorage indisponível (ex: modo privado) — mostra à mesma, sem bloquear
   }
-  setTimeout(abrirPopupFecad, delayMs);
+  setTimeout(abrirPopupFacim, delayMs);
 }
 
-function abrirPopupFecad() {
-  if (document.getElementById("popup-fecad-overlay")) return;
+function abrirPopupFacim() {
+  if (document.getElementById("popup-facim-overlay")) return;
 
-  try { sessionStorage.setItem(FECAD_POPUP_STORAGE_KEY, "1"); } catch (e) {}
+  try { sessionStorage.setItem(FACIM_POPUP_STORAGE_KEY, "1"); } catch (e) {}
 
   const overlay = document.createElement("div");
-  overlay.id = "popup-fecad-overlay";
+  overlay.id = "popup-facim-overlay";
   overlay.className = "modal-overlay";
   overlay.innerHTML = `
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="popup-fecad-titulo" style="max-width:440px; text-align:center;">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="popup-facim-titulo" style="max-width:440px; text-align:center;">
       <button type="button" class="modal-close" aria-label="Fechar">
         <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
       </button>
 
-      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas</span>
+      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas · até 31 de Julho</span>
 
-      <h2 id="popup-fecad-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">FECAD — Feira Económica de Cabo Delgado</h2>
+      <h2 id="popup-facim-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">FACIM 2026 — Leva a Tua Empresa</h2>
 
       <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">
-        O maior evento anual de exposição multissetorial da província, realizado habitualmente na cidade de Pemba.
-        Garante já o teu lugar — data a confirmar em breve.
+        A Market Access, com o apoio da Technoserve, está a mobilizar empresas de Nampula, Niassa,
+        Cabo Delgado e do Distrito de Mocuba para expor na 61.ª Edição da FACIM, de 31 de Agosto a 6 de Setembro.
       </p>
 
-      <a href="${FECAD_FORM_URL}" class="btn btn-primary" style="width:100%; height:48px;">Inscrever a Minha Empresa →</a>
-      <button type="button" class="btn btn-secondary" style="width:100%; height:44px; margin-top: var(--space-sm);" onclick="fecharPopupFecad()">Talvez mais tarde</button>
+      <a href="${FACIM_FORM_URL}" class="btn btn-primary" style="width:100%; height:48px;">Manifestar Interesse →</a>
+      <button type="button" class="btn btn-secondary" style="width:100%; height:44px; margin-top: var(--space-sm);" onclick="fecharPopupFacim()">Talvez mais tarde</button>
     </div>
   `;
 
   document.body.appendChild(overlay);
   document.body.style.overflow = "hidden";
-  document.addEventListener("keydown", _escListenerPopupFecad);
+  document.addEventListener("keydown", _escListenerPopupFacim);
 
   overlay.addEventListener("click", (ev) => {
-    if (ev.target === overlay) fecharPopupFecad();
+    if (ev.target === overlay) fecharPopupFacim();
   });
-  overlay.querySelector(".modal-close").addEventListener("click", fecharPopupFecad);
+  overlay.querySelector(".modal-close").addEventListener("click", fecharPopupFacim);
 }
 
-function _escListenerPopupFecad(ev) {
-  if (ev.key === "Escape") fecharPopupFecad();
+function _escListenerPopupFacim(ev) {
+  if (ev.key === "Escape") fecharPopupFacim();
 }
 
-function fecharPopupFecad() {
-  const overlay = document.getElementById("popup-fecad-overlay");
+function fecharPopupFacim() {
+  const overlay = document.getElementById("popup-facim-overlay");
   if (!overlay) return;
   overlay.remove();
   document.body.style.overflow = "";
-  document.removeEventListener("keydown", _escListenerPopupFecad);
+  document.removeEventListener("keydown", _escListenerPopupFacim);
 }
 
-document.addEventListener("DOMContentLoaded", () => agendarPopupFecad());
+document.addEventListener("DOMContentLoaded", () => agendarPopupFacim());
 
 /**
  * Abre o modal de agendamento de reunião B2B.
