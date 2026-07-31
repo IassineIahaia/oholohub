@@ -852,13 +852,13 @@ function abrirPopupFacim() {
         <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
       </button>
 
-      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas · até 31 de Julho</span>
+      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas · até 03 de Agosto</span>
 
       <h2 id="popup-facim-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">FACIM 2026 — Leva a Tua Empresa</h2>
 
       <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">
         A Market Access, com o apoio da Technoserve, está a mobilizar empresas de Nampula, Niassa,
-        Cabo Delgado e do Distrito de Mocuba para expor na 61.ª Edição da FACIM, de 31 de Agosto a 6 de Setembro.
+        Cabo Delgado e do Distrito de Mocuba para expor na 61.ª Edição da FACIM.
       </p>
 
       <a href="${FACIM_FORM_URL}" class="btn btn-primary" style="width:100%; height:48px;">Manifestar Interesse →</a>
