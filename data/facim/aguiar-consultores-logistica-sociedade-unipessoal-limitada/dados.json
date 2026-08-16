@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Aguiar Consultores  Logística Sociedade Unipessoal Limitada.",
+    "pastaUrl": "https://drive.google.com/drive/folders/1Tj-GfBUExOILNN2BGPtRLAxrRVePaDGV"
+  },
+  "empresa": {
+    "nome": "Aguiar Consultores & Logística, Sociedade Unipessoal, Limitada.",
+    "descricao": "Assessoria em Contabilidade, Fiscalidade, Auditoria, Consultoria e Logística.",
+    "badges": [],
+    "nuit": "401147969",
+    "fundacao": "",
+    "anosActividade": "2021",
+    "industria": "Logística & Transportes",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "aguiarconsultores.lda@gmail.com",
+      "telefone": "875171616",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Aguiar Jaime",
+      "cargo": "Fundador & CEO"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "2021",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Logística & Transportes",
+    "produtosExpor": "Assessoria em Contabilidade, Fiscalidade, Auditoria, Consultoria e Logística.",
+    "quantidade": "",
+    "representante": "Aguiar Jaime",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

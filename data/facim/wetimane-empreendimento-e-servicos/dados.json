@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Wetimane empreendimento e serviços",
+    "pastaUrl": "https://drive.google.com/drive/folders/1OSQWlJUmFO4jfZlP64vbZcx4g1U3HGBK"
+  },
+  "empresa": {
+    "nome": "Wetimane empreendimento e serviços",
+    "descricao": "Venda a crédito, exposições, vendas presenciais.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "111732062",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "anajossinawetimanewetimane@gmail.com",
+      "telefone": "864637463/844248544",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Ana wetimane",
+      "cargo": "Proprietária"
+    },
+    "servicos": [
+      {
+        "nome": "Produtos naturais da wetimane",
+        "descricao": "Cosméticos, capilares, corporais, diversos chás medicinais, diversos óleos alimentares e medicinais, diversos cereais e diversos licores."
+      },
+      {
+        "nome": "Produtos naturais.",
+        "descricao": ""
+      },
+      {
+        "nome": "Transporte pessoal",
+        "descricao": "Oleos alimentares, medicinais, e diversos"
+      },
+      {
+        "nome": "Transportes públicos",
+        "descricao": "Venda a crédito, vendas nas exposições"
+      },
+      {
+        "nome": "Transporte de cargas",
+        "descricao": "Vendas em vários lugares dentro e fora da província."
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "",
+    "quantidade": "",
+    "representante": "Ana Uetman",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Não",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

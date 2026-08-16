@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "RECAE",
+    "pastaUrl": "https://drive.google.com/drive/folders/11YoIuF8NrwpRTJ-D8PWO6rBbtVheMXH_"
+  },
+  "empresa": {
+    "nome": "RECAE",
+    "descricao": "Serviços de consultoria\nFornecimento de insumos\nFornecimento de serviço",
+    "badges": [],
+    "nuit": "401886745",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "recae@recae.coop",
+      "telefone": "848611572",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Antonio Muangerene",
+      "cargo": "Gestor"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "Serviços de consultoria\nFornecimento de insumos\nFornecimento de serviço",
+    "quantidade": "",
+    "representante": "Antonio Muangerene",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": false,
+    "temCover": true,
+    "temInfo": true
+  }
+}

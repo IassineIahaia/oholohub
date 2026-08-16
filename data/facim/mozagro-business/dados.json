@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Mozagro Business",
+    "pastaUrl": "https://drive.google.com/drive/folders/1OEp31ka7Ol3z-KnDmdwpKsCevH4VhS1L"
+  },
+  "empresa": {
+    "nome": "Mozagro Business",
+    "descricao": "A MozAgro Business Lda é uma empresa moçambicana de agronegócio que atua na agregação, processamento, comercialização e exportação de produtos agrícolas, com foco em cereais, leguminosas, oleaginosas e frutos secos, incluindo soja, feijão bóer, feijão comum, gergelim, milho, castanha de caju e macadâmia. A empresa também desenvolve produtos de valor acrescentado, como farinhas e alimentos embalados, promovendo maior competitividade no mercado nacional e internacional.\n\nAlém da comercialização, a MozAgro oferece serviços de desenvolvimento de agronegócios, assistência técnica, capacitação de produtores, consultoria em cadeias de valor, acesso ao mercado, gestão de projetos agrícolas, recolha de dados de campo e facilitação de parcerias entre agricultores, cooperativas, empresas e organizações de desenvolvimento.\n\nO modelo de negócio baseia-se na integração da cadeia de valor agrícola, estabelecendo parcerias com pequenos produtores para compra, agregação, processamento e comercialização da produção. A empresa gera receitas através da venda de produtos agrícolas e processados, da prestação de serviços de consultoria e assistência técnica, da implementação de projetos financiados por parceiros de desenvolvimento e da intermediação comercial entre produtores e compradores institucionais, contribuindo para o aumento da renda dos agricultores, redução das perdas pós-colheita e promoção de uma agricultura sustentável e inclusiva.",
+    "badges": [],
+    "nuit": "401724011",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "Mozagrobusiness@gmail.com",
+      "telefone": "+258848137225",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Alberto Chaúque",
+      "cargo": "Director Executivo"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "A MozAgro Business Lda é uma empresa moçambicana de agronegócio que atua na agregação, processamento, comercialização e exportação de produtos agrícolas, com foco em cereais, leguminosas, oleaginosas e frutos secos, incluindo soja, feijão bóer, feijão comum, gergelim, milho, castanha de caju e macadâmia. A empresa também desenvolve produtos de valor acrescentado, como farinhas e alimentos embalados, promovendo maior competitividade no mercado nacional e internacional.\n\nAlém da comercialização, a MozAgro oferece serviços de desenvolvimento de agronegócios, assistência técnica, capacitação de produtores, consultoria em cadeias de valor, acesso ao mercado, gestão de projetos agrícolas, recolha de dados de campo e facilitação de parcerias entre agricultores, cooperativas, empresas e organizações de desenvolvimento.\n\nO modelo de negócio baseia-se na integração da cadeia de valor agrícola, estabelecendo parcerias com pequenos produtores para compra, agregação, processamento e comercialização da produção. A empresa gera receitas através da venda de produtos agrícolas e processados, da prestação de serviços de consultoria e assistência técnica, da implementação de projetos financiados por parceiros de desenvolvimento e da intermediação comercial entre produtores e compradores institucionais, contribuindo para o aumento da renda dos agricultores, redução das perdas pós-colheita e promoção de uma agricultura sustentável e inclusiva.",
+    "quantidade": "",
+    "representante": "Alberto Chaúque",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

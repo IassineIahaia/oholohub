@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Sociedade Agro-Florestal de Moçambique LDA SAF-MOZ LDA",
+    "pastaUrl": "https://drive.google.com/drive/folders/10sK50iq-o-TV12otobumexPnrtr-yqC3"
+  },
+  "empresa": {
+    "nome": "Sociedade Agro-Florestal de Moçambique LDA (SAF-MOZ, LDA)",
+    "descricao": "A sociedade Agro-Florestal de Moçambique, é uma Empresa do ramo Agro-Florestal, com Modelo de negocio de produção e desenvolvimento comunitario \nProduz, apoiar as comunidades e temos a componente de ligação de Mercado de produtos e alimentos comunitarios.\nOs nosso produtos sao:\nMel\nCera\nPropolis \nKits de apicultura \nFarinha de milho amarelo\nFarinha de Mapira\nFeijao Soroc\nMatago\nFeijao preto\nFeijao vermeho\nArroz torrado",
+    "badges": [],
+    "nuit": "401120866",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Agroprocessamento",
+    "provincia": "Distrito de Mocuba",
+    "contactos": {
+      "email": "marquesernestovictor@gmail.com",
+      "telefone": "872005001",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Marques Ernesto Victor",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Mel organic",
+        "descricao": "Produzido nas paisagens da ZAMBEZIA, nas florestas locais, nas comunidades de Mocuba, floresta nativa"
+      },
+      {
+        "nome": "Mel bruto",
+        "descricao": "Mel bruto é um Mel de favos, depois da colheita o Mel não é processado, cortado em favos."
+      },
+      {
+        "nome": "Matago e soroco",
+        "descricao": "Produzido na ZAMBEZIA, nos Campos Verdes da ZAMBEZIA"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "A sociedade Agro-Florestal de Moçambique, é uma Empresa do ramo Agro-Florestal, com Modelo de negocio de produção e desenvolvimento comunitario \nProduz, apoiar as comunidades e temos a componente de ligação de Mercado de produtos e alimentos comunitarios.\nOs nosso produtos sao:\nMel\nCera\nPropolis \nKits de apicultura \nFarinha de milho amarelo\nFarinha de Mapira\nFeijao Soroc\nMatago\nFeijao preto\nFeijao vermeho\nArroz torrado",
+    "quantidade": "",
+    "representante": "Marques Ernesto Victor",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg"
+    ],
+    "nFotos": 5,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

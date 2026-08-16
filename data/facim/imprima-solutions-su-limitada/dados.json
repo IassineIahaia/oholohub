@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "IMPRIMA SOLUTIONS SU LIMITADA",
+    "pastaUrl": "https://drive.google.com/drive/folders/1lls3WfslkBwfiYitPEfdVzaLwlaxw6jE"
+  },
+  "empresa": {
+    "nome": "IMPRIMA SOLUTIONS SU LIMITADA",
+    "descricao": "A IMPRIMA SOLUTIONS SU, LIMITADA é uma empresa moçambicana especializada na prestação de serviços de Tecnologia da Informação (TI), oferecendo soluções inovadoras e personalizadas para empresas, instituições públicas e clientes particulares. Atua nas áreas de segurança eletrónica, energias renováveis, redes e infraestrutura tecnológica, sistemas de videovigilância, controlo de acessos, automação, desenvolvimento de soluções digitais e consultoria em TI, assegurando qualidade, inovação e elevado padrão técnico em todos os seus projetos.\n\nModelo de Negócio\n\nO modelo de negócio da IMPRIMA SOLUTIONS baseia-se na oferta integrada de soluções tecnológicas, combinando consultoria, fornecimento de equipamentos, instalação, configuração, formação, manutenção preventiva e corretiva, bem como suporte técnico especializado. A empresa estabelece parcerias estratégicas com fabricantes e fornecedores de referência, permitindo entregar soluções completas e adaptadas às necessidades específicas de cada cliente, com foco na eficiência operacional, segurança, sustentabilidade e criação de valor a longo prazo.",
+    "badges": [],
+    "nuit": "401802371",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Tecnologia & Comunicação",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "info@imprimasolutions.co.mz",
+      "telefone": "862204230",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "SERGIO MAICO CHUNI",
+      "cargo": "SUPERVISOR DE OPERAÇOES"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Tecnologia & Comunicação",
+    "produtosExpor": "A IMPRIMA SOLUTIONS SU, LIMITADA é uma empresa moçambicana especializada na prestação de serviços de Tecnologia da Informação (TI), oferecendo soluções inovadoras e personalizadas para empresas, instituições públicas e clientes particulares. Atua nas áreas de segurança eletrónica, energias renováveis, redes e infraestrutura tecnológica, sistemas de videovigilância, controlo de acessos, automação, desenvolvimento de soluções digitais e consultoria em TI, assegurando qualidade, inovação e elevado padrão técnico em todos os seus projetos.\n\nModelo de Negócio\n\nO modelo de negócio da IMPRIMA SOLUTIONS baseia-se na oferta integrada de soluções tecnológicas, combinando consultoria, fornecimento de equipamentos, instalação, configuração, formação, manutenção preventiva e corretiva, bem como suporte técnico especializado. A empresa estabelece parcerias estratégicas com fabricantes e fornecedores de referência, permitindo entregar soluções completas e adaptadas às necessidades específicas de cada cliente, com foco na eficiência operacional, segurança, sustentabilidade e criação de valor a longo prazo.",
+    "quantidade": "",
+    "representante": "SERGIO MAICO CHUNI",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": false,
+    "temCover": true,
+    "temInfo": true
+  }
+}

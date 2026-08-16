@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Nada Consulting",
+    "pastaUrl": "https://drive.google.com/drive/folders/1M5QngZMnPRrTeCCTymd4NZP_jkvy4Cvy"
+  },
+  "empresa": {
+    "nome": "Nada Consulting",
+    "descricao": "Consultoria, Contabilidade e Recusrsos Humanos",
+    "badges": [],
+    "nuit": "11240499",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "nitodossantosdossantos@gmail.com",
+      "telefone": "848980805",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Nasa Consulting",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Consultoria",
+        "descricao": "Contabilidade e Recursos humanos, fiscalidade e seeviços"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "Consultoria, Contabilidade e Recusrsos Humanos",
+    "quantidade": "",
+    "representante": "Nasa Consulting",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

@@ -800,13 +800,38 @@ const AGENDAMENTO_HORARIOS = [
   "14:30", "15:00", "15:30", "16:00", "16:30", "17:00",
 ];
 
-let _empresasParaAgendamentoCache = null;
+/* ── Vertentes de agendamento ──────────────────────────────────
+   O mesmo modal serve as duas feiras. Muda a lista de empresas,
+   o local por omissão e o assunto do email que chega à equipa. */
+const AGENDAMENTO_VERTENTES = {
+  fena: {
+    rotulo: "FENA",
+    local: "Stand OHOLO Hub (FENA)",
+    titulo: "Agende a Sua Reunião B2B",
+    subtitulo: "Marque uma reunião com as empresas do OHOLO Hub.",
+    carregar: () => carregarTodasEmpresas(),
+  },
+  facim: {
+    rotulo: "FACIM 2026",
+    local: "Stand OHOLO Hub — FACIM 2026 (Ricatla, Marracuene)",
+    titulo: "Agende a Sua Reunião na FACIM 2026",
+    subtitulo:
+      "31 de Agosto a 6 de Setembro, em Ricatla. Escolha a empresa, o dia e a hora — confirmamos consigo.",
+    carregar: () =>
+      typeof carregarTodasEmpresasFacim === "function"
+        ? carregarTodasEmpresasFacim()
+        : carregarTodasEmpresas(),
+  },
+};
 
-async function _obterEmpresasParaAgendamento() {
-  if (!_empresasParaAgendamentoCache) {
-    _empresasParaAgendamentoCache = await carregarTodasEmpresas();
+const _empresasParaAgendamentoCache = {};
+
+async function _obterEmpresasParaAgendamento(vertente = "fena") {
+  if (!_empresasParaAgendamentoCache[vertente]) {
+    const cfg = AGENDAMENTO_VERTENTES[vertente] || AGENDAMENTO_VERTENTES.fena;
+    _empresasParaAgendamentoCache[vertente] = await cfg.carregar();
   }
-  return _empresasParaAgendamentoCache;
+  return _empresasParaAgendamentoCache[vertente];
 }
 
 function _escListenerAgendamento(ev) {
@@ -821,15 +846,29 @@ function fecharModalAgendamento() {
 }
 
 // ============================================================
-//  POPUP — Manifestação de Interesse FACIM 2026
-//  Aparece uma vez por sessão, em todas as páginas.
-//  Para desligar temporariamente, comenta a chamada a
-//  agendarPopupFacim() no fundo deste ficheiro.
+//  POPUP — FACIM 2026 · Vitrine Digital
+//  Aparece uma vez por sessão, em todas as páginas excepto na
+//  própria página da FACIM. Para desligar temporariamente,
+//  comenta a chamada a agendarPopupFacim() no fundo deste ficheiro.
 // ============================================================
-const FACIM_POPUP_STORAGE_KEY = "facim2026-popup-visto";
-const FACIM_FORM_URL = "https://form-fena.vercel.app/";
+const FACIM_POPUP_STORAGE_KEY = "facim2026-vitrine-popup-visto";
+const FACIM_PAGINA_URL = "facim.html";
+const FACIM_DATAS = { inicio: "2026-08-31T08:00:00", fim: "2026-09-06T23:59:59" };
+
+/** Texto do selo do popup, conforme a data de hoje. */
+function _seloPopupFacim(agora = new Date()) {
+  const inicio = new Date(FACIM_DATAS.inicio);
+  const fim = new Date(FACIM_DATAS.fim);
+  if (agora > fim) return "61.ª Edição · encerrada";
+  if (agora >= inicio) return "A decorrer · 31 Ago — 06 Set";
+  const dias = Math.ceil((inicio - agora) / 86400000);
+  if (dias <= 1) return "Abre amanhã · Ricatla, Marracuene";
+  return `Faltam ${dias} dias · 31 Ago — 06 Set`;
+}
 
 function agendarPopupFacim({ delayMs = 1800 } = {}) {
+  // Na página da FACIM o conteúdo já está todo à vista — não vale a pena interromper.
+  if (/facim(-empresa)?\.html$/i.test(window.location.pathname)) return;
   try {
     if (sessionStorage.getItem(FACIM_POPUP_STORAGE_KEY) === "1") return;
   } catch (e) {
@@ -847,22 +886,23 @@ function abrirPopupFacim() {
   overlay.id = "popup-facim-overlay";
   overlay.className = "modal-overlay";
   overlay.innerHTML = `
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="popup-facim-titulo" style="max-width:440px; text-align:center;">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="popup-facim-titulo" style="max-width:460px; text-align:center;">
       <button type="button" class="modal-close" aria-label="Fechar">
         <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
       </button>
 
-      <span class="badge badge-success" style="margin-bottom: var(--space-md);">Inscrições Abertas · até 03 de Agosto</span>
+      <span class="badge badge-success" style="margin-bottom: var(--space-md);">${_seloPopupFacim()}</span>
 
-      <h2 id="popup-facim-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">FACIM 2026 — Leva a Tua Empresa</h2>
+      <h2 id="popup-facim-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">Já está online a Vitrine Digital da FACIM 2026</h2>
 
       <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">
-        A Market Access, com o apoio da Technoserve, está a mobilizar empresas de Nampula, Niassa,
-        Cabo Delgado e do Distrito de Mocuba para expor na 61.ª Edição da FACIM.
+        19 empresas de Nampula, Cabo Delgado e do Distrito de Mocuba foram apuradas para expor
+        na 61.ª Feira Internacional de Maputo. Veja os produtos de cada uma e marque a sua
+        reunião antes de a feira abrir.
       </p>
 
-      <a href="${FACIM_FORM_URL}" class="btn btn-primary" style="width:100%; height:48px;">Manifestar Interesse →</a>
-      <button type="button" class="btn btn-secondary" style="width:100%; height:44px; margin-top: var(--space-sm);" onclick="fecharPopupFacim()">Talvez mais tarde</button>
+      <a href="${FACIM_PAGINA_URL}" class="btn btn-primary" style="width:100%; height:48px;">Ver a Vitrine Digital →</a>
+      <button type="button" class="btn btn-secondary" style="width:100%; height:44px; margin-top: var(--space-sm);" onclick="fecharPopupFacim()">Agora não</button>
     </div>
   `;
 
@@ -894,13 +934,18 @@ document.addEventListener("DOMContentLoaded", () => agendarPopupFacim());
  * Abre o modal de agendamento de reunião B2B.
  * @param {string} [slugPreSelecionado] - se vier de uma página de empresa,
  *   pré-selecciona essa empresa no formulário.
+ * @param {string} [vertente] - "fena" (por omissão) ou "facim". Define a lista
+ *   de empresas, o local por omissão e o assunto do email.
  */
-async function abrirModalAgendamento(slugPreSelecionado = "") {
+async function abrirModalAgendamento(slugPreSelecionado = "", vertente = "fena") {
   fecharModalAgendamento(); // evita sobrepor 2 modais
+
+  const cfg = AGENDAMENTO_VERTENTES[vertente] || AGENDAMENTO_VERTENTES.fena;
 
   const overlay = document.createElement("div");
   overlay.id = "modal-agendamento-overlay";
   overlay.className = "modal-overlay";
+  overlay.dataset.vertente = vertente;
   overlay.innerHTML = `
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-agendamento-titulo">
       <button type="button" class="modal-close" aria-label="Fechar">
@@ -908,8 +953,8 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
       </button>
 
       <div style="text-align:center; margin-bottom: var(--space-lg);">
-        <h2 id="modal-agendamento-titulo" class="text-headline-md">Agende a Sua Reunião B2B</h2>
-        <p class="text-body-md text-muted" style="margin-top: var(--space-xs);">Marque uma reunião com as empresas do OHOLO Hub.</p>
+        <h2 id="modal-agendamento-titulo" class="text-headline-md">${cfg.titulo}</h2>
+        <p class="text-body-md text-muted" style="margin-top: var(--space-xs);">${cfg.subtitulo}</p>
       </div>
 
       <form id="form-agendamento" style="display:flex; flex-direction:column; gap: var(--space-md);">
@@ -945,7 +990,7 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
 
         <div class="modal-field">
           <label class="text-label-sm text-muted" for="agendamento-local">Local</label>
-          <input type="text" id="agendamento-local" class="input-field" value="Stand OHOLO Hub (FENA)">
+          <input type="text" id="agendamento-local" class="input-field" value="${cfg.local}">
         </div>
 
         <div class="modal-field">
@@ -969,24 +1014,33 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
   });
   overlay.querySelector(".modal-close").addEventListener("click", fecharModalAgendamento);
 
-  // Data mínima = hoje (não deixar marcar reuniões no passado)
+  // Data mínima = hoje (não deixar marcar reuniões no passado).
+  // Na FACIM, limitar também à janela da feira.
   const inputData = overlay.querySelector("#agendamento-data");
-  inputData.min = new Date().toISOString().split("T")[0];
+  const hoje = new Date().toISOString().split("T")[0];
+  if (vertente === "facim" && typeof FACIM_EVENTO !== "undefined") {
+    inputData.min = hoje > FACIM_EVENTO.inicio ? hoje : FACIM_EVENTO.inicio;
+    inputData.max = FACIM_EVENTO.fim;
+    if (hoje <= FACIM_EVENTO.inicio) inputData.value = FACIM_EVENTO.inicio;
+  } else {
+    inputData.min = hoje;
+  }
 
   // Popular o select de empresas
-  const nome = overlay.querySelector("#agendamento-nome").value.trim();
-  const telefone = overlay.querySelector("#agendamento-telefone").value.trim();
   const selectEmpresa = overlay.querySelector("#agendamento-empresa");
   try {
-    const empresas = await _obterEmpresasParaAgendamento();
+    const empresas = await _obterEmpresasParaAgendamento(vertente);
     selectEmpresa.innerHTML = `<option value="" disabled ${slugPreSelecionado ? "" : "selected"}>Seleccionar empresa</option>`;
     empresas
       .slice()
-      .sort((a, b) => (a.nome || "").localeCompare(b.nome || ""))
+      .sort((a, b) => (a.nome || "").localeCompare(b.nome || "", "pt"))
       .forEach((emp) => {
         const opt = document.createElement("option");
         opt.value = emp.slug;
-        opt.textContent = emp.nome;
+        opt.textContent =
+          vertente === "facim" && emp.facim && emp.facim.apurada
+            ? `${emp.nome} — stand ${emp.facim.stand || "por atribuir"}`
+            : emp.nome;
         if (emp.slug === slugPreSelecionado) opt.selected = true;
         selectEmpresa.appendChild(opt);
       });
@@ -996,6 +1050,11 @@ async function abrirModalAgendamento(slugPreSelecionado = "") {
   }
 
   overlay.querySelector("#form-agendamento").addEventListener("submit", _submeterAgendamento);
+}
+
+/** Atalho: abre o modal já na vertente FACIM 2026. */
+function abrirModalAgendamentoFacim(slugPreSelecionado = "") {
+  return abrirModalAgendamento(slugPreSelecionado, "facim");
 }
 
 async function _submeterAgendamento(ev) {
@@ -1026,12 +1085,16 @@ async function _submeterAgendamento(ev) {
   btn.disabled = true;
   btn.textContent = "A agendar...";
 
+  const _vertente = overlay.dataset.vertente || "fena";
+  const _rotuloVertente = (AGENDAMENTO_VERTENTES[_vertente] || AGENDAMENTO_VERTENTES.fena).rotulo;
+
   try {
     const resp = await fetch(`https://formsubmit.co/ajax/${AGENDAMENTO_EMAIL_DESTINO}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        _subject: `Nova Reunião B2B — ${nomeEmpresa}`,
+        _subject: `Nova Reunião B2B (${_rotuloVertente}) — ${nomeEmpresa}`,
+        Feira: _rotuloVertente,
         Nome: nome,
         Telefone: telefone,
         Empresa: nomeEmpresa,

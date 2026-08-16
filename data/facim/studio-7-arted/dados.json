@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Studio 7 Arted",
+    "pastaUrl": "https://drive.google.com/drive/folders/19n2Dv0Nkvz41bcIHTYvDYsalsWRKP97a"
+  },
+  "empresa": {
+    "nome": "Studio 7 Arted",
+    "descricao": "A empresa de Sociedade Unipessoal Studio 7 Artes, se enquadra no ramo impressão e actividades de preparação da impressão nomeadamente, design gráfico e publicidade, criação de cartazes, logotipos, folhetos, cartões de visitas entre outros elementos visuais, fazemos a reprodução dos mesmo, e auxiliamos no processo de divulgação por meio da gestão de redes sociais.",
+    "badges": [],
+    "nuit": "401730125",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Artesanato & Design",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "cleydepamela@gmail.com",
+      "telefone": "845815230",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Cleyde Henrique Maoze Pamela",
+      "cargo": "Directora"
+    },
+    "servicos": [
+      {
+        "nome": "Convites físicos",
+        "descricao": "Convites físicos para casamentos, graduação, aniversários, batizados entre outros eventos, de diversos tamanhos, cores e modelos."
+      },
+      {
+        "nome": "Agendas de capulana",
+        "descricao": "Produção de agendas de capulana de todos os tamanhos e com as cores mais vibrantes do nosso país."
+      },
+      {
+        "nome": "Brindes institucionais",
+        "descricao": "Criação de diversos tipos de brindes desde canetas, agendas, cantis entre outros para cabazes empresariais assim como presentes comuns para o uso diário."
+      },
+      {
+        "nome": "Quadros personalizados",
+        "descricao": "Design e impressão de quadros de diversos tamanhos e modelos para decoração de casas, empresas e presentes."
+      },
+      {
+        "nome": "Identidade Visual",
+        "descricao": "Criação de logotipos, paleta de cores, tipografia e todos itens de identificação de uma empresa."
+      },
+      {
+        "nome": "Vinil e Banner",
+        "descricao": "Maquetização, impressão e montagem de vinil e banner."
+      },
+      {
+        "nome": "Material escolar",
+        "descricao": "Personalização de material escolar (cadernos, canetas, borrachas)"
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Artesanato & Design",
+    "produtosExpor": "A empresa de Sociedade Unipessoal Studio 7 Artes, se enquadra no ramo impressão e actividades de preparação da impressão nomeadamente, design gráfico e publicidade, criação de cartazes, logotipos, folhetos, cartões de visitas entre outros elementos visuais, fazemos a reprodução dos mesmo, e auxiliamos no processo de divulgação por meio da gestão de redes sociais.",
+    "quantidade": "",
+    "representante": "Cleyde Henrique Maoze Pamela",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg",
+      "servico_5.jpg",
+      "servico_6.jpg",
+      "servico_7.jpg"
+    ],
+    "nFotos": 8,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

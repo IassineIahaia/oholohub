@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Nutrinatural Lda.",
+    "pastaUrl": "https://drive.google.com/drive/folders/1z-0yp7YYLUFzSwGSGc9W5sYr6lnQ0dJE"
+  },
+  "empresa": {
+    "nome": "Nutrinatural Lda.",
+    "descricao": "A Nutrinatural Lda. é uma empresa moçambicana fundada em 2018 que se dedica à produção de alimentos naturais e sustentáveis, tendo como principal produto o óleo de coco extra-virgem, 100% puro, prensado a frio e livre de químicos. 100% puro, prensado a frio. O óleo mantém aroma e nutrientes naturais, sem aditivos ou químicos, e usado para culinária, cuidados com pele e cabelo, e bem-estar geral.\n\nO negócio funciona em parceria com produtores locais, promovendo comércio justo e reinvestindo em projetos comunitários e ambientais. Apoiamos pequenos produtores através de formação em agricultura sustentável e não intensiva, preservando o solo e a biodiversidade e comércio justo. Geramos emprego e aumento da renda na comunidade local e parcerias transparentes e de benefício mútuo com comunidades rurais.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "400944105",
+    "fundacao": "",
+    "anosActividade": "6",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "abanze@nutrinatural.co.mz",
+      "telefone": "+258878060985",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Alberto Banze",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Oleo de Coco Extra-Virgem",
+        "descricao": "O óleo de coco extra‑virgem é um produto natural obtido da polpa fresca do coco, através de prensagem a frio, sem uso de calor excessivo ou químicos. Esse método preserva os nutrientes, o aroma característico e a pureza do óleo, valorizado por ser um produto puro, nutritivo e multifuncional, que combina benefícios alimentares e cosméticos."
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "6",
+      "producao": "50 garrafas de cada tamanho, temos 6 tamanhos diferentes",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Óleo de coco extra-virgem",
+    "quantidade": "50 garrafas de cada tamanho, temos 6 tamanhos diferentes",
+    "representante": "Alberto Banze",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

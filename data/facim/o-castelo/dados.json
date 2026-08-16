@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "O castelo",
+    "pastaUrl": "https://drive.google.com/drive/folders/1fYCKuPihJxxPEr2myTkrAHASoiM8RDzN"
+  },
+  "empresa": {
+    "nome": "O castelo",
+    "descricao": "O nosso empreendimento é um alojamento turístico com 5 quartos, que oferece aos hóspedes conforto, hospitalidade e uma experiência acolhedora. Além da hospedagem, disponibilizamos refeições com comidas típicas da região, preparadas com ingredientes frescos e produtos fabricados localmente, valorizando a cultura, os sabores e os produtores da nossa comunidade.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "108064951",
+    "fundacao": "",
+    "anosActividade": "13",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "cammysuadique.96@gmail.com",
+      "telefone": "875992100",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Muanema Abdulrahim Momade",
+      "cargo": "Gerente"
+    },
+    "servicos": [
+      {
+        "nome": "Achar de Limão Ardência Pura",
+        "descricao": "Preparado à base de limão e usado para dar sabor e picância às refeições."
+      },
+      {
+        "nome": "Piripiri Picante Caseiro",
+        "descricao": "Feito artesanalmente com ingredientes frescos e selecionados, o nosso piripíri oferece o equilíbrio perfeito entre sabor e picância. Ideal para temperar frango, peixe, carnes, mariscos, batatas e qualquer prato que mereça um toque especial."
+      },
+      {
+        "nome": "Castanha de Caju Caramelizada Caseira",
+        "descricao": "As nossas castanhas caramelizadas são preparadas com ingredientes de qualidade para oferecer um sabor irresistível em cada dentada.\n\nPerfeitas para um lanche, para partilhar com a família e amigos ou para adoçar qualquer momento do seu dia."
+      },
+      {
+        "nome": "Castanha de Caju Tostada",
+        "descricao": "Uma opção deliciosa e prática para um lanche saudável, para acompanhar bebidas ou para partilhar em qualquer ocasião."
+      },
+      {
+        "nome": "Amendoim Melado",
+        "descricao": "O nosso amendoim melado é cuidadosamente preparado para garantir um sabor marcante e uma textura irresistível em cada grão."
+      },
+      {
+        "nome": "Biscoito de Gergelim Anti-estresse",
+        "descricao": "Preparado com gergelim cuidadosamente selecionado. Uma opção deliciosa para acompanhar o chá, o café ou para um lanche a qualquer hora do dia."
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "13",
+      "producao": "Uma caixa com 20 Produtos de Cada",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Achar de Limão Ardência Pura; Piripiri Picante Caseiro; Castanha de Caju Caramelizada Caseira; Castanha de Caju Tostada; Amendoim Melado; Biscoito de Gergelim Anti-estresse",
+    "quantidade": "Uma caixa com 20 Produtos de Cada",
+    "representante": "Muanema Abdulrahim Momade",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg",
+      "servico_5.jpg",
+      "servico_6.jpg"
+    ],
+    "nFotos": 7,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

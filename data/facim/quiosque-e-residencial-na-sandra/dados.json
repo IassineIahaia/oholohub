@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Quiosque e Residencial na Sandra",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qymeiclp66seZtXF9FY92yTSHQX2AkgU"
+  },
+  "empresa": {
+    "nome": "Quiosque e Residencial na Sandra",
+    "descricao": "Fornecimento de Refeicoes e Bebidas, Alojamento Dentro e fora do Estabelecimento",
+    "badges": [],
+    "nuit": "100798131",
+    "fundacao": "",
+    "anosActividade": "11",
+    "industria": "Turismo, Hotelaria & Catering",
+    "provincia": "Niassa",
+    "contactos": {
+      "email": "quiosquesandra11@gmail.com",
+      "telefone": "861500832",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Sandra Maria do Rosario Abula",
+      "cargo": "Directora"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "11",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Turismo, Hotelaria & Catering",
+    "produtosExpor": "Fornecimento de Refeicoes e Bebidas, Alojamento Dentro e fora do Estabelecimento",
+    "quantidade": "",
+    "representante": "Sandra Maria do Rosario Abula",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

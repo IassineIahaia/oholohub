@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Agro Nice Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1rdDZ2aFimkeNyRsRXRHsXLXuIG_Kx_xx"
+  },
+  "empresa": {
+    "nome": "Agro Nice Lda",
+    "descricao": "Consultoria agrícola, comercialização de insumos agrícolas e capacitação de jovens através do programa Farm Expert",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "400805210",
+    "fundacao": "",
+    "anosActividade": "8",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "agronicelimitada@gmail.com",
+      "telefone": "844559856",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Adolfo Graciano Marcelino",
+      "cargo": "Director de Operações e Implementação"
+    },
+    "servicos": [
+      {
+        "nome": "Sementes , Adubos , sistemas de regas",
+        "descricao": "Parceria com empressas forncedoras de sementes e sistemas de rega em Maputo"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "8",
+      "producao": "Embaladas em volumes de 1 a 2 kg - total de 50 kg",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "Diferentes variedades de sementes e apresentação digital dos nossos projectos e plataformas",
+    "quantidade": "Embaladas em volumes de 1 a 2 kg - total de 50 kg",
+    "representante": "Adolfo Graciano Marcelino",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

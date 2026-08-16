@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Indico Seafood Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1L3SzPz0juG2Gq6V7ve3dJJKNdAd_h5ws"
+  },
+  "empresa": {
+    "nome": "Indico Seafood Lda",
+    "descricao": "Processamento de produtos da pesca artesanal, exporta para a União Europeia",
+    "badges": [],
+    "nuit": "401460871",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Pescas & Mar",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "miguelacscosta@hotmail.com",
+      "telefone": "876060826",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Miguel Costa",
+      "cargo": "Director geral"
+    },
+    "servicos": [
+      {
+        "nome": "peixe e mariscos processados",
+        "descricao": "Fumentamos a pesca artesanal, processamos e exportamos para a União Europeia"
+      }
+    ],
+    "lideranca": [],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Pescas & Mar",
+    "produtosExpor": "Processamento de produtos da pesca artesanal, exporta para a União Europeia",
+    "quantidade": "",
+    "representante": "Miguel Costa",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

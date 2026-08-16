@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Hotel Oceano",
+    "pastaUrl": "https://drive.google.com/drive/folders/1w5yXp4b3hwiYsQp6RcfGNQ-Bhyzprzji"
+  },
+  "empresa": {
+    "nome": "Hotel Oceano",
+    "descricao": "Hoteleira e restauração",
+    "badges": [],
+    "nuit": "400780617",
+    "fundacao": "",
+    "anosActividade": "15",
+    "industria": "Turismo, Hotelaria & Catering",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "hotelooceiano18@gmail.com",
+      "telefone": "824987750#857860000",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Ana Vasnconcelos",
+      "cargo": "Directora"
+    },
+    "servicos": [
+      {
+        "nome": "Acomodação",
+        "descricao": "Quartos bar,restaurante"
+      },
+      {
+        "nome": "Quantos ,bar,restauração",
+        "descricao": ""
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "15",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Turismo, Hotelaria & Catering",
+    "produtosExpor": "Hoteleira e restauração",
+    "quantidade": "",
+    "representante": "Ana Vasnconcelos",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg"
+    ],
+    "nFotos": 3,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Topoland lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/19NdFdt87ukmoCoKYVs05Ge0iNvt-J9tx"
+  },
+  "empresa": {
+    "nome": "Topoland lda",
+    "descricao": "Oferecemos serviços de topografia e cartografia",
+    "badges": [],
+    "nuit": "401692861",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Construção & Topografia",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "esmeraldo.botao@yahoo.com.br",
+      "telefone": "872615829",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Esmeraldo Botão",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Levantamento planimétricos",
+        "descricao": "Com base no uso do aparelho GNSS, faz se o levantamentos dos pontos de uma área, estrada de seguida o processamento dos dados que servem para serem utilizados nas actividades subsequentes"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Construção & Topografia",
+    "produtosExpor": "Oferecemos serviços de topografia e cartografia",
+    "quantidade": "",
+    "representante": "Esmeraldo Botão",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

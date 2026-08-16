@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Butterfly- Beleza e Cosmético SU LDA",
+    "pastaUrl": "https://drive.google.com/drive/folders/1Fs1GIr_G_NisNVp75F2V6I1GyWHl2Qmt"
+  },
+  "empresa": {
+    "nome": "Butterfly- Beleza e Cosmético, SU, LDA",
+    "descricao": "Produtos: Oleos de Ricino, Coco e Aloe-Vera e coco, pastas de capulana e pano jeans e apliques para cabelos de fibra sintetica.",
+    "badges": [],
+    "nuit": "402116201",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Cosmética & Bem-estar",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "anesiajuma@gmail.com",
+      "telefone": "844892022",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Anêsia de Lurdes Juma Lihamade",
+      "cargo": "Gestora"
+    },
+    "servicos": [
+      {
+        "nome": "oleo de Coco",
+        "descricao": "Oleo de coco e um produto que serve para hidratara pele, nutrir o cabelo reduzindo a perda de proteina dos fios"
+      },
+      {
+        "nome": "Oleo de Ricino",
+        "descricao": "Oleo de ricino lubrifica os fios de cabelo, ajuda a combater a caspa e recuperacabelos secos e quebrados"
+      },
+      {
+        "nome": "Oleo de Aloe-Vera e Coco",
+        "descricao": "Oleo de Aloe-Vera e Coco ajuda na hidratacao e nutricao profunda, reduz o frizz e fortalece os fios de cabelo"
+      },
+      {
+        "nome": "Mochila de capulana e pano jeans",
+        "descricao": "Um acessorio ideal para o dia-a-dia da mulher mocambicana que quer estar na tendencia europei sem deixar as suas raizes"
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Cosmética & Bem-estar",
+    "produtosExpor": "Produtos: Oleos de Ricino, Coco e Aloe-Vera e coco, pastas de capulana e pano jeans e apliques para cabelos de fibra sintetica.",
+    "quantidade": "",
+    "representante": "Anêsia de Lurdes Juma Lihamade",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg"
+    ],
+    "nFotos": 5,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

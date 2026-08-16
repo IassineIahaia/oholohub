@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Xima de Namaua",
+    "pastaUrl": "https://drive.google.com/drive/folders/1lDF3T4wIGLycQGAbcOsI2EpZkEKIN0FS"
+  },
+  "empresa": {
+    "nome": "Xima de Namaua",
+    "descricao": "Processamento de farinha de milho",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "107842518",
+    "fundacao": "",
+    "anosActividade": "10",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "momademax@yahoo.com.br",
+      "telefone": "861771971",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Momade Amade",
+      "cargo": "Gestor"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "10",
+      "producao": "10 sacos de 10kg e 5 sacos de 25kg",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Farinha de milho",
+    "quantidade": "10 sacos de 10kg e 5 sacos de 25kg",
+    "representante": "Momade Amade",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

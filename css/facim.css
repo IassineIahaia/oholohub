@@ -1,0 +1,1606 @@
+/* ============================================================
+   FACIM 2026 — FOLHA DE ESTILO DA VERTENTE
+   Estende os tokens de style.css. Não sobrepõe nada da FENA:
+   todas as classes começam por .facim-
+   ------------------------------------------------------------
+   Ideia visual: a página é lida como a planta de um pavilhão.
+   Fundo azul-marinho com grelha de projecto, medidas e datas em
+   tipo monoespaçado, e o laranja OHOLO reservado para o que é
+   accionável (stands atribuídos, botões, marcos activos).
+   ============================================================ */
+
+:root {
+  --facim-navy: #071e3d;
+  --facim-navy-2: #0a2a52;
+  --facim-navy-3: #16345c;
+  --facim-linha: rgba(255, 255, 255, 0.08);
+  --facim-areia: #fdf6f0;
+  --facim-verde: #1f7a5a;
+  --facim-ambar: #b7791f;
+  --facim-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, monospace;
+}
+
+/* ------------------------------------------------------------
+   1. HERO — planta do recinto
+   ------------------------------------------------------------ */
+.facim-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(155deg, var(--facim-navy) 0%, var(--facim-navy-2) 55%, var(--facim-navy-3) 100%);
+  color: #fff;
+  padding: calc(var(--space-xxl) + 16px) 0 var(--space-xxl);
+}
+
+.facim-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--facim-linha) 1px, transparent 1px),
+    linear-gradient(90deg, var(--facim-linha) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 70% 20%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle at 70% 20%, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+
+.facim-hero::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -160px;
+  top: -180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 89, 12, 0.32) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.facim-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.facim-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-inverse-primary);
+}
+
+.facim-hero-edicao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-full);
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--space-lg);
+}
+
+.facim-hero-edicao b {
+  color: var(--color-primary-container);
+  font-weight: 600;
+}
+
+.facim-hero-titulo {
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+  margin-bottom: var(--space-md);
+}
+
+.facim-hero-titulo em {
+  font-style: normal;
+  color: var(--color-primary-container);
+}
+
+.facim-hero-sub {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 56ch;
+  margin-bottom: var(--space-xl);
+}
+
+.facim-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.facim-hero-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.facim-hero-meta dt,
+.facim-hero-meta .rot {
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.facim-hero-meta dd,
+.facim-hero-meta .val {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── Contagem decrescente ── */
+.facim-contagem {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.facim-contagem-bloco {
+  min-width: 78px;
+  padding: var(--space-md) var(--space-sm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.facim-contagem-num {
+  display: block;
+  font-family: var(--facim-mono);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.facim-contagem-rotulo {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.facim-contagem-viva {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(232, 89, 12, 0.16);
+  border: 1px solid rgba(255, 178, 122, 0.4);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+.facim-ponto-vivo {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: facim-pulso 1.8s infinite;
+}
+
+@keyframes facim-pulso {
+  70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+.facim-hero-accoes {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.facim-btn-claro {
+  background: #fff;
+  color: var(--facim-navy-2);
+}
+
+.facim-btn-linha {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.facim-btn-linha:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ------------------------------------------------------------
+   2. NÚMEROS DA MISSÃO
+   ------------------------------------------------------------ */
+.facim-numeros {
+  background: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding: var(--space-xl) 0;
+}
+
+.facim-numeros-grelha {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-lg);
+}
+
+.facim-numero {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--space-md);
+}
+
+.facim-numero-valor {
+  display: block;
+  font-family: var(--facim-mono);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--facim-navy-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.facim-numero-rotulo {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+/* ------------------------------------------------------------
+   3. SECÇÕES GENÉRICAS
+   ------------------------------------------------------------ */
+.facim-seccao {
+  padding: var(--space-xxl) 0;
+}
+
+.facim-seccao.is-alt {
+  background: var(--color-surface-container-low);
+}
+
+.facim-seccao-cabecalho {
+  max-width: 62ch;
+  margin-bottom: var(--space-xl);
+}
+
+.facim-seccao-cabecalho .facim-eyebrow {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.facim-h1,
+.facim-h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--facim-navy-2);
+  margin-bottom: var(--space-sm);
+}
+
+.facim-seccao-cabecalho p {
+  font-size: 17px;
+  line-height: 27px;
+  color: var(--color-on-surface-variant);
+}
+
+/* ------------------------------------------------------------
+   4. VITRINE DIGITAL
+   ------------------------------------------------------------ */
+.facim-barra-filtros {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.6fr) repeat(2, minmax(140px, 1fr)) auto auto;
+  gap: var(--space-sm);
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-level-1);
+  margin-bottom: var(--space-lg);
+}
+
+.facim-campo-pesquisa {
+  position: relative;
+}
+
+.facim-campo-pesquisa .icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  color: var(--color-outline);
+  pointer-events: none;
+}
+
+.facim-barra-filtros .input-field {
+  height: 46px;
+}
+
+.facim-campo-pesquisa .input-field {
+  padding-left: 40px;
+}
+
+.facim-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 var(--space-sm);
+}
+
+.facim-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.facim-contador-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-md);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+#facim-contador {
+  font-family: var(--facim-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-grelha {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+  gap: var(--space-lg);
+}
+
+.facim-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-level-1);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.facim-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-level-2);
+  border-color: var(--color-primary-container);
+}
+
+.facim-card-media {
+  position: relative;
+  height: 196px;
+  background: var(--color-surface-container);
+  overflow: hidden;
+}
+
+.facim-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.facim-card:hover .facim-card-img {
+  transform: scale(1.05);
+}
+
+.facim-card-img.is-logo {
+  object-fit: contain;
+  padding: var(--space-lg);
+  background: #fff;
+}
+
+.facim-card-vazio {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--facim-navy-2), var(--facim-navy-3));
+}
+
+.facim-card-vazio span {
+  font-family: var(--facim-mono);
+  font-size: 34px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.34);
+  letter-spacing: 0.06em;
+}
+
+.facim-selo {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facim-selo.is-estatico {
+  position: static;
+}
+
+.facim-selo.is-candidata {
+  position: static;
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+}
+
+.facim-stand-tag {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(7, 30, 61, 0.86);
+  color: #fff;
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.facim-card-corpo {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.facim-sector {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-sm);
+}
+
+.facim-sector-agro       { background: #e3f4e8; color: #17603a; }
+.facim-sector-pescas     { background: #e0f0f8; color: #14556e; }
+.facim-sector-artesanato { background: #fbeade; color: #8a4a12; }
+.facim-sector-cosmetica  { background: #fbe6f0; color: #8b2d5a; }
+.facim-sector-tecnologia { background: #e6ecfb; color: #23407f; }
+.facim-sector-turismo    { background: #fdf0dc; color: #8a5b10; }
+.facim-sector-logistica  { background: #eae7fa; color: #4c3d90; }
+.facim-sector-construcao { background: #eceff2; color: #3d4a57; }
+.facim-sector-ensino     { background: #e6f2f4; color: #14595f; }
+.facim-sector-servicos   { background: #eef0f2; color: #414c56; }
+
+.facim-card-nome {
+  font-size: 19px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-xs);
+}
+
+.facim-card-desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+.facim-card-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-outline-variant);
+  flex-wrap: wrap;
+}
+
+.facim-card-local {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.facim-card-local .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.facim-card-media-contagem {
+  display: inline-flex;
+  gap: var(--space-sm);
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-card-media-contagem .em-falta {
+  color: var(--color-outline);
+  opacity: 0.7;
+}
+
+#facim-vazio {
+  display: none;
+  text-align: center;
+  padding: var(--space-xxl) 0;
+  color: var(--color-on-surface-variant);
+}
+
+#facim-paginacao {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+/* ------------------------------------------------------------
+   5. PLANTA DO PAVILHÃO  (elemento assinatura)
+   ------------------------------------------------------------ */
+.facim-planta-quadro {
+  position: relative;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  background-color: var(--facim-navy);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+  overflow: hidden;
+}
+
+.facim-planta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.facim-stand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  min-height: 124px;
+  padding: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-default);
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.facim-stand:hover {
+  background: rgba(232, 89, 12, 0.18);
+  border-color: var(--color-primary-container);
+  transform: translateY(-3px);
+}
+
+.facim-stand.is-grande {
+  grid-column: span 2;
+  min-height: 150px;
+  background: rgba(232, 89, 12, 0.1);
+  border-color: rgba(255, 178, 122, 0.42);
+}
+
+.facim-stand-medida {
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--color-inverse-primary);
+}
+
+.facim-stand-nome {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.facim-stand-origem {
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.facim-planta-legenda {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.facim-legenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.facim-quadro {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.facim-quadro.is-grande {
+  width: 24px;
+  background: rgba(232, 89, 12, 0.24);
+  border-color: rgba(255, 178, 122, 0.5);
+}
+
+/* ------------------------------------------------------------
+   6. ESTADO DA RECOLHA DE CONTEÚDOS
+   ------------------------------------------------------------ */
+.facim-conteudos-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.facim-painel {
+  background: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-level-1);
+}
+
+.facim-progresso + .facim-progresso {
+  margin-top: var(--space-md);
+}
+
+.facim-progresso-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.facim-progresso-rotulo {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.facim-progresso-valor {
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-progresso-barra {
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-container-high);
+  overflow: hidden;
+}
+
+.facim-progresso-barra span {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-container));
+  transition: width 0.4s ease;
+}
+
+.facim-tabela-wrap {
+  background: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-level-1);
+}
+
+.facim-tabela-topo {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-outline-variant);
+  background: var(--color-surface-container-low);
+}
+
+.facim-tabela-scroll {
+  overflow-x: auto;
+}
+
+.facim-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.facim-tabela th {
+  text-align: left;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  border-bottom: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+
+.facim-tabela td {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-surface-container-high);
+  vertical-align: middle;
+}
+
+.facim-tabela tr:last-child td {
+  border-bottom: none;
+}
+
+.facim-tabela tbody tr:hover {
+  background: var(--color-surface-container-low);
+}
+
+.facim-tabela-nome {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-on-surface);
+}
+
+.facim-tabela-nome:hover {
+  color: var(--color-primary);
+}
+
+.facim-tabela-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.facim-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.facim-marca em {
+  font-style: normal;
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.facim-marca.ok { color: var(--facim-verde); }
+.facim-marca.falta { color: var(--color-outline); }
+
+.facim-tabela-total {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-container-high);
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-tabela-total.completo {
+  background: #e3f4e8;
+  color: var(--facim-verde);
+}
+
+.facim-tabela-vazia {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-nota {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-primary);
+  background: var(--facim-areia);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-on-surface-variant);
+}
+
+/* ------------------------------------------------------------
+   7. CRONOGRAMA E DESLOCAÇÃO
+   ------------------------------------------------------------ */
+.facim-logistica {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.facim-cronograma {
+  position: relative;
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-outline-variant);
+}
+
+.facim-marco {
+  position: relative;
+  padding-bottom: var(--space-lg);
+}
+
+.facim-marco:last-child {
+  padding-bottom: 0;
+}
+
+.facim-marco::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-lg) * -1 - 7px);
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 2px solid var(--color-outline);
+}
+
+.facim-marco.is-concluido::before {
+  background: var(--facim-verde);
+  border-color: var(--facim-verde);
+}
+
+.facim-marco.is-proximo::before {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.facim-marco.is-destaque::before {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(232, 89, 12, 0.18);
+}
+
+.facim-marco-data {
+  display: block;
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-bottom: 3px;
+}
+
+.facim-marco.is-concluido .facim-marco-data {
+  color: var(--facim-verde);
+}
+
+.facim-marco-titulo {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-on-surface);
+}
+
+.facim-marco-resultado {
+  display: block;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.facim-marco.is-destaque .facim-marco-titulo {
+  color: var(--facim-navy-2);
+  font-size: 17px;
+}
+
+.facim-lado-logistica {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.facim-rota + .facim-rota {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.facim-rota-cidade {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--facim-navy-2);
+  margin-bottom: var(--space-sm);
+}
+
+.facim-rota-cidade span {
+  font-family: var(--facim-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.facim-rota-dados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm) var(--space-md);
+}
+
+.facim-rota-dados dt {
+  font-family: var(--facim-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+.facim-rota-dados dd {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.facim-representantes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: var(--space-sm);
+}
+
+.facim-rep {
+  padding: var(--space-md);
+  border-radius: var(--radius-default);
+  background: var(--color-surface-container-low);
+  text-align: center;
+}
+
+.facim-rep.is-total {
+  background: var(--facim-navy-2);
+  color: #fff;
+}
+
+.facim-rep-num {
+  display: block;
+  font-family: var(--facim-mono);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.facim-rep.is-total .facim-rep-num {
+  color: var(--color-primary-container);
+}
+
+.facim-rep-origem {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.facim-rep-detalhe {
+  display: block;
+  font-size: 11px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-rep.is-total .facim-rep-detalhe {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ------------------------------------------------------------
+   8. CTA FINAL
+   ------------------------------------------------------------ */
+.facim-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  padding: var(--space-xxl) var(--space-lg);
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(140deg, var(--facim-navy-2), var(--facim-navy));
+}
+
+.facim-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at 50% 0%, #000 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle at 50% 0%, #000 0%, transparent 72%);
+}
+
+.facim-cta > * {
+  position: relative;
+}
+
+.facim-cta h2 {
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.facim-cta p {
+  max-width: 54ch;
+  margin: 0 auto var(--space-lg);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.facim-cta-accoes {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------
+   9. PÁGINA DA EMPRESA
+   ------------------------------------------------------------ */
+.facim-perfil-topo {
+  position: relative;
+}
+
+.facim-perfil-capa {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(140deg, var(--facim-navy-2), var(--facim-navy));
+  overflow: hidden;
+}
+
+.facim-perfil-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facim-perfil-veu {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 30, 61, 0.88) 0%, rgba(7, 30, 61, 0.25) 55%, rgba(7, 30, 61, 0.4) 100%);
+}
+
+.facim-perfil-cabecalho {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-lg);
+  margin-top: -68px;
+  padding-bottom: var(--space-lg);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.facim-perfil-logo {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: var(--shadow-level-2);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: var(--space-md);
+}
+
+.facim-perfil-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.facim-perfil-logo.is-vazio {
+  background: linear-gradient(135deg, var(--facim-navy-2), var(--facim-navy-3));
+}
+
+.facim-perfil-logo.is-vazio span {
+  font-family: var(--facim-mono);
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.facim-perfil-identidade {
+  padding-bottom: var(--space-xs);
+  flex: 1;
+  min-width: 260px;
+}
+
+.facim-perfil-selos {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+
+.facim-perfil-nome {
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.14;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-xs);
+}
+
+.facim-perfil-local {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-perfil-local .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+}
+
+.facim-perfil-corpo {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-xl);
+  align-items: start;
+  padding-bottom: var(--space-xxl);
+}
+
+.facim-perfil-desc {
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--color-on-surface-variant);
+  white-space: pre-line;
+  margin-bottom: var(--space-xl);
+}
+
+.facim-perfil-principal .facim-h2 {
+  margin-top: var(--space-xl);
+}
+
+.facim-perfil-principal > .facim-h2:first-child {
+  margin-top: 0;
+}
+
+.facim-destaque-expor {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--facim-areia);
+  border: 1px solid #f3dfd0;
+  margin-bottom: var(--space-xl);
+}
+
+.facim-destaque-expor .facim-eyebrow {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.facim-destaque-expor p {
+  font-size: 16px;
+  line-height: 25px;
+  white-space: pre-line;
+}
+
+.facim-quantidade {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-lg);
+}
+
+.facim-servico {
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-container-lowest);
+}
+
+.facim-servico-img {
+  height: 190px;
+  background: var(--color-surface-container);
+}
+
+.facim-servico-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facim-servico-txt {
+  padding: var(--space-md);
+}
+
+.facim-servico-txt h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+  margin-bottom: var(--space-xs);
+}
+
+.facim-servico-txt p {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-on-surface-variant);
+  white-space: pre-line;
+}
+
+.facim-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-sm);
+}
+
+.facim-galeria-item {
+  border: none;
+  padding: 0;
+  height: 150px;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-surface-container);
+}
+
+.facim-galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.facim-galeria-item:hover img {
+  transform: scale(1.06);
+}
+
+.facim-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.facim-video {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+}
+
+.facim-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.facim-perfil-lado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  position: sticky;
+  top: 88px;
+}
+
+.facim-ficha {
+  background: var(--color-surface-container-lowest);
+  border: var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-level-1);
+}
+
+.facim-ficha-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--space-md);
+}
+
+.facim-ficha dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-surface-container-high);
+}
+
+.facim-ficha dl > div:last-child {
+  border-bottom: none;
+}
+
+.facim-ficha dt {
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  flex-shrink: 0;
+}
+
+.facim-ficha dd {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.facim-contactos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.facim-contactos a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.facim-contactos a:hover {
+  color: var(--color-primary);
+}
+
+.facim-contactos .icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.facim-btn-bloco {
+  width: 100%;
+  height: 48px;
+  justify-content: center;
+}
+
+.facim-erro {
+  padding: var(--space-xxl) 0;
+  text-align: center;
+}
+
+.facim-erro a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ── Lightbox ── */
+.facim-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 14, 28, 0.94);
+  padding: var(--space-xl);
+}
+
+.facim-lightbox img {
+  max-width: min(1100px, 92vw);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--radius-default);
+}
+
+.facim-lightbox-fechar,
+.facim-lightbox-nav {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 22px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.facim-lightbox-fechar:hover,
+.facim-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.facim-lightbox-fechar {
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 18px;
+}
+
+.facim-lightbox-nav.is-prev { left: var(--space-lg); }
+.facim-lightbox-nav.is-next { right: var(--space-lg); }
+
+.facim-lightbox-contador {
+  position: absolute;
+  bottom: var(--space-lg);
+  font-family: var(--facim-mono);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* ------------------------------------------------------------
+   10. FAIXA FACIM NA HOME
+   ------------------------------------------------------------ */
+.facim-faixa {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(120deg, var(--facim-navy) 0%, var(--facim-navy-2) 60%, var(--facim-navy-3) 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.facim-faixa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at 85% 20%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 85% 20%, #000 0%, transparent 70%);
+}
+
+.facim-faixa > * {
+  position: relative;
+}
+
+.facim-faixa h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: var(--space-sm) 0;
+}
+
+.facim-faixa p {
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 60ch;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+/* ------------------------------------------------------------
+   11. RESPONSIVO
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .facim-perfil-corpo,
+  .facim-logistica,
+  .facim-conteudos-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .facim-perfil-lado {
+    position: static;
+  }
+
+  .facim-barra-filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .facim-campo-pesquisa {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .facim-hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .facim-seccao {
+    padding: var(--space-xl) 0;
+  }
+
+  .facim-planta-quadro {
+    padding: var(--space-md);
+  }
+
+  .facim-stand.is-grande {
+    grid-column: span 1;
+  }
+
+  .facim-barra-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .facim-contagem-bloco {
+    min-width: 66px;
+    padding: var(--space-sm);
+  }
+
+  .facim-contagem-num {
+    font-size: 24px;
+  }
+
+  .facim-faixa {
+    grid-template-columns: 1fr;
+  }
+
+  .facim-perfil-capa {
+    height: 210px;
+  }
+
+  .facim-perfil-logo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .facim-lightbox-nav.is-prev { left: var(--space-sm); }
+  .facim-lightbox-nav.is-next { right: var(--space-sm); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .facim-card,
+  .facim-card-img,
+  .facim-stand,
+  .facim-galeria-item img,
+  .facim-progresso-barra span {
+    transition: none;
+  }
+
+  .facim-ponto-vivo {
+    animation: none;
+  }
+}

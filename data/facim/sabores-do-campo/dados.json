@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "SABORES DO CAMPO",
+    "pastaUrl": "https://drive.google.com/drive/folders/1_PrbkAklwK_opDoY2VlP15F3u6oLGnRG"
+  },
+  "empresa": {
+    "nome": "SABORES DO CAMPO",
+    "descricao": "A Sabores do Campo é uma empresa de agroprocessamento dedicada à produção e comercialização de farinhas nutritivas e outros produtos alimentares de valor acrescentado, elaborados a partir de cereais, leguminosas e oleaginosas adquiridos a pequenos produtores locais. Os nossos produtos destinam-se a famílias, comerciantes, supermercados, instituições e programas de alimentação, promovendo uma alimentação saudável e contribuindo para a valorização da produção agrícola nacional.\n\nO nosso modelo de negócio baseia-se na compra de matérias-primas locais, processamento, embalagem, rotulagem e comercialização dos produtos através de venda direta, revendedores, supermercados e encomendas institucionais, com perspetiva de expansão para mercados nacionais e de exportação.",
+    "badges": [],
+    "nuit": "SABORES DO CAMPO",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Agroprocessamento",
+    "provincia": "Niassa",
+    "contactos": {
+      "email": "saboresdocampo.geral@gmail.com",
+      "telefone": "861787300",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "JOÃO OSÓRIO MACHIRICA",
+      "cargo": "Director Executivo"
+    },
+    "servicos": [
+      {
+        "nome": "FARINHA DE MULTIMISTURAS",
+        "descricao": "Mistura nutritiva produzida a partir de cereais, leguminosas e oleaginosas selecionadas, indicada para o preparo de papas e outras refeições.\nBenefícios: Rica em proteínas, fibras, vitaminas e minerais, contribui para uma alimentação equilibrada e para a diversificação da dieta de crianças e adultos."
+      },
+      {
+        "nome": "FARINHA DE MAPIRA",
+        "descricao": "Descrição: Produzida a partir de mapira (sorgo) de elevada qualidade, destinada ao consumo familiar e institucional.\nBenefícios: Rica em fibras e minerais, contribui para uma alimentação equilibrada e promove o aproveitamento de cereais produzidos localmente."
+      },
+      {
+        "nome": "FARINHA DE FEIJÃO-NHEMBA",
+        "descricao": "Descrição: Farinha produzida a partir de feijão-nhemba de elevada qualidade.\nBenefícios: Rica em proteína vegetal, fibras e minerais, sendo uma excelente opção para enriquecer refeições e promover uma alimentação nutritiva."
+      },
+      {
+        "nome": "FARINHA DE MANDIOCA",
+        "descricao": "Descrição: Farinha de alta qualidade obtida a partir de mandioca cuidadosamente selecionada e processada.\nBenefícios: Fonte de energia, de fácil digestão e versátil na preparação de diversos pratos tradicionais e modernos."
+      },
+      {
+        "nome": "FARINHA DE MEXOEIRA",
+        "descricao": "Descrição: Farinha obtida de mexoeira cuidadosamente selecionada e processada.\nBenefícios: Fonte de energia e fibras, adequada para papas, bolos e outras preparações, incentivando o consumo de cereais tradicionais"
+      },
+      {
+        "nome": "FARINHA DE GRÃO-DE-BICO",
+        "descricao": "Descrição: Farinha obtida de grão-de-bico selecionado e cuidadosamente processado.\nBenefícios: Rica em proteína vegetal, fibras e minerais, ideal para receitas saudáveis e para aumentar o valor nutricional das refeições."
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "A Sabores do Campo é uma empresa de agroprocessamento dedicada à produção e comercialização de farinhas nutritivas e outros produtos alimentares de valor acrescentado, elaborados a partir de cereais, leguminosas e oleaginosas adquiridos a pequenos produtores locais. Os nossos produtos destinam-se a famílias, comerciantes, supermercados, instituições e programas de alimentação, promovendo uma alimentação saudável e contribuindo para a valorização da produção agrícola nacional.\n\nO nosso modelo de negócio baseia-se na compra de matérias-primas locais, processamento, embalagem, rotulagem e comercialização dos produtos através de venda direta, revendedores, supermercados e encomendas institucionais, com perspetiva de expansão para mercados nacionais e de exportação.",
+    "quantidade": "",
+    "representante": "JOÃO OSÓRIO MACHIRICA",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg",
+      "servico_5.jpg",
+      "servico_6.jpg"
+    ],
+    "nFotos": 7,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "NÉLIA SÓ FRESCOS",
+    "pastaUrl": "https://drive.google.com/drive/folders/11WCCYA3YwcTykNC5W9AprQBm7e3AfVa6"
+  },
+  "empresa": {
+    "nome": "NÉLIA SÓ FRESCOS",
+    "descricao": "A NÉLIA SÓ FRESCOS é uma empresa moçambicana dedicada ao processamento, embalagem e comercialização de produtos agrícolas, incluindo farinhas, cereais, leguminosas, oleaginosas, frutas, hortaliças e mariscos. A empresa acrescenta valor aos produtos locais por meio da seleção, limpeza, secagem, processamento e embalagem, garantindo qualidade, segurança alimentar e maior durabilidade.\n\nO negócio funciona através da compra da produção de agricultores e produtores locais, do processamento dos produtos em unidades apropriadas e da sua comercialização para consumidores, grossistas, retalhistas, supermercados, instituições e mercados nacionais e internacionais. A empresa também promove práticas sustentáveis, contribuindo para o aumento da renda dos produtores e para o fortalecimento da cadeia de valor agrícola em Moçambique.",
+    "badges": [],
+    "nuit": "120373285",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Pescas & Mar",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "neliasofrescos007@gmail.com",
+      "telefone": "878824696",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Gervásio das Neves Aquilas",
+      "cargo": "Director de Marketing e Estratégia"
+    },
+    "servicos": [
+      {
+        "nome": "Achar de limão",
+        "descricao": "Achares de limão com e sem Piri Piri, 100% naturais."
+      },
+      {
+        "nome": "Farinhas de Cereais e leguminosas",
+        "descricao": "Farinhas diversas ( de milho, mexoeira, mapira, soja, arroz, marupi, badjia, feijão holoco"
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Pescas & Mar",
+    "produtosExpor": "A NÉLIA SÓ FRESCOS é uma empresa moçambicana dedicada ao processamento, embalagem e comercialização de produtos agrícolas, incluindo farinhas, cereais, leguminosas, oleaginosas, frutas, hortaliças e mariscos. A empresa acrescenta valor aos produtos locais por meio da seleção, limpeza, secagem, processamento e embalagem, garantindo qualidade, segurança alimentar e maior durabilidade.\n\nO negócio funciona através da compra da produção de agricultores e produtores locais, do processamento dos produtos em unidades apropriadas e da sua comercialização para consumidores, grossistas, retalhistas, supermercados, instituições e mercados nacionais e internacionais. A empresa também promove práticas sustentáveis, contribuindo para o aumento da renda dos produtores e para o fortalecimento da cadeia de valor agrícola em Moçambique.",
+    "quantidade": "",
+    "representante": "Gervásio das Neves Aquilas",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg"
+    ],
+    "nFotos": 3,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

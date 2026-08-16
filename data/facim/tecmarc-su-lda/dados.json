@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "TecmarcSuLda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1trqOmn3_lPt7XuLFNk1JEegLTJUUVEBZ"
+  },
+  "empresa": {
+    "nome": "Tecmarc,Su,Lda",
+    "descricao": "Produtos/Serviços e Modelo de Negócio – Tecmarc, Lda.\n\nA Tecmarc, Lda. é uma empresa moçambicana especializada em soluções de transformação digital, infraestrutura de TI e conectividade via satélite, garantindo comunicação estável mesmo em áreas de difícil acesso. Oferecemos desenvolvimento e adaptação modular de softwares de gestão corporativa, além de suporte técnico contínuo e manutenção (SLA). Operamos no modelo B2B e B2G, atendendo ao setor privado e público por meio do fornecimento de equipamentos, projetos customizados para concursos/cotações e contratos de serviços contínuos, contando com equipa interna e parceiros qualificados para assegurar cobertura operacional eficiente.",
+    "badges": [],
+    "nuit": "401019936",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Tecnologia & Comunicação",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "noemia.miguel@tecmarc.co.mz",
+      "telefone": "863397031",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Noemia CELESTINO",
+      "cargo": "Assistente de Veendas"
+    },
+    "servicos": [
+      {
+        "nome": "Camera Autdoor Bullet",
+        "descricao": "Câmera Outdoor Bullet\n\nCâmera de vigilância externa de alta resolução com proteção contra intempéries (chuva/poeira) e visão noturna infravermelha. Possui design ostensivo ideal para monitoramento perimetral e segurança de fachadas, estacionamentos e áreas abertas."
+      },
+      {
+        "nome": "Antena Starlink (Terminal de Conectividade via Satélite)",
+        "descricao": "Sistema avançado de internet de alta velocidade e baixa latência via satélites de órbita baixa (LEO). Possui antena autogerenciável de alta resistência a intempéries, ideal para garantir conexão estável e contínua em áreas urbanas, rurais e de difícil acesso."
+      },
+      {
+        "nome": "Camera de vigilancia",
+        "descricao": "Câmera de Segurança Externa\n\nEquipamento de vigilância resistente a intempéries, equipado com visão noturna e alta resolução. Ideal para monitoramento perimetral e segurança de áreas externas e fachadas."
+      },
+      {
+        "nome": "Roteador / Switch TP-Link",
+        "descricao": "Equipamento de rede para distribuição e gestão de sinal de internet, garantindo alta velocidade, estabilidade e cobertura contínua. Ideal para interconectar dispositivos e otimizar a infraestrutura de comunicação em ambientes corporativos e residenciais."
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Tecnologia & Comunicação",
+    "produtosExpor": "Produtos/Serviços e Modelo de Negócio – Tecmarc, Lda.\n\nA Tecmarc, Lda. é uma empresa moçambicana especializada em soluções de transformação digital, infraestrutura de TI e conectividade via satélite, garantindo comunicação estável mesmo em áreas de difícil acesso. Oferecemos desenvolvimento e adaptação modular de softwares de gestão corporativa, além de suporte técnico contínuo e manutenção (SLA). Operamos no modelo B2B e B2G, atendendo ao setor privado e público por meio do fornecimento de equipamentos, projetos customizados para concursos/cotações e contratos de serviços contínuos, contando com equipa interna e parceiros qualificados para assegurar cobertura operacional eficiente.",
+    "quantidade": "",
+    "representante": "Noemia CELESTINO",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg"
+    ],
+    "nFotos": 5,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

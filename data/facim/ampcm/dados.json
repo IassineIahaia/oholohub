@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "AMPCM",
+    "pastaUrl": "https://drive.google.com/drive/folders/11SD6WdHCReFZZf8lSc6GWzb5l6QyrWOY"
+  },
+  "empresa": {
+    "nome": "AMPCM",
+    "descricao": "Consultorias \nPromoção dos cooperativismos\nLobby e advocia",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "700095371",
+    "fundacao": "",
+    "anosActividade": "12",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "nbarnete@ampcm.coop",
+      "telefone": "848910587",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Natalino Jose Barnete",
+      "cargo": "Coordenador Regional da AMPCM"
+    },
+    "servicos": [
+      {
+        "nome": "Transporte e fornecimento de mudas",
+        "descricao": "promoção de cooperativismo\nlobby e advocacia\nserviços de treinamentos e pesquisas"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "12",
+      "producao": "Uma caixa  com  cerca de 30 kg dos diversos produtos",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Café do Ibo, café de Mecufi, licor a base de café, chocolate, Cosméticos (óleos naturais a base de café e outras ervas, esfoliantes, sabonetes naturais, camisetas.",
+    "quantidade": "Uma caixa  com  cerca de 30 kg dos diversos produtos",
+    "representante": "Charmila Moiane",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

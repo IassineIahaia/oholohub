@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "DelivMoz",
+    "pastaUrl": "https://drive.google.com/drive/folders/1b9BA9BrGuEs6m_MKYvJYt8I4ZDFu-BvG"
+  },
+  "empresa": {
+    "nome": "DelivMoz",
+    "descricao": "A DelivMoz é uma empresa moçambicana de logística e mobilidade que oferece serviços de entrega de encomendas, documentos, refeições e mercadorias, ligando empresas e consumidores de forma rápida, segura e acessível. Além dos serviços de entrega, a empresa desenvolve soluções inovadoras para ampliar o acesso ao transporte e gerar oportunidades de rendimento, incluindo um modelo de financiamento de motorizadas para estafetas e mototaxistas. Através da utilização de tecnologia e de uma gestão eficiente da operação, a DelivMoz procura modernizar o setor logístico em Moçambique, contribuindo para o crescimento das pequenas e médias empresas e para a criação de emprego.",
+    "badges": [],
+    "nuit": "401412328",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Tecnologia & Comunicação",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "delivmoz@gmail.com",
+      "telefone": "851516380",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Carla Afonso hilson",
+      "cargo": "Assistente administrativa"
+    },
+    "servicos": [
+      {
+        "nome": "Entregas e financiamento de motas",
+        "descricao": "A **DelivMoz** é uma empresa moçambicana de logística e mobilidade que oferece serviços de entrega de encomendas, documentos, refeições e mercadorias, ligando empresas e consumidores de forma rápida, segura e acessível. Além dos serviços de entrega, a empresa desenvolve soluções inovadoras para ampliar o acesso ao transporte e gerar oportunidades de rendimento, incluindo um modelo de financiamento de motorizadas para estafetas e mototaxistas. Através da utilização de tecnologia e de uma gestão eficiente da operação, a DelivMoz procura modernizar o setor logístico em Moçambique, contribuindo para o crescimento das pequenas e médias empresas e para a criação de emprego."
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Tecnologia & Comunicação",
+    "produtosExpor": "A DelivMoz é uma empresa moçambicana de logística e mobilidade que oferece serviços de entrega de encomendas, documentos, refeições e mercadorias, ligando empresas e consumidores de forma rápida, segura e acessível. Além dos serviços de entrega, a empresa desenvolve soluções inovadoras para ampliar o acesso ao transporte e gerar oportunidades de rendimento, incluindo um modelo de financiamento de motorizadas para estafetas e mototaxistas. Através da utilização de tecnologia e de uma gestão eficiente da operação, a DelivMoz procura modernizar o setor logístico em Moçambique, contribuindo para o crescimento das pequenas e médias empresas e para a criação de emprego.",
+    "quantidade": "",
+    "representante": "Carla Afonso hilson",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

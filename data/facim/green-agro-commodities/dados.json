@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "GREEN AGRO COMMODITIES",
+    "pastaUrl": "https://drive.google.com/drive/folders/1oh7M1nKMOzO9DVcNmbAN8THzJkCRV77E"
+  },
+  "empresa": {
+    "nome": "GREEN AGRO COMMODITIES",
+    "descricao": "Produzimos Milho Amarelo e feijões,  o milho amarelo é processado em farinha que é vendida no mercado nacional. Para produção do milho amarelo, possuímos campos próprios nos distritos de Mecuburi e Lugela e também fomentamos pequenos produtores nos distritos de Mecuburi, Erati e Lugela, neste momento temos uma rede de 500 produtores.",
+    "badges": [],
+    "nuit": "401188169",
+    "fundacao": "",
+    "anosActividade": "5",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "cleopatraecocoro04@gmail.com",
+      "telefone": "871952042",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Cleopatra Dos Santos Ecocoro",
+      "cargo": "Gestora de projetos"
+    },
+    "servicos": [
+      {
+        "nome": "Rainha do Norte",
+        "descricao": "A farinha de milho amarelo tem como marca Rainha do Norte"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "5",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Produzimos Milho Amarelo e feijões,  o milho amarelo é processado em farinha que é vendida no mercado nacional. Para produção do milho amarelo, possuímos campos próprios nos distritos de Mecuburi e Lugela e também fomentamos pequenos produtores nos distritos de Mecuburi, Erati e Lugela, neste momento temos uma rede de 500 produtores.",
+    "quantidade": "",
+    "representante": "Cleopatra Dos Santos Ecocoro",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

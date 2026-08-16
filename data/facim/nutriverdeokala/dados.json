@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Nutriverdeokala",
+    "pastaUrl": "https://drive.google.com/drive/folders/1bu3JSQxnl79rdJhXO7JQ7uQ3TCioedEH"
+  },
+  "empresa": {
+    "nome": "Nutriverdeokala",
+    "descricao": "Rolitos de gergelim, chips de banana e pó de moringa. Vendemos na loja e também fazemos encomendas para os supermercados",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "110657127",
+    "fundacao": "",
+    "anosActividade": "2020",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "nutriverdeokala@gmail.com",
+      "telefone": "849046027",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Douglas Norberto Salomão Douglas",
+      "cargo": "Director geral"
+    },
+    "servicos": [
+      {
+        "nome": "Chips de banana",
+        "descricao": "É feito com banana madura"
+      },
+      {
+        "nome": "Sementes de Chia",
+        "descricao": "São sementes que ajudam na digestão e dieta, Omega 3 vegetal"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "2020",
+      "producao": "150 de cada Unidade, totalizando 300 kg",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "1_Chip de Bananas;\n  2_Cha de Hibisco;\n  3_piri-piri Machaca;\n  4_Rolitos de Gergelim \n  5_ Mel puro de Cabo Delgado \n  6_ Pó de Gengibre \n  7_ pó de Moringa \n  8 pó de açafrão da terra",
+    "quantidade": "150 de cada Unidade, totalizando 300 kg",
+    "representante": "Suna Madali/ Julieta Henriques Lucas",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

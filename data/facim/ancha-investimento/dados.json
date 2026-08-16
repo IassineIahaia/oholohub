@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Ancha investimento",
+    "pastaUrl": "https://drive.google.com/drive/folders/1nCGDJx85O_Ld1Uc1K5fFIt_4AMAhANIl"
+  },
+  "empresa": {
+    "nome": "Ancha investimento",
+    "descricao": "Artesanato -venda de capulana, colares africanos,mussiro,argila",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "109731269",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Artesanato & Design",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "abraimo774@gmail.com",
+      "telefone": "879252600",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Ancha Braimo",
+      "cargo": "Gestora"
+    },
+    "servicos": [
+      {
+        "nome": "Capulana de Nampula",
+        "descricao": "Capulanas do Norte"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "20 Peças e diversos colares africanos",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Artesanato & Design",
+    "produtosExpor": "Capulanas de Nampula, Colares africanos, Argila e mussiro",
+    "quantidade": "20 Peças e diversos colares africanos",
+    "representante": "Ancha Braimo",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Não",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

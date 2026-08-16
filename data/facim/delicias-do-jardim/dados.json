@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Excel — sem pasta de conteúdos"
+  },
+  "empresa": {
+    "nome": "Delicias do Jardim",
+    "descricao": "Sorvete mágico e Maquina de Sorvete",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "",
+    "fundacao": "",
+    "anosActividade": "",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "",
+      "telefone": "843109181",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Nelson Gomes",
+      "cargo": ""
+    },
+    "servicos": [
+      {
+        "nome": "Sorvete mágico e Maquina de Sorvete",
+        "descricao": "10 galoes de 5 litros - total 50 litros,"
+      }
+    ],
+    "lideranca": [],
+    "stats": {
+      "exp": "",
+      "producao": "10 galoes de 5 litros - total 50 litros,",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Sorvete mágico e Maquina de Sorvete",
+    "quantidade": "10 galoes de 5 litros - total 50 litros,",
+    "representante": "Nelson Gomes",
+    "participouFena": "",
+    "empresaFormalizada": "",
+    "rotulagemConforme": "",
+    "identidadeVisual": ""
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

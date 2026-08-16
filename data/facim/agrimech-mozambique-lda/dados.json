@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "AgriMech Mozambique Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1fm6lP9607GkQsd0aIbndzZU5Wb6s6L-8"
+  },
+  "empresa": {
+    "nome": "AgriMech Mozambique, Lda",
+    "descricao": "O Latão de Negócios é o baú onde empreendedores e empresas encontram as ferramentas certas para resolver os desafios reais dos seus negócios.\n\nTal como um mestre artesão guarda no seu latão as ferramentas certas para cada desafio, o Latão de Negócios reúne conhecimento, estratégia e soluções práticas para ajudar quem constrói empresas a enfrentar os desafios do mundo dos negócios.",
+    "badges": [],
+    "nuit": "401572902",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "tomaslataoimpeta@gmail.com",
+      "telefone": "866862440",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Tomas Latao",
+      "cargo": "CEO"
+    },
+    "servicos": [
+      {
+        "nome": "Latão de Negócios",
+        "descricao": "Plataforma de desenvolvimento empresarial que reúne ferramentas, metodologias, experiências e soluções práticas para ajudar empreendedores, empresas e organizações a construir, gerir e fazer crescer  os seus negócios de forma sustentável."
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "O Latão de Negócios é o baú onde empreendedores e empresas encontram as ferramentas certas para resolver os desafios reais dos seus negócios.\n\nTal como um mestre artesão guarda no seu latão as ferramentas certas para cada desafio, o Latão de Negócios reúne conhecimento, estratégia e soluções práticas para ajudar quem constrói empresas a enfrentar os desafios do mundo dos negócios.",
+    "quantidade": "",
+    "representante": "Tomas Latao",
+    "participouFena": "",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

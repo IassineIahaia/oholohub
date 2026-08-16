@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Nampula",
+    "pastaUrl": "https://drive.google.com/drive/folders/1FTrr2fkKRAGfaHb7Ngt-a5_Oh2tXymMP"
+  },
+  "empresa": {
+    "nome": "Oruwera, Limitada",
+    "descricao": "A Oruwera Limitada é uma empresa de origem moçambicana vocacionada na multiplicação de sementes certificadas: produção agricola.",
+    "badges": [],
+    "nuit": "400288161",
+    "fundacao": "",
+    "anosActividade": "16",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@oruwera.co.mz",
+      "telefone": "862158555",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Amilcar Benate",
+      "cargo": "Director Executivo"
+    },
+    "servicos": [
+      {
+        "nome": "Agro-processamento.",
+        "descricao": "Vendas de sementes certificadas."
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "16",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "A Oruwera Limitada é uma empresa de origem moçambicana vocacionada na multiplicação de sementes certificadas: produção agricola.",
+    "quantidade": "",
+    "representante": "Amilcar Benate",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

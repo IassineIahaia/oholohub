@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Consultores Multilingue SU Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1sinCBg5uUdGQ6lL9R1_VONFnHyKhGuxS"
+  },
+  "empresa": {
+    "nome": "Consultores Multilingue, SU, Lda",
+    "descricao": "Serviços de Consultoria em Agronegócio, Gestão e Diagnóstico empresarial",
+    "badges": [],
+    "nuit": "401217665",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "papvevelua@gmail.com",
+      "telefone": "876619486",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Paulo Vevelua",
+      "cargo": "Drector Executivo"
+    },
+    "servicos": [
+      {
+        "nome": "Consultoria Empresarial",
+        "descricao": "A Consultores Multilingue, é uma empresa de Sociedade Unipessoal dedicada a consultoria empresarial para diagnóstico e apoio a melhoria contínua para o aumento da qualidade e produtividade."
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "Serviços de Consultoria em Agronegócio, Gestão e Diagnóstico empresarial",
+    "quantidade": "",
+    "representante": "Paulo Vevelua",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

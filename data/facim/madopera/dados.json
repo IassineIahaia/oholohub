@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Madopera",
+    "pastaUrl": "https://drive.google.com/drive/folders/1QSdLX37scqc7HDHS0MTL3gDJDPWLJSAP"
+  },
+  "empresa": {
+    "nome": "Madopera",
+    "descricao": "Processamento de farinha de milho fortificada e comercialização de produtos agricolas",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "400963721",
+    "fundacao": "",
+    "anosActividade": "2014",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "conde08abreu89@gmail.com",
+      "telefone": "875949074",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Conde Abreu Madopera",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Farinha de milho e produtos agricola",
+        "descricao": "Agronegócio"
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "2014",
+      "producao": "1kg, 5kg, 10kg, 25kg, pacotes de 1kg - Na totalidade 1 toneladas para expor",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Farinha de milho fortificada - de gergelim branco, feijão nhemba, feijão oloco, Amendoim, ervilha.",
+    "quantidade": "1kg, 5kg, 10kg, 25kg, pacotes de 1kg - Na totalidade 1 toneladas para expor",
+    "representante": "Abubacar bachir/Abreu Antonio",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

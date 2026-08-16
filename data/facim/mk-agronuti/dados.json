@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Mk Agronuti",
+    "pastaUrl": "https://drive.google.com/drive/folders/1WlNFVerJkl1215asNCWYPlBZ9XS8gkQo"
+  },
+  "empresa": {
+    "nome": "Mk Agronuti",
+    "descricao": "Processamento de grãos, fruta e legumes para venda local",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "113632771",
+    "fundacao": "",
+    "anosActividade": "2023",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "leonormakavaca@gmail.com",
+      "telefone": "874568416-0846568416",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Leonor Marta Mandlhate Makavaka",
+      "cargo": "Proprietaria"
+    },
+    "servicos": [
+      {
+        "nome": "Geleia de tomate e Maçã:",
+        "descricao": "Preparado com polpa de tomate, maçã e açúcar como conservante , mas pode ser sem açúcar"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "2023",
+      "producao": "50 kg de várias farinhas, 20 embalagens de Geleias, 5 litros de óleo de côco, 2 litros de óleo de Rissino, 10 licores e 20 embalagens de fruta desidratada.",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Grãos e farinhas, Óleo de coco e de rissino e Geleias e licores.",
+    "quantidade": "50 kg de várias farinhas, 20 embalagens de Geleias, 5 litros de óleo de côco, 2 litros de óleo de Rissino, 10 licores e 20 embalagens de fruta desidratada.",
+    "representante": "Leonor Marta Mandlhate e Lina Francisco",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 1,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

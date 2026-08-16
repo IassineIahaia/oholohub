@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Al muzawad Su. Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1j77VjupeHf75gVO_8Y2CexhPax6GlWEy"
+  },
+  "empresa": {
+    "nome": "Al muzawad Su. Lda",
+    "descricao": "A empresa e especializada na produção de sabonetes artesanais a base de glicerina.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "402061243",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "alexandranova93@gmail.com",
+      "telefone": "845740068",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Adila Mahomed Said Omar",
+      "cargo": "Logística"
+    },
+    "servicos": [
+      {
+        "nome": "Alexandra Nova",
+        "descricao": "Sabonetes artesanais a base de glicerina com cuidado para peles sensíveis incluindo, as canecas, secas, oleosas e até para bebés."
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "50 unidades",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Sabonetes artesanais",
+    "quantidade": "50 unidades",
+    "representante": "Adila Mahomed Said Omar",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

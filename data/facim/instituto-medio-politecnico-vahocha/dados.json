@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Instituto Medio Politecnico-Vahocha",
+    "pastaUrl": "https://drive.google.com/drive/folders/16k1FqeDgX7eP3JHxPEbNRPnMhaXaRvCf"
+  },
+  "empresa": {
+    "nome": "Instituto Medio Politecnico-Vahocha",
+    "descricao": "Treinamento de Operadores de Máquinas Pesadas",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "401082123",
+    "fundacao": "",
+    "anosActividade": "20",
+    "industria": "Serviços & Consultoria",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "vahocha@hotmail.com",
+      "telefone": "848250315",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Melagres Zacarias Cupula",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Treinamento na Operação de Máquinas Pesadas",
+        "descricao": "Treinamento Profissional\nReciclagem \nCertificação e segurança Industrial"
+      },
+      {
+        "nome": "•\tTreinamento em Segurança na Operação de Máquinas",
+        "descricao": "Treinamento na Operação de Máquinas Pesadas\nAvaliação de professional de competências"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "20",
+      "producao": "NA",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Serviços & Consultoria",
+    "produtosExpor": "Apresentação de projectos, programas e seu imapcto",
+    "quantidade": "NA",
+    "representante": "Samito Pinto da Costa",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Global Monica",
+    "pastaUrl": "https://drive.google.com/drive/folders/1TgCD2vK-TlXU6Pxc39iJeU-TvGLOERqe"
+  },
+  "empresa": {
+    "nome": "Global Monica",
+    "descricao": "A Global Mónica é uma empresa Moçambicana dedicada ao processamento e comercialização de snacks de alta qualidade, com destaque para amendoim crocante, castanha crocante revestido em diversos sabores. E também Piri Piri em base de frutas como Malambe, Laranja e Tamarinho. Produzimos alimentos seguros, saborosos e nutritivos para consumidores, supermercados, lojas e distribuidores, garantindo qualidade, higiene e inovação em cada produto.\n\nCrocantes da Mónica é um petisco (snack) composto por grãos de amendoim ou castanha selecionados, envoltos por uma camada crocante à base de farinha (geralmente de trigo, milho ou mandioca) e assados ou fritos até atingirem a textura perfeita.\n\nO picantes da Mónica é piri piri à base de frutas é um molho artesanal que combina a picância vibrante e marcante da pimenta piri-piri (também conhecida como malagueta ou com a doçura natural e a acidez de frutas tropicais ou cítricas.\nEssa fusão cria um perfil de sabor complexo, equilibrando o calor intenso da pimenta com notas frescas, doces e frutadas.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "402024836",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "monicajoseph1602@gmail.com",
+      "telefone": "847466617",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Mónica Joseph Ernesto",
+      "cargo": "Directora Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Amendoim Crocante",
+        "descricao": "O amendoim crocante é um produto feito a base de trigo, ovo e leite. Como cobertura do amendoim"
+      },
+      {
+        "nome": "Castanha Crocante",
+        "descricao": "Castanha Crocante é um produto feito a base de trigo, ovo e leite. Como cobertura da castanha"
+      },
+      {
+        "nome": "Picante da Mónica",
+        "descricao": "Piri piri é um produto feito a base de piri piri com sabores de malambe, laranja e tamarindo."
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "200 potes de amendoim \n200 potes de castanha \n50 garafa de Piri Piri de malambe e de  Tamarindo",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "1-Amendoim crocantes \n    2_Castanha crocantes\n  3_piri-piri de malambe\n   4_Piri-piri de Tamarindo",
+    "quantidade": "200 potes de amendoim \n200 potes de castanha \n50 garafa de Piri Piri de malambe e de  Tamarindo",
+    "representante": "Armando Santos samissone/Santo Traquino",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg"
+    ],
+    "nFotos": 3,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

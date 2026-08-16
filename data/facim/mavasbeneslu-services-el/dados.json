@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Mavasbeneslu services el",
+    "pastaUrl": "https://drive.google.com/drive/folders/1QH4xDbyCOA9piRzJhvPSrdUPeFeYbGhp"
+  },
+  "empresa": {
+    "nome": "Mavasbeneslu services el",
+    "descricao": "Produtos artesanais e alimentares",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "100985691",
+    "fundacao": "",
+    "anosActividade": "02",
+    "industria": "Agroprocessamento & Artesanato",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "manuelanamuras@gmail.com",
+      "telefone": "879726985",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Maria Manuela Muhelua",
+      "cargo": "Proprietaria"
+    },
+    "servicos": [
+      {
+        "nome": "Produtos artesanais e alimentares",
+        "descricao": "Micangas roupa e shipses de tubérculos castanha  amendoim"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "02",
+      "producao": "10 artigos de roupas, micangas 20kg, Afrodisiacos 5 kg",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento & Artesanato",
+    "produtosExpor": "Roupa crianças, artigos de micangas, produtos afrodisíacos naturais, ships de tubérculos e grãos panados.",
+    "quantidade": "10 artigos de roupas, micangas 20kg, Afrodisiacos 5 kg",
+    "representante": "Maria Manuela Muhelua",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": false,
+    "temCover": true,
+    "temInfo": true
+  }
+}

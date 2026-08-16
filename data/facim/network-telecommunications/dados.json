@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Network Telecommunications",
+    "pastaUrl": "https://drive.google.com/drive/folders/1bfhD-aI4M8-kTsJmvOCTqNgf03D_UYgy"
+  },
+  "empresa": {
+    "nome": "Network Telecommunications",
+    "descricao": "Fornecimento e prestação de serviços na área de informática, eletrônica, sistemas de segurança, telecomunicações, automação.",
+    "badges": [],
+    "nuit": "401689672",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Tecnologia & Comunicação",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "baptista.jorge88@gmail.com",
+      "telefone": "845836770",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Baptista Jorge",
+      "cargo": "Director Geral"
+    },
+    "servicos": [
+      {
+        "nome": "Sistemas de energia renovaveis",
+        "descricao": "Montagem de sistema de energias renovaveis"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Tecnologia & Comunicação",
+    "produtosExpor": "Fornecimento e prestação de serviços na área de informática, eletrônica, sistemas de segurança, telecomunicações, automação.",
+    "quantidade": "",
+    "representante": "Baptista Jorge",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [],
+    "nFotos": 1,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "BELMOZ Lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qHrH4oXyWHAd1Ngo6Yyzqh71uGDhbuTS"
+  },
+  "empresa": {
+    "nome": "BELMOZ Lda",
+    "descricao": "BELMOZ produces natural cosmetics using pure Mozambican botanicals, artisanally processed according EU regulations.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "400.149.119",
+    "fundacao": "",
+    "anosActividade": "20",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "salesbelmoz@gmail.com",
+      "telefone": "+258843897749",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "STEFAN DUPON",
+      "cargo": "SALES & EXPORT MANAGER"
+    },
+    "servicos": [
+      {
+        "nome": "BELMOZ BOUTIQUE LINE",
+        "descricao": ""
+      },
+      {
+        "nome": "BELMOZ KITS",
+        "descricao": "BELMOZ KIT Pele Oleosa, BELMOZ KIT Pele Seca, BELMOZ KIT Borbulhas, BELMOZ KIT Cabelo, BELMOZ KIT Bebe, BELMOZ KIT Aftershave"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "20",
+      "producao": "150 produtos e diferentes expositires",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Cosmeticos naturais com botanicos de Mocambique",
+    "quantidade": "150 produtos e diferentes expositires",
+    "representante": "Márcia Rita Antônio Alves de Carvalho",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": false,
+    "temInfo": true
+  }
+}

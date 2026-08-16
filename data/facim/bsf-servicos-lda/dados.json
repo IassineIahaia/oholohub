@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "BSF serviços lda",
+    "pastaUrl": "https://drive.google.com/drive/folders/1HHXbS6Zc1feYNmNIaYTtAF1_R6MldB7r"
+  },
+  "empresa": {
+    "nome": "BSF serviços lda",
+    "descricao": "Fazer prestação de serviços de ar condicionados gileira congelador..........",
+    "badges": [],
+    "nuit": "165562194",
+    "fundacao": "",
+    "anosActividade": "13",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "benjaminnassir624@gmail.com",
+      "telefone": "852339128",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Benjamin nacir machca",
+      "cargo": "Técnico de HVAC refrigeração"
+    },
+    "servicos": [
+      {
+        "nome": "HVAC refrigeração",
+        "descricao": "É para ajudar com outros pessoal para poderem aprender ser técnico de HVAC refrigeração"
+      },
+      {
+        "nome": "HVAC refrigeração",
+        "descricao": "Eu Benjamin quero muito abrir essa empresa para facilitar outras pessoas que não tem emprego para ele ser técnico de HVAC"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "13",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Fazer prestação de serviços de ar condicionados gileira congelador..........",
+    "quantidade": "",
+    "representante": "Benjamin nacir machca",
+    "participouFena": "Não",
+    "empresaFormalizada": "Não",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

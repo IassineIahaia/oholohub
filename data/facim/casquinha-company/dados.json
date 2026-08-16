@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Casquinha Company",
+    "pastaUrl": "https://drive.google.com/drive/folders/1ul3sJIkJHs0FKRZ5j6dBfXn_Td7sU9X3"
+  },
+  "empresa": {
+    "nome": "Casquinha Company",
+    "descricao": "A **Casquinha Company, Limitada** é uma empresa moçambicana do sector de agroprocessamento alimentar, dedicada à transformação e comercialização de frutas nativas e exóticas em produtos naturais de valor acrescentado, como sumos, geleias, óleos, pó, pastas e frutas desidratadas. O seu modelo de negócio baseia-se na aquisição de fruta junto de comunidades locais de Nampula, utilizando um processo de transformação mínima que preserva as vitaminas e os nutrientes naturais, sem adição de substâncias químicas. A empresa gera receitas através da venda destes produtos a consumidores finais, retalhistas e distribuidores, promovendo simultaneamente a redução do desperdício alimentar, a valorização da produção local e o acesso a alimentos saudáveis de elevada qualidade.",
+    "badges": [],
+    "nuit": "401539281",
+    "fundacao": "",
+    "anosActividade": "3",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "info@casquinhacompany.com",
+      "telefone": "865009756",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Osvaldo Chiporia",
+      "cargo": "Marketing Manager"
+    },
+    "servicos": [
+      {
+        "nome": "Fruttela",
+        "descricao": "Geleias de Banana"
+      },
+      {
+        "nome": "Gloh",
+        "descricao": "Sumo orgânico de laranja"
+      },
+      {
+        "nome": "Máximo",
+        "descricao": "Castanhas de caju temperadas"
+      }
+    ],
+    "lideranca": [
+      "Mulher",
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "3",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "A **Casquinha Company, Limitada** é uma empresa moçambicana do sector de agroprocessamento alimentar, dedicada à transformação e comercialização de frutas nativas e exóticas em produtos naturais de valor acrescentado, como sumos, geleias, óleos, pó, pastas e frutas desidratadas. O seu modelo de negócio baseia-se na aquisição de fruta junto de comunidades locais de Nampula, utilizando um processo de transformação mínima que preserva as vitaminas e os nutrientes naturais, sem adição de substâncias químicas. A empresa gera receitas através da venda destes produtos a consumidores finais, retalhistas e distribuidores, promovendo simultaneamente a redução do desperdício alimentar, a valorização da produção local e o acesso a alimentos saudáveis de elevada qualidade.",
+    "quantidade": "",
+    "representante": "Osvaldo Chiporia",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg"
+    ],
+    "nFotos": 4,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

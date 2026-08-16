@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "CONSERTERA LDA",
+    "pastaUrl": "https://drive.google.com/drive/folders/1kZ3UMupIn_f8WbJzhHhNxba-QuzEpiVS"
+  },
+  "empresa": {
+    "nome": "CONSERTERA LDA",
+    "descricao": "venda de mel, castanha de Caju, produzidos nas florestas do distrito de Mocuba Zambézia em forma de fomento em coordenação com as comunidades locais.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "401606343",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Agroprocessamento",
+    "provincia": "Distrito de Mocuba",
+    "contactos": {
+      "email": "conserteramoz@gmail.com",
+      "telefone": "861676339",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "João Abílio Pais Amade",
+      "cargo": "CEO"
+    },
+    "servicos": [
+      {
+        "nome": "Consultoria e Serviços de Terra e Ambiente",
+        "descricao": "serviços de Topografia, Ambiente,  Agro Florestais, Apicultura, Comércio e Fomento agrario"
+      }
+    ],
+    "lideranca": [
+      "Jovem"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "1- 200 litros de mel, 50 kg de Castanha processada e 5kg de Feijões",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "3x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Mel,  castanha processada e diversos Feijões",
+    "quantidade": "1- 200 litros de mel, 50 kg de Castanha processada e 5kg de Feijões",
+    "representante": "João Abílio Pais Amade",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Ekhalacos Catering e Serviços",
+    "pastaUrl": "https://drive.google.com/drive/folders/1nOOVzBAs1V2E_DePpHb2AbwT3pO2JWIf"
+  },
+  "empresa": {
+    "nome": "Ekhalaco's Catering e Serviços",
+    "descricao": "Serviços de Catering; venda de comida",
+    "badges": [],
+    "nuit": "100458659",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Turismo, Hotelaria & Catering",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "ekhalacos.cat.servicos@gmail.com",
+      "telefone": "823188800",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Aida Maria Vital",
+      "cargo": "Administradora"
+    },
+    "servicos": [
+      {
+        "nome": "Serviços de Catering",
+        "descricao": "Venda de comida típica Moçambicana"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Turismo, Hotelaria & Catering",
+    "produtosExpor": "Serviços de Catering; venda de comida",
+    "quantidade": "",
+    "representante": "Aida Maria Vital",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}

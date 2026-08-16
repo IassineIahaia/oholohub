@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.0",
+    "origem": "Green Agro Service",
+    "pastaUrl": "https://drive.google.com/drive/folders/1B7h8cWWP_wHMtlFnWZInXNf1k9TMhGl7"
+  },
+  "empresa": {
+    "nome": "Green Agro Service",
+    "descricao": "Green Agro Service (GAS) desenvolve atividades integradas de agronegócio com foco na produção, formação e inclusão económica de jovens rurais.\n\nAs principais atividades da empresa incluem:\n\nProdução avícola\n\nCriação de frangos de corte.\n\nProdução de galinhas Sasso para carne e ovos.\n\nProdução e venda de pintos de um dia, pintos recriados, matrizes, reprodutores e ovos férteis.\n\n\nIncubação\n\nIncubação artificial de ovos férteis.\n\nFornecimento de pintos para produtores e projetos de desenvolvimento.\n\n\nProdução agrícola e hortícola\n\nProdução de hortícolas (tomate, bok choy, coentro, salsa, pimento, entre outras).\n\nProdução de banana-da-terra (plantain), papaia e outras culturas alimentares.\n\n\nProdução de rações e insumos\n\nFormulação e fabrico de rações para aves.\n\nComercialização de ingredientes e suplementos para alimentação animal.\n\n\nFormação profissional\n\nCapacitação em avicultura, horticultura, empreendedorismo, gestão de negócios e educação financeira.\n\nDesenvolvimento de materiais didáticos e acompanhamento técnico dos formandos.\n\n\nAssistência técnica e extensão rural\n\nAcompanhamento de produtores.\n\nApoio na implementação e gestão de explorações agrícolas e avícolas.\n\nConsultoria em agronegócio.\n\n\nInclusão económica de jovens e mulheres\n\nImplementação de modelos de produção com jovens empreendedores.\n\nCriação de aviários-piloto e promoção de cadeias de valor agrícolas.\n\nMentoria e apoio ao acesso ao mercado.\n\n\nComercialização\n\nVenda de aves, ovos férteis, pintos, hortícolas, sementes e outros produtos agropecuários.\n\nLigação entre pequenos produtores e compradores.\n\n\nInovação agrícola\n\nTeste e introdução de novas tecnologias de produção.\n\nDesenvolvimento de soluções sustentáveis para pequenos produtores, incluindo sistemas de produção integrada. Estas atividades estão alinhadas com o objetivo da empresa de promover um agronegócio moderno e inclusivo.",
+    "badges": [],
+    "nuit": "401392955",
+    "fundacao": "",
+    "anosActividade": "4",
+    "industria": "Agroprocessamento",
+    "provincia": "Nampula",
+    "contactos": {
+      "email": "gas-sede@outlook.com",
+      "telefone": "848008139",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Gemila De Sousa",
+      "cargo": "Proprietaria /administradora"
+    },
+    "servicos": [],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "4",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": false,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Green Agro Service (GAS) desenvolve atividades integradas de agronegócio com foco na produção, formação e inclusão económica de jovens rurais.\n\nAs principais atividades da empresa incluem:\n\nProdução avícola\n\nCriação de frangos de corte.\n\nProdução de galinhas Sasso para carne e ovos.\n\nProdução e venda de pintos de um dia, pintos recriados, matrizes, reprodutores e ovos férteis.\n\n\nIncubação\n\nIncubação artificial de ovos férteis.\n\nFornecimento de pintos para produtores e projetos de desenvolvimento.\n\n\nProdução agrícola e hortícola\n\nProdução de hortícolas (tomate, bok choy, coentro, salsa, pimento, entre outras).\n\nProdução de banana-da-terra (plantain), papaia e outras culturas alimentares.\n\n\nProdução de rações e insumos\n\nFormulação e fabrico de rações para aves.\n\nComercialização de ingredientes e suplementos para alimentação animal.\n\n\nFormação profissional\n\nCapacitação em avicultura, horticultura, empreendedorismo, gestão de negócios e educação financeira.\n\nDesenvolvimento de materiais didáticos e acompanhamento técnico dos formandos.\n\n\nAssistência técnica e extensão rural\n\nAcompanhamento de produtores.\n\nApoio na implementação e gestão de explorações agrícolas e avícolas.\n\nConsultoria em agronegócio.\n\n\nInclusão económica de jovens e mulheres\n\nImplementação de modelos de produção com jovens empreendedores.\n\nCriação de aviários-piloto e promoção de cadeias de valor agrícolas.\n\nMentoria e apoio ao acesso ao mercado.\n\n\nComercialização\n\nVenda de aves, ovos férteis, pintos, hortícolas, sementes e outros produtos agropecuários.\n\nLigação entre pequenos produtores e compradores.\n\n\nInovação agrícola\n\nTeste e introdução de novas tecnologias de produção.\n\nDesenvolvimento de soluções sustentáveis para pequenos produtores, incluindo sistemas de produção integrada. Estas atividades estão alinhadas com o objetivo da empresa de promover um agronegócio moderno e inclusivo.",
+    "quantidade": "",
+    "representante": "Gemila De Sousa",
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Não aplicável",
+    "identidadeVisual": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "",
+    "cover": "",
+    "fotos": [],
+    "nFotos": 0,
+    "temLogo": false,
+    "temCover": false,
+    "temInfo": true
+  }
+}
