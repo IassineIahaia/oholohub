@@ -1169,6 +1169,10 @@
   font-size: clamp(24px, 4vw, 38px);
   line-height: 1.14;
   font-weight: 700;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: white;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   letter-spacing: -0.025em;
   color: var(--color-on-surface);
   margin-bottom: var(--space-xs);
@@ -1339,6 +1343,7 @@
 }
 
 .facim-ficha {
+ 
   background: var(--color-surface-container-lowest);
   border: var(--border-card);
   border-radius: var(--radius-lg);
@@ -1346,6 +1351,9 @@
   box-shadow: var(--shadow-level-1);
 }
 
+.facim-ficha-contactos{
+  display: none;
+}
 .facim-ficha-titulo {
   font-size: 13px;
   font-weight: 700;
@@ -1603,4 +1611,415 @@
   .facim-ponto-vivo {
     animation: none;
   }
+}
+
+/* ============================================================
+   12. REVISÃO — refinamentos de movimento e ritmo visual
+   ============================================================ */
+
+/* ── Acessibilidade: rótulos só para leitores de ecrã ── */
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Hero: o header agora flutua por cima, por isso há mais folga ── */
+.facim-hero {
+  padding-top: calc(var(--nav-altura) + var(--space-xxl));
+  min-height: min(92vh, 860px);
+  display: flex;
+  align-items: center;
+}
+
+.facim-hero > .container {
+  width: 100%;
+}
+
+/* Brilho quente que se desloca ligeiramente ao rolar */
+.facim-hero-brilho {
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  right: -180px;
+  top: -140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 89, 12, 0.34) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* substitui o ::after estático da versão anterior */
+.facim-hero::after {
+  content: none;
+}
+
+.facim-hero-titulo em {
+  position: relative;
+}
+
+.facim-hero-rodape {
+  margin-top: var(--space-xl);
+}
+
+/* ── Risco que se desenha por baixo dos títulos de secção ── */
+.facim-risco {
+  display: block;
+  width: 68px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-container));
+  margin: var(--space-md) 0;
+}
+
+/* ── Números: separador em vez de caixa fechada ── */
+.facim-numeros-grelha {
+  align-items: end;
+}
+
+.facim-numero {
+  border-left-width: 2px;
+  transition: border-color 0.4s var(--ease-suave);
+}
+
+.facim-numero:hover {
+  border-left-color: var(--facim-navy-2);
+}
+
+/* ── Barra de filtros: foco visível e mais suave ── */
+.facim-barra-filtros .input-field:focus-visible,
+.facim-barra-filtros select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.facim-contador-nota {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+}
+
+/* ── Cartão: seta que aparece no hover ── */
+.facim-card-corpo {
+  position: relative;
+}
+
+.facim-card-seta {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
+  color: #fff;
+  opacity: 0;
+  transform: translate3d(-6px, 6px, 0) scale(0.8);
+  transition:
+    opacity 0.34s var(--ease-expo),
+    transform 0.34s var(--ease-expo);
+  pointer-events: none;
+}
+
+.facim-card-seta .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.facim-card:hover .facim-card-seta {
+  opacity: 1;
+  transform: none;
+}
+
+.facim-card:hover .facim-card-rodape {
+  border-top-color: var(--color-primary-container);
+}
+
+.facim-card-rodape {
+  transition: border-color 0.34s var(--ease-suave);
+  padding-right: 38px;
+}
+
+.facim-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ── Ver mais ── */
+.facim-ver-mais {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-xl);
+}
+
+.facim-ver-mais-btn {
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-md) var(--space-xxl);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+
+.facim-ver-mais-resto {
+  font-family: var(--facim-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-outline);
+}
+
+.facim-fim-lista {
+  font-family: var(--facim-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+/* ── Planta: brilho que segue o cursor sobre o bloco ── */
+.facim-stand {
+  position: relative;
+  overflow: hidden;
+}
+
+.facim-stand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232, 89, 12, 0.26), transparent 62%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-suave);
+}
+
+.facim-stand:hover::before {
+  opacity: 1;
+}
+
+.facim-stand > * {
+  position: relative;
+}
+
+/* ── Cronograma: a linha desenha-se ao entrar ── */
+.facim-cronograma {
+  border-left-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-outline-variant),
+    var(--color-outline-variant)
+  );
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 2px 0%;
+  transition: background-size 1.4s var(--ease-expo) 0.15s;
+}
+
+.facim-cronograma.is-in {
+  background-size: 2px 100%;
+}
+
+/* ── Recolha de conteúdos: cabeçalho com resumo + painel recolhível ── */
+.facim-conteudos-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.facim-conteudos-topo .facim-eyebrow {
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.facim-conteudos-topo .facim-h1 {
+  margin-bottom: var(--space-md);
+}
+
+.facim-conteudos-sumario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.facim-conteudos-sumario span {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+}
+
+.facim-conteudos-sumario b {
+  font-family: var(--facim-mono);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--facim-navy-2);
+  margin-right: 3px;
+}
+
+.facim-conteudos-sumario .em-falta b {
+  color: var(--color-primary);
+}
+
+.facim-toggle {
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.facim-toggle-seta {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.42s var(--ease-expo);
+}
+
+.facim-toggle[aria-expanded="true"] .facim-toggle-seta {
+  transform: rotate(180deg);
+}
+
+.facim-conteudos-painel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.62s var(--ease-expo),
+    opacity 0.42s var(--ease-suave);
+}
+
+.facim-conteudos-painel > * {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.facim-conteudos-painel.is-aberto {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.facim-conteudos-painel.is-aberto > * {
+  padding-top: var(--space-md);
+}
+
+/* Tabela longa: rola por dentro, com cabeçalho fixo */
+.facim-tabela-scroll {
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.facim-tabela thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-surface-container-lowest);
+}
+
+.facim-tabela tbody tr {
+  transition: background-color 0.2s var(--ease-suave);
+}
+
+/* Barras de progresso animam a partir do zero */
+.facim-progresso-barra span {
+  transition: width 1.1s var(--ease-expo);
+}
+
+/* ── CTA e painéis: elevação subtil no hover ── */
+.facim-painel {
+  transition:
+    transform 0.42s var(--ease-expo),
+    box-shadow 0.42s var(--ease-expo);
+}
+
+.facim-painel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-level-2);
+}
+
+/* ── Galeria e serviços da página de empresa ── */
+.facim-servico {
+  transition:
+    transform 0.42s var(--ease-expo),
+    box-shadow 0.42s var(--ease-expo),
+    border-color 0.42s var(--ease-suave);
+}
+
+.facim-servico:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-level-2);
+  border-color: var(--color-primary-container);
+}
+
+.facim-galeria-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Perfil: a capa desloca-se ligeiramente ── */
+.facim-perfil-capa img {
+  transform: scale(1.06);
+}
+
+/* ── Faixa da home ── */
+.facim-faixa {
+  transition: transform 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo);
+}
+
+.facim-faixa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(7, 30, 61, 0.22);
+}
+
+/* ── Ajustes de telemóvel ── */
+@media (max-width: 720px) {
+  .facim-hero {
+    padding-top: calc(var(--nav-altura) + var(--space-xl));
+    min-height: auto;
+  }
+
+  .facim-conteudos-topo {
+    align-items: flex-start;
+  }
+
+  .facim-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .facim-tabela-scroll {
+    max-height: 60vh;
+  }
+
+  .facim-ver-mais-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .facim-cronograma {
+    background-size: 2px 100%;
+    transition: none;
+  }
+
+  .facim-painel:hover,
+  .facim-servico:hover,
+  .facim-faixa:hover {
+    transform: none;
+  }
+
+  .facim-conteudos-painel {
+    transition: none;
+  }
+
+  .facim-card-seta {
+    transition: none;
+  }
+}
+
+/* Corpo de cada marco do cronograma (agrupa título e resultado) */
+.facim-marco-corpo {
+  display: block;
 }

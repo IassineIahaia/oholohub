@@ -20,7 +20,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-</head>
+  <link rel="stylesheet" href="css/motion.css">
+    <noscript>
+      <style>
+        /* Sem JavaScript, nada fica escondido à espera de uma animação */
+        [data-anim] { opacity: 1 !important; transform: none !important;
+                      filter: none !important; clip-path: none !important; }
+        .linha-mascara > span { transform: none !important; }
+        .facim-conteudos-painel { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      </style>
+    </noscript>
+  </head>
 <body>
 
   <!-- ══════════════════════════════════════════════════════
@@ -51,6 +61,7 @@
         </button>
       </div>
     </div>
+    <span class="navbar-progresso"></span>
   </header>
 
   <!-- ══════════════════════════════════════════════════════
@@ -59,8 +70,8 @@
   <main>
     <section style="padding: var(--space-xl) 0 var(--space-lg);">
       <div class="container">
-        <h1 class="text-headline-lg" style="margin-bottom: var(--space-sm);">Explore o Ecossistema Empresarial de Moçambique</h1>
-        <p class="text-body-lg text-muted">Conecte-se com parceiros verificados, líderes em logística e empresas industriais em todas as províncias.</p>
+        <h1 class="text-headline-lg" data-anim="up" style="margin-bottom: var(--space-sm);">Explore o Ecossistema Empresarial de Moçambique</h1>
+        <p class="text-body-lg text-muted" data-anim="up" data-anim-delay="70">Conecte-se com parceiros verificados, líderes em logística e empresas industriais em todas as províncias.</p>
       </div>
     </section>
 
@@ -71,7 +82,7 @@
       <div class="container explore-layout">
 
         <!-- ── Sidebar de filtros ── -->
-        <aside>
+        <aside data-anim="left">
           <button type="button" class="explore-filters-toggle card text-label-md">
             Filtros
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
@@ -140,7 +151,7 @@
 
         <!-- ── Resultados ── -->
         <div>
-          <div id="empresas-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
+          <div id="empresas-grid" data-anim="fade" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
             <p class="text-body-md text-muted">A carregar empresas...</p>
           </div>
 
@@ -256,12 +267,13 @@
         </div>
 
         <div class="footer-bottom">
-          &copy; 2026 OHOLO Hub. Avança o Teu Negócio.
+          &copy; 2026 Powered by Market Access. Todos os direitos reservados.
         </div>
       </div>
     </footer>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/motion.js"></script>
   <script>
     inicializarExplore();
   </script>

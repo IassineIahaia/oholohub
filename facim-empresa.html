@@ -18,7 +18,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/motion.css" />
     <link rel="stylesheet" href="css/facim.css" />
+      <noscript>
+      <style>
+        /* Sem JavaScript, nada fica escondido à espera de uma animação */
+        [data-anim] { opacity: 1 !important; transform: none !important;
+                      filter: none !important; clip-path: none !important; }
+        .linha-mascara > span { transform: none !important; }
+        .facim-conteudos-painel { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      </style>
+    </noscript>
   </head>
   <body>
     <header class="navbar">
@@ -41,6 +51,7 @@
           </button>
         </div>
       </div>
+      <span class="navbar-progresso"></span>
     </header>
 
     <main id="facim-empresa-root">
@@ -86,13 +97,14 @@
           </div>
         </div>
 
-        <div class="footer-bottom">&copy; 2026 OHOLO Hub. Avança o Teu Negócio.</div>
+        <div class="footer-bottom">&copy; 2026 Powered by Market Access. Todos os direitos reservados.</div>
       </div>
     </footer>
 
     <script src="js/data.js"></script>
     <script src="js/facim-data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/motion.js"></script>
     <script src="js/facim.js"></script>
     <script>
       renderizarPerfilFacim();

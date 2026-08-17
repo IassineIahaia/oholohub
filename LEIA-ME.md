@@ -21,6 +21,8 @@ cp -r facim-2026/* /caminho/para/b2b-mozambique/
 | `css/facim.css` | Estilos da vertente. **Todas as classes começam por `.facim-`** — não colide com nada do `style.css` |
 | `js/facim-data.js` | Lista de empresas, dados do evento, cronograma e plano de viagem |
 | `js/facim.js` | Renderização: vitrine, filtros, planta, painel de conteúdos, perfil, lightbox |
+| `css/motion.css` | Sistema de movimento: revelações, header reactivo, rail de secções |
+| `js/motion.js` | Motor de animação (~7 KB, sem bibliotecas externas) |
 | `data/facim/` | 48 empresas convertidas, com logótipos e fotografias |
 
 ### Ficheiros alterados
@@ -28,9 +30,10 @@ cp -r facim-2026/* /caminho/para/b2b-mozambique/
 | Ficheiro | O que mudou |
 |---|---|
 | `js/main.js` | Popup novo; modal de agendamento passa a servir as duas feiras |
-| `index.html` | Link FACIM na navbar, faixa da FACIM, `css/facim.css` ligado |
-| `explore.html` | Link FACIM na navbar |
-| `empresa.html` | Link FACIM na navbar |
+| `index.html` | Link FACIM na navbar, faixa da FACIM, revelações, `motion` ligado |
+| `explore.html` | Link FACIM na navbar, revelações, `motion` ligado |
+| `empresa.html` | Link FACIM na navbar, `motion` ligado |
+| `servicos.html` | `motion` ligado |
 
 > Se já mexeu no `main.js` desde que me enviou o ZIP, veja a secção
 > «Alterações no main.js» no fim deste ficheiro antes de substituir.
@@ -154,3 +157,88 @@ Se preferir aplicar à mão em vez de substituir o ficheiro:
    datas ficam limitadas a 31/08–06/09 e o email que chega à equipa identifica a
    feira no assunto. As chamadas existentes sem segundo argumento continuam a
    funcionar como antes (FENA).
+
+
+---
+
+## Sistema de movimento
+
+`css/motion.css` + `js/motion.js`. Faz o que se costuma pedir ao GSAP com
+ScrollTrigger — revelações ao entrar no ecrã, cascatas, parallax, contadores,
+header reactivo e secção activa — mas sem biblioteca externa: cerca de 7 KB, um
+único `requestAnimationFrame`, tudo em `transform` e `opacity` (compositado pela
+GPU).
+
+Optei por não carregar o GSAP de um CDN por três razões: são mais ~70 KB antes de
+a página pintar, num público que muitas vezes navega em dados móveis; um CDN em
+baixo deixaria a página com secções invisíveis; e o site não tem build nem
+gestor de pacotes. Se preferir GSAP mesmo assim, diga — a troca é directa, os
+atributos `data-anim` mapeiam quase um-para-um para `ScrollTrigger.batch`.
+
+### Como animar qualquer elemento
+
+```html
+<div data-anim="up">…</div>                    <!-- sobe e aparece -->
+<div data-anim="rise" data-anim-delay="120">…</div>
+<div data-anim-stagger="70">                   <!-- filhos em cascata -->
+  <article data-anim="rise">…</article>
+  <article data-anim="rise">…</article>
+</div>
+<h1 data-anim-linhas="110">Linha um<br>Linha dois</h1>
+<span data-count="19">0</span>                 <!-- conta até 19 -->
+<span data-parallax="0.06">…</span>            <!-- desloca-se ao rolar -->
+```
+
+Variantes de `data-anim`: `up`, `down`, `left`, `right`, `scale`, `rise`,
+`blur`, `clip`, `line`, `fade`. A curva é `cubic-bezier(0.16, 1, 0.3, 1)` —
+expo.out, a que dá a travagem suave.
+
+Para conteúdo injectado por JavaScript depois do arranque:
+
+```js
+window.Movimento.observar(container);  // regista as animações dos novos nós
+window.Movimento.remedir();            // recalcula alturas das secções
+```
+
+### Rede de segurança
+
+Cada página tem um bloco `<noscript>` que anula os estados iniciais. Se o
+JavaScript falhar, nada fica invisível à espera de uma animação.
+
+Quem tem `prefers-reduced-motion: reduce` activo no sistema recebe a página
+inteira sem uma única animação — não é uma versão degradada, é o mesmo conteúdo
+sem movimento.
+
+---
+
+## Como a página FACIM deixou de parecer longa
+
+O conteúdo é o mesmo; o que mudou foi o percurso.
+
+1. **Rail de secções.** Barra vertical à direita (desktop) com a secção actual
+   marcada. No telemóvel, barra flutuante no fundo do ecrã. Aparece depois do
+   hero e desaparece perto do fim.
+2. **Fio de progresso** no header, para se saber quanto falta.
+3. **Vitrine por lotes.** Passou de páginas numeradas para 9 cartões e um botão
+   «Ver mais 9 empresas — 39 por mostrar». Números numerados obrigam a decidir;
+   um botão só pede um clique. Os filtros repõem o lote inicial.
+4. **Painel de conteúdos recolhido.** É ferramenta interna, não vitrine. Ficou
+   um resumo de uma linha sempre visível (13/19 com fotografias, 0/19 com
+   vídeo…) e o detalhe abre-se com um clique. A tabela rola por dentro, com o
+   cabeçalho fixo, em vez de esticar a página.
+5. **Ordem revista.** O painel de conteúdos passou para depois do plano da
+   missão — o visitante externo chega ao agendamento sem passar por uma tabela
+   de gestão interna.
+6. **Revelações ao descer.** O conteúdo chega à medida que se rola, em vez de
+   estar todo parado à espera.
+
+## Header
+
+- Sobre o hero da FACIM fica transparente com texto branco; ao sair do hero
+  torna-se vidro fosco e encolhe.
+- Recolhe ao descer e volta ao subir — devolve altura de ecrã sem tirar o acesso
+  à navegação.
+- Sublinhado que se desenha nos links, e fio de progresso da página em baixo.
+- No telemóvel, os itens do menu entram em cascata.
+- Nas páginas com hero escuro o header é `position: fixed` (classe
+  `tem-hero-escuro` no `<body>`); nas restantes continua `sticky`, como estava.

@@ -5,8 +5,8 @@
    ============================================================ */
 
 let _facimCache = null;
-let _facimPagina = 1;
-const FACIM_POR_PAGINA = 12;
+let _facimVisiveis = 9;
+const FACIM_LOTE = 9;
 
 /* ------------------------------------------------------------
    HELPERS
@@ -139,7 +139,11 @@ function renderizarNumerosFacim(empresas) {
 
   const def = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (!el) return;
+    el.setAttribute("data-count", valor);
+    el.dataset.contado = "";
+    if (window.Movimento) window.Movimento.contar(el);
+    else el.textContent = valor;
   };
 
   def("facim-num-apuradas", apuradas.length);
@@ -151,7 +155,7 @@ function renderizarNumerosFacim(empresas) {
 /* ------------------------------------------------------------
    VITRINE DIGITAL — CARTÕES
    ------------------------------------------------------------ */
-function cartaoVitrineHTML(empresa) {
+function cartaoVitrineHTML(empresa, indiceAnim = -1) {
   const img = imagemCartaoFacim(empresa);
   const f = empresa.facim || {};
   const v = empresa.vitrine || {};
@@ -163,8 +167,13 @@ function cartaoVitrineHTML(empresa) {
            class="facim-card-img ${img.tipo === "logo" ? "is-logo" : ""}">`
     : `<div class="facim-card-vazio"><span>${iniciaisEmpresa(empresa.nome)}</span></div>`;
 
+  const anim =
+    indiceAnim >= 0
+      ? ` data-anim="rise" style="--i:${indiceAnim}; --anim-delay:${indiceAnim * 60}ms"`
+      : "";
+
   return `
-    <a href="facim-empresa.html?id=${empresa.slug}" class="facim-card">
+    <a href="facim-empresa.html?id=${empresa.slug}" class="facim-card"${anim}>
       <div class="facim-card-media">
         ${media}
         ${f.apurada ? '<span class="facim-selo">Apurada</span>' : ""}
@@ -181,6 +190,7 @@ function cartaoVitrineHTML(empresa) {
             <span class="${nVideos ? "" : "em-falta"}">${nVideos} vídeo${nVideos === 1 ? "" : "s"}</span>
           </span>
         </div>
+        <span class="facim-card-seta">${icone("arrow")}</span>
       </div>
     </a>`;
 }
@@ -218,9 +228,9 @@ function empresasFiltradasFacim() {
   });
 }
 
-function aplicarFiltrosFacim(resetarPagina = true) {
+function aplicarFiltrosFacim(resetar = true, animar = false) {
   if (!_facimCache) return;
-  if (resetarPagina) _facimPagina = 1;
+  if (resetar) _facimVisiveis = FACIM_LOTE;
 
   const grid = document.getElementById("facim-grid");
   const vazio = document.getElementById("facim-vazio");
@@ -228,60 +238,61 @@ function aplicarFiltrosFacim(resetarPagina = true) {
   if (!grid) return;
 
   const filtradas = empresasFiltradasFacim();
-  const totalPaginas = Math.max(1, Math.ceil(filtradas.length / FACIM_POR_PAGINA));
-  if (_facimPagina > totalPaginas) _facimPagina = totalPaginas;
+  const total = filtradas.length;
+  if (_facimVisiveis > total) _facimVisiveis = Math.max(FACIM_LOTE, total);
 
   if (contador) {
     contador.textContent =
-      filtradas.length === 0
+      total === 0
         ? "Nenhuma empresa"
-        : `${filtradas.length} empresa${filtradas.length === 1 ? "" : "s"}`;
+        : `A mostrar ${Math.min(_facimVisiveis, total)} de ${total} empresa${total === 1 ? "" : "s"}`;
   }
 
-  if (filtradas.length === 0) {
+  if (total === 0) {
     grid.innerHTML = "";
     if (vazio) vazio.style.display = "block";
+    renderizarVerMaisFacim(0, 0);
+    return;
+  }
+  if (vazio) vazio.style.display = "none";
+
+  const mostrar = filtradas.slice(0, _facimVisiveis);
+  grid.innerHTML = mostrar
+    .map((e, i) => cartaoVitrineHTML(e, animar ? i % FACIM_LOTE : -1))
+    .join("");
+
+  if (animar && window.Movimento) {
+    window.Movimento.observar(grid);
   } else {
-    const inicio = (_facimPagina - 1) * FACIM_POR_PAGINA;
-    grid.innerHTML = filtradas
-      .slice(inicio, inicio + FACIM_POR_PAGINA)
-      .map(cartaoVitrineHTML)
-      .join("");
-    if (vazio) vazio.style.display = "none";
+    grid.querySelectorAll("[data-anim]").forEach((el) => el.classList.add("is-in"));
   }
 
-  renderizarPaginacaoFacim(filtradas.length, totalPaginas);
+  renderizarVerMaisFacim(mostrar.length, total);
 }
 
-function renderizarPaginacaoFacim(total, totalPaginas) {
-  const container = document.getElementById("facim-paginacao");
+/** Botão "ver mais" — mais discreto do que uma barra de páginas numeradas. */
+function renderizarVerMaisFacim(mostradas, total) {
+  const container = document.getElementById("facim-ver-mais");
   if (!container) return;
-  if (total === 0 || totalPaginas <= 1) {
-    container.innerHTML = "";
+
+  const restantes = total - mostradas;
+  if (restantes <= 0) {
+    container.innerHTML =
+      total > FACIM_LOTE
+        ? '<span class="facim-fim-lista">Chegou ao fim da vitrine</span>'
+        : "";
     return;
   }
 
-  const botoes = [
-    `<button type="button" class="btn btn-secondary" data-facim-pagina="${_facimPagina - 1}" ${_facimPagina === 1 ? "disabled" : ""}>‹ Anterior</button>`,
-  ];
-  for (let p = 1; p <= totalPaginas; p++) {
-    botoes.push(
-      `<button type="button" class="btn ${p === _facimPagina ? "btn-primary" : "btn-secondary"}" data-facim-pagina="${p}" style="min-width:42px;">${p}</button>`,
-    );
-  }
-  botoes.push(
-    `<button type="button" class="btn btn-secondary" data-facim-pagina="${_facimPagina + 1}" ${_facimPagina === totalPaginas ? "disabled" : ""}>Seguinte ›</button>`,
-  );
+  container.innerHTML = `
+    <button type="button" class="btn btn-secondary facim-ver-mais-btn" id="facim-btn-mais">
+      Ver mais ${Math.min(restantes, FACIM_LOTE)} empresa${Math.min(restantes, FACIM_LOTE) === 1 ? "" : "s"}
+      <span class="facim-ver-mais-resto">${restantes} por mostrar</span>
+    </button>`;
 
-  container.innerHTML = botoes.join("");
-  container.querySelectorAll("[data-facim-pagina]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const p = parseInt(btn.getAttribute("data-facim-pagina"), 10);
-      if (Number.isNaN(p) || p < 1 || p > totalPaginas) return;
-      _facimPagina = p;
-      aplicarFiltrosFacim(false);
-      document.getElementById("vitrine")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  document.getElementById("facim-btn-mais").addEventListener("click", () => {
+    _facimVisiveis += FACIM_LOTE;
+    aplicarFiltrosFacim(false, true);
   });
 }
 
@@ -331,17 +342,20 @@ function renderizarPlantaFacim(empresas) {
   });
 
   container.innerHTML = ordenadas
-    .map((e) => {
+    .map((e, i) => {
       const stand = _txt(e.facim.stand) || "—";
       const grande = stand.startsWith("3x2");
       return `
-      <a href="facim-empresa.html?id=${e.slug}" class="facim-stand ${grande ? "is-grande" : ""}">
+      <a href="facim-empresa.html?id=${e.slug}" class="facim-stand ${grande ? "is-grande" : ""}"
+         data-anim="scale" style="--anim-delay:${Math.min(i, 14) * 45}ms">
         <span class="facim-stand-medida">${_escapar(stand)}</span>
         <span class="facim-stand-nome">${_escapar(e.nome)}</span>
         <span class="facim-stand-origem">${_escapar(e.provincia)}</span>
       </a>`;
     })
     .join("");
+
+  if (window.Movimento) window.Movimento.observar(container);
 
   const legenda = document.getElementById("facim-planta-legenda");
   if (legenda) {
@@ -409,6 +423,18 @@ function renderizarConteudosFacim(empresas) {
       barra("Vídeos", somaVideos) +
       barra("Descrição do produto", somaInfo) +
       barra("Logótipo", somaLogo);
+  }
+
+  // Resumo de uma linha, para quem não abre o painel
+  const sumario = document.getElementById("facim-conteudos-sumario");
+  if (sumario) {
+    const completas = base.filter((e) => estadoConteudos(e).completos === 4).length;
+    const emFalta = base.length - completas;
+    sumario.innerHTML = `
+      <span><b>${somaFotos}</b>/${base.length} com fotografias</span>
+      <span><b>${somaVideos}</b>/${base.length} com vídeo</span>
+      <span><b>${somaLogo}</b>/${base.length} com logótipo</span>
+      <span class="${emFalta ? "em-falta" : ""}"><b>${emFalta}</b> ainda por completar</span>`;
   }
 
   if (lista.length === 0) {
@@ -548,12 +574,12 @@ async function renderizarPerfilFacim() {
         ${logo ? `<div class="facim-perfil-logo"><img src="${logo}" alt="Logótipo ${_escapar(e.nome)}"></div>`
                : `<div class="facim-perfil-logo is-vazio"><span>${iniciaisEmpresa(e.nome)}</span></div>`}
         <div class="facim-perfil-identidade">
-          <div class="facim-perfil-selos">
+          <div class="facim-perfil-selos" data-anim="up">
             <span class="facim-sector ${classeSectorFacim(e.industria)}">${_escapar(e.industria)}</span>
             ${f.apurada ? '<span class="facim-selo is-estatico">Apurada para expor</span>' : '<span class="facim-selo is-candidata">Candidatura submetida</span>'}
           </div>
-          <h1 class="facim-perfil-nome">${_escapar(e.nome)}</h1>
-          <p class="facim-perfil-local">${icone("pin")} ${_escapar(e.provincia) || "Moçambique"}${f.stand ? ` &nbsp;·&nbsp; Stand ${_escapar(f.stand)}` : ""}</p>
+          <h1 class="facim-perfil-nome" data-anim="up" data-anim-delay="70">${_escapar(e.nome)}</h1>
+          <p class="facim-perfil-local" data-anim="up" data-anim-delay="130">${icone("pin")} ${_escapar(e.provincia) || "Moçambique"}${f.stand ? ` &nbsp;·&nbsp; Stand ${_escapar(f.stand)}` : ""}</p>
         </div>
       </div>
     </section>
@@ -561,23 +587,23 @@ async function renderizarPerfilFacim() {
     <section class="container facim-perfil-corpo">
       <div class="facim-perfil-principal">
         ${_txt(e.descricao) ? `
-          <h2 class="facim-h2">Sobre a empresa</h2>
-          <p class="facim-perfil-desc">${_escapar(e.descricao)}</p>` : ""}
+          <h2 class="facim-h2" data-anim="up">Sobre a empresa</h2>
+          <p class="facim-perfil-desc" data-anim="up" data-anim-delay="60">${_escapar(e.descricao)}</p>` : ""}
 
         ${_txt(f.produtosExpor) && _txt(f.produtosExpor) !== _txt(e.descricao) ? `
-          <div class="facim-destaque-expor">
+          <div class="facim-destaque-expor" data-anim="rise">
             <span class="facim-eyebrow">O que leva à feira</span>
             <p>${_escapar(f.produtosExpor)}</p>
             ${_txt(f.quantidade) ? `<span class="facim-quantidade">Volume previsto: ${_escapar(f.quantidade)}</span>` : ""}
           </div>` : ""}
 
         ${(e.servicos || []).length ? `
-          <h2 class="facim-h2">Produtos e serviços</h2>
-          <div class="facim-servicos">
+          <h2 class="facim-h2" data-anim="up">Produtos e serviços</h2>
+          <div class="facim-servicos" data-anim-stagger="80">
             ${e.servicos.map((s, i) => {
               const img = (v.fotos || [])[i] ? imagemFacim(slug, v.fotos[i]) : "";
               return `
-              <article class="facim-servico">
+              <article class="facim-servico" data-anim="rise">
                 ${img ? `<div class="facim-servico-img"><img src="${img}" alt="${_escapar(s.nome)}" loading="lazy"></div>` : ""}
                 <div class="facim-servico-txt">
                   <h3>${_escapar(s.nome)}</h3>
@@ -588,27 +614,27 @@ async function renderizarPerfilFacim() {
           </div>` : ""}
 
         ${galeria.length ? `
-          <h2 class="facim-h2">Galeria</h2>
-          <div class="facim-galeria">
+          <h2 class="facim-h2" data-anim="up">Galeria</h2>
+          <div class="facim-galeria" data-anim-stagger="55">
             ${galeria.map((src, i) => `
-              <button type="button" class="facim-galeria-item" onclick="abrirLightboxFacim(${i})">
+              <button type="button" class="facim-galeria-item" data-anim="scale" onclick="abrirLightboxFacim(${i})">
                 <img src="${src}" alt="" loading="lazy">
               </button>`).join("")}
           </div>` : ""}
 
         ${(v.videos || []).length ? `
-          <h2 class="facim-h2">Vídeos</h2>
-          <div class="facim-videos">
+          <h2 class="facim-h2" data-anim="up">Vídeos</h2>
+          <div class="facim-videos" data-anim-stagger="80">
             ${v.videos.map((url) => {
               const id = idYoutube(url);
               return id
-                ? `<div class="facim-video"><iframe src="https://www.youtube.com/embed/${id}" title="Vídeo de ${_escapar(e.nome)}" allowfullscreen loading="lazy"></iframe></div>`
+                ? `<div class="facim-video" data-anim="rise"><iframe src="https://www.youtube.com/embed/${id}" title="Vídeo de ${_escapar(e.nome)}" allowfullscreen loading="lazy"></iframe></div>`
                 : `<a href="${_escapar(url)}" class="btn btn-secondary" target="_blank" rel="noopener">Ver vídeo</a>`;
             }).join("")}
           </div>` : ""}
       </div>
 
-      <aside class="facim-perfil-lado">
+      <aside class="facim-perfil-lado" data-anim="up" data-anim-delay="120">
         <div class="facim-ficha">
           <h2 class="facim-ficha-titulo">Ficha</h2>
           <dl>
@@ -617,7 +643,7 @@ async function renderizarPerfilFacim() {
         </div>
 
         ${(_txt(contactos.email) || _txt(contactos.telefone)) ? `
-        <div class="facim-ficha">
+        <div class="facim-ficha facim-ficha-contactos">
           <h2 class="facim-ficha-titulo">Contacto</h2>
           <div class="facim-contactos">
             ${_txt(contactos.telefone) ? `<a href="tel:${_escapar(contactos.telefone).replace(/\s/g, "")}">${icone("phone")} ${_escapar(contactos.telefone)}</a>` : ""}
@@ -633,6 +659,11 @@ async function renderizarPerfilFacim() {
     </section>`;
 
   window._facimGaleria = galeria;
+
+  if (window.Movimento) {
+    window.Movimento.observar(raiz);
+    window.Movimento.remedir();
+  }
 }
 
 /* ── Lightbox simples para a galeria da empresa ── */
@@ -705,12 +736,13 @@ async function inicializarFacim() {
   renderizarNumerosFacim(_facimCache);
   renderizarPlantaFacim(_facimCache);
   renderizarConteudosFacim(_facimCache);
-  aplicarFiltrosFacim();
+  aplicarFiltrosFacim(true, true);
 
-  document.getElementById("facim-pesquisa")?.addEventListener("input", () => aplicarFiltrosFacim());
-  document.getElementById("facim-filtro-sector")?.addEventListener("change", () => aplicarFiltrosFacim());
-  document.getElementById("facim-filtro-provincia")?.addEventListener("change", () => aplicarFiltrosFacim());
-  document.getElementById("facim-filtro-apuradas")?.addEventListener("change", () => aplicarFiltrosFacim());
+  const refiltrar = () => aplicarFiltrosFacim(true, false);
+  document.getElementById("facim-pesquisa")?.addEventListener("input", refiltrar);
+  document.getElementById("facim-filtro-sector")?.addEventListener("change", refiltrar);
+  document.getElementById("facim-filtro-provincia")?.addEventListener("change", refiltrar);
+  document.getElementById("facim-filtro-apuradas")?.addEventListener("change", refiltrar);
 
   document
     .getElementById("facim-conteudos-apuradas")
@@ -728,6 +760,23 @@ async function inicializarFacim() {
     if (pr) pr.value = "";
     const a = document.getElementById("facim-filtro-apuradas");
     if (a) a.checked = false;
-    aplicarFiltrosFacim();
+    aplicarFiltrosFacim(true, true);
   });
+
+  // ── Painel de conteúdos: recolhido por omissão (é ferramenta de equipa) ──
+  const botaoPainel = document.getElementById("facim-conteudos-toggle");
+  const painel = document.getElementById("facim-conteudos-painel");
+  if (botaoPainel && painel) {
+    botaoPainel.addEventListener("click", () => {
+      const aberto = painel.classList.toggle("is-aberto");
+      botaoPainel.setAttribute("aria-expanded", aberto ? "true" : "false");
+      botaoPainel.querySelector(".facim-toggle-texto").textContent = aberto
+        ? "Fechar painel"
+        : "Abrir painel detalhado";
+      if (window.Movimento) window.Movimento.remedir();
+    });
+  }
+
+  // As secções mudaram de altura depois de carregar os dados
+  if (window.Movimento) window.Movimento.remedir();
 }

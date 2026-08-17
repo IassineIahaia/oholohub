@@ -23,7 +23,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/motion.css" />
     <link rel="stylesheet" href="css/facim.css" />
+      <noscript>
+      <style>
+        /* Sem JavaScript, nada fica escondido à espera de uma animação */
+        [data-anim] { opacity: 1 !important; transform: none !important;
+                      filter: none !important; clip-path: none !important; }
+        .linha-mascara > span { transform: none !important; }
+        .facim-conteudos-painel { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      </style>
+    </noscript>
   </head>
   <body>
     <!-- ══════════════════════════════════════════════════════
@@ -81,6 +91,7 @@
           >
         </div>
       </div>
+      <span class="navbar-progresso"></span>
     </header>
 
     <main>
@@ -198,7 +209,7 @@
     ══════════════════════════════════════════════════════ -->
       <section style="padding: 0 0 var(--space-xxl)">
         <div class="container">
-          <div class="hero-search-card">
+          <div class="hero-search-card" data-anim="rise">
             <form
               class="hero-search-form"
               data-search-form
@@ -326,7 +337,7 @@
         "
       >
         <div
-          class="container stats-row"
+          class="container stats-row" data-anim-stagger="90"
           style="
             display: flex;
             justify-content: center;
@@ -335,7 +346,7 @@
             text-align: center;
           "
         >
-          <div>
+          <div data-anim="up">
             <div
               id="stat-empresas"
               class="text-headline-lg"
@@ -345,7 +356,7 @@
             </div>
             <div class="text-label-sm text-muted">EMPRESAS VERIFICADAS</div>
           </div>
-          <div>
+          <div data-anim="up">
             <div
               id="stat-servicos"
               class="text-headline-lg"
@@ -355,7 +366,7 @@
             </div>
             <div class="text-label-sm text-muted">SERVIÇOS CATALOGADOS</div>
           </div>
-          <div>
+          <div data-anim="up">
             <div
               id="stat-provincias"
               class="text-headline-lg"
@@ -373,7 +384,7 @@
     ══════════════════════════════════════════════════════ -->
       <section style="padding: var(--space-xl) 0 0">
         <div class="container">
-          <div class="facim-faixa">
+          <div class="facim-faixa" data-anim="rise">
             <div>
               <span class="facim-eyebrow" style="color: var(--color-primary-container)">
                 61.ª Feira Internacional de Maputo · 31 Ago — 06 Set 2026
@@ -386,7 +397,7 @@
               </p>
             </div>
             <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap">
-              <a href="facim.html" class="btn facim-btn-claro">Ver a Vitrine Digital</a>
+              <a href="facim.html" class="btn facim-btn-claro magnetico">Ver a Vitrine Digital</a>
               <a href="facim.html#missao" class="btn facim-btn-linha">Plano da missão</a>
             </div>
           </div>
@@ -418,7 +429,7 @@
               >
                 EXCELÊNCIA SELECCIONADA
               </div>
-              <h2 class="text-headline-lg">Empresas em Destaque</h2>
+              <h2 class="text-headline-lg" data-anim="up">Empresas em Destaque</h2>
             </div>
             <a
               href="explore.html"
@@ -437,7 +448,7 @@
           </div>
 
           <div
-            id="empresas-destaque"
+            id="empresas-destaque" data-anim="fade"
             style="
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -470,7 +481,7 @@
             >
               O OHOLO HUB EM ACÇÃO
             </div>
-            <h2 class="text-headline-lg">Galeria</h2>
+            <h2 class="text-headline-lg" data-anim="up">Galeria</h2>
             <p
               class="text-body-md text-muted"
               style="max-width: 560px; margin: var(--space-xs) auto 0"
@@ -479,7 +490,7 @@
             </p>
           </div>
 
-          <div class="galeria-tabs">
+          <div class="galeria-tabs" data-anim="up" data-anim-delay="80">
             <button
               type="button"
               class="galeria-tab is-active"
@@ -648,6 +659,7 @@
           >
             <h2
               class="text-headline-lg"
+              data-anim="up"
               style="
                 color: var(--color-on-primary);
                 margin-bottom: var(--space-sm);
@@ -787,13 +799,14 @@
         </div>
 
         <div class="footer-bottom">
-          &copy; 2026 OHOLO Hub. Avança o Teu Negócio.
+          &copy; 2026 Powered by Market Access. Todos os direitos reservados.
         </div>
       </div>
     </footer>
 
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/motion.js"></script>
     <script src="js/galeria.js"></script>
     <script>
       renderizarGridEmpresas("empresas-destaque", {

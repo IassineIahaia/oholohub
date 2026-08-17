@@ -23,6 +23,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+      <noscript>
+      <style>
+        /* Sem JavaScript, nada fica escondido à espera de uma animação */
+        [data-anim] { opacity: 1 !important; transform: none !important;
+                      filter: none !important; clip-path: none !important; }
+        .linha-mascara > span { transform: none !important; }
+        .facim-conteudos-painel { grid-template-rows: 1fr !important; opacity: 1 !important; }
+      </style>
+    </noscript>
   </head>
   <body>
     <!-- ══════════════════════════════════════════════════════
@@ -48,6 +58,7 @@
           </button>
         </div>
       </div>
+      <span class="navbar-progresso"></span>
     </header>
 
     <!-- ══════════════════════════════════════════════════════
@@ -151,7 +162,7 @@
         </div>
 
         <div class="footer-bottom">
-          &copy; 2026 OHOLO Hub. Avança o Teu Negócio.
+          &copy; 2026 Powered by Market Access. Todos os direitos reservados.
         </div>
       </div>
     </footer>
@@ -161,6 +172,7 @@
   ══════════════════════════════════════════════════════ -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/motion.js"></script>
     <script>
       renderizarPerfilEmpresa();
     </script>

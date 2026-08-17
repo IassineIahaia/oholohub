@@ -1,0 +1,529 @@
+/* ============================================================
+   OHOLO HUB — SISTEMA DE MOVIMENTO
+   ------------------------------------------------------------
+   Primitivas de animação, header reactivo e barra de secções.
+   Sem dependências externas — tudo compositado em transform e
+   opacity, e desligado por inteiro em prefers-reduced-motion.
+
+   COMO USAR
+     <div data-anim="up">…</div>            revela ao entrar no ecrã
+     <div data-anim="up" data-anim-delay="120">…</div>
+     <div data-anim-stagger="70"> filhos revelam em cascata </div>
+     <span data-count="19">19</span>        conta até ao valor
+     <div data-parallax="-0.12">…</div>     move ao rolar
+   ============================================================ */
+
+:root {
+  /* Curvas — expo.out e power4.out, as que dão o "peso" certo */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-power: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-suave: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-rapida: 0.42s;
+  --dur-media: 0.72s;
+  --dur-longa: 1.05s;
+  --nav-altura: 72px;
+}
+
+html {
+  scroll-padding-top: calc(var(--nav-altura) + 16px);
+}
+
+/* ------------------------------------------------------------
+   1. PRIMITIVAS DE REVELAÇÃO
+   ------------------------------------------------------------ */
+[data-anim] {
+  will-change: transform, opacity;
+  opacity: 0;
+  transition:
+    opacity var(--dur-media) var(--ease-expo),
+    transform var(--dur-media) var(--ease-expo),
+    clip-path var(--dur-longa) var(--ease-expo),
+    filter var(--dur-media) var(--ease-expo);
+  transition-delay: var(--anim-delay, 0ms);
+}
+
+[data-anim="up"]    { transform: translate3d(0, 34px, 0); }
+[data-anim="down"]  { transform: translate3d(0, -28px, 0); }
+[data-anim="left"]  { transform: translate3d(-38px, 0, 0); }
+[data-anim="right"] { transform: translate3d(38px, 0, 0); }
+[data-anim="scale"] { transform: scale(0.94); }
+[data-anim="rise"]  { transform: translate3d(0, 60px, 0) scale(0.985); }
+[data-anim="blur"]  { transform: translate3d(0, 20px, 0); filter: blur(9px); }
+[data-anim="fade"]  { transform: none; }
+
+/* Revelação por corte — a peça entra por baixo de uma máscara */
+[data-anim="clip"] {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 24px, 0);
+}
+
+/* Linha que se desenha */
+[data-anim="line"] {
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 1;
+}
+
+[data-anim].is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  clip-path: inset(0 0 0 0);
+}
+
+[data-anim="line"].is-in {
+  transform: scaleX(1);
+}
+
+/* Depois de entrar, liberta o will-change */
+[data-anim].is-done {
+  will-change: auto;
+}
+
+/* ── Título em linhas mascaradas ── */
+.linha-mascara {
+  display: block;
+  overflow: hidden;
+  /* espaço para descendentes (g, p, ç) não serem cortados pela máscara */
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.linha-mascara > span {
+  display: block;
+  transform: translate3d(0, 105%, 0);
+  transition: transform var(--dur-longa) var(--ease-expo);
+  transition-delay: var(--anim-delay, 0ms);
+}
+
+.linha-mascara.is-in > span {
+  transform: none;
+}
+
+/* ── Cascata ── */
+[data-anim-stagger] > [data-anim] {
+  --anim-delay: calc(var(--i, 0) * var(--stagger-passo, 70ms));
+}
+
+/* ------------------------------------------------------------
+   2. HEADER
+   ------------------------------------------------------------ */
+
+/* Páginas cujo hero é escuro: o header flutua por cima dele.
+   O hero compensa com padding-top igual a --nav-altura. */
+body.tem-hero-escuro .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  transition:
+    transform 0.55s var(--ease-expo),
+    background-color 0.4s var(--ease-suave),
+    border-color 0.4s var(--ease-suave),
+    box-shadow 0.4s var(--ease-suave);
+}
+
+.navbar-inner {
+  transition: padding 0.4s var(--ease-suave);
+}
+
+/* Recolhe ao descer, volta ao subir */
+.navbar.is-hidden {
+  transform: translate3d(0, -102%, 0);
+}
+
+.navbar.is-scrolled {
+  background-color: rgba(247, 249, 251, 0.82);
+  box-shadow: 0 1px 0 rgba(10, 42, 82, 0.06), 0 10px 34px rgba(10, 42, 82, 0.06);
+  border-bottom-color: transparent;
+}
+
+.navbar.is-scrolled .navbar-inner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* ── Modo sobre hero escuro (facim.html) ── */
+.navbar.is-over {
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.navbar.is-over .navbar-brand,
+.navbar.is-over .navbar-links a,
+.navbar.is-over .navbar-toggle {
+  color: #fff;
+}
+
+.navbar.is-over .navbar-links a.active {
+  color: var(--color-primary-container);
+}
+
+.navbar.is-over .btn-primary {
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.navbar.is-over .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+/* ── Wordmark ── */
+.navbar-brand {
+  letter-spacing: -0.02em;
+  transition: color 0.3s var(--ease-suave), opacity 0.3s var(--ease-suave);
+}
+
+.navbar-brand:hover {
+  opacity: 0.72;
+}
+
+/* ── Links com sublinhado que se desenha ── */
+.navbar-links a {
+  position: relative;
+  transition: color 0.28s var(--ease-suave);
+}
+
+@media (min-width: 769px) {
+  .navbar-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.42s var(--ease-expo);
+  }
+
+  .navbar-links a:hover::after,
+  .navbar-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  .navbar-links a.active::after {
+    background: var(--color-primary);
+  }
+
+  .navbar.is-over .navbar-links a.active::after {
+    background: var(--color-primary-container);
+  }
+}
+
+/* ── Fio de progresso da página ── */
+.navbar-progresso {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  transform: scaleX(var(--progresso, 0));
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-container));
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-suave);
+  pointer-events: none;
+}
+
+.navbar.is-scrolled .navbar-progresso {
+  opacity: 1;
+}
+
+/* ── Botões com resposta ao toque ── */
+.btn {
+  transition:
+    background-color 0.25s var(--ease-suave),
+    border-color 0.25s var(--ease-suave),
+    color 0.25s var(--ease-suave),
+    transform 0.32s var(--ease-expo),
+    box-shadow 0.32s var(--ease-expo);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  transition-duration: 0.08s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 22px rgba(232, 89, 12, 0.28);
+}
+
+/* ── Menu mobile: painel inteiro com entrada em cascata ── */
+@media (max-width: 768px) {
+  .navbar-links {
+    transition:
+      max-height 0.5s var(--ease-expo),
+      opacity 0.32s var(--ease-suave),
+      visibility 0.32s;
+  }
+
+  .navbar-links a {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.36s var(--ease-expo),
+      transform 0.36s var(--ease-expo);
+  }
+
+  .navbar-links.is-open a {
+    opacity: 1;
+    transform: none;
+  }
+
+  .navbar-links.is-open a:nth-child(1) { transition-delay: 0.06s; }
+  .navbar-links.is-open a:nth-child(2) { transition-delay: 0.12s; }
+  .navbar-links.is-open a:nth-child(3) { transition-delay: 0.18s; }
+  .navbar-links.is-open a:nth-child(4) { transition-delay: 0.24s; }
+
+  .navbar-toggle .icon svg path {
+    transition: d 0.3s var(--ease-expo);
+  }
+
+  .navbar.is-menu-aberto {
+    background-color: rgba(247, 249, 251, 0.96);
+    backdrop-filter: blur(24px);
+  }
+
+  .navbar.is-menu-aberto.is-over .navbar-brand,
+  .navbar.is-menu-aberto.is-over .navbar-links a,
+  .navbar.is-menu-aberto.is-over .navbar-toggle {
+    color: var(--color-on-surface);
+  }
+}
+
+/* ------------------------------------------------------------
+   3. BARRA DE SECÇÕES  (torna a página longa navegável)
+   ------------------------------------------------------------ */
+.secoes-rail {
+  position: fixed;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s var(--ease-expo), visibility 0.5s;
+}
+
+.secoes-rail.is-visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.secoes-rail a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 7px 0;
+  color: var(--color-on-surface-variant);
+}
+
+.secoes-rail-nome {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition:
+    opacity 0.36s var(--ease-expo),
+    transform 0.36s var(--ease-expo),
+    color 0.3s var(--ease-suave);
+}
+
+.secoes-rail:hover .secoes-rail-nome,
+.secoes-rail a.is-activa .secoes-rail-nome {
+  opacity: 1;
+  transform: none;
+}
+
+.secoes-rail a.is-activa .secoes-rail-nome {
+  color: var(--color-primary);
+}
+
+.secoes-rail-traco {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-outline);
+  opacity: 0.42;
+  transition:
+    width 0.42s var(--ease-expo),
+    background-color 0.3s var(--ease-suave),
+    opacity 0.3s var(--ease-suave);
+}
+
+.secoes-rail a:hover .secoes-rail-traco {
+  width: 26px;
+  opacity: 0.8;
+}
+
+.secoes-rail a.is-activa .secoes-rail-traco {
+  width: 34px;
+  background: var(--color-primary);
+  opacity: 1;
+}
+
+@media (max-width: 1180px) {
+  .secoes-rail { display: none; }
+}
+
+/* ── Alternativa no telemóvel: barra flutuante no fundo ──
+   Fixa (não sticky) para não ocupar espaço no topo do documento
+   nem competir com o header, que nessas páginas flutua. */
+.secoes-fita {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 45;
+  display: none;
+  gap: var(--space-sm);
+  padding: 10px var(--margin-mobile) calc(10px + env(safe-area-inset-bottom, 0px));
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: rgba(247, 249, 251, 0.94);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid var(--color-outline-variant);
+  box-shadow: 0 -6px 24px rgba(10, 42, 82, 0.08);
+  transform: translate3d(0, 110%, 0);
+  transition: transform 0.5s var(--ease-expo);
+}
+
+.secoes-fita::-webkit-scrollbar { display: none; }
+
+.secoes-fita.is-visivel {
+  transform: none;
+}
+
+@media (max-width: 1180px) {
+  .secoes-fita { display: flex; }
+}
+
+.secoes-fita a {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-outline-variant);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  transition:
+    background-color 0.28s var(--ease-suave),
+    color 0.28s var(--ease-suave),
+    border-color 0.28s var(--ease-suave);
+}
+
+.secoes-fita a.is-activa {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------
+   4. DETALHES
+   ------------------------------------------------------------ */
+
+/* Números que contam */
+[data-count] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Pista de rolagem no hero */
+.scroll-pista {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--facim-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-pista i {
+  display: block;
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-pista i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary-container);
+  animation: pista-desce 2.4s var(--ease-suave) infinite;
+}
+
+@keyframes pista-desce {
+  0%   { transform: translateY(-100%); }
+  55%  { transform: translateY(100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Botão magnético — deslocamento subtil no hover (desktop) */
+.magnetico {
+  transition: transform 0.42s var(--ease-expo);
+}
+
+/* Elementos com parallax */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ------------------------------------------------------------
+   5. QUEM NÃO QUER MOVIMENTO
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  [data-anim],
+  [data-anim].is-in,
+  .linha-mascara > span {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  .navbar,
+  .navbar-inner,
+  .btn,
+  .secoes-rail,
+  .secoes-fita,
+  .secoes-rail-traco,
+  .secoes-rail-nome {
+    transition: none !important;
+  }
+
+  .navbar.is-hidden { transform: none !important; }
+
+  .btn:hover { transform: none; }
+
+  .scroll-pista i::after { animation: none; }
+
+  [data-parallax] { transform: none !important; }
+}
