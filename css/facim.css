@@ -578,6 +578,7 @@
    5. PLANTA DO PAVILHÃO  (elemento assinatura)
    ------------------------------------------------------------ */
 .facim-planta-quadro {
+  display: none;
   position: relative;
   padding: var(--space-xl);
   border-radius: var(--radius-xl);
