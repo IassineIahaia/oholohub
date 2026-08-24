@@ -1,17 +1,18 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
+    "versao": "2.1",
     "origem": "Xima de Namaua",
-    "pastaUrl": "https://drive.google.com/drive/folders/1lDF3T4wIGLycQGAbcOsI2EpZkEKIN0FS"
+    "actualizadoEm": "2026-08-18T12:33:57.354Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1GXaoG1Ep0iAih8GpSWzMqDUG_WipgZcS"
   },
   "empresa": {
     "nome": "Xima de Namaua",
-    "descricao": "Processamento de farinha de milho",
+    "descricao": "Processamento de cereais, com destaque a farinha de milho.",
     "badges": [
       "Empresa Apurada"
     ],
-    "nuit": "107842518",
+    "nuit": "108742518",
     "fundacao": "",
     "anosActividade": "10",
     "industria": "Agroprocessamento",
@@ -27,7 +28,12 @@
       "nome": "Momade Amade",
       "cargo": "Gestor"
     },
-    "servicos": [],
+    "servicos": [
+      {
+        "nome": "Farinha de Milho",
+        "descricao": ""
+      }
+    ],
     "lideranca": [
       "Jovem"
     ],
@@ -55,16 +61,18 @@
     "representante": "Momade Amade",
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
-    "rotulagemConforme": "Não",
-    "identidadeVisual": "Sim"
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Não",
+    "comparticipacaoStand": "Não"
   },
   "vitrine": {
     "videos": [],
-    "logo": "",
+    "logo": "logo.jpg",
     "cover": "",
     "fotos": [],
     "nFotos": 0,
-    "temLogo": false,
+    "temLogo": true,
     "temCover": false,
     "temInfo": true
   }

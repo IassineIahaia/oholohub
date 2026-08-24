@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-18T16:09:50.754Z",
+    "pastaId": "1qQN0b4MPr_Fi3TM_o9SkLIcVKzRwTgIp",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qQN0b4MPr_Fi3TM_o9SkLIcVKzRwTgIp"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Nutriverdeokala ",
+    "nomeResponsavel": "Suna Madali",
+    "cargo": "Gestora",
+    "provincia": "Cabo Delgado",
+    "anosActividade": "6",
+    "nuit": "110652127",
+    "telefone": "861190325",
+    "email": "nutriverdeokala@gmail.com",
+    "produtosServicos": "Produzimos flor de hibisco, chip's de banana, rolitos de gergelim, sumo de malambe e gengibre, sumo de hibisco, e muito mais. Nós temos uma loja onde vendemos os nossos produtos e também fazemos encomendas nos supermercados ",
+    "servicos": [
+      {
+        "nome": "Pó de gengibre",
+        "descricao": "Auxilia na perda de peso, serve como anti-inflamatório e anti-oxidante",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Chips de banana",
+        "descricao": "Energético, contém potássio que ajuda a evitar cãibra"
+      },
+      {
+        "nome": "Flor seca de hibisco",
+        "descricao": "Ajuda na circulação do sangue, regula colesterol, ajuda a baixar a pressão arterial",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Óleo de coco",
+        "descricao": "Bom para pele, ajuda no crescimento do cabelo, pode ajudar a diminuir a vontade de comer doces"
+      },
+      {
+        "nome": "Sementes de chia",
+        "descricao": "Ajuda no emagrecimento , contém muita proteína, Omega 3, regula açúcar no sangue"
+      },
+      {
+        "nome": "Rolitos de gergelim",
+        "descricao": "Retarda o envelhecimento, vitamina E, contém zinco e cobre",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Sumo de malambe e gengibre",
+        "descricao": "Imunidade, energia, perda de peso, ajuda na digestão"
+      },
+      {
+        "nome": "Sumo de hibisco",
+        "descricao": "Desincha, ajuda o coração , queima gordura, desintoxicação do fígado"
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Não",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Não",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

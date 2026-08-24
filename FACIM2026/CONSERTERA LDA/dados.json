@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-17T15:45:42.391Z",
+    "pastaId": "10Xtoev6KSTczWNddoDou0O9iVYSt52GD",
+    "pastaUrl": "https://drive.google.com/drive/folders/10Xtoev6KSTczWNddoDou0O9iVYSt52GD"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "CONSERTERA LDA ",
+    "nomeResponsavel": "Joao Abilio Pais",
+    "cargo": "Administrador",
+    "provincia": "Distrito de Mocuba",
+    "anosActividade": "3",
+    "nuit": "401606343",
+    "telefone": "861676339",
+    "email": "conserteramoz@gmail.com",
+    "produtosServicos": "Mel, castanha de caju, cachaça de caju, consultoria em terra e ambiente, Venda e disteibuiçao em loja fixa e ao domicilio dos products",
+    "servicos": [
+      {
+        "nome": "castanha de caju",
+        "descricao": "Producao de castanha de caju 100% natural nas florestas nativas dos Distritos de Lugela e Mocuba na provincia da Zambezia"
+      },
+      {
+        "nome": "Produçao e Venda de Mel puro e natural",
+        "descricao": "Produçao de Mel nas florestas nativas dos Distritos de Lugela e Mocuba com Venda em todos Distritos da provincia e a nivel nacional"
+      },
+      {
+        "nome": "Consultoria em Terra e Ambiente",
+        "descricao": "Serviços de parcelamento, demarcaçao, delimitaçao, raster, ediçao e impressao de mapas em\nImagem satelite"
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

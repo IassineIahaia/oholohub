@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "2.1",
+    "origem": "Aliança Moçambicana de Mulheres no Café AMMC",
+    "actualizadoEm": "2026-08-18T09:13:04.426Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1vRoQ_Iw893HPZ4LIxNIYcfrJQ-wCBtU8"
+  },
+  "empresa": {
+    "nome": "Aliança Moçambicana de Mulheres no Café (AMMC)",
+    "descricao": "Cultivo, processamento e venda dos seguintes cafés: Café do Ibo e Café Mecufi. Licor a base do café. Chocolate, cosméticos (óleos naturais a base do café e outras ervas, esfoliantes, sabonetes naturais) e camisetas.",
+    "badges": [
+      "Empresa Apurada"
+    ],
+    "nuit": "700270920",
+    "fundacao": "",
+    "anosActividade": "2",
+    "industria": "Agroprocessamento",
+    "provincia": "Cabo Delgado",
+    "contactos": {
+      "email": "iolanda.almeida@ammcafe.org.mz",
+      "telefone": "865619343",
+      "website": "",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "responsavel": {
+      "nome": "Iolanda Almeida",
+      "cargo": "Presidente"
+    },
+    "servicos": [
+      {
+        "nome": "Café Drip Coffee",
+        "descricao": "Café do Ibo Drip coffee instantâneo e ideal para transportar"
+      }
+    ],
+    "lideranca": [
+      "Mulher"
+    ],
+    "stats": {
+      "exp": "2",
+      "producao": "",
+      "vendas": "",
+      "extra": "",
+      "labels": [
+        "Anos de Actividade",
+        "Volume a Expor",
+        "",
+        ""
+      ]
+    }
+  },
+  "facim": {
+    "apurada": true,
+    "edicao": "61.ª Edição",
+    "periodo": "31/08/2026 a 06/09/2026",
+    "stand": "2x2m",
+    "sector": "Agroprocessamento",
+    "produtosExpor": "Cultivo, processamento e venda dos seguintes cafés: Café do Ibo e Café Mecufi. Licor a base do café. Chocolate, cosméticos (óleos naturais a base do café e outras ervas, esfoliantes, sabonetes naturais) e camisetas.",
+    "quantidade": "",
+    "representante": "Iolanda Almeida",
+    "participouFena": "Não",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Não",
+    "comparticipacaoStand": "Sim"
+  },
+  "vitrine": {
+    "videos": [],
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
+    "temInfo": true
+  }
+}

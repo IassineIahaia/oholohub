@@ -1,13 +1,14 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
+    "versao": "2.1",
     "origem": "Agro Nice Lda",
-    "pastaUrl": "https://drive.google.com/drive/folders/1rdDZ2aFimkeNyRsRXRHsXLXuIG_Kx_xx"
+    "actualizadoEm": "2026-08-17T12:13:29.578Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1aXryfA7lSujxAFyR06bWdXq9ngtJOfW_"
   },
   "empresa": {
     "nome": "Agro Nice Lda",
-    "descricao": "Consultoria agrícola, comercialização de insumos agrícolas e capacitação de jovens através do programa Farm Expert",
+    "descricao": "Comercialização de sementes e insumos agrícolas, consultoria e assistência técnica, produção agrícola, agregação e compra de cereais, capacitação e implementação de projectos agrícolas.",
     "badges": [
       "Empresa Apurada"
     ],
@@ -17,8 +18,8 @@
     "industria": "Serviços & Consultoria",
     "provincia": "Cabo Delgado",
     "contactos": {
-      "email": "agronicelimitada@gmail.com",
-      "telefone": "844559856",
+      "email": "amarcelino@agronicemz.com",
+      "telefone": "+258844559856",
       "website": "",
       "linkedin": "",
       "twitter": ""
@@ -29,8 +30,24 @@
     },
     "servicos": [
       {
-        "nome": "Sementes , Adubos , sistemas de regas",
-        "descricao": "Parceria com empressas forncedoras de sementes e sistemas de rega em Maputo"
+        "nome": "Treinamentos",
+        "descricao": "Capacitação pratica com jovens agrónomos e produtores"
+      },
+      {
+        "nome": "Produção de Horticolas [ Produção agricola ]",
+        "descricao": "Actividades de Desenvolvimento"
+      },
+      {
+        "nome": "Sementes de Milho",
+        "descricao": "Sementes de Milho"
+      },
+      {
+        "nome": "Insumos Agricolas",
+        "descricao": "Loja de venda de insumos agricolas"
+      },
+      {
+        "nome": "Formação de Jovens",
+        "descricao": "Capacitações"
       }
     ],
     "lideranca": [
@@ -58,19 +75,27 @@
     "produtosExpor": "Diferentes variedades de sementes e apresentação digital dos nossos projectos e plataformas",
     "quantidade": "Embaladas em volumes de 1 a 2 kg - total de 50 kg",
     "representante": "Adolfo Graciano Marcelino",
-    "participouFena": "Sim",
+    "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],
-    "logo": "",
-    "cover": "",
-    "fotos": [],
-    "nFotos": 0,
-    "temLogo": false,
-    "temCover": false,
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg",
+      "servico_5.jpg"
+    ],
+    "nFotos": 6,
+    "temLogo": true,
+    "temCover": true,
     "temInfo": true
   }
 }

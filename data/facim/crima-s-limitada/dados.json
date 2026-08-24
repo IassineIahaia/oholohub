@@ -1,9 +1,10 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
+    "versao": "2.1",
     "origem": "CRIMAS LIMITADA",
-    "pastaUrl": "https://drive.google.com/drive/folders/1OUF0xfdGvsnltVKUkb1IeHKLEn0dbQy6"
+    "actualizadoEm": "2026-08-18T13:02:59.238Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1zi2rv4iLG0GI3PdH94-pHYcNGn1qiy1H"
   },
   "empresa": {
     "nome": "CRIMA'S LIMITADA",
@@ -18,14 +19,14 @@
     "provincia": "Nampula",
     "contactos": {
       "email": "info@crimas.co.mz",
-      "telefone": "874018387/877443188",
+      "telefone": "877443188/874018387",
       "website": "",
       "linkedin": "",
       "twitter": ""
     },
     "responsavel": {
-      "nome": "ABDUL RAUFO ALFREDO DE ALMEIDA",
-      "cargo": "DIRETOR EXECUTIVO"
+      "nome": "Eunice Adelaide Alfredo Joao",
+      "cargo": "Assistente de Programas e Projetos"
     },
     "servicos": [
       {
@@ -65,7 +66,9 @@
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],

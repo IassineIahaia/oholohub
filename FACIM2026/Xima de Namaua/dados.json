@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-18T12:33:57.354Z",
+    "pastaId": "1GXaoG1Ep0iAih8GpSWzMqDUG_WipgZcS",
+    "pastaUrl": "https://drive.google.com/drive/folders/1GXaoG1Ep0iAih8GpSWzMqDUG_WipgZcS"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Xima de Namaua ",
+    "nomeResponsavel": "Momade Amade",
+    "cargo": "Gestor ",
+    "provincia": "Cabo Delgado",
+    "anosActividade": "10",
+    "nuit": "108742518",
+    "telefone": "861771971",
+    "email": "momademax@yahoo.com.br",
+    "produtosServicos": "Processamento de cereais, com destaque a farinha de milho.",
+    "servicos": [
+      {
+        "nome": "Farinha de Milho",
+        "descricao": "",
+        "imagemBase64": null
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Não",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Não",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

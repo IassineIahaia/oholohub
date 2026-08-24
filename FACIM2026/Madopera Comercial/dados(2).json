@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-17T12:35:23.823Z",
+    "pastaId": "1dwXGdqH_bPK_VSSN2CEFuAMcePmrHq3j",
+    "pastaUrl": "https://drive.google.com/drive/folders/1dwXGdqH_bPK_VSSN2CEFuAMcePmrHq3j"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Madopera Comercial",
+    "nomeResponsavel": "Conde Abreu Madopera",
+    "cargo": "Director Geral",
+    "provincia": "Cabo Delgado",
+    "anosActividade": "6",
+    "nuit": "400963721",
+    "telefone": "875949074",
+    "email": "conde08abreu89@gmail.com",
+    "produtosServicos": "O nosso Foco principal é o Processamento de Farinha de Milho Fortifica, alem disso, atuamos em Diversas outras areas estrategicas como:\n1. Produção e Comercialização de Produtos agricolas\n2. Fornecimentos de Produtos Basicos para o Campo\n3. Distribuição de insumos agricolas focados no apoio de pequenos agricultores\n\nIsto é, o negocio Funciona de seguinte maneira:\nProdução, Armazenamento, Processamento e Comercialização.",
+    "servicos": [
+      {
+        "nome": "Farinha de Milho",
+        "descricao": "A Farinha de Milho que a Empresa Produz é branca e Fortificada",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Conjunto de Produtos que a Empresa Fornece",
+        "descricao": "A Imagem Ilustra:\n1. Saco de Farinha de Milho Fortificada\n2. Pacote de Feijão Boer\n3. Pacote de Gergelim\n4. Pacote de Feijao Nhemba\n5. Pacote de Amendoim",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Colaboradores com a melhor Farinha de Cabo delgado",
+        "descricao": "A Imagem Ilustra 2 Colaboradores da empresa assegurando um saco de Farinha de Milho Fortificada 10Kg",
+        "imagemBase64": null
+      },
+      {
+        "nome": "Milho que a Empresa Produz",
+        "descricao": "Milho Ideal que a empresa MADOPERA COMERCIAL Produz",
+        "imagemBase64": null
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

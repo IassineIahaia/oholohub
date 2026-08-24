@@ -35,6 +35,7 @@ const FACIM_SLUGS = [
   // ── Apuradas para expor (Plano Integrado FACIM 2026) ──
   "agro-nice-lda",
   "al-muzawad-su-lda",
+  "ammc",
   "ampcm",
   "ancha-investimento",
   "belmoz-lda",

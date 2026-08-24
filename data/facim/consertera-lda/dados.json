@@ -1,19 +1,20 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
+    "versao": "2.1",
     "origem": "CONSERTERA LDA",
-    "pastaUrl": "https://drive.google.com/drive/folders/1kZ3UMupIn_f8WbJzhHhNxba-QuzEpiVS"
+    "actualizadoEm": "2026-08-17T15:45:42.391Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/10Xtoev6KSTczWNddoDou0O9iVYSt52GD"
   },
   "empresa": {
     "nome": "CONSERTERA LDA",
-    "descricao": "venda de mel, castanha de Caju, produzidos nas florestas do distrito de Mocuba Zambézia em forma de fomento em coordenação com as comunidades locais.",
+    "descricao": "Mel, castanha de caju, cachaça de caju, consultoria em terra e ambiente, Venda e disteibuiçao em loja fixa e ao domicilio dos products",
     "badges": [
       "Empresa Apurada"
     ],
     "nuit": "401606343",
     "fundacao": "",
-    "anosActividade": "4",
+    "anosActividade": "3",
     "industria": "Agroprocessamento",
     "provincia": "Distrito de Mocuba",
     "contactos": {
@@ -24,20 +25,28 @@
       "twitter": ""
     },
     "responsavel": {
-      "nome": "João Abílio Pais Amade",
-      "cargo": "CEO"
+      "nome": "Joao Abilio Pais",
+      "cargo": "Administrador"
     },
     "servicos": [
       {
-        "nome": "Consultoria e Serviços de Terra e Ambiente",
-        "descricao": "serviços de Topografia, Ambiente,  Agro Florestais, Apicultura, Comércio e Fomento agrario"
+        "nome": "castanha de caju",
+        "descricao": "Producao de castanha de caju 100% natural nas florestas nativas dos Distritos de Lugela e Mocuba na provincia da Zambezia"
+      },
+      {
+        "nome": "Produçao e Venda de Mel puro e natural",
+        "descricao": "Produçao de Mel nas florestas nativas dos Distritos de Lugela e Mocuba com Venda em todos Distritos da provincia e a nivel nacional"
+      },
+      {
+        "nome": "Consultoria em Terra e Ambiente",
+        "descricao": "Serviços de parcelamento, demarcaçao, delimitaçao, raster, ediçao e impressao de mapas em\nImagem satelite"
       }
     ],
     "lideranca": [
       "Jovem"
     ],
     "stats": {
-      "exp": "4",
+      "exp": "3",
       "producao": "1- 200 litros de mel, 50 kg de Castanha processada e 5kg de Feijões",
       "vendas": "",
       "extra": "",
@@ -61,16 +70,22 @@
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],
-    "logo": "",
-    "cover": "",
-    "fotos": [],
-    "nFotos": 0,
-    "temLogo": false,
-    "temCover": false,
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg"
+    ],
+    "nFotos": 4,
+    "temLogo": true,
+    "temCover": true,
     "temInfo": true
   }
 }

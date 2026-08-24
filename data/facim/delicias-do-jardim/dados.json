@@ -1,40 +1,44 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
-    "origem": "Excel — sem pasta de conteúdos"
+    "versao": "2.1",
+    "origem": "Delícias do jardim",
+    "actualizadoEm": "2026-08-17T15:05:02.628Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1Ai-4u7Ejm0vGCKsQhxOFylwYgWNtvyPx"
   },
   "empresa": {
-    "nome": "Delicias do Jardim",
-    "descricao": "Sorvete mágico e Maquina de Sorvete",
+    "nome": "Delícias do Jardim",
+    "descricao": "Produção de sorvete para fornecimento à sorveterias",
     "badges": [
       "Empresa Apurada"
     ],
-    "nuit": "",
+    "nuit": "108791462",
     "fundacao": "",
-    "anosActividade": "",
+    "anosActividade": "2",
     "industria": "Agroprocessamento",
     "provincia": "Nampula",
     "contactos": {
-      "email": "",
+      "email": "noliapamela34@gmail.com",
       "telefone": "843109181",
       "website": "",
       "linkedin": "",
       "twitter": ""
     },
     "responsavel": {
-      "nome": "Nelson Gomes",
-      "cargo": ""
+      "nome": "Nolia Pamela",
+      "cargo": "Administradora"
     },
     "servicos": [
       {
-        "nome": "Sorvete mágico e Maquina de Sorvete",
-        "descricao": "10 galoes de 5 litros - total 50 litros,"
+        "nome": "Venda de sorvetes artesanal",
+        "descricao": "Fornecimento de sorvete a nossa cadeia de sorveterias e fornecimento a terceiros que pretendem revender o nosso sorvete"
       }
     ],
-    "lideranca": [],
+    "lideranca": [
+      "Mulher"
+    ],
     "stats": {
-      "exp": "",
+      "exp": "2",
       "producao": "10 galoes de 5 litros - total 50 litros,",
       "vendas": "",
       "extra": "",
@@ -55,19 +59,23 @@
     "produtosExpor": "Sorvete mágico e Maquina de Sorvete",
     "quantidade": "10 galoes de 5 litros - total 50 litros,",
     "representante": "Nelson Gomes",
-    "participouFena": "",
-    "empresaFormalizada": "",
-    "rotulagemConforme": "",
-    "identidadeVisual": ""
+    "participouFena": "Sim",
+    "empresaFormalizada": "Sim",
+    "rotulagemConforme": "Sim",
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],
     "logo": "",
-    "cover": "",
-    "fotos": [],
-    "nFotos": 0,
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
     "temLogo": false,
-    "temCover": false,
+    "temCover": true,
     "temInfo": true
   }
 }

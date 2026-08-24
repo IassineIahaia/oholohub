@@ -1,19 +1,20 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
-    "origem": "Madopera",
-    "pastaUrl": "https://drive.google.com/drive/folders/1QSdLX37scqc7HDHS0MTL3gDJDPWLJSAP"
+    "versao": "2.1",
+    "origem": "Madopera Comercial",
+    "actualizadoEm": "2026-08-18T14:28:04.117Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1uEYPWhhYKjNfTey3wEJjvNL8QCI9Yh1q"
   },
   "empresa": {
-    "nome": "Madopera",
-    "descricao": "Processamento de farinha de milho fortificada e comercialização de produtos agricolas",
+    "nome": "Madopera Comercial",
+    "descricao": "A Empresa Madopera Comercial Oferece a farinha de milho fortificada, Isso Funciona na producao no armazenamento e ate na distribuicao para a comercializao",
     "badges": [
       "Empresa Apurada"
     ],
     "nuit": "400963721",
     "fundacao": "",
-    "anosActividade": "2014",
+    "anosActividade": "14",
     "industria": "Agroprocessamento",
     "provincia": "Cabo Delgado",
     "contactos": {
@@ -29,16 +30,15 @@
     },
     "servicos": [
       {
-        "nome": "Farinha de milho e produtos agricola",
-        "descricao": "Agronegócio"
+        "nome": "A farinha carregada para a sua devida venda",
+        "descricao": "Farinha Pronta para o Consumo, os sacos que o transporte carregou sao de quantidade 25Kg"
       }
     ],
     "lideranca": [
-      "Mulher",
       "Jovem"
     ],
     "stats": {
-      "exp": "2014",
+      "exp": "14",
       "producao": "1kg, 5kg, 10kg, 25kg, pacotes de 1kg - Na totalidade 1 toneladas para expor",
       "vendas": "",
       "extra": "",
@@ -62,16 +62,20 @@
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],
-    "logo": "",
-    "cover": "",
-    "fotos": [],
-    "nFotos": 0,
-    "temLogo": false,
-    "temCover": false,
+    "logo": "logo.jpg",
+    "cover": "cover.jpg",
+    "fotos": [
+      "servico_1.jpg"
+    ],
+    "nFotos": 2,
+    "temLogo": true,
+    "temCover": true,
     "temInfo": true
   }
 }

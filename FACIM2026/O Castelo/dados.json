@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-18T15:17:38.515Z",
+    "pastaId": "1qGhFeCA49XD4LULci6BHt_BrOR_Qk6Ne",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qGhFeCA49XD4LULci6BHt_BrOR_Qk6Ne"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "O Castelo",
+    "nomeResponsavel": "Muanema Abdulrahim Momade",
+    "cargo": "Gerente",
+    "provincia": "Nampula",
+    "anosActividade": "13",
+    "nuit": "108064951",
+    "telefone": "875992100",
+    "email": "cammysuadique.96@gmail.com",
+    "produtosServicos": "O nosso empreendimento é um alojamento turístico com 5 quartos, que oferece aos hóspedes conforto, hospitalidade e uma experiência acolhedora. Além da hospedagem, disponibilizamos refeições com comidas típicas da região, preparadas com ingredientes frescos e produtos fabricados localmente, valorizando a cultura, os sabores e os produtores da nossa comunidade.",
+    "servicos": [
+      {
+        "nome": "Achar de Limão Ardência Pura",
+        "descricao": "Preparado à base de limão e usado para dar ainda mais sabor e picância às refeições."
+      },
+      {
+        "nome": "Achar de Manga",
+        "descricao": "sabor intenso e uma ardência que conquista, feito com manga e piripiri para dar ainda mais sabor a refeição."
+      },
+      {
+        "nome": "Piripiri Picante Caseiro",
+        "descricao": "Feito artesanalmente com ingredientes frescos e selecionados, o nosso piripíri oferece o equilíbrio perfeito entre sabor e picância. Ideal para temperar frango, peixe, carnes, mariscos, batatas e qualquer prato que mereça um toque especial."
+      },
+      {
+        "nome": "Castanha de Caju Caramelizada",
+        "descricao": "As nossas castanhas caramelizadas são preparadas com ingredientes de qualidade para oferecer um sabor irresistível em cada dentada.\nPerfeitas para um lanche, para partilhar com a família e amigos ou para adoçar qualquer momento do seu dia."
+      },
+      {
+        "nome": "Castanhas de Caju Tostadas",
+        "descricao": "Uma opção deliciosa e prática para um lanche saudável, para acompanhar bebidas ou para partilhar em qualquer ocasião."
+      },
+      {
+        "nome": "Biscoitos de Gergelim Crocantes Ante-estresse",
+        "descricao": "Preparado com gergelim cuidadosamente selecionado. Uma opção deliciosa para acompanhar o chá, o café ou para um lanche a qualquer hora do dia."
+      },
+      {
+        "nome": "Amendoim Melado",
+        "descricao": "nosso amendoim melado é cuidadosamente preparado para garantir um sabor marcante e uma textura irresistível em cada grão."
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Não",
+    "lideranca": [
+      "Mulher"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

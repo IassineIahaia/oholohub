@@ -1,47 +1,72 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
+    "versao": "2.1",
     "origem": "Nutriverdeokala",
-    "pastaUrl": "https://drive.google.com/drive/folders/1bu3JSQxnl79rdJhXO7JQ7uQ3TCioedEH"
+    "actualizadoEm": "2026-08-18T16:09:50.754Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qQN0b4MPr_Fi3TM_o9SkLIcVKzRwTgIp"
   },
   "empresa": {
     "nome": "Nutriverdeokala",
-    "descricao": "Rolitos de gergelim, chips de banana e pó de moringa. Vendemos na loja e também fazemos encomendas para os supermercados",
+    "descricao": "Produzimos flor de hibisco, chip's de banana, rolitos de gergelim, sumo de malambe e gengibre, sumo de hibisco, e muito mais. Nós temos uma loja onde vendemos os nossos produtos e também fazemos encomendas nos supermercados",
     "badges": [
       "Empresa Apurada"
     ],
-    "nuit": "110657127",
+    "nuit": "110652127",
     "fundacao": "",
-    "anosActividade": "2020",
+    "anosActividade": "6",
     "industria": "Agroprocessamento",
     "provincia": "Cabo Delgado",
     "contactos": {
       "email": "nutriverdeokala@gmail.com",
-      "telefone": "849046027",
+      "telefone": "861190325",
       "website": "",
       "linkedin": "",
       "twitter": ""
     },
     "responsavel": {
-      "nome": "Douglas Norberto Salomão Douglas",
-      "cargo": "Director geral"
+      "nome": "Suna Madali",
+      "cargo": "Gestora"
     },
     "servicos": [
       {
         "nome": "Chips de banana",
-        "descricao": "É feito com banana madura"
+        "descricao": "Energético, contém potássio que ajuda a evitar cãibra"
       },
       {
-        "nome": "Sementes de Chia",
-        "descricao": "São sementes que ajudam na digestão e dieta, Omega 3 vegetal"
+        "nome": "Óleo de coco",
+        "descricao": "Bom para pele, ajuda no crescimento do cabelo, pode ajudar a diminuir a vontade de comer doces"
+      },
+      {
+        "nome": "Sementes de chia",
+        "descricao": "Ajuda no emagrecimento , contém muita proteína, Omega 3, regula açúcar no sangue"
+      },
+      {
+        "nome": "Sumo de malambe e gengibre",
+        "descricao": "Imunidade, energia, perda de peso, ajuda na digestão"
+      },
+      {
+        "nome": "Sumo de hibisco",
+        "descricao": "Desincha, ajuda o coração , queima gordura, desintoxicação do fígado"
+      },
+      {
+        "nome": "Pó de gengibre",
+        "descricao": "Auxilia na perda de peso, serve como anti-inflamatório e anti-oxidante"
+      },
+      {
+        "nome": "Flor seca de hibisco",
+        "descricao": "Ajuda na circulação do sangue, regula colesterol, ajuda a baixar a pressão arterial"
+      },
+      {
+        "nome": "Rolitos de gergelim",
+        "descricao": "Retarda o envelhecimento, vitamina E, contém zinco e cobre"
       }
     ],
     "lideranca": [
       "Jovem"
     ],
     "stats": {
-      "exp": "2020",
+      "exp": "6",
       "producao": "150 de cada Unidade, totalizando 300 kg",
       "vendas": "",
       "extra": "",
@@ -65,16 +90,22 @@
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Não",
+    "comparticipacaoStand": "Não"
   },
   "vitrine": {
     "videos": [],
     "logo": "logo.jpg",
     "cover": "cover.jpg",
     "fotos": [
-      "servico_1.jpg"
+      "servico_1.jpg",
+      "servico_2.jpg",
+      "servico_3.jpg",
+      "servico_4.jpg",
+      "servico_5.jpg"
     ],
-    "nFotos": 2,
+    "nFotos": 6,
     "temLogo": true,
     "temCover": true,
     "temInfo": true

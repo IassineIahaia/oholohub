@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-17T12:13:29.578Z",
+    "pastaId": "1aXryfA7lSujxAFyR06bWdXq9ngtJOfW_",
+    "pastaUrl": "https://drive.google.com/drive/folders/1aXryfA7lSujxAFyR06bWdXq9ngtJOfW_"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Agro Nice Lda",
+    "nomeResponsavel": "Adolfo Graciano Marcelino",
+    "cargo": "Director de Operações e Implementação ",
+    "provincia": "Cabo Delgado",
+    "anosActividade": "8",
+    "nuit": "400805210",
+    "telefone": "+258844559856",
+    "email": "amarcelino@agronicemz.com",
+    "produtosServicos": "omercialização de sementes e insumos agrícolas, consultoria e assistência técnica, produção agrícola, agregação e compra de cereais, capacitação e implementação de projectos agrícolas.",
+    "servicos": [
+      {
+        "nome": "Treinamentos",
+        "descricao": "Capacitação pratica com jovens agrónomos e produtores"
+      },
+      {
+        "nome": "Produção de Horticolas [ Produção agricola ]",
+        "descricao": "Actividades de Desenvolvimento"
+      },
+      {
+        "nome": "Sementes de Milho",
+        "descricao": "Sementes de Milho"
+      },
+      {
+        "nome": "Insumos Agricolas",
+        "descricao": "Loja de venda de insumos agricolas"
+      },
+      {
+        "nome": "Formação de Jovens",
+        "descricao": "Capacitações"
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

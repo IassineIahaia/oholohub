@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-18T12:41:24.105Z",
+    "pastaId": "1G9KF8Z1FOEdmdQJoAFae80oXMYNVEqMj",
+    "pastaUrl": "https://drive.google.com/drive/folders/1G9KF8Z1FOEdmdQJoAFae80oXMYNVEqMj"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Madopera Comercial",
+    "nomeResponsavel": "Conde Abreu Madopera",
+    "cargo": "Director Geral",
+    "provincia": "Cabo Delgado",
+    "anosActividade": "6",
+    "nuit": "400963721",
+    "telefone": "875949074",
+    "email": "conde08abreu89@gmail.com",
+    "produtosServicos": "Processamento de Farinha De Milho Fortificada e Outras areas Como Produção e Comercialização de Produtos Agricolas",
+    "servicos": [
+      {
+        "nome": "Farinha de Milho",
+        "descricao": "Produzido para Fins Alimentativos, Este Rico em Vitaminas ou Seja fortificada",
+        "imagemBase64": null
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Não",
+    "lideranca": [
+      "Jovem"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

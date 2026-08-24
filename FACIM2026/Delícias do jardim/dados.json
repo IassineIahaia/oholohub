@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "vertente": "facim2026",
+    "versao": "1.1",
+    "criadoEm": "2026-08-17T15:05:02.628Z",
+    "pastaId": "1Ai-4u7Ejm0vGCKsQhxOFylwYgWNtvyPx",
+    "pastaUrl": "https://drive.google.com/drive/folders/1Ai-4u7Ejm0vGCKsQhxOFylwYgWNtvyPx"
+  },
+  "manifestacao": {
+    "nomeEmpresa": "Delícias do jardim ",
+    "nomeResponsavel": "Nolia Pamela",
+    "cargo": "Administradora ",
+    "provincia": "Nampula",
+    "anosActividade": "2",
+    "nuit": "108791462",
+    "telefone": "843109181",
+    "email": "noliapamela34@gmail.com",
+    "produtosServicos": "Produção de sorvete para fornecimento à sorveterias ",
+    "servicos": [
+      {
+        "nome": "Venda de sorvetes artesanal",
+        "descricao": "Fornecimento de sorvete a nossa cadeia de sorveterias e fornecimento a terceiros que pretendem revender o nosso sorvete"
+      }
+    ],
+    "rotulagemConforme": "Sim",
+    "empresaFormalizada": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "identidadeVisual": "Sim",
+    "comparticipacaoStand": "Sim",
+    "participouFena": "Sim",
+    "lideranca": [
+      "Mulher"
+    ],
+    "prazoSubmissao": "31/07/2026",
+    "periodoFacim": "31/08/2026 a 06/09/2026",
+    "edicao": "61.ª Edição"
+  }
+}

@@ -1,12 +1,13 @@
 {
   "_meta": {
     "vertente": "facim2026",
-    "versao": "2.0",
-    "origem": "O castelo",
-    "pastaUrl": "https://drive.google.com/drive/folders/1fYCKuPihJxxPEr2myTkrAHASoiM8RDzN"
+    "versao": "2.1",
+    "origem": "O Castelo",
+    "actualizadoEm": "2026-08-18T15:17:38.515Z",
+    "pastaUrl": "https://drive.google.com/drive/folders/1qGhFeCA49XD4LULci6BHt_BrOR_Qk6Ne"
   },
   "empresa": {
-    "nome": "O castelo",
+    "nome": "O Castelo",
     "descricao": "O nosso empreendimento é um alojamento turístico com 5 quartos, que oferece aos hóspedes conforto, hospitalidade e uma experiência acolhedora. Além da hospedagem, disponibilizamos refeições com comidas típicas da região, preparadas com ingredientes frescos e produtos fabricados localmente, valorizando a cultura, os sabores e os produtores da nossa comunidade.",
     "badges": [
       "Empresa Apurada"
@@ -30,27 +31,31 @@
     "servicos": [
       {
         "nome": "Achar de Limão Ardência Pura",
-        "descricao": "Preparado à base de limão e usado para dar sabor e picância às refeições."
+        "descricao": "Preparado à base de limão e usado para dar ainda mais sabor e picância às refeições."
+      },
+      {
+        "nome": "Achar de Manga",
+        "descricao": "sabor intenso e uma ardência que conquista, feito com manga e piripiri para dar ainda mais sabor a refeição."
       },
       {
         "nome": "Piripiri Picante Caseiro",
         "descricao": "Feito artesanalmente com ingredientes frescos e selecionados, o nosso piripíri oferece o equilíbrio perfeito entre sabor e picância. Ideal para temperar frango, peixe, carnes, mariscos, batatas e qualquer prato que mereça um toque especial."
       },
       {
-        "nome": "Castanha de Caju Caramelizada Caseira",
-        "descricao": "As nossas castanhas caramelizadas são preparadas com ingredientes de qualidade para oferecer um sabor irresistível em cada dentada.\n\nPerfeitas para um lanche, para partilhar com a família e amigos ou para adoçar qualquer momento do seu dia."
+        "nome": "Castanha de Caju Caramelizada",
+        "descricao": "As nossas castanhas caramelizadas são preparadas com ingredientes de qualidade para oferecer um sabor irresistível em cada dentada.\nPerfeitas para um lanche, para partilhar com a família e amigos ou para adoçar qualquer momento do seu dia."
       },
       {
-        "nome": "Castanha de Caju Tostada",
+        "nome": "Castanhas de Caju Tostadas",
         "descricao": "Uma opção deliciosa e prática para um lanche saudável, para acompanhar bebidas ou para partilhar em qualquer ocasião."
       },
       {
-        "nome": "Amendoim Melado",
-        "descricao": "O nosso amendoim melado é cuidadosamente preparado para garantir um sabor marcante e uma textura irresistível em cada grão."
+        "nome": "Biscoitos de Gergelim Crocantes Ante-estresse",
+        "descricao": "Preparado com gergelim cuidadosamente selecionado. Uma opção deliciosa para acompanhar o chá, o café ou para um lanche a qualquer hora do dia."
       },
       {
-        "nome": "Biscoito de Gergelim Anti-estresse",
-        "descricao": "Preparado com gergelim cuidadosamente selecionado. Uma opção deliciosa para acompanhar o chá, o café ou para um lanche a qualquer hora do dia."
+        "nome": "Amendoim Melado",
+        "descricao": "nosso amendoim melado é cuidadosamente preparado para garantir um sabor marcante e uma textura irresistível em cada grão."
       }
     ],
     "lideranca": [
@@ -81,7 +86,9 @@
     "participouFena": "Não",
     "empresaFormalizada": "Sim",
     "rotulagemConforme": "Sim",
-    "identidadeVisual": "Sim"
+    "identidadeVisual": "Sim",
+    "capacidadeFinanceira": "Sim",
+    "comparticipacaoStand": "Sim"
   },
   "vitrine": {
     "videos": [],
@@ -93,9 +100,10 @@
       "servico_3.jpg",
       "servico_4.jpg",
       "servico_5.jpg",
-      "servico_6.jpg"
+      "servico_6.jpg",
+      "servico_7.jpg"
     ],
-    "nFotos": 7,
+    "nFotos": 8,
     "temLogo": true,
     "temCover": true,
     "temInfo": true
