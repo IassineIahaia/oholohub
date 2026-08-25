@@ -578,7 +578,7 @@ async function renderizarPerfilFacim() {
             ${f.apurada ? '<span class="facim-selo is-estatico">Apurada para expor</span>' : '<span class="facim-selo is-candidata">Candidatura submetida</span>'}
           </div>
           <h1 class="facim-perfil-nome" data-anim="up" data-anim-delay="70">${_escapar(e.nome)}</h1>
-          <p class="facim-perfil-local" data-anim="up" data-anim-delay="130">${icone("pin")} ${_escapar(e.provincia) || "Moçambique"}${f.stand ? ` &nbsp;·&nbsp; Stand ${_escapar(f.stand)}` : ""}</p>
+          <p class="facim-perfil-local" data-anim="up" data-anim-delay="130">${icone("pin")} ${_escapar(e.provincia) || "Moçambique"}${f.stand ? ` ` : ""}</p>
         </div>
       </div>
     </section>
