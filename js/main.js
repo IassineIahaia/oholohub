@@ -896,9 +896,9 @@ function abrirPopupFacim() {
       <h2 id="popup-facim-titulo" class="text-headline-md" style="margin-bottom: var(--space-sm);">Já está online a Vitrine Digital da FACIM 2026</h2>
 
       <p class="text-body-md text-muted" style="margin-bottom: var(--space-lg);">
-        19 empresas de Nampula, Cabo Delgado e do Distrito de Mocuba foram apuradas para expor
-        na 61.ª Feira Internacional de Maputo. Veja os produtos de cada uma e marque a sua
-        reunião antes de a feira abrir.
+        Com o apoio da TechnoServe, através do Projecto Oholo, 19 empresas de Nampula, Cabo Delgado e do Distrito de Mocuba vão apresentar os seus produtos, serviços e soluções a potenciais clientes, parceiros e investidores durante a 61.ª Feira Internacional de Maputo (FACIM 2026).
+        <br/>
+        Conheça as empresas, descubra os seus produtos e marque a sua reunião antes de a feira abrir através da nossa Vitrine Digital.
       </p>
 
       <a href="${FACIM_PAGINA_URL}" class="btn btn-primary" style="width:100%; height:48px;">Ver a Vitrine Digital →</a>
