@@ -92,6 +92,9 @@
   margin-bottom: var(--space-lg);
 }
 
+#reuniao{
+  background-color:  rgba(255, 255, 255, 0.92);
+}
 .facim-hero-edicao b {
   color: var(--color-primary-container);
   font-weight: 600;
@@ -470,6 +473,7 @@
 }
 
 .facim-stand-tag {
+  display: none;
   position: absolute;
   bottom: var(--space-sm);
   right: var(--space-sm);
