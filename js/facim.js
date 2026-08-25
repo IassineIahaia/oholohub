@@ -557,7 +557,6 @@ async function renderizarPerfilFacim() {
   const linhasFicha = [
     ["Sector", e.industria],
     ["Origem", e.provincia],
-    ["Stand na FACIM", f.stand ? `${f.stand}` : ""],
     ["Anos de actividade", e.anosActividade],
     ["NUIT", e.nuit],
     ["Representante", f.representante || responsavel.nome],
