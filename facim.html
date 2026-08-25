@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CXNQ3RKW0W"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-CXNQ3RKW0W");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FACIM 2026 — Vitrine Digital | OHOLO Hub</title>
+    <meta
+      name="description"
+      content="Vitrine Digital da missão empresarial do OHOLO Hub à 61.ª Feira Internacional de Maputo — FACIM 2026, de 31 de Agosto a 6 de Setembro, em Ricatla, Marracuene."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/facim.css" />
+    <noscript>
+      <style>
+        /* Sem JavaScript, nada fica escondido à espera de uma animação */
+        [data-anim] {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          clip-path: none !important;
+        }
+        .linha-mascara > span {
+          transform: none !important;
+        }
+        .facim-conteudos-painel {
+          grid-template-rows: 1fr !important;
+          opacity: 1 !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="tem-hero-escuro">
+    <!-- ══════════════════════════════════════════════════════
+         HEADER — transparente sobre o hero, vidro depois
+    ══════════════════════════════════════════════════════ -->
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-brand">OHOLO HUB</a>
+
+        <button class="navbar-toggle" type="button" aria-label="Abrir menu">
+          <span class="icon"
+            ><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg
+          ></span>
+        </button>
+
+        <nav class="navbar-links">
+          <a href="index.html">Início</a>
+          <a href="facim.html" class="active">FACIM 2026</a>
+          <a href="explore.html">FENA</a>
+        </nav>
+
+        <div class="navbar-actions">
+          <button
+            type="button"
+            class="btn btn-primary magnetico"
+            onclick="abrirModalAgendamentoFacim()"
+          >
+            <span class="icon" style="width: 18px; height: 18px">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+            </span>
+            Agendar Reunião
+          </button>
+        </div>
+      </div>
+      <span class="navbar-progresso"></span>
+    </header>
+
+    <!-- ══════════════════════════════════════════════════════
+         RAIL DE SECÇÕES — a página é longa; isto diz onde se está
+    ══════════════════════════════════════════════════════ -->
+    <nav class="secoes-rail" aria-label="Secções da página">
+      <a href="#vitrine" data-seccao-link>
+        <span class="secoes-rail-nome">Vitrine Digital</span
+        ><i class="secoes-rail-traco"></i>
+      </a>
+      <a href="#pavilhao" data-seccao-link>
+        <span class="secoes-rail-nome">Stands</span
+        ><i class="secoes-rail-traco"></i>
+      </a>
+      <a href="#missao" data-seccao-link>
+        <span class="secoes-rail-nome">Plano da missão</span
+        ><i class="secoes-rail-traco"></i>
+      </a>
+      <a href="#conteudos" data-seccao-link>
+        <span class="secoes-rail-nome">Conteúdos</span
+        ><i class="secoes-rail-traco"></i>
+      </a>
+      <a href="#reuniao" data-seccao-link>
+        <span class="secoes-rail-nome">Agendar</span
+        ><i class="secoes-rail-traco"></i>
+      </a>
+    </nav>
+
+    <!-- Alternativa no telemóvel -->
+    <nav class="secoes-fita" aria-label="Atalhos das secções">
+      <a href="#vitrine" data-seccao-link>Vitrine</a>
+      <a href="#pavilhao" data-seccao-link>Stands</a>
+      <a href="#missao" data-seccao-link>Missão</a>
+      <a href="#conteudos" data-seccao-link>Conteúdos</a>
+      <a href="#reuniao" data-seccao-link>Agendar</a>
+    </nav>
+
+    <main>
+      <!-- ══════════════════════════════════════════════════════
+           HERO
+      ══════════════════════════════════════════════════════ -->
+      <section class="facim-hero" data-hero-escuro>
+        <span class="facim-hero-brilho" data-parallax="0.06"></span>
+
+        <div class="container">
+          <span class="facim-hero-edicao" data-anim="down">
+            <b>61.ª Edição</b> · Feira Internacional de Maputo
+          </span>
+
+          <h1 class="facim-hero-titulo" data-anim-linhas="110">
+            Do Norte <br />
+            para todo o país<br /><em>Negócios que crescem e geram impacto.</em>
+          </h1>
+
+          <p class="facim-hero-sub" data-anim="up" data-anim-delay="320">
+            Aqui encontrará empresas de diferentes sectores, incluindo
+            participantes da FENA, com os seus produtos, serviços e histórias.
+            Mais do que uma montra, esta plataforma representa o compromisso da
+            TechnoServe em fortalecer pequenas e médias empresas, ampliar o seu
+            acesso a mercados, criar conexões e promover negócios mais
+            competitivos e sustentáveis. TechnoServe & Marketacess |
+            Fortalecendo empresas. Conectando mercados. Criando oportunidades.
+          </p>
+
+          <div class="facim-hero-meta">
+            <div data-anim="up" data-anim-delay="420">
+              <span class="rot">Quando</span>
+              <span class="val">31 Ago — 06 Set 2026</span>
+            </div>
+            <div data-anim="up" data-anim-delay="480">
+              <span class="rot">Onde</span>
+              <span class="val">Ricatla, Marracuene</span>
+            </div>
+            <div data-anim="up" data-anim-delay="540">
+              <span class="rot">Tema da edição</span>
+              <span class="val">Transformação Digital e Energética</span>
+            </div>
+            <div data-anim="up" data-anim-delay="600">
+              <span class="rot">Organização</span>
+              <span class="val">Ministério da Economia · APIEX</span>
+            </div>
+          </div>
+
+          <div
+            class="facim-contagem"
+            id="facim-contagem"
+            data-anim="up"
+            data-anim-delay="660"
+          ></div>
+
+          <div class="facim-hero-accoes" data-anim="up" data-anim-delay="740">
+            <a href="#vitrine" class="btn facim-btn-claro magnetico"
+              >Ver a Vitrine Digital</a
+            >
+            <button
+              type="button"
+              class="btn facim-btn-linha"
+              onclick="abrirModalAgendamentoFacim()"
+            >
+              Marcar reunião no stand
+            </button>
+          </div>
+
+          <div class="facim-hero-rodape" data-anim="fade" data-anim-delay="900">
+            <span class="scroll-pista"><i></i> Continue a descer</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           NÚMEROS
+      ══════════════════════════════════════════════════════ -->
+      <!-- <section class="facim-numeros">
+        <div class="container facim-numeros-grelha" data-anim-stagger="90">
+          <div class="facim-numero" data-anim="up">
+            <span class="facim-numero-valor" id="facim-num-apuradas">0</span>
+            <span class="facim-numero-rotulo">Empresas apuradas</span>
+          </div>
+          <div class="facim-numero" data-anim="up">
+            <span class="facim-numero-valor" id="facim-num-candidaturas"
+              >0</span
+            >
+            <span class="facim-numero-rotulo">Candidaturas submetidas</span>
+          </div>
+          <div class="facim-numero" data-anim="up">
+            <span class="facim-numero-valor" id="facim-num-provincias">0</span>
+            <span class="facim-numero-rotulo">Origens representadas</span>
+          </div>
+          <div class="facim-numero" data-anim="up">
+            <span class="facim-numero-valor" id="facim-num-sectores">0</span>
+            <span class="facim-numero-rotulo">Sectores em exposição</span>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ══════════════════════════════════════════════════════
+           VITRINE DIGITAL
+      ══════════════════════════════════════════════════════ -->
+      <section class="facim-seccao" id="vitrine">
+        <div class="container">
+          <div class="facim-seccao-cabecalho">
+            <span class="facim-eyebrow" data-anim="up">Vitrine Digital</span>
+            <h2 class="facim-h1" data-anim="up" data-anim-delay="60">
+              Os produtos e serviços que vão estar na feira
+            </h2>
+            <span
+              class="facim-risco"
+              data-anim="line"
+              data-anim-delay="140"
+            ></span>
+            <p data-anim="up" data-anim-delay="180">
+              Cada empresa tem a sua página com fotografias, descrição dos
+              produtos e, quando disponível, vídeo. Pesquise por sector, origem
+              ou nome — e marque a reunião directamente a partir da página da
+              empresa.
+            </p>
+          </div>
+
+          <div class="facim-barra-filtros" data-anim="rise">
+            <div class="facim-campo-pesquisa">
+              <span class="icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+              </span>
+              <label for="facim-pesquisa" class="visualmente-oculto"
+                >Pesquisar empresa</label
+              >
+              <input
+                type="text"
+                id="facim-pesquisa"
+                class="input-field"
+                placeholder="Procurar por empresa, produto ou representante..."
+              />
+            </div>
+
+            <label for="facim-filtro-sector" class="visualmente-oculto"
+              >Sector</label
+            >
+            <select id="facim-filtro-sector" class="input-field">
+              <option value="">Todos os sectores</option>
+            </select>
+
+            <label for="facim-filtro-provincia" class="visualmente-oculto"
+              >Origem</label
+            >
+            <select id="facim-filtro-provincia" class="input-field">
+              <option value="">Todas as origens</option>
+            </select>
+
+            <label class="facim-check">
+              <input type="checkbox" id="facim-filtro-apuradas" />
+              Só apuradas
+            </label>
+
+            <button type="button" class="btn btn-secondary" id="facim-limpar">
+              Limpar
+            </button>
+          </div>
+
+          <div class="facim-contador-linha" data-anim="fade">
+            <span id="facim-contador">A carregar…</span>
+            <span class="facim-contador-nota"
+              >As empresas apuradas aparecem primeiro.</span
+            >
+          </div>
+
+          <div class="facim-grelha" id="facim-grid">
+            <p class="text-body-md text-muted">A carregar as empresas…</p>
+          </div>
+
+          <p id="facim-vazio" class="text-body-md">
+            Nenhuma empresa corresponde a estes filtros. Experimente limpar a
+            pesquisa.
+          </p>
+
+          <div id="facim-ver-mais" class="facim-ver-mais"></div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           PLANTA DO PAVILHÃO
+      ══════════════════════════════════════════════════════ -->
+      <section class="facim-seccao is-alt" id="pavilhao">
+        <div class="container">
+          <div class="facim-seccao-cabecalho">
+            <span class="facim-eyebrow" data-anim="up"
+              >Distribuição de stands</span
+            >
+            <h2 class="facim-h1" data-anim="up" data-anim-delay="60">
+              Quem está onde, e em que área
+            </h2>
+            <span
+              class="facim-risco"
+              data-anim="line"
+              data-anim-delay="140"
+            ></span>
+            <p data-anim="up" data-anim-delay="180">
+              Cada bloco representa o espaço atribuído a uma empresa apurada. Os
+              blocos mais largos são stands de 3&times;2&nbsp;m; os restantes,
+              de 2&times;2&nbsp;m. Clique num bloco para abrir a página da
+              empresa.
+            </p>
+          </div>
+
+          <div class="facim-planta-quadro" data-anim="rise">
+            <div class="facim-planta" id="facim-planta">
+              <p style="color: rgba(255, 255, 255, 0.6)">
+                A carregar os stands…
+              </p>
+            </div>
+            <div class="facim-planta-legenda" id="facim-planta-legenda"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           LOGÍSTICA DA MISSÃO
+      ══════════════════════════════════════════════════════ -->
+      <section class="facim-seccao missao" id="missao">
+        <div class="container">
+          <div class="facim-seccao-cabecalho">
+            <span class="facim-eyebrow" data-anim="up">Plano da missão</span>
+            <h2 class="facim-h1" data-anim="up" data-anim-delay="60">
+              Do Norte a Marracuene, dia a dia
+            </h2>
+            <span
+              class="facim-risco"
+              data-anim="line"
+              data-anim-delay="140"
+            ></span>
+            <p data-anim="up" data-anim-delay="180">
+              Calendário de trabalho e plano de deslocação dos expositores,
+              conforme o Plano Integrado FACIM 2026.
+            </p>
+          </div>
+
+          <div class="facim-logistica">
+            <ol
+              class="facim-cronograma"
+              id="facim-cronograma"
+              data-anim="fade"
+            ></ol>
+
+            <div class="facim-lado-logistica" data-anim-stagger="110">
+              <div class="facim-painel" data-anim="rise">
+                <h3 class="facim-ficha-titulo">Deslocação dos expositores</h3>
+                <div id="facim-deslocacao"></div>
+              </div>
+
+              <div class="facim-painel" data-anim="rise">
+                <h3 class="facim-ficha-titulo">Representantes a viajar</h3>
+                <div
+                  class="facim-representantes"
+                  id="facim-representantes"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           RECOLHA DE CONTEÚDOS — ferramenta de equipa, recolhida
+      ══════════════════════════════════════════════════════ -->
+      <!-- <section class="facim-seccao is-alt" id="conteudos">
+        <div class="container">
+          <div class="facim-conteudos-topo" data-anim="rise">
+            <div>
+              <span class="facim-eyebrow">Recolha de conteúdos</span>
+              <h2 class="facim-h1">O que já temos de cada beneficiário</h2>
+              <div
+                class="facim-conteudos-sumario"
+                id="facim-conteudos-sumario"
+              ></div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-secondary facim-toggle"
+              id="facim-conteudos-toggle"
+              aria-expanded="false"
+              aria-controls="facim-conteudos-painel"
+            >
+              <span class="facim-toggle-texto">Abrir painel detalhado</span>
+              <span class="icon facim-toggle-seta"
+                ><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg
+              ></span>
+            </button>
+          </div>
+
+          <div class="facim-conteudos-painel" id="facim-conteudos-painel">
+            <div class="facim-conteudos-layout">
+              <div class="facim-painel">
+                <h3 class="facim-ficha-titulo">Progresso global</h3>
+                <div id="facim-conteudos-resumo"></div>
+                <div class="facim-nota">
+                  Para publicar um vídeo, abra
+                  <code>data/facim/&lt;empresa&gt;/dados.json</code> e
+                  acrescente o link do YouTube em
+                  <code>"vitrine" → "videos"</code>. As fotografias entram na
+                  mesma pasta como <code>servico_1.jpg</code>,
+                  <code>servico_2.jpg</code>, e assim por diante.
+                </div>
+              </div>
+
+              <div class="facim-tabela-wrap">
+                <div class="facim-tabela-topo">
+                  <label class="facim-check">
+                    <input
+                      type="checkbox"
+                      id="facim-conteudos-apuradas"
+                      checked
+                    />
+                    Só empresas apuradas
+                  </label>
+                  <label class="facim-check">
+                    <input type="checkbox" id="facim-conteudos-falta" />
+                    Só com material em falta
+                  </label>
+                </div>
+
+                <div class="facim-tabela-scroll">
+                  <table class="facim-tabela">
+                    <thead>
+                      <tr>
+                        <th>Empresa</th>
+                        <th>Fotos</th>
+                        <th>Vídeo</th>
+                        <th>Descrição</th>
+                        <th>Logótipo</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody id="facim-conteudos-corpo">
+                      <tr>
+                        <td colspan="6" class="facim-tabela-vazia">
+                          A carregar…
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ══════════════════════════════════════════════════════
+           CTA
+      ══════════════════════════════════════════════════════ -->
+      <section class="facim-seccao" id="reuniao">
+        <div class="container">
+          <div class="facim-cta" data-anim="rise">
+            <span
+              class="facim-eyebrow"
+              style="color: var(--color-primary-container)"
+            >
+              31 Ago — 06 Set · Ricatla, Marracuene
+            </span>
+            <h2>Marque a sua reunião antes de a feira abrir</h2>
+            <p>
+              Escolha a empresa, o dia e a hora. A equipa do OHOLO Hub confirma
+              a marcação e recebe-o no stand, com o expositor já à sua espera.
+            </p>
+            <div class="facim-cta-accoes">
+              <button
+                type="button"
+                class="btn facim-btn-claro magnetico"
+                onclick="abrirModalAgendamentoFacim()"
+              >
+                Agendar reunião B2B
+              </button>
+              <a href="#vitrine" class="btn facim-btn-linha"
+                >Voltar à vitrine</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid" data-anim-stagger="80">
+          <div data-anim="up">
+            <div class="navbar-brand" style="margin-bottom: var(--space-sm)">
+              OHOLO Hub
+            </div>
+            <p class="text-body-md text-muted">
+              Preparamos negócios. Conectamos mercados. Geramos impacto —
+              suportado pelo Projecto OHOLO.
+            </p>
+          </div>
+
+          <div data-anim="up">
+            <div
+              class="text-label-sm text-muted"
+              style="margin-bottom: var(--space-md)"
+            >
+              FACIM 2026
+            </div>
+            <ul
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-sm);
+              "
+            >
+              <li>
+                <a href="#vitrine" class="text-body-md">Vitrine Digital</a>
+              </li>
+              <li>
+                <a href="#pavilhao" class="text-body-md"
+                  >Distribuição de stands</a
+                >
+              </li>
+              <li>
+                <a href="#missao" class="text-body-md">Plano da missão</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facim.gov.mz/"
+                  class="text-body-md"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Site oficial da FACIM
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div data-anim="up">
+            <div
+              class="text-label-sm text-muted"
+              style="margin-bottom: var(--space-md)"
+            >
+              CONTACTO
+            </div>
+            <div style="display: flex; gap: var(--space-sm)">
+              <a
+                href="mailto:infomarketaccessmz@gmail.com"
+                class="text-body-md icon"
+                style="width: 18px; height: 18px"
+                aria-label="Enviar email"
+              >
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m3 7 9 6 9-6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2026 Powered by Market Access. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/facim-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/facim.js"></script>
+    <script>
+      inicializarFacim();
+    </script>
+  </body>
+</html>
