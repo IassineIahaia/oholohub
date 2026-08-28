@@ -3077,3 +3077,153 @@ html.lenis body {
     color: var(--oh-vermelho);
   }
 }
+
+/* ============================================================
+   GALERIA NO TELEMÓVEL
+   ------------------------------------------------------------
+   O mosaico assimétrico do desktop não funciona num ecrã
+   estreito: as peças ficam minúsculas e o ritmo perde-se.
+   Aqui simplifica-se — a primeira fotografia ocupa a largura
+   toda e as restantes são quadrados iguais em duas colunas.
+   Os vídeos ficam um por linha, em 16:9.
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .oh-galeria {
+    padding: var(--oh-15) 0 var(--oh-10);
+  }
+
+  /* Cabeçalho: título, texto e separadores empilhados */
+  .oh-galeria-topo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--oh-3);
+    margin-bottom: var(--oh-4);
+  }
+
+  .oh-galeria-intro p {
+    margin-top: var(--oh-2);
+  }
+
+  .oh-galeria-tabs {
+    width: 100%;
+    gap: var(--oh-4);
+    padding-top: var(--oh-3);
+    border-top: 1px solid var(--oh-linha);
+  }
+
+  .oh-galeria-tabs .galeria-tab {
+    font-size: 15px;
+  }
+
+  /* ── Fotografias ── */
+  .galeria-grid-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 44vw;
+    gap: 6px;
+  }
+
+  /* todas as peças passam a quadrados iguais... */
+  .galeria-item-foto,
+  .galeria-item-foto.tile-md,
+  .galeria-item-foto.tile-wide,
+  .galeria-item-foto.tile-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* ...menos a primeira, que abre a secção a toda a largura */
+  .galeria-item-foto.tile-lg {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  /* ── Vídeos: um por linha, em 16:9 ── */
+  .galeria-grid-videos {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 54vw;
+    gap: 6px;
+  }
+
+  /* sem isto o "tile-lg" pedia 2 colunas numa grelha de 1 e a
+     grelha transbordava para fora do ecrã */
+  .galeria-item-video,
+  .galeria-item-video.tile-lg {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .galeria-video-play,
+  .galeria-item-video.tile-lg .galeria-video-play {
+    width: 54px;
+    height: 54px;
+  }
+
+  /* ── Legendas: no telemóvel não há hover ──
+     Só a peça grande mostra legenda; nas pequenas o texto não
+     caberia e só sujava a fotografia. */
+  .galeria-item-foto::after {
+    opacity: 0;
+  }
+
+  .galeria-item-foto-legenda {
+    opacity: 0;
+    transform: none;
+  }
+
+  .galeria-item-foto.tile-lg::after {
+    opacity: 1;
+  }
+
+  .galeria-item-foto.tile-lg .galeria-item-foto-legenda {
+    opacity: 1;
+    transform: none;
+    padding: var(--oh-2);
+    font-size: 13px;
+  }
+
+  .galeria-item-video-legenda {
+    font-size: 13px;
+    padding: var(--oh-6) var(--oh-2) var(--oh-2);
+  }
+
+  /* o "Ver" a vermelho é um estado de rato — não faz sentido aqui */
+  .galeria-item-foto::before {
+    content: none;
+  }
+
+  .oh-galeria-paginacao {
+    margin-top: var(--oh-4);
+  }
+}
+
+/* ============================================================
+   FAIXA FACIM — o texto alinha com o wrapper no desktop
+   ------------------------------------------------------------
+   A faixa é de ponta a ponta e a fotografia continua a sangrar
+   pela direita. Só a coluna de texto passa a começar na mesma
+   linha que o resto da página, em vez de colar à margem do ecrã.
+   A percentagem resolve contra a largura do <main>, por isso
+   bate certo com o .container mesmo com a barra de scroll.
+   ============================================================ */
+
+@media (min-width: 1100px) {
+  .oh-faixa,
+  .facim-faixa {
+    padding-left: max(
+      var(--oh-gutter),
+      calc((100% - var(--oh-max)) / 2 + var(--oh-gutter))
+    );
+  }
+}
+
+/* A coluna de texto passa a ter a largura do próprio texto, para a
+   fotografia começar logo a seguir em vez de ficar a um vazio de
+   distância (o 7fr era muito mais largo do que os 620px do texto) */
+@media (min-width: 1100px) {
+  .oh-faixa,
+  .facim-faixa {
+    grid-template-columns: minmax(0, 620px) 1fr;
+    gap: var(--oh-6);
+  }
+}
