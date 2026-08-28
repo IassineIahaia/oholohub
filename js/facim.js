@@ -564,7 +564,7 @@ async function renderizarPerfilFacim() {
   ].filter(([, valor]) => _txt(valor));
 
   raiz.innerHTML = `
-    <section class="facim-perfil-topo">
+    <section class="facim-perfil-topo" data-hero-escuro>
       <div class="facim-perfil-capa">
         ${capa ? `<img src="${capa}" alt="">` : ""}
         <div class="facim-perfil-veu"></div>

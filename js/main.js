@@ -8,30 +8,41 @@ function inicializarNavbarMobile() {
   const links = document.querySelector(".navbar-links");
   if (!toggle || !links) return;
 
+  const navbar = document.querySelector(".navbar");
+
+  function aplicarEstado(aberto) {
+    links.classList.toggle("is-open", aberto);
+    navbar && navbar.classList.toggle("is-menu-aberto", aberto);
+    document.body.classList.toggle("menu-aberto", aberto);
+    toggle.setAttribute("aria-expanded", aberto ? "true" : "false");
+    toggle.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+  }
+
+  toggle.setAttribute("aria-expanded", "false");
+
   toggle.addEventListener("click", () => {
-    links.classList.toggle("is-open");
+    aplicarEstado(!links.classList.contains("is-open"));
   });
 
   // fechar o menu ao clicar num link (mobile)
   links.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => links.classList.remove("is-open"));
+    a.addEventListener("click", () => aplicarEstado(false));
+  });
+
+  // fechar com Escape
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && links.classList.contains("is-open")) {
+      aplicarEstado(false);
+    }
+  });
+
+  // ao voltar ao desktop, o menu não pode ficar meio aberto
+  window.matchMedia("(min-width: 901px)").addEventListener("change", (ev) => {
+    if (ev.matches) aplicarEstado(false);
   });
 }
 
 document.addEventListener("DOMContentLoaded", inicializarNavbarMobile);
-
-/* ── Explore: abre/fecha o painel de filtros no telemóvel ── */
-function inicializarToggleFiltros() {
-  const toggle = document.querySelector(".explore-filters-toggle");
-  const body = document.querySelector(".explore-filters-body");
-  if (!toggle || !body) return;
-
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("is-open");
-  });
-}
-
-document.addEventListener("DOMContentLoaded", inicializarToggleFiltros);
 
 /**
  * Liga qualquer formulário de pesquisa marcado com [data-search-form] para
@@ -137,13 +148,14 @@ function resumir(texto, max = 120) {
 // ── Helper: igual ao imgComFallback, mas quando esgota as extensões do
 //    "cover", tenta o "logo" como fundo (com classe para aplicar blur via CSS) ──
 function coverComFallback(slug, classeExtra = "") {
+  return coverComFallbackPasta("data/empresas", slug, classeExtra);
+}
+
+// ── Igual, mas com a pasta indicada (data/empresas ou data/facim) ──
+function coverComFallbackPasta(pasta, slug, classeExtra = "") {
   const extensoes = ["jpg", "png", "jpeg"];
-  const candidatosCover = extensoes.map((ext) =>
-    imagemEmpresa(slug, `cover.${ext}`),
-  );
-  const candidatosLogo = extensoes.map((ext) =>
-    imagemEmpresa(slug, `logo.${ext}`),
-  );
+  const candidatosCover = extensoes.map((ext) => `${pasta}/${slug}/cover.${ext}`);
+  const candidatosLogo = extensoes.map((ext) => `${pasta}/${slug}/logo.${ext}`);
   const primeiro = candidatosCover[0];
   const restoCover = candidatosCover.slice(1);
 
@@ -177,9 +189,18 @@ function coverComFallback(slug, classeExtra = "") {
 // ── Helper: gerar atributos src + onerror de uma <img> que tenta
 //    várias extensões em cascata (jpg → png → jpeg) antes de desistir ──
 function imgComFallback(slug, baseNome, extensoes = ["jpg", "png", "jpeg"]) {
-  const candidatos = extensoes.map((ext) =>
-    imagemEmpresa(slug, `${baseNome}.${ext}`),
-  );
+  return imgComFallbackPasta("data/empresas", slug, baseNome, extensoes);
+}
+
+// ── Igual ao imgComFallback, mas a pasta é indicada — a página "Empresas"
+//    junta as fichas de data/empresas/ e de data/facim/ na mesma lista ──
+function imgComFallbackPasta(
+  pasta,
+  slug,
+  baseNome,
+  extensoes = ["jpg", "png", "jpeg"],
+) {
+  const candidatos = extensoes.map((ext) => `${pasta}/${slug}/${baseNome}.${ext}`);
   const primeiro = candidatos[0];
   const resto = JSON.stringify(candidatos.slice(1));
   // onerror: avança para o próximo candidato guardado em data-fallback;
@@ -224,14 +245,17 @@ function cardEmpresaHTML(empresa) {
 //    em vez da foto de capa, para um layout mais "directório de marcas" ──
 function cardEmpresaExploreHTML(empresa) {
   const nServicos = (empresa.servicos || []).length;
-  const verificada = empresa.badges && empresa.badges.length > 0;
+  const q = qualificarEmpresa(empresa);
+  const href = empresa.href || `empresa.html?id=${empresa.slug}`;
+  const pasta = empresa.pasta || "data/empresas";
+  const naFacim = empresa.fonte === "facim" || empresa.tambemNaFacim;
 
   return `
-    <a href="empresa.html?id=${empresa.slug}" class="card explore-card">
+    <a href="${href}" class="card explore-card" data-escalao="${q.escalao.id}">
       <div class="explore-card-top">
-        <div class="explore-card-logo-frame">
-          <img ${imgComFallback(empresa.slug, "logo")} alt="Logo ${empresa.nome}" class="explore-card-logo">
-        </div>
+        <img ${coverComFallbackPasta(pasta, empresa.slug, "explore-card-cover")} alt="${empresa.nome}" loading="lazy">
+        <span class="oh-selo oh-selo-${q.escalao.id}">${q.escalao.rotulo}</span>
+        ${naFacim ? `<span class="oh-marca-facim">FACIM 2026</span>` : ""}
       </div>
       <div class="explore-card-body">
         <span class="badge ${classeBadgeIndustria(empresa.industria)}" style="margin-bottom: var(--space-sm);">${empresa.industria || "Empresa"}</span>
@@ -239,6 +263,22 @@ function cardEmpresaExploreHTML(empresa) {
         <p class="text-body-md text-muted" style="margin-bottom: var(--space-md);">
           ${resumir(empresa.descricao, 90)}
         </p>
+
+        <div class="oh-prontidao" title="${q.escalao.descricao}">
+          <div class="oh-prontidao-topo">
+            <span class="oh-prontidao-rotulo">Índice de prontidão</span>
+            <span class="oh-prontidao-valor">${q.indice}<i>/100</i></span>
+          </div>
+          <div class="oh-prontidao-barra">
+            <span style="width: ${q.indice}%"></span>
+          </div>
+          ${
+            q.emFalta.length > 0
+              ? `<span class="oh-prontidao-falta">A completar: ${q.emFalta[0].toLowerCase()}</span>`
+              : `<span class="oh-prontidao-falta">Ficha completa</span>`
+          }
+        </div>
+
         <span class="text-label-sm explore-card-meta">${icone("pin")} ${empresa.provincia || "Moçambique"} &nbsp;·&nbsp; ${nServicos} serviço${nServicos === 1 ? "" : "s"}</span>
       </div>
     </a>
@@ -548,7 +588,8 @@ async function actualizarStatsHome() {
 //    para os filtros não terem de voltar a fazer fetch sempre que mudam ──
 let _empresasCache = null;
 let _paginaActual = 1;
-const ITEMS_POR_PAGINA = 6;
+const ITEMS_POR_PAGINA = 12;
+let _escalaoActivo = "todas";
 
 /**
  * Aplica os filtros activos (texto, verified, indústria[], província) e
@@ -562,23 +603,17 @@ function aplicarFiltrosExplore(resetarPagina = true) {
   const termo = (document.getElementById("filter-search")?.value || "")
     .trim()
     .toLowerCase();
-  const verifiedOnly = document.getElementById("filter-verified")?.checked;
   const provinciaSel = document.getElementById("filter-provincia")?.value || "";
-  const industriasSel = Array.from(
-    document.querySelectorAll(".filter-industria:checked"),
-  ).map((el) => el.value);
+  const industriaSel = document.getElementById("filter-industria")?.value || "";
 
   let filtradas = _empresasCache.filter((empresa) => {
-    if (verifiedOnly && !(empresa.badges && empresa.badges.length > 0)) {
+    if (_escalaoActivo !== "todas" && escalaoDaEmpresa(empresa) !== _escalaoActivo) {
       return false;
     }
     if (provinciaSel && empresa.provincia !== provinciaSel) {
       return false;
     }
-    if (
-      industriasSel.length > 0 &&
-      !industriasSel.includes(empresa.industria)
-    ) {
+    if (industriaSel && empresa.industria !== industriaSel) {
       return false;
     }
     if (termo) {
@@ -596,6 +631,9 @@ function aplicarFiltrosExplore(resetarPagina = true) {
     }
     return true;
   });
+
+  // As mais prontas aparecem primeiro
+  filtradas = ordenarPorProntidao(filtradas);
 
   const grid = document.getElementById("empresas-grid");
   const emptyMsg = document.getElementById("empty-msg");
@@ -615,7 +653,22 @@ function aplicarFiltrosExplore(resetarPagina = true) {
     if (emptyMsg) emptyMsg.style.display = "none";
   }
 
+  actualizarContadorExplore(filtradas.length);
   renderizarPaginacaoExplore(filtradas.length, totalPaginas);
+}
+
+/** Linha de resultados: "9 de 26 empresas". */
+function actualizarContadorExplore(total) {
+  const alvo = document.getElementById("oh-contador-resultados");
+  if (!alvo) return;
+
+  const universo = _empresasCache ? _empresasCache.length : 0;
+  const palavra = total === 1 ? "empresa" : "empresas";
+
+  alvo.innerHTML =
+    total === universo
+      ? `<b>${total}</b> ${palavra}`
+      : `<b>${total}</b> de ${universo} ${palavra}`;
 }
 
 /**
@@ -668,39 +721,105 @@ function renderizarPaginacaoExplore(totalItens, totalPaginas) {
  * filtros vindos de outras páginas (ex: pesquisa da home).
  */
 async function inicializarExplore() {
-  _empresasCache = await carregarTodasEmpresas();
+  _empresasCache = await carregarEmpresasDoSite();
+
+  preencherSelectsExplore();
+  actualizarContagensEscaloes();
 
   const termoUrl = obterParamDaUrl("q");
   const industriaUrl = obterParamDaUrl("industria");
   const provinciaUrl = obterParamDaUrl("provincia");
+  const escalaoUrl = obterParamDaUrl("estado");
 
   const inputSearch = document.getElementById("filter-search");
   if (inputSearch && termoUrl) inputSearch.value = termoUrl;
 
-  if (industriaUrl) {
-    document.querySelectorAll(".filter-industria").forEach((el) => {
-      if (el.value === industriaUrl) el.checked = true;
-    });
-  }
+  const selectIndustria = document.getElementById("filter-industria");
+  if (selectIndustria && industriaUrl) selectIndustria.value = industriaUrl;
 
   const selectProvincia = document.getElementById("filter-provincia");
   if (selectProvincia && provinciaUrl) selectProvincia.value = provinciaUrl;
 
+  if (["pronta", "activacao", "potencial"].includes(escalaoUrl)) {
+    seleccionarEscalao(escalaoUrl, false);
+  }
+
   aplicarFiltrosExplore();
 
-  inputSearch?.addEventListener("input", aplicarFiltrosExplore);
+  inputSearch?.addEventListener("input", () => aplicarFiltrosExplore());
+  selectIndustria?.addEventListener("change", () => aplicarFiltrosExplore());
+  selectProvincia?.addEventListener("change", () => aplicarFiltrosExplore());
 
-  document
-    .getElementById("filter-verified")
-    ?.addEventListener("change", aplicarFiltrosExplore);
+  document.getElementById("filter-limpar")?.addEventListener("click", () => {
+    if (inputSearch) inputSearch.value = "";
+    if (selectIndustria) selectIndustria.value = "";
+    if (selectProvincia) selectProvincia.value = "";
+    seleccionarEscalao("todas", false);
+    aplicarFiltrosExplore();
+  });
 
-  document
-    .getElementById("filter-provincia")
-    ?.addEventListener("change", aplicarFiltrosExplore);
+  document.querySelectorAll("[data-escalao]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-escalao");
+      // clicar outra vez no escalão activo volta a mostrar tudo
+      seleccionarEscalao(id === _escalaoActivo ? "todas" : id, false);
+      aplicarFiltrosExplore();
+    });
+  });
+}
 
-  document
-    .querySelectorAll(".filter-industria")
-    .forEach((el) => el.addEventListener("change", aplicarFiltrosExplore));
+/* ── Sectores e origens saem dos próprios dados, não de uma lista fixa ── */
+function preencherSelectsExplore() {
+  if (!_empresasCache) return;
+
+  const encher = (id, valores, rotuloVazio) => {
+    const select = document.getElementById(id);
+    if (!select) return;
+    const actual = select.value;
+    select.innerHTML =
+      `<option value="">${rotuloVazio}</option>` +
+      valores
+        .map((v) => `<option value="${v}">${v}</option>`)
+        .join("");
+    select.value = actual;
+  };
+
+  const unicos = (campo) =>
+    [...new Set(_empresasCache.map((e) => (e[campo] || "").trim()))]
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "pt"));
+
+  encher("filter-industria", unicos("industria"), "Todos os sectores");
+  encher("filter-provincia", unicos("provincia"), "Todas as origens");
+}
+
+/* ── Contagem em cada cartão de escalão ── */
+function actualizarContagensEscaloes() {
+  if (!_empresasCache) return;
+
+  const contagem = contarPorEscalao(_empresasCache);
+  const total = _empresasCache.length;
+
+  const escrever = (chave, valor) => {
+    const alvo = document.querySelector(`[data-contagem="${chave}"]`);
+    if (alvo) alvo.textContent = String(valor).padStart(2, "0");
+  };
+
+  escrever("todas", total);
+  escrever("pronta", contagem.pronta);
+  escrever("activacao", contagem.activacao);
+  escrever("potencial", contagem.potencial);
+}
+
+function seleccionarEscalao(id, aplicar = true) {
+  _escalaoActivo = id;
+  document.querySelectorAll("[data-escalao]").forEach((btn) => {
+    btn.classList.toggle(
+      "is-activo",
+      btn.getAttribute("data-escalao") === id,
+    );
+  });
+  if (aplicar) aplicarFiltrosExplore();
 }
 
 
@@ -739,6 +858,9 @@ function inicializarHeroSlider() {
     dots = Array.from(dotsContainer.querySelectorAll(".hero-dot"));
   }
 
+  const contador = document.getElementById("hero-contador");
+  const doisDigitos = (n) => String(n).padStart(2, "0");
+
   function actualizarUI() {
     slides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === indiceAtual);
@@ -746,6 +868,9 @@ function inicializarHeroSlider() {
     dots.forEach((dot, i) => {
       dot.classList.toggle("is-active", i === indiceAtual);
     });
+    if (contador) {
+      contador.innerHTML = `<b>${doisDigitos(indiceAtual + 1)}</b> / ${doisDigitos(slides.length)}`;
+    }
   }
 
   function irParaSlide(indice) {

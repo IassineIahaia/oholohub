@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/motion.css" />
     <link rel="stylesheet" href="css/facim.css" />
+    <!-- Camada de marca nova — carrega sempre em último -->
+    <link rel="stylesheet" href="css/oholo.css" />
       <noscript>
       <style>
         /* Sem JavaScript, nada fica escondido à espera de uma animação */
@@ -41,7 +43,9 @@
   ══════════════════════════════════════════════════════ -->
     <header class="navbar">
       <div class="navbar-inner">
-        <a href="index.html" class="navbar-brand">OHOLO HUB</a>
+        <a href="index.html" class="navbar-brand"
+          >OHOLO <span class="oh-hub">HUB</span></a
+        >
 
         <button class="navbar-toggle" type="button" aria-label="Abrir menu">
           <span class="icon"
@@ -51,7 +55,7 @@
         <nav class="navbar-links">
           <a href="index.html" class="active">Início</a>
           <a href="facim.html">FACIM 2026</a>
-          <a href="explore.html">FENA</a>
+          <a href="explore.html">Empresas</a>
           <!-- <a href="servicos.html">Serviços</a>
         <a href="#">Categorias</a>
         <a href="#">Sobre</a>
@@ -76,11 +80,7 @@
             </span>
             Agendar Reunião
           </button>
-          <a
-            href="facim.html"
-            class="btn"
-            style="background-color: #fff; color: var(--color-primary)"
-          >
+          <a href="facim.html" class="btn oh-btn-linha">
             <span class="icon" style="width: 18px; height: 18px">
               <svg viewBox="0 0 24 24">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -110,19 +110,27 @@
             <h1 class="hero-slide-title">
               Preparamos Negócios.<br /><em>Conectamos Mercados.</em>
             </h1>
-            <!-- <p class="hero-slide-sub">
+            <p class="hero-slide-sub">
               O OHOLO Hub prepara empresas moçambicanas para o mercado, liga-as
               a compradores certos e acompanha o seu crescimento — passo a
               passo.
             </p>
             <div class="hero-slide-cta">
-              <a href="explore.html" class="btn btn-primary"
-                >Explorar Empresas</a
+              <a href="explore.html" class="btn btn-primary magnetico"
+                >Explorar Empresas
+                <span class="icon oh-seta"
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></span>
+              </a>
+              <button
+                type="button"
+                class="btn oh-btn-linha-clara"
+                onclick="abrirModalAgendamento()"
               >
-              <a href="#" class="btn btn-ghost-inverse"
-                >Registar a Sua Empresa</a
-              >
-            </div> -->
+                Agendar Reunião
+              </button>
+            </div>
           </div>
         </div>
 
@@ -182,26 +190,32 @@
           </div>
         </div>
 
-        <button
-          type="button"
-          class="hero-arrow hero-arrow-prev"
-          aria-label="Slide anterior"
-        >
-          <span class="icon"
-            ><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" /></svg
-          ></span>
-        </button>
-        <button
-          type="button"
-          class="hero-arrow hero-arrow-next"
-          aria-label="Próximo slide"
-        >
-          <span class="icon"
-            ><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg
-          ></span>
-        </button>
+        <div class="oh-hero-controlos">
+          <span class="oh-hero-contador" id="hero-contador"
+            ><b>01</b> / 05</span
+          >
+          <div class="hero-dots"></div>
+          <button
+            type="button"
+            class="hero-arrow hero-arrow-prev"
+            aria-label="Slide anterior"
+          >
+            <span class="icon"
+              ><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" /></svg
+            ></span>
+          </button>
+          <button
+            type="button"
+            class="hero-arrow hero-arrow-next"
+            aria-label="Próximo slide"
+          >
+            <span class="icon"
+              ><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></svg
+            ></span>
+          </button>
+        </div>
 
-        <div class="hero-dots"></div>
+        <span class="oh-scroll">Scroll</span>
       </section>
 
       <!-- ══════════════════════════════════════════════════════
@@ -328,53 +342,21 @@
       <!-- ══════════════════════════════════════════════════════
          STATS GERAIS
     ══════════════════════════════════════════════════════ -->
-      <section
-        style="
-          background-color: var(--color-surface-container-lowest);
-          border-top: 1px solid var(--color-outline-variant);
-          border-bottom: 1px solid var(--color-outline-variant);
-          padding: var(--space-xl) 0;
-        "
-      >
-        <div
-          class="container stats-row" data-anim-stagger="90"
-          style="
-            display: flex;
-            justify-content: center;
-            gap: var(--space-xxl);
-            flex-wrap: wrap;
-            text-align: center;
-          "
-        >
-          <div data-anim="up">
-            <div
-              id="stat-empresas"
-              class="text-headline-lg"
-              style="color: var(--color-primary)"
-            >
-              —
+      <section class="oh-numeros">
+        <div class="container">
+          <div class="oh-numeros-grelha stats-row" data-anim-stagger="90">
+            <div class="oh-numero" data-anim="up">
+              <div id="stat-empresas" class="oh-numero-valor">—</div>
+              <div class="oh-numero-rotulo">Empresas verificadas</div>
             </div>
-            <div class="text-label-sm text-muted">EMPRESAS VERIFICADAS</div>
-          </div>
-          <div data-anim="up">
-            <div
-              id="stat-servicos"
-              class="text-headline-lg"
-              style="color: var(--color-primary)"
-            >
-              —
+            <div class="oh-numero" data-anim="up">
+              <div id="stat-servicos" class="oh-numero-valor">—</div>
+              <div class="oh-numero-rotulo">Serviços catalogados</div>
             </div>
-            <div class="text-label-sm text-muted">SERVIÇOS CATALOGADOS</div>
-          </div>
-          <div data-anim="up">
-            <div
-              id="stat-provincias"
-              class="text-headline-lg"
-              style="color: var(--color-primary)"
-            >
-              —
+            <div class="oh-numero" data-anim="up">
+              <div id="stat-provincias" class="oh-numero-valor">—</div>
+              <div class="oh-numero-rotulo">Províncias cobertas</div>
             </div>
-            <div class="text-label-sm text-muted">PROVÍNCIAS COBERTAS</div>
           </div>
         </div>
       </section>
@@ -382,62 +364,65 @@
       <!-- ══════════════════════════════════════════════════════
          FAIXA — FACIM 2026
     ══════════════════════════════════════════════════════ -->
-      <section style="padding: var(--space-xl) 0 0">
-        <div class="container">
-          <div class="facim-faixa" data-anim="rise">
-            <div>
-              <span class="facim-eyebrow" style="color: var(--color-primary-container)">
-                61.ª Feira Internacional de Maputo · 31 Ago — 06 Set 2026
-              </span>
-              <h2>19 empresas apoiadas pela TechnoServe vão expor na FACIM 2026</h2>
-              <p>
-                A Vitrine Digital já está online! Conheça os produtos e serviços, veja as fotografias e aceda aos contactos de cada expositor.
-              </p>
-            </div>
-            <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap">
-              <a href="facim.html" class="btn facim-btn-claro magnetico">Ver a Vitrine Digital</a>
-              <a href="facim.html#missao" class="btn facim-btn-linha">Plano da missão</a>
-            </div>
+      <section class="oh-faixa" data-anim="fade">
+        <div class="oh-faixa-conteudo">
+          <span class="oh-eyebrow oh-eyebrow-linha" data-anim="up">
+            61.ª Feira Internacional de Maputo · 31 Ago — 06 Set 2026
+          </span>
+          <h2 data-anim="up" data-anim-delay="80">
+            19 empresas apoiadas pela TechnoServe vão expor na FACIM 2026
+          </h2>
+          <p data-anim="up" data-anim-delay="160">
+            A Vitrine Digital já está online! Conheça os produtos e serviços,
+            veja as fotografias e aceda aos contactos de cada expositor.
+          </p>
+          <div
+            style="display: flex; gap: var(--oh-2); flex-wrap: wrap"
+            data-anim="up"
+            data-anim-delay="240"
+          >
+            <a href="facim.html" class="btn oh-btn-claro magnetico"
+              >Ver a Vitrine Digital
+              <span class="icon oh-seta"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></span>
+            </a>
+            <a href="facim.html#missao" class="btn oh-btn-linha-clara"
+              >Plano da missão</a
+            >
           </div>
+          <div class="oh-contagem" id="home-contagem" data-anim="fade" data-anim-delay="320"></div>
+        </div>
+        <div class="oh-faixa-media" data-anim="fade" data-anim-delay="200">
+          <img src="images/hero/image2.jpeg" alt="" />
         </div>
       </section>
 
       <!-- ══════════════════════════════════════════════════════
          EMPRESAS EM DESTAQUE
     ══════════════════════════════════════════════════════ -->
-      <section class="section-pad-xxl" style="padding: var(--space-xxl) 0">
+      <section class="oh-sec">
         <div class="container">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-end;
-              margin-bottom: var(--space-lg);
-              flex-wrap: wrap;
-              gap: var(--space-sm);
-            "
-          >
+          <div class="oh-cab">
             <div>
-              <div
-                class="text-label-sm"
-                style="
-                  color: var(--color-primary);
-                  margin-bottom: var(--space-xs);
-                "
-              >
-                EXCELÊNCIA SELECCIONADA
+              <span class="oh-num" data-anim="fade">03 / 05</span>
+              <div style="margin-top: var(--oh-2)">
+                <span class="oh-eyebrow" data-anim="up"
+                  >Excelência Seleccionada</span
+                >
               </div>
-              <h2 class="text-headline-lg" data-anim="up">Empresas em Destaque</h2>
+              <h2
+                class="text-headline-lg"
+                data-anim="up"
+                data-anim-delay="60"
+                style="margin-top: var(--oh-2)"
+              >
+                Empresas em Destaque
+              </h2>
+              <span class="oh-risco" data-anim="line" data-anim-delay="140"></span>
             </div>
-            <a
-              href="explore.html"
-              class="text-label-md"
-              style="
-                color: var(--color-primary);
-                display: flex;
-                align-items: center;
-                gap: var(--space-xs);
-              "
+            <a href="explore.html" class="oh-cab-link" data-anim="up"
               >Ver todas as empresas
               <span class="icon"
                 ><svg viewBox="0 0 24 24">
@@ -461,68 +446,69 @@
       <!-- ══════════════════════════════════════════════════════
          GALERIA — FOTOS INSTITUCIONAIS + VÍDEOS (YOUTUBE)
     ══════════════════════════════════════════════════════ -->
-      <section
-        class="section-pad-xxl"
-        style="
-          background-color: var(--color-surface-container-low);
-          padding: var(--space-xxl) 0;
-        "
-      >
+      <section class="oh-galeria" id="galeria">
         <div class="container">
-          <div style="text-align: center; margin-bottom: var(--space-lg)">
+          <div class="oh-galeria-topo">
+            <div class="oh-galeria-intro">
+              <span class="oh-num" data-anim="fade">04 / 05</span>
+              <span class="oh-eyebrow" data-anim="up" data-anim-delay="40"
+                >O OHOLO Hub em acção</span
+              >
+              <h2 class="text-headline-lg" data-anim="up" data-anim-delay="80">
+                Galeria
+              </h2>
+              <span
+                class="oh-risco"
+                data-anim="line"
+                data-anim-delay="160"
+              ></span>
+              <p
+                class="text-body-md text-muted"
+                data-anim="up"
+                data-anim-delay="200"
+              >
+                FENA 2026 e momentos das empresas que preparamos para o
+                mercado.
+              </p>
+            </div>
+
             <div
-              class="text-label-sm"
-              style="
-                color: var(--color-primary);
-                margin-bottom: var(--space-xs);
-              "
+              class="galeria-tabs oh-galeria-tabs"
+              data-anim="up"
+              data-anim-delay="120"
             >
-              O OHOLO HUB EM ACÇÃO
-            </div>
-            <h2 class="text-headline-lg" data-anim="up">Galeria</h2>
-            <p
-              class="text-body-md text-muted"
-              style="max-width: 560px; margin: var(--space-xs) auto 0"
-            >
-              FENA 2026 e momentos das empresas que preparamos para o mercado.
-            </p>
-          </div>
-
-          <div class="galeria-tabs" data-anim="up" data-anim-delay="80">
-            <button
-              type="button"
-              class="galeria-tab is-active"
-              data-galeria-tab="fotos"
-            >
-              <span class="icon"
-                ><svg viewBox="0 0 24 24">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <circle cx="8.5" cy="10" r="1.5" />
-                  <path d="m21 15-5-4-4 3-3-2-6 5" /></svg
-              ></span>
-              Fotos
-            </button>
-            <button type="button" class="galeria-tab" data-galeria-tab="videos">
-              <span class="icon"
-                ><svg viewBox="0 0 24 24">
-                  <path d="M23 7l-7 5 7 5V7z" />
-                  <rect x="1" y="5" width="15" height="14" rx="2" /></svg
-              ></span>
-              Vídeos
-            </button>
-          </div>
-
-          <div class="galeria-painel is-active" data-galeria-painel="fotos">
-            <div id="galeria-fotos-grid" class="galeria-grid-fotos">
-              <p class="text-body-md text-muted">A carregar fotos...</p>
+              <button
+                type="button"
+                class="galeria-tab is-active"
+                data-galeria-tab="fotos"
+              >
+                Fotografias
+                <span class="oh-tab-conta" id="oh-conta-fotos"></span>
+              </button>
+              <button
+                type="button"
+                class="galeria-tab"
+                data-galeria-tab="videos"
+              >
+                Vídeos
+                <span class="oh-tab-conta" id="oh-conta-videos"></span>
+              </button>
             </div>
           </div>
 
-          <div class="galeria-painel" data-galeria-painel="videos">
-            <div id="galeria-videos-grid" class="galeria-grid-videos">
-              <p class="text-body-md text-muted">A carregar vídeos...</p>
+          <!-- Mosaico — dentro do wrapper, alinhado com o resto da página -->
+          <div class="oh-galeria-mosaico" data-anim="fade" data-anim-delay="240">
+            <div class="galeria-painel is-active" data-galeria-painel="fotos">
+              <div id="galeria-fotos-grid" class="galeria-grid-fotos"></div>
             </div>
-            <div id="galeria-videos-paginacao" style="display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap; margin-top: var(--space-xl);"></div>
+
+            <div class="galeria-painel" data-galeria-painel="videos">
+              <div id="galeria-videos-grid" class="galeria-grid-videos"></div>
+              <div
+                id="galeria-videos-paginacao"
+                class="oh-galeria-paginacao"
+              ></div>
+            </div>
           </div>
         </div>
       </section>
@@ -639,68 +625,42 @@
       <!-- ══════════════════════════════════════════════════════
          CTA FINAL
     ══════════════════════════════════════════════════════ -->
-      <section
-        class="section-pad-xxl"
-        style="
-          background-color: var(--color-surface-container-low);
-          padding: var(--space-xxl) 0;
-        "
-      >
-        <div class="container">
+      <section class="oh-cta">
+        <span class="oh-cta-marca" aria-hidden="true">OHOLO</span>
+        <div class="oh-cta-conteudo">
+          <h2 data-anim="up">Pronto para Avançar o Teu Negócio?</h2>
+          <p data-anim="up" data-anim-delay="80">
+            Junte-se ao OHOLO Hub e prepare a sua empresa para o mercado, aceda
+            a novas oportunidades e cresça com o apoio do Projecto OHOLO.
+          </p>
           <div
-            style="
-              background-color: var(--color-primary);
-              border-radius: var(--radius-xl);
-              padding: var(--space-xxl) var(--space-lg);
-              text-align: center;
-            "
+            style="display: flex; gap: var(--oh-2); justify-content: center; flex-wrap: wrap"
+            data-anim="up"
+            data-anim-delay="160"
           >
-            <h2
-              class="text-headline-lg"
-              data-anim="up"
-              style="
-                color: var(--color-on-primary);
-                margin-bottom: var(--space-sm);
-              "
+            <a
+              href="https://form-fena.vercel.app/"
+              class="btn oh-btn-claro magnetico"
             >
-              Pronto para Avançar o Teu Negócio?
-            </h2>
-            <p
-              class="text-body-lg"
-              style="
-                color: rgba(255, 255, 255, 0.85);
-                margin-bottom: var(--space-lg);
-                max-width: 560px;
-                margin-left: auto;
-                margin-right: auto;
-              "
+              <span class="icon">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+              </span>
+              Registar a Sua Empresa
+              <span class="icon oh-seta"
+                ><svg viewBox="0 0 24 24">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></span>
+            </a>
+            <button
+              type="button"
+              class="btn oh-btn-linha-clara"
+              onclick="abrirModalAgendamento()"
             >
-              Junte-se ao OHOLO Hub e prepare a sua empresa para o mercado,
-              aceda a novas oportunidades e cresça com o apoio do Projecto
-              OHOLO.
-            </p>
-            <div
-              style="
-                display: flex;
-                gap: var(--space-md);
-                justify-content: center;
-                flex-wrap: wrap;
-              "
-            >
-              <a
-                href="https://form-fena.vercel.app/"
-                class="btn"
-                style="background-color: #fff; color: var(--color-primary)"
-              >
-                <span class="icon" style="width: 18px; height: 18px">
-                  <svg viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18M9 21V9" />
-                  </svg>
-                </span>
-                Registar a Sua Empresa</a
-              >
-            </div>
+              Agendar Reunião
+            </button>
           </div>
         </div>
       </section>
@@ -710,89 +670,60 @@
        FOOTER (copiar este bloco para todas as páginas)
   ══════════════════════════════════════════════════════ -->
     <footer class="footer">
+      <div class="oh-footer-marca" aria-hidden="true">
+        <span>OHOLO <em>HUB</em></span>
+      </div>
+
       <div class="container">
         <div class="footer-grid">
           <div>
-            <div class="navbar-brand" style="margin-bottom: var(--space-sm)">
-              OHOLO Hub
+            <div class="navbar-brand" style="margin-bottom: var(--oh-2)">
+              OHOLO <span class="oh-hub">Hub</span>
             </div>
-            <p class="text-body-md text-muted">
+            <p class="text-body-md text-muted" style="max-width: 320px">
               Preparamos negócios. Conectamos mercados. Geramos impacto —
               suportado pelo Projecto OHOLO.
             </p>
           </div>
 
-          <!-- <div>
-            <div
-              class="text-label-sm text-muted"
-              style="margin-bottom: var(--space-md)"
-            >
+          <div>
+            <div class="text-label-sm" style="margin-bottom: var(--oh-3)">
               PLATAFORMA
             </div>
             <ul
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-sm);
-              "
+              style="display: flex; flex-direction: column; gap: var(--oh-1)"
             >
               <li>
-                <a href="explore.html" class="text-body-md"
-                  >Explorar o Marketplace</a
+                <a href="explore.html" class="text-body-md">Explorar Empresas</a>
+              </li>
+              <li>
+                <a href="facim.html" class="text-body-md"
+                  >Vitrine FACIM 2026</a
                 >
               </li>
               <li>
-                <a href="#" class="text-body-md">Fornecedores Verificados</a>
-              </li>
-              <li>
-                <a href="#" class="text-body-md"
-                  >Guia de Negócios em Moçambique</a
+                <a href="facim.html#missao" class="text-body-md"
+                  >Plano da Missão</a
                 >
               </li>
-              <li><a href="#" class="text-body-md">Planos e Preços</a></li>
             </ul>
-          </div> -->
-          <!-- 
-          <div>
-            <div
-              class="text-label-sm text-muted"
-              style="margin-bottom: var(--space-md)"
-            >
-              SUPORTE
-            </div>
-            <ul
-              style="
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-sm);
-              "
-            >
-              <li><a href="#" class="text-body-md">Centro de Ajuda</a></li>
-              <li><a href="#" class="text-body-md">Termos de Serviço</a></li>
-              <li>
-                <a href="#" class="text-body-md">Política de Privacidade</a>
-              </li>
-              <li><a href="#" class="text-body-md">Contactar Suporte</a></li>
-            </ul>
-          </div> -->
+          </div>
 
           <div>
-            <div
-              class="text-label-sm text-muted"
-              style="margin-bottom: var(--space-md)"
-            >
+            <div class="text-label-sm" style="margin-bottom: var(--oh-3)">
               CONTACTO
             </div>
-            <div style="display: flex; gap: var(--space-sm)">
-              <a
-                href="mailto:infomarketaccessmz@gmail.com"
-                class="text-body-md icon"
-                style="width: 18px; height: 18px"
+            <a
+              href="mailto:infomarketaccessmz@gmail.com"
+              class="oh-footer-contacto"
+            >
+              <span class="icon"
                 ><svg viewBox="0 0 24 24">
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m3 7 9 6 9-6" /></svg
-              ></a>
-            </div>
+              ></span>
+              infomarketaccessmz@gmail.com
+            </a>
           </div>
         </div>
 
@@ -803,14 +734,64 @@
     </footer>
 
     <script src="js/data.js"></script>
+    <script src="js/qualificacao.js"></script>
     <script src="js/main.js"></script>
     <script src="js/motion.js"></script>
+    <script src="js/oholo-motion.js"></script>
     <script src="js/galeria.js"></script>
     <script>
       renderizarGridEmpresas("empresas-destaque", {
         slugs: ["Owani", "casquinha-company", "nutrinatural"],
       });
       actualizarStatsHome();
+
+      // ── Contagem de peças nos separadores da galeria ──
+      (function contarGaleria() {
+        const doisDig = (n) => String(n).padStart(2, "0");
+        const fotos = document.getElementById("oh-conta-fotos");
+        const videos = document.getElementById("oh-conta-videos");
+        if (fotos && typeof GALERIA_FOTOS !== "undefined") {
+          fotos.textContent = doisDig(GALERIA_FOTOS.length);
+        }
+        if (videos && typeof GALERIA_VIDEOS !== "undefined") {
+          videos.textContent = doisDig(GALERIA_VIDEOS.length);
+        }
+      })();
+
+      // ── Contagem decrescente para a FACIM 2026 (faixa da home) ──
+      (function contagemFacimHome() {
+        const alvo = document.getElementById("home-contagem");
+        if (!alvo) return;
+
+        const inicio = new Date("2026-08-31T08:00:00");
+
+        function bloco(valor, rotulo) {
+          return `
+            <div class="oh-contagem-bloco">
+              <div class="oh-contagem-valor">${String(valor).padStart(2, "0")}</div>
+              <div class="oh-contagem-rotulo">${rotulo}</div>
+            </div>`;
+        }
+
+        function actualizar() {
+          const restante = Math.floor((inicio - new Date()) / 1000);
+
+          if (restante <= 0) {
+            alvo.innerHTML = bloco(0, "A feira está a decorrer");
+            return;
+          }
+
+          const dias = Math.floor(restante / 86400);
+          const horas = Math.floor((restante % 86400) / 3600);
+          const minutos = Math.floor((restante % 3600) / 60);
+
+          alvo.innerHTML =
+            bloco(dias, "Dias") + bloco(horas, "Horas") + bloco(minutos, "Min");
+        }
+
+        actualizar();
+        setInterval(actualizar, 30000);
+      })();
     </script>
   </body>
 </html>

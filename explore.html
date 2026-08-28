@@ -16,11 +16,12 @@
   gtag("config", "G-CXNQ3RKW0W");
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explorar — OHOLO Hub</title>
+  <title>Empresas — OHOLO Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/oholo.css">
     <noscript>
       <style>
         /* Sem JavaScript, nada fica escondido à espera de uma animação */
@@ -38,27 +39,45 @@
   ══════════════════════════════════════════════════════ -->
   <header class="navbar">
     <div class="navbar-inner">
-      <a href="index.html" class="navbar-brand">OHOLO HUB</a>
+      <a href="index.html" class="navbar-brand"
+        >OHOLO <span class="oh-hub">HUB</span></a
+      >
 
            <button class="navbar-toggle" type="button" aria-label="Abrir menu"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></button>
       <nav class="navbar-links">
         <a href="index.html">Início</a>
         <a href="facim.html">FACIM 2026</a>
-        <a href="explore.html" class="active">FENA</a>
+        <a href="explore.html" class="active">Empresas</a>
         <!-- <a href="servicos.html">Serviços</a>
         <a href="#">Categorias</a>
         <a href="#">Sobre</a>
         <a href="#">Contacto</a> -->
       </nav>
 
-      <!-- <div class="navbar-actions">
-        <a href="#" class="text-label-md">Entrar</a>
-        <a href="#" class="btn btn-primary">Registar</a>
-      </div> -->
+
       <div class="navbar-actions">
-        <button type="button" class="btn btn-primary" onclick="abrirModalAgendamento()">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="abrirModalAgendamento()"
+        >
+          <span class="icon" style="width: 18px; height: 18px">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </span>
           Agendar Reunião
         </button>
+        <a href="facim.html" class="btn oh-btn-linha">
+          <span class="icon" style="width: 18px; height: 18px">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </span>
+          Vitrine FACIM 2026</a
+        >
       </div>
     </div>
     <span class="navbar-progresso"></span>
@@ -68,100 +87,153 @@
        CABEÇALHO DA PÁGINA
   ══════════════════════════════════════════════════════ -->
   <main>
-    <section style="padding: var(--space-xl) 0 var(--space-lg);">
+    <!-- ══════════════════════════════════════════════════════
+         CABEÇALHO DA PÁGINA
+    ══════════════════════════════════════════════════════ -->
+    <section class="oh-explore-topo">
       <div class="container">
-        <h1 class="text-headline-lg" data-anim="up" style="margin-bottom: var(--space-sm);">Explore o Ecossistema Empresarial de Moçambique</h1>
-        <p class="text-body-lg text-muted" data-anim="up" data-anim-delay="70">Conecte-se com parceiros verificados, líderes em logística e empresas industriais em todas as províncias.</p>
+        <span class="oh-num" data-anim="fade">Ecossistema OHOLO</span>
+        <h1 class="text-headline-lg" data-anim="up" data-anim-delay="60">
+          As empresas que preparamos<br /><em>para o mercado</em>
+        </h1>
+        <span class="oh-risco" data-anim="line" data-anim-delay="140"></span>
+        <p class="text-body-lg text-muted" data-anim="up" data-anim-delay="200">
+          Cada empresa entra no OHOLO Hub num ponto diferente do percurso. O
+          índice de prontidão mostra o que já está pronto na ficha de cada uma
+          — descrição, oferta, contactos e identificação — para saber de
+          imediato quem pode ser apresentado a um comprador e quem ainda está
+          em preparação.
+        </p>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         GRID: FILTROS + RESULTADOS
+         ESCALÕES — funcionam como filtro
     ══════════════════════════════════════════════════════ -->
-    <section class="section-pad-xxl" style="padding-bottom: var(--space-xxl);">
-      <div class="container explore-layout">
-
-        <!-- ── Sidebar de filtros ── -->
-        <aside data-anim="left">
-          <button type="button" class="explore-filters-toggle card text-label-md">
-            Filtros
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+    <section class="oh-escaloes">
+      <div class="container">
+        <div
+          class="oh-escaloes-grelha"
+          id="oh-escaloes"
+          role="group"
+          aria-label="Filtrar por estado de preparação"
+          data-anim-stagger="80"
+        >
+          <button
+            type="button"
+            class="oh-escalao is-activo"
+            data-escalao="todas"
+            data-anim="up"
+          >
+            <span class="oh-escalao-valor" data-contagem="todas">—</span>
+            <span class="oh-escalao-rotulo">Todas as empresas</span>
+            <span class="oh-escalao-desc"
+              >O ecossistema completo, ordenado por prontidão.</span
+            >
           </button>
 
-          <div class="explore-filters-body" style="display:flex; flex-direction:column; gap: var(--space-md);">
+          <button
+            type="button"
+            class="oh-escalao"
+            data-escalao="pronta"
+            data-anim="up"
+          >
+            <span class="oh-escalao-valor" data-contagem="pronta">—</span>
+            <span class="oh-escalao-rotulo">Prontas para o mercado</span>
+            <span class="oh-escalao-desc"
+              >Ficha completa — podem ser apresentadas a um comprador tal como
+              estão.</span
+            >
+          </button>
 
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">PESQUISAR</div>
-            <div style="position:relative;">
-              <span style="position:absolute; left: var(--space-md); top:50%; transform:translateY(-50%); color: var(--color-on-surface-variant); width:16px; height:16px;" class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
-              <input type="text" id="filter-search" class="input-field" style="padding-left: 38px; height:44px;" placeholder="Nome, indústria ou serviço...">
-            </div>
+          <button
+            type="button"
+            class="oh-escalao"
+            data-escalao="activacao"
+            data-anim="up"
+          >
+            <span class="oh-escalao-valor" data-contagem="activacao">—</span>
+            <span class="oh-escalao-rotulo">Em activação</span>
+            <span class="oh-escalao-desc"
+              >Em preparação connosco. Falta fechar uma ou outra parte da
+              ficha.</span
+            >
+          </button>
+
+          <button
+            type="button"
+            class="oh-escalao"
+            data-escalao="potencial"
+            data-anim="up"
+          >
+            <span class="oh-escalao-valor" data-contagem="potencial">—</span>
+            <span class="oh-escalao-rotulo">Com potencial</span>
+            <span class="oh-escalao-desc"
+              >Registo inicial. A recolha e a preparação estão a começar.</span
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FILTROS + RESULTADOS
+    ══════════════════════════════════════════════════════ -->
+    <section class="oh-explore-lista">
+      <div class="container">
+        <div class="oh-barra-filtros" data-anim="up">
+          <div class="oh-campo oh-campo-pesquisa">
+            <span class="icon"
+              ><svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" /></svg
+            ></span>
+            <input
+              type="text"
+              id="filter-search"
+              class="input-field"
+              placeholder="Procurar por nome, sector ou serviço..."
+            />
           </div>
 
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">ESTADO</div>
-            <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-              <input type="checkbox" id="filter-verified">
-              <span class="text-body-md">Apenas Verificadas</span>
-            </label>
-          </div>
-
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">INDÚSTRIA</div>
-            <div style="display:flex; flex-direction:column; gap: var(--space-sm);">
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="Logística & Supply Chain">
-                <span class="text-body-md">Logística &amp; Supply Chain</span>
-              </label>
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="Agricultura, pecuária e natureza">
-                <span class="text-body-md">Agricultura</span>
-              </label>
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="Finanças & Fintech">
-                <span class="text-body-md">Finanças &amp; Fintech</span>
-              </label>
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="Comunicação e tecnologia">
-                <span class="text-body-md">Comunicação &amp; Tecnologia</span>
-              </label>
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="BDS e ensino">
-                <span class="text-body-md">BDS &amp; Ensino</span>
-              </label>
-              <label style="display:flex; align-items:center; gap: var(--space-sm); cursor:pointer;">
-                <input type="checkbox" class="filter-industria" value="Construção">
-                <span class="text-body-md">Construção</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="card" style="padding: var(--space-lg);">
-            <div class="text-label-sm text-muted" style="margin-bottom: var(--space-md);">PROVÍNCIA</div>
-            <select id="filter-provincia" class="input-field" style="height:44px;">
-              <option value="">Todas as Províncias</option>
-              <option>Nampula</option>
-              <option>Niassa</option>
-              <option>Cabo Delgado</option>
+          <div class="oh-campo">
+            <select id="filter-industria" class="input-field">
+              <option value="">Todos os sectores</option>
             </select>
           </div>
 
-          </div>
-        </aside>
-
-        <!-- ── Resultados ── -->
-        <div>
-          <div id="empresas-grid" data-anim="fade" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg);">
-            <p class="text-body-md text-muted">A carregar empresas...</p>
+          <div class="oh-campo">
+            <select id="filter-provincia" class="input-field">
+              <option value="">Todas as origens</option>
+            </select>
           </div>
 
-          <p id="empty-msg" class="text-body-md text-muted" style="display:none; text-align:center; padding: var(--space-xl) 0;">
-            Nenhuma empresa encontrada com estes filtros.
-          </p>
-
-          <div id="explore-paginacao" style="display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap; margin-top: var(--space-xl);"></div>
+          <button type="button" class="oh-limpar" id="filter-limpar">
+            Limpar
+          </button>
         </div>
 
+        <div class="oh-linha-resultados" data-anim="fade">
+          <span id="oh-contador-resultados" class="oh-contador"
+            >A carregar…</span
+          >
+          <span class="oh-nota-ordem"
+            >Ordenadas pelo índice de prontidão.</span
+          >
+        </div>
+
+        <div
+          id="empresas-grid"
+          class="oh-grelha-empresas"
+          data-anim="fade"
+        ></div>
+
+        <p id="empty-msg" class="oh-vazio" style="display: none">
+          Nenhuma empresa corresponde a estes filtros. Experimente limpar a
+          pesquisa.
+        </p>
+
+        <div id="explore-paginacao" class="oh-galeria-paginacao"></div>
       </div>
     </section>
   </main>
@@ -272,8 +344,11 @@
       </div>
     </footer>
   <script src="js/data.js"></script>
+  <script src="js/facim-data.js"></script>
+  <script src="js/qualificacao.js"></script>
   <script src="js/main.js"></script>
   <script src="js/motion.js"></script>
+    <script src="js/oholo-motion.js"></script>
   <script>
     inicializarExplore();
   </script>

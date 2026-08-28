@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explorar - OHOLO HUB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#1b1b1b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e32228",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#410003",
+                        "on-tertiary-container": "#848484",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#303030",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "primary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#bb0016",
+                        "outline-variant": "#cfc4c5",
+                        "on-background": "#1b1b1b",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-side": "24px",
+                        "section-v-lg": "100px",
+                        "stack-sm": "12px",
+                        "section-v-md": "70px",
+                        "stack-lg": "48px",
+                        "grid-columns": "12",
+                        "max-width": "1440px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-hero": ["Inter"],
+                        "body-main": ["Inter"],
+                        "label-eyebrow": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "display-hero": ["clamp(48px, 8vw, 104px)", { "lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-main": ["18px", { "lineHeight": "1.65", "fontWeight": "400" }],
+                        "label-eyebrow": ["12px", { "lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; }
+        .hairline-b { border-bottom: 1px solid #E4E6E9; }
+        .hairline-t { border-top: 1px solid #E4E6E9; }
+        .hairline-all { border: 1px solid #E4E6E9; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-body-main text-on-surface antialiased w-full max-w-[390px] mx-auto bg-surface-container-lowest min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopNavBar (Web/Tablet mostly, simplified for mobile) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center h-16 px-gutter-side bg-surface-container-lowest/90 backdrop-blur-md hairline-b max-w-[390px]">
+<div class="font-headline-md text-[20px] font-bold tracking-tighter text-primary">OHOLO HUB</div>
+<button class="material-symbols-outlined text-primary text-2xl">menu</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[88px] pb-[100px] px-gutter-side">
+<!-- Hero & Search -->
+<section class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-primary mb-stack-sm">Market</h1>
+<p class="font-body-main text-body-main text-on-surface-variant mb-stack-md">Discover leading institutional entities.</p>
+<div class="relative w-full hairline-all rounded-DEFAULT bg-surface-container-lowest flex items-center px-4 py-3 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline mr-3">search</span>
+<input class="w-full bg-transparent border-none p-0 font-body-main text-caption text-primary placeholder:text-outline focus:ring-0" placeholder="Search companies, sectors..." type="text"/>
+<button class="material-symbols-outlined text-outline ml-3 active:text-primary transition-colors">tune</button>
+</div>
+<!-- Quick Filters (Horizontal Scroll) -->
+<div class="flex overflow-x-auto hide-scrollbar gap-3 mt-4 pb-2">
+<button class="whitespace-nowrap px-4 py-2 hairline-all rounded-DEFAULT font-label-eyebrow text-label-eyebrow text-primary hover:bg-surface transition-colors bg-primary text-on-primary border-primary">ALL SECTORS</button>
+<button class="whitespace-nowrap px-4 py-2 hairline-all rounded-DEFAULT font-label-eyebrow text-label-eyebrow text-primary hover:bg-surface transition-colors">FINANCE</button>
+<button class="whitespace-nowrap px-4 py-2 hairline-all rounded-DEFAULT font-label-eyebrow text-label-eyebrow text-primary hover:bg-surface transition-colors">ENERGY</button>
+<button class="whitespace-nowrap px-4 py-2 hairline-all rounded-DEFAULT font-label-eyebrow text-label-eyebrow text-primary hover:bg-surface transition-colors">LOGISTICS</button>
+</div>
+</section>
+<!-- Results Grid (1-column for mobile) -->
+<section class="flex flex-col gap-stack-md">
+<!-- Company Card 1 -->
+<article class="hairline-all rounded-xl bg-surface-container-lowest overflow-hidden hover:border-primary transition-colors group">
+<div class="w-full aspect-[4/3] relative">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A modern, minimalist corporate office interior in Maputo, Mozambique. Bright, high-key white lighting floods the space, highlighting sleek glass partitions and dark graphite accents. A subtle touch of vibrant red is visible in a piece of abstract art on the wall. The mood is professional, exclusive, and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACw4fvEMYn7zl_PUdRNEmYZw-o8N9chuudMxqLpR6woSUK1Vt1Iym8QcXP_lAewO5hWtBd53kMcILH5wGK6Cp5BvUOIhw7X_gQSUO3dhkjWq5apXrHSgZBYbv7Hh0QPoDMGHmZC8tCd7bYmfFFUXdoQiN6AZ2fHjOZQh9FWo-ylta-eisGcSZZld_DsvvBw93osGAnHDw7OOG5TSh2CGMGpzl_l-8T3bQ1twldR7y4Tbm8uk_cqLex"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-DEFAULT hairline-all">
+<span class="font-label-eyebrow text-[10px] text-primary tracking-widest uppercase">Finance</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-[20px] text-primary mb-1">Standard Bank Moçambique</h3>
+<p class="font-body-main text-caption text-on-surface-variant mb-4">Leading financial institution providing comprehensive banking solutions.</p>
+<div class="hairline-t pt-4 flex justify-between items-center">
+<span class="font-label-eyebrow text-[10px] text-outline tracking-widest uppercase">Maputo</span>
+<span class="material-symbols-outlined text-primary text-lg group-hover:text-secondary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Company Card 2 -->
+<article class="hairline-all rounded-xl bg-surface-container-lowest overflow-hidden hover:border-primary transition-colors group">
+<div class="w-full aspect-[4/3] relative">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="An expansive, high-tech logistics port facility under a clear blue sky. Crisp, clean lines dominate the composition with stark white storage units and deep black shipping containers. A singular bright red gantry crane creates a striking focal point. The aesthetic is industrial yet highly ordered and editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmA_jCQx5K_1ggwlKq3HHng9IZspj6_wsR6SoVrCd5motYvB0EG7eQ8RjD1k75oDlcVpl5EFgoYU9PhNi75ADHOvtnf9ytVYgn69basKfMIfg56s9SVR5AbJTTnjH_ufAGDNKCGftWnBbdUKPuL5EXdgGg8m93R-gwqTo4PvcchBRCGZmYa8_4Ndw6xKCgFsVDIFhN9C7eaUWs9OUCMe86j2xZA4FpNd4YTRjaTs_nR-PCJnAoUE6M"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-DEFAULT hairline-all">
+<span class="font-label-eyebrow text-[10px] text-primary tracking-widest uppercase">Logistics</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-[20px] text-primary mb-1">Portos e Caminhos de Ferro</h3>
+<p class="font-body-main text-caption text-on-surface-variant mb-4">Strategic infrastructure enabling regional trade and movement.</p>
+<div class="hairline-t pt-4 flex justify-between items-center">
+<span class="font-label-eyebrow text-[10px] text-outline tracking-widest uppercase">National</span>
+<span class="material-symbols-outlined text-primary text-lg group-hover:text-secondary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Company Card 3 -->
+<article class="hairline-all rounded-xl bg-surface-container-lowest overflow-hidden hover:border-primary transition-colors group">
+<div class="w-full aspect-[4/3] relative">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A macro shot of a sleek, modern solar panel array gleaming in the sun. The composition is highly structured, emphasizing the geometric lines of the panels in deep graphite and pristine white. A subtle, sharp reflection of a red safety beam crosses the foreground. The tone is forward-looking and environmentally authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQv5USy_pYH6WVEmaSrxquTDu-VMbJ4HkUbAfU-2YCwOww27rx5BTYG8sK3J-NFIEtrTA7dZso8VKvR_pj3DVJ9n0w6qKMGr2WAbSdHh2yyB48WVfZ_eoXCTtVqOYhztVpv2mI7l26ZoNBEK9DY-wPI9L3vPIAU_hyoyJ8-P8GJHZD0c9_q-mMVHoaEhj9Ogjau8s2wlB3osivOKDOMsJwoo58E0gygv8H8Siae3MWE24fMN2dfjvF"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded-DEFAULT hairline-all">
+<span class="font-label-eyebrow text-[10px] text-primary tracking-widest uppercase">Energy</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-headline-md text-[20px] text-primary mb-1">Electricidade de Moçambique</h3>
+<p class="font-body-main text-caption text-on-surface-variant mb-4">Powering the nation's industrial and domestic sectors.</p>
+<div class="hairline-t pt-4 flex justify-between items-center">
+<span class="font-label-eyebrow text-[10px] text-outline tracking-widest uppercase">Maputo</span>
+<span class="material-symbols-outlined text-primary text-lg group-hover:text-secondary-container transition-colors">arrow_forward</span>
+</div>
+</div>
+</article>
+<button class="w-full h-[52px] bg-transparent border border-primary text-primary font-label-eyebrow text-label-eyebrow uppercase hover:bg-primary hover:text-on-primary transition-colors rounded-DEFAULT mt-4 flex items-center justify-center">
+                Load More
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="fixed bottom-0 w-full max-w-[390px] h-[72px] bg-surface-container-lowest hairline-t flex justify-between items-center px-6 z-50 shadow-[0_-4px_24px_rgba(0,0,0,0.02)]">
+<a class="flex flex-col items-center gap-1 text-secondary-container font-bold group" href="#">
+<span class="material-symbols-outlined text-2xl group-active:scale-95 transition-transform" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-eyebrow text-[10px] uppercase tracking-widest border-b-[1.5px] border-secondary-container pb-[2px]">Market</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-active:scale-95 transition-transform">lightbulb</span>
+<span class="font-label-eyebrow text-[10px] uppercase tracking-widest">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-active:scale-95 transition-transform">account_balance</span>
+<span class="font-label-eyebrow text-[10px] uppercase tracking-widest">Capital</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl group-active:scale-95 transition-transform">domain</span>
+<span class="font-label-eyebrow text-[10px] uppercase tracking-widest">Instit.</span>
+</a>
+</nav>
+</body></html>

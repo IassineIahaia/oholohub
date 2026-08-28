@@ -1,0 +1,3079 @@
+/* ============================================================
+   OHOLO HUB — CAMADA DE MARCA NOVA
+   Branco · Preto · Cinza · Vermelho
+   Carregar SEMPRE depois de style.css. Redefine os tokens e
+   redesenha os componentes; não altera markup nem JS.
+   ============================================================ */
+
+:root {
+  /* ── Paleta ───────────────────────────────────────────── */
+  --oh-preto: #000000;
+  --oh-ink: #0b0c0e;
+  --oh-grafite: #17191c;
+  --oh-ardosia: #3a3e44;
+  --oh-cinza: #6e7278;
+  --oh-linha: #e4e6e9;
+  --oh-bruma: #f4f5f7;
+  --oh-branco: #ffffff;
+
+  --oh-vermelho: #e01f26;
+  --oh-vermelho-escuro: #b0161c;
+  --oh-vermelho-tenue: #fff1f1;
+
+  /* ── Tokens antigos redefinidos (os componentes herdam) ── */
+  --color-primary: var(--oh-vermelho);
+  --color-on-primary: var(--oh-branco);
+  --color-primary-container: var(--oh-vermelho);
+  --color-on-primary-container: var(--oh-vermelho-tenue);
+  --color-inverse-primary: var(--oh-vermelho);
+
+  --color-secondary: var(--oh-ink);
+  --color-on-secondary: var(--oh-branco);
+  --color-secondary-container: var(--oh-grafite);
+  --color-on-secondary-container: var(--oh-branco);
+  --color-tertiary: var(--oh-ink);
+  --color-tertiary-container: var(--oh-grafite);
+
+  --color-surface: var(--oh-branco);
+  --color-surface-dim: var(--oh-bruma);
+  --color-surface-bright: var(--oh-branco);
+  --color-surface-container-lowest: var(--oh-branco);
+  --color-surface-container-low: var(--oh-bruma);
+  --color-surface-container: var(--oh-bruma);
+  --color-surface-container-high: #eceef0;
+  --color-surface-container-highest: #e6e8ea;
+  --color-background: var(--oh-branco);
+
+  --color-on-surface: var(--oh-preto);
+  --color-on-background: var(--oh-preto);
+  --color-on-surface-variant: var(--oh-ardosia);
+  --color-outline: var(--oh-cinza);
+  --color-outline-variant: var(--oh-linha);
+  --color-inverse-surface: var(--oh-ink);
+  --color-inverse-on-surface: var(--oh-branco);
+
+  /* ── Escala de espaço, 8px ───────────────────────────── */
+  --oh-1: 8px;
+  --oh-2: 16px;
+  --oh-3: 24px;
+  --oh-4: 32px;
+  --oh-6: 48px;
+  --oh-8: 64px;
+  --oh-10: 80px;
+  --oh-15: 120px;
+  --oh-20: 160px;
+
+  --oh-gutter: 80px;
+  --oh-max: 1440px;
+
+  /* ── Raios ───────────────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 16px;
+  --radius-xl: 16px;
+
+  /* ── Movimento (base; o GSAP entra na fase 3) ────────── */
+  --oh-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --oh-rapido: 0.35s var(--oh-ease);
+  --oh-lento: 0.8s var(--oh-ease);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+body {
+  background-color: var(--oh-branco);
+  color: var(--oh-preto);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--oh-max);
+  padding-left: var(--oh-gutter);
+  padding-right: var(--oh-gutter);
+}
+
+::selection {
+  background: var(--oh-vermelho);
+  color: #fff;
+}
+
+/* ── Tipografia ─────────────────────────────────────────── */
+
+.text-display-lg,
+.text-headline-lg {
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--oh-preto);
+}
+
+.text-headline-lg {
+  font-size: clamp(34px, 4vw, 56px);
+}
+
+.text-headline-md {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--oh-preto);
+}
+
+.text-body-md,
+.text-body-lg {
+  color: var(--oh-ardosia);
+  line-height: 1.65;
+}
+
+.text-muted {
+  color: var(--oh-cinza);
+}
+
+/* Sobrancelha — 11px, caixa alta, ponto vermelho */
+.oh-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--oh-vermelho);
+}
+
+.oh-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--oh-vermelho);
+  flex: none;
+}
+
+.oh-eyebrow-linha::before {
+  width: 24px;
+  height: 2px;
+  border-radius: 0;
+}
+
+/* Régua vermelha por baixo dos títulos */
+.oh-risco {
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--oh-vermelho);
+  margin-top: var(--oh-3);
+}
+
+/* Número da secção na margem */
+.oh-num {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--oh-cinza);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cabeçalho de secção: título à esquerda, link à direita */
+.oh-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--oh-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--oh-8);
+}
+
+.oh-cab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oh-preto);
+  white-space: nowrap;
+}
+
+.oh-cab-link .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--oh-vermelho);
+  transition: transform var(--oh-rapido);
+}
+
+.oh-cab-link:hover .icon {
+  transform: translateX(6px);
+}
+
+/* Secções */
+.oh-sec {
+  padding: var(--oh-20) 0;
+}
+
+.oh-sec-bruma {
+  background: var(--oh-bruma);
+}
+
+.oh-sec-ink {
+  background: var(--oh-ink);
+  color: #fff;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--oh-linha);
+  box-shadow: none;
+}
+
+.navbar-inner {
+  max-width: var(--oh-max);
+  height: 80px;
+  padding: 0 var(--oh-gutter);
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--oh-preto);
+}
+
+.navbar-brand em,
+.navbar-brand .oh-hub {
+  color: var(--oh-vermelho);
+  font-style: normal;
+}
+
+.navbar-links {
+  gap: 40px;
+}
+
+.navbar-links a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--oh-preto);
+  padding-bottom: 6px;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--oh-vermelho);
+  transition: width var(--oh-rapido);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-progresso {
+  height: 2px;
+  background: var(--oh-vermelho);
+}
+
+.navbar-actions {
+  gap: var(--oh-1);
+}
+
+.navbar-actions .btn {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+
+.btn {
+  height: 52px;
+  padding: 0 var(--oh-3);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  gap: 10px;
+  transition: background-color var(--oh-rapido), color var(--oh-rapido),
+    border-color var(--oh-rapido), transform var(--oh-rapido);
+}
+
+.btn-primary {
+  background: var(--oh-vermelho);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--oh-vermelho-escuro);
+}
+
+.btn-secondary,
+.oh-btn-linha {
+  background: transparent;
+  border: 1px solid var(--oh-preto);
+  color: var(--oh-preto);
+}
+
+.btn-secondary:hover,
+.oh-btn-linha:hover {
+  background: var(--oh-preto);
+  color: #fff;
+}
+
+.oh-btn-linha-clara {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.oh-btn-linha-clara:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--oh-preto);
+}
+
+.oh-btn-claro {
+  background: #fff;
+  color: var(--oh-preto);
+}
+
+.oh-btn-claro:hover {
+  background: var(--oh-bruma);
+}
+
+.btn .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Seta que desliza */
+.btn .oh-seta {
+  transition: transform var(--oh-rapido);
+}
+
+.btn:hover .oh-seta {
+  transform: translateX(5px);
+}
+
+/* Botão circular (setas do carrossel) */
+.oh-circ {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--oh-rapido), color var(--oh-rapido);
+}
+
+.oh-circ .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.oh-circ:hover {
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+  color: #fff;
+}
+
+/* ============================================================
+   BADGES / CHIPS
+   ============================================================ */
+
+.badge {
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--oh-preto);
+  border: 1px solid var(--oh-linha);
+}
+
+.badge-success,
+.badge-apurada {
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+  color: #fff;
+}
+
+/* Pílulas de pesquisa */
+.oh-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--oh-linha);
+  background: #fff;
+  font-size: 13px;
+  color: var(--oh-cinza);
+  cursor: pointer;
+  transition: background-color var(--oh-rapido), color var(--oh-rapido),
+    border-color var(--oh-rapido);
+}
+
+.oh-pill:hover {
+  background: var(--oh-preto);
+  border-color: var(--oh-preto);
+  color: #fff;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero-slider {
+  height: 80vh;
+  min-height: 640px;
+}
+
+.hero-slide-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(11, 12, 14, 0.96) 0%,
+      rgba(11, 12, 14, 0.78) 30%,
+      rgba(11, 12, 14, 0.34) 58%,
+      rgba(11, 12, 14, 0.12) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(11, 12, 14, 0.82) 0%,
+      rgba(11, 12, 14, 0.34) 45%,
+      rgba(11, 12, 14, 0) 78%
+    );
+}
+
+.hero-slide-img {
+  filter: saturate(0.82) contrast(1.05);
+}
+
+/* O conteúdo passa a assentar em baixo à esquerda, dentro da grelha */
+.hero-slide {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.hero-slide-content {
+  width: 100%;
+  max-width: var(--oh-max);
+  margin: 0 auto;
+  padding: 0 var(--oh-gutter) 22vh;
+  text-align: left;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+}
+
+.hero-slide-title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: #fff;
+  margin: var(--oh-3) 0 var(--oh-4);
+  max-width: 18ch;
+}
+
+.hero-slide-title em {
+  font-style: italic;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-slide-title em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 3px;
+  background: var(--oh-vermelho);
+}
+
+.hero-slide-sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 18px;
+  max-width: 520px;
+  margin-bottom: var(--oh-4);
+}
+
+.hero-slide-cta {
+  display: flex;
+  gap: var(--oh-2);
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Controlos do carrossel */
+.oh-hero-controlos {
+  position: absolute;
+  right: var(--oh-gutter);
+  bottom: var(--oh-6);
+  display: flex;
+  align-items: center;
+  gap: var(--oh-3);
+  color: #fff;
+  z-index: 4;
+}
+
+.oh-hero-contador {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.oh-hero-contador b {
+  color: var(--oh-vermelho);
+  font-weight: 600;
+}
+
+.hero-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 16px;
+  height: 2px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background-color var(--oh-rapido);
+}
+
+.hero-dot.is-active {
+  background: var(--oh-vermelho);
+  width: 28px;
+}
+
+.hero-arrow {
+  position: static;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  transform: none;
+  color: #fff;
+}
+
+.hero-arrow:hover {
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+}
+
+/* Indicação de scroll */
+.oh-scroll {
+  position: absolute;
+  left: var(--oh-gutter);
+  bottom: var(--oh-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.6);
+  writing-mode: vertical-rl;
+}
+
+.oh-scroll::after {
+  content: "";
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   CARTÃO DE PESQUISA
+   ============================================================ */
+
+.hero-search-card {
+  max-width: 1100px;
+  margin: -72px auto 0;
+  position: relative;
+  z-index: 4;
+  background: #fff;
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+  padding: var(--oh-4);
+  box-shadow: 0 24px 60px -32px rgba(11, 12, 14, 0.35);
+}
+
+.input-field {
+  height: 52px;
+  border: 0;
+  border-bottom: 1px solid var(--oh-linha);
+  border-radius: 0;
+  background: transparent;
+  font-size: 18px;
+  color: var(--oh-preto);
+  transition: border-color var(--oh-rapido);
+}
+
+.input-field::placeholder {
+  color: var(--oh-cinza);
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom-color: var(--oh-vermelho);
+  box-shadow: none;
+}
+
+/* ============================================================
+   FAIXA DE NÚMEROS
+   ============================================================ */
+
+.oh-numeros {
+  border-top: 1px solid var(--oh-linha);
+  border-bottom: 1px solid var(--oh-linha);
+  background: #fff;
+}
+
+.oh-numeros-grelha {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.oh-numero {
+  text-align: center;
+  padding: var(--oh-8) var(--oh-3);
+  border-left: 1px solid var(--oh-linha);
+}
+
+.oh-numero:first-child {
+  border-left: 0;
+}
+
+.oh-numero::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--oh-vermelho);
+  margin: 0 auto var(--oh-2);
+}
+
+.oh-numero-valor {
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--oh-preto);
+  font-variant-numeric: tabular-nums;
+}
+
+.oh-numero-rotulo {
+  margin-top: var(--oh-2);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--oh-cinza);
+}
+
+/* ============================================================
+   FAIXA FACIM
+   ============================================================ */
+
+.facim-faixa,
+.oh-faixa {
+  position: relative;
+  overflow: hidden;
+  background: var(--oh-ink);
+  color: #fff;
+  border-radius: 0;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: stretch;
+  gap: var(--oh-8);
+  padding: var(--oh-15) var(--oh-gutter);
+  min-height: 520px;
+}
+
+.oh-faixa-conteudo {
+  align-self: center;
+}
+
+.oh-faixa-conteudo {
+  max-width: 620px;
+}
+
+.oh-faixa h2,
+.facim-faixa h2 {
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: var(--oh-3) 0 var(--oh-2);
+}
+
+.oh-faixa p,
+.facim-faixa p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 17px;
+  max-width: 560px;
+  margin-bottom: var(--oh-4);
+}
+
+.oh-faixa .facim-eyebrow,
+.facim-faixa .facim-eyebrow {
+  color: var(--oh-vermelho) !important;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.oh-faixa-media {
+  position: relative;
+  align-self: stretch;
+  height: 100%;
+  min-height: 320px;
+  margin-right: calc(var(--oh-gutter) * -1);
+  overflow: hidden;
+}
+
+.oh-faixa-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+  opacity: 0.55;
+}
+
+/* Contagem decrescente */
+.oh-contagem {
+  display: flex;
+  gap: var(--oh-3);
+  margin-top: var(--oh-4);
+}
+
+.oh-contagem-bloco {
+  text-align: left;
+}
+
+.oh-contagem-valor {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.oh-contagem-bloco + .oh-contagem-bloco .oh-contagem-valor::before {
+  content: ":";
+  color: var(--oh-vermelho);
+  margin-right: var(--oh-3);
+}
+
+.oh-contagem-rotulo {
+  margin-top: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+   CARTÕES DE EMPRESA
+   ============================================================ */
+
+.card {
+  background: #fff;
+  text-align: left;
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: none;
+  position: relative;
+  transition: transform var(--oh-rapido), border-color var(--oh-rapido);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--oh-vermelho);
+  z-index: 2;
+  transition: width var(--oh-lento);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -40px rgba(11, 12, 14, 0.45);
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
+.card-cover {
+  overflow: hidden;
+}
+
+.card-cover img {
+  transition: transform 0.9s var(--oh-ease);
+}
+
+.card:hover .card-cover img {
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   GALERIA
+   ============================================================ */
+
+.galeria-tabs {
+  gap: var(--oh-4);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  justify-content: center;
+}
+
+.galeria-tab {
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--oh-cinza);
+}
+
+.galeria-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--oh-vermelho);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--oh-rapido);
+}
+
+.galeria-tab.is-active {
+  background: transparent;
+  color: var(--oh-preto);
+}
+
+.galeria-tab.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+
+.oh-cta {
+  position: relative;
+  background: var(--oh-ink);
+  color: #fff;
+  padding: var(--oh-20) 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.oh-cta-marca {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(180px, 26vw, 380px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #14161a;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.oh-cta-conteudo {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--oh-gutter);
+}
+
+.oh-cta-conteudo::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: var(--oh-vermelho);
+  margin: 0 auto var(--oh-4);
+}
+
+.oh-cta h2 {
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: var(--oh-3);
+}
+
+.oh-cta p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 18px;
+  max-width: 560px;
+  margin: 0 auto var(--oh-6);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--oh-ink);
+  color: #fff;
+  padding: 0 0 0;
+  border-top: 0;
+}
+
+.oh-footer-marca {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--oh-4) 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.oh-footer-marca span {
+  display: block;
+  font-size: clamp(64px, 13vw, 180px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--oh-grafite);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.oh-footer-marca em {
+  font-style: normal;
+  color: #2a0d0f;
+}
+
+.footer-grid {
+  padding: var(--oh-10) 0 var(--oh-8);
+  gap: var(--oh-8);
+}
+
+.footer .navbar-brand {
+  color: #fff;
+}
+
+.footer .text-body-md,
+.footer .text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .text-label-sm {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--oh-rapido);
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.oh-footer-contacto {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.oh-footer-contacto .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--oh-vermelho);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--oh-3) 0;
+  font-size: 13px;
+  color: var(--oh-cinza);
+  text-align: left;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  :root {
+    --oh-gutter: 40px;
+    --oh-20: 120px;
+    --oh-15: 80px;
+  }
+
+  .facim-faixa,
+  .oh-faixa {
+    grid-template-columns: 1fr;
+    padding: var(--oh-10) var(--oh-gutter);
+  }
+
+  .oh-faixa-media {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --oh-gutter: 20px;
+    --oh-20: 96px;
+  }
+
+  .navbar-inner {
+    padding: 0 var(--oh-gutter);
+  }
+
+  .hero-slide-content {
+    /* bottom: 18%; */
+  }
+
+  .hero-slide-title {
+    font-size: clamp(34px, 10vw, 48px);
+    max-width: none;
+  }
+
+  .oh-scroll {
+    display: none;
+  }
+
+  .oh-hero-controlos {
+    right: var(--oh-gutter);
+    bottom: var(--oh-6);
+    gap: var(--oh-2);
+  }
+
+  .oh-hero-controlos .hero-arrow {
+    display: none;
+  }
+
+  .hero-search-card {
+    margin-top: -48px;
+    padding: var(--oh-3);
+  }
+
+  .oh-numeros-grelha {
+    grid-template-columns: 1fr;
+  }
+
+  .oh-numero {
+    border-left: 0;
+    border-top: 1px solid var(--oh-linha);
+    padding: var(--oh-6) var(--oh-3);
+  }
+
+  .oh-numero:first-child {
+    border-top: 0;
+  }
+
+  .oh-cab {
+    margin-bottom: var(--oh-6);
+  }
+
+  .oh-contagem {
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   VERTENTE FACIM — rebranding da camada .facim-*
+   O facim.css continua igual; aqui só se troca o azul-marinho
+   por preto e o laranja por vermelho.
+   ============================================================ */
+
+:root {
+  --facim-navy: #0b0c0e;
+  --facim-navy-2: #101215;
+  --facim-navy-3: #17191c;
+  --facim-linha: rgba(255, 255, 255, 0.07);
+  --facim-areia: var(--oh-bruma);
+}
+
+/* Hero — brilho vermelho em vez de laranja */
+.facim-hero::after {
+  background: radial-gradient(
+    circle,
+    rgba(224, 31, 38, 0.28) 0%,
+    transparent 68%
+  );
+}
+
+.facim-hero-edicao {
+  border-color: rgba(255, 255, 255, 0.22);
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.facim-hero-edicao b {
+  color: #fff;
+}
+
+.facim-hero-titulo {
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  max-width: 18ch;
+}
+
+.facim-hero-titulo em {
+  font-style: italic;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.facim-hero-titulo em::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 3px;
+  background: var(--oh-vermelho);
+}
+
+/* Sobrancelhas e títulos das secções */
+.facim-eyebrow {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--oh-vermelho);
+}
+
+.facim-h1,
+.facim-h2 {
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--oh-preto);
+}
+
+.facim-h1 {
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.02;
+}
+
+.facim-risco {
+  background: var(--oh-vermelho);
+  height: 3px;
+  width: 64px;
+}
+
+.facim-seccao {
+  padding: var(--oh-20) 0;
+}
+
+/* Contagem decrescente */
+.facim-contagem-num {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.facim-contagem-rotulo {
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.facim-contagem-viva {
+  background: rgba(224, 31, 38, 0.16);
+}
+
+/* Botões da vertente */
+.facim-btn-claro {
+  background: #fff;
+  color: var(--oh-preto);
+  border-radius: var(--radius-sm);
+}
+
+.facim-btn-claro:hover {
+  background: var(--oh-bruma);
+}
+
+.facim-btn-linha {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border-radius: var(--radius-sm);
+}
+
+.facim-btn-linha:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--oh-preto);
+}
+
+/* Barra de filtros */
+.facim-barra-filtros {
+  background: var(--oh-bruma);
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+}
+
+/* Cartões de empresa */
+.facim-card {
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+  position: relative;
+}
+
+.facim-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--oh-vermelho);
+  z-index: 3;
+  transition: width var(--oh-lento);
+}
+
+.facim-card:hover {
+  border-color: var(--oh-linha);
+  box-shadow: 0 30px 60px -40px rgba(11, 12, 14, 0.45);
+}
+
+.facim-card:hover::before {
+  width: 100%;
+}
+
+.facim-card-img {
+  transition: transform 0.9s var(--oh-ease);
+}
+
+.facim-card:hover .facim-card-img {
+  transform: scale(1.05);
+}
+
+.facim-card-nome {
+  letter-spacing: -0.02em;
+  color: var(--oh-preto);
+}
+
+/* Selo "Empresa Apurada" */
+.facim-selo {
+  background: var(--oh-vermelho);
+  color: #fff;
+  border-color: var(--oh-vermelho);
+}
+
+/* Planta do pavilhão */
+.facim-planta-quadro {
+  background: #fff;
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+}
+
+.facim-stand:hover {
+  background: rgba(224, 31, 38, 0.18);
+}
+
+.facim-stand.is-grande {
+  background: rgba(224, 31, 38, 0.1);
+}
+
+.facim-quadro.is-grande {
+  background: rgba(224, 31, 38, 0.24);
+}
+
+/* Marcos do plano da missão */
+.facim-marco.is-destaque::before {
+  box-shadow: 0 0 0 5px rgba(224, 31, 38, 0.18);
+}
+
+.facim-marco-titulo {
+  letter-spacing: -0.02em;
+  color: var(--oh-preto);
+}
+
+/* Progresso */
+.facim-progresso-barra {
+  background: var(--oh-vermelho);
+}
+
+/* Perfil de empresa */
+.facim-perfil-veu {
+  background: linear-gradient(
+    to top,
+    rgba(11, 12, 14, 0.96) 0%,
+    rgba(11, 12, 14, 0.62) 45%,
+    rgba(11, 12, 14, 0.15) 100%
+  );
+}
+
+.facim-perfil-nome {
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.facim-perfil-logo {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--oh-linha);
+}
+
+.facim-cta {
+  background: var(--oh-ink);
+}
+
+/* ============================================================
+   CORRECÇÃO — sublinhado vermelho que acompanha a quebra de linha
+   (o ::after só funcionava em títulos de uma linha)
+   ============================================================ */
+
+.hero-slide-title em::after,
+.facim-hero-titulo em::after {
+  content: none;
+}
+
+.hero-slide-title em,
+.facim-hero-titulo em {
+  display: inline;
+  background-image: linear-gradient(var(--oh-vermelho), var(--oh-vermelho));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  padding-bottom: 0.08em;
+}
+
+/* A terceira linha da FACIM é longa — entra um pouco mais pequena */
+.facim-hero-titulo em {
+  font-size: 0.72em;
+}
+
+/* Chips de sector — neutros; a cor fica reservada ao vermelho */
+.facim-sector,
+.facim-sector-agro,
+.facim-sector-artesanato,
+.facim-sector-construcao,
+.facim-sector-cosmetica,
+.facim-sector-ensino,
+.facim-sector-logistica,
+.facim-sector-pescas,
+.facim-sector-servicos,
+.facim-sector-tecnologia,
+.facim-sector-turismo {
+  background: transparent;
+  border: 1px solid var(--oh-linha);
+  color: var(--oh-cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  padding: 5px 12px;
+}
+
+/* Badges de indústria da FENA — mesmo tratamento */
+.badge-ind-agricultura,
+.badge-ind-construcao,
+.badge-ind-ensino,
+.badge-ind-financas,
+.badge-ind-logistica,
+.badge-ind-tecnologia {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--oh-linha);
+  color: var(--oh-preto);
+}
+
+/* Estados do cronograma — sem verde nem âmbar; só cinza, preto e vermelho */
+:root {
+  --facim-verde: var(--oh-cinza);
+  --facim-ambar: var(--oh-preto);
+}
+
+.facim-marco-data {
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   GALERIA — mosaico editorial de ponta a ponta
+   ============================================================ */
+
+.oh-galeria {
+  padding: var(--oh-20) 0 var(--oh-15);
+  background: #fff;
+  border-top: 1px solid var(--oh-linha);
+}
+
+.oh-galeria-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--oh-8);
+  flex-wrap: wrap;
+  margin-bottom: var(--oh-8);
+}
+
+.oh-galeria-intro {
+  max-width: 640px;
+}
+
+.oh-galeria-intro .oh-eyebrow {
+  display: flex;
+  margin-top: var(--oh-2);
+}
+
+.oh-galeria-intro h2 {
+  margin-top: var(--oh-2);
+}
+
+.oh-galeria-intro p {
+  margin-top: var(--oh-3);
+  max-width: 520px;
+}
+
+/* Separadores — texto simples com risco vermelho e contagem */
+.oh-galeria-tabs {
+  justify-content: flex-start;
+  gap: var(--oh-4);
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.oh-galeria-tabs .galeria-tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 17px;
+}
+
+.oh-tab-conta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--oh-cinza);
+  font-variant-numeric: tabular-nums;
+}
+
+.galeria-tab.is-active .oh-tab-conta {
+  color: var(--oh-vermelho);
+}
+
+/* O mosaico sai da grelha do container e vai de ponta a ponta */
+.oh-galeria-mosaico {
+  width: 100%;
+}
+
+.galeria-grid-fotos,
+.galeria-grid-videos {
+  gap: 4px;
+  padding: 0 4px;
+  grid-auto-rows: 220px;
+}
+
+@media (min-width: 1100px) {
+  .galeria-grid-fotos {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  /* Ritmo do mosaico: destaque 3×2, largos 2×1, altos 1×2 */
+  .galeria-item-foto {
+    grid-column: span 2;
+  }
+
+  .galeria-item-foto.tile-lg {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .galeria-item-foto.tile-wide {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+
+  .galeria-item-foto.tile-tall {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .galeria-grid-videos {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 260px;
+  }
+}
+
+/* Peças — sem cantos redondos, imagem que ganha cor no hover */
+.galeria-item-foto,
+.galeria-item-video {
+  border-radius: 0;
+  background: var(--oh-bruma);
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-item-foto img,
+.galeria-item-video img {
+  filter: saturate(0.72) contrast(1.04);
+  transition: transform 1s var(--oh-ease), filter 0.6s var(--oh-ease);
+}
+
+.galeria-item-foto:hover img,
+.galeria-item-video:hover img {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1);
+}
+
+/* Véu que só aparece ao passar o rato */
+.galeria-item-foto::after,
+.galeria-item-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 12, 14, 0.88) 0%,
+    rgba(11, 12, 14, 0.35) 42%,
+    rgba(11, 12, 14, 0) 78%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--oh-ease);
+  pointer-events: none;
+}
+
+.galeria-item-foto:hover::after,
+.galeria-item-video:hover::after {
+  opacity: 1;
+}
+
+/* Legenda — sobe de baixo */
+.galeria-item-foto-legenda,
+.galeria-item-video-legenda {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: var(--oh-3);
+  background: none;
+  text-align: left;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s var(--oh-ease), transform 0.45s var(--oh-ease);
+}
+
+.galeria-item-foto:hover .galeria-item-foto-legenda,
+.galeria-item-video:hover .galeria-item-video-legenda {
+  opacity: 1;
+  transform: none;
+}
+
+/* Marca "Ver" no canto superior */
+.galeria-item-foto::before {
+  content: "Ver";
+  position: absolute;
+  top: var(--oh-2);
+  left: var(--oh-2);
+  z-index: 3;
+  padding: 6px 12px;
+  background: var(--oh-vermelho);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.4s var(--oh-ease), transform 0.4s var(--oh-ease);
+}
+
+.galeria-item-foto:hover::before {
+  opacity: 1;
+  transform: none;
+}
+
+/* Botão de play dos vídeos */
+.galeria-video-play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--oh-vermelho);
+  border: 0;
+  z-index: 3;
+  transition: transform 0.4s var(--oh-ease), background-color 0.4s var(--oh-ease);
+}
+
+.galeria-item-video:hover .galeria-video-play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--oh-vermelho);
+  color: #fff;
+}
+
+.galeria-item-video-legenda {
+  opacity: 1;
+  transform: none;
+  background: linear-gradient(
+    to top,
+    rgba(11, 12, 14, 0.9) 0%,
+    rgba(11, 12, 14, 0) 100%
+  );
+  padding-top: var(--oh-8);
+}
+
+/* Paginação dos vídeos */
+.oh-galeria-paginacao {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--oh-6);
+}
+
+@media (max-width: 1099px) {
+  .galeria-grid-fotos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .oh-galeria-topo {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .galeria-grid-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+
+  .galeria-item-foto.tile-lg,
+  .galeria-item-foto.tile-wide {
+    grid-column: span 2;
+  }
+
+  .galeria-item-foto.tile-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .galeria-grid-videos {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  /* No telemóvel não há hover — a legenda fica sempre visível */
+  .galeria-item-foto::after,
+  .galeria-item-foto-legenda {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Ritmo do mosaico em 12 colunas — as peças fecham sempre a linha
+   (lg 6×2 · larga 6×1 · alta 3×2 · média 3×1) */
+@media (min-width: 1100px) {
+  .galeria-grid-fotos {
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 250px;
+  }
+
+  .galeria-item-foto {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+
+  .galeria-item-foto.tile-lg {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+
+  .galeria-item-foto.tile-wide {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+
+  .galeria-item-foto.tile-tall {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+}
+
+/* Paginação dos vídeos — os botões são .btn, por isso a cor fica com
+   .btn-primary/.btn-secondary; aqui só se ajusta a forma */
+.oh-galeria-paginacao button,
+.oh-galeria-paginacao .btn {
+  background: none;
+  color: inherit;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px !important;
+  font-size: 14px;
+}
+
+.oh-galeria-paginacao .btn-primary {
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+  color: #fff;
+}
+
+.oh-galeria-paginacao .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--oh-linha);
+  color: var(--oh-preto);
+}
+
+.oh-galeria-paginacao .btn-secondary:hover:not(:disabled) {
+  border-color: var(--oh-preto);
+  background: var(--oh-preto);
+  color: #fff;
+}
+
+.oh-galeria-paginacao .btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.galeria-grid-videos {
+  grid-auto-flow: dense;
+}
+
+/* ============================================================
+   GALERIA — dentro do wrapper + renderização das imagens
+   (sobrepõe-se ao bloco anterior de propósito)
+   ============================================================ */
+
+.oh-galeria-mosaico {
+  width: 100%;
+}
+
+.galeria-grid-fotos,
+.galeria-grid-videos {
+  gap: var(--oh-1);
+  padding: 0;
+}
+
+/* Cada peça: a grelha define a altura, por isso o espaço fica reservado
+   antes da imagem chegar — não há saltos de layout */
+.galeria-item-foto,
+.galeria-item-video {
+  border: 0;
+  background: var(--oh-bruma);
+}
+
+.galeria-media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.galeria-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.7s var(--oh-ease), transform 1s var(--oh-ease),
+    filter 0.6s var(--oh-ease);
+  filter: saturate(0.72) contrast(1.04);
+}
+
+.galeria-item-foto.is-carregada .galeria-media img,
+.galeria-item-video.is-carregada .galeria-media img {
+  opacity: 1;
+  transform: none;
+}
+
+.galeria-item-foto:hover .galeria-media img,
+.galeria-item-video:hover .galeria-media img {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1);
+}
+
+/* Esqueleto enquanto carrega */
+.galeria-item-foto.is-a-carregar::after,
+.galeria-item-video.is-a-carregar::after {
+  opacity: 1;
+  background: linear-gradient(
+    100deg,
+    var(--oh-bruma) 30%,
+    #eceef0 46%,
+    var(--oh-bruma) 62%
+  );
+  background-size: 260% 100%;
+  animation: oh-brilho 1.4s ease-in-out infinite;
+}
+
+@keyframes oh-brilho {
+  from {
+    background-position: 160% 0;
+  }
+  to {
+    background-position: -60% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria-media img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .galeria-item-foto.is-a-carregar::after,
+  .galeria-item-video.is-a-carregar::after {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   LIGHTBOX — palco de tamanho fixo
+   As fotografias têm proporções diferentes (verticais e horizontais).
+   Antes a moldura encolhia e crescia a cada troca; agora o palco tem
+   sempre a mesma medida e a imagem ajusta-se lá dentro.
+   ============================================================ */
+
+.galeria-lightbox {
+  background: rgba(11, 12, 14, 0.96);
+  backdrop-filter: blur(6px);
+  gap: var(--oh-4);
+  padding: var(--oh-6) var(--oh-4);
+}
+
+.galeria-lightbox-conteudo {
+  width: min(1120px, 84vw);
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--oh-2);
+}
+
+.galeria-lightbox-conteudo img {
+  width: 100%;
+  height: 74vh;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 1;
+  transition: opacity 0.25s var(--oh-ease);
+}
+
+.galeria-lightbox-conteudo.is-a-trocar img {
+  opacity: 0.25;
+}
+
+.galeria-lightbox-rodape {
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: var(--oh-2);
+  margin-top: 0;
+}
+
+.galeria-lightbox-rodape p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.galeria-lightbox-contador {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-variant-numeric: tabular-nums;
+  color: var(--oh-vermelho);
+}
+
+.galeria-lightbox .hero-arrow {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.galeria-lightbox .modal-close {
+  top: var(--oh-3);
+  right: var(--oh-3);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .galeria-lightbox {
+    padding: var(--oh-4) var(--oh-2);
+    gap: var(--oh-2);
+  }
+
+  .galeria-lightbox-conteudo {
+    width: 100%;
+  }
+
+  .galeria-lightbox-conteudo img {
+    height: 62vh;
+  }
+
+  .galeria-lightbox .hero-arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ============================================================
+   PÁGINA EMPRESAS — escalões de prontidão
+   ============================================================ */
+
+.oh-explore-topo {
+  padding: var(--oh-15) 0 var(--oh-8);
+  border-bottom: 1px solid var(--oh-linha);
+}
+
+.oh-explore-topo .oh-num {
+  display: block;
+  text-transform: uppercase;
+  color: var(--oh-vermelho);
+  font-weight: 600;
+}
+
+.oh-explore-topo h1 {
+  margin-top: var(--oh-2);
+  max-width: 16ch;
+}
+
+.oh-explore-topo h1 em {
+  font-style: italic;
+  background-image: linear-gradient(var(--oh-vermelho), var(--oh-vermelho));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 3px;
+  padding-bottom: 0.08em;
+}
+
+.oh-explore-topo p {
+  margin-top: var(--oh-4);
+  max-width: 62ch;
+}
+
+/* ── Cartões de escalão (também são o filtro) ── */
+.oh-escaloes {
+  padding: var(--oh-8) 0 0;
+}
+
+.oh-escaloes-grelha {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--oh-1);
+}
+
+.oh-escalao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
+  padding: var(--oh-3);
+  background: #fff;
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  position: relative;
+  transition: border-color var(--oh-rapido), background-color var(--oh-rapido),
+    transform var(--oh-rapido);
+}
+
+.oh-escalao::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: var(--oh-vermelho);
+  opacity: 0;
+  transition: opacity var(--oh-rapido);
+}
+
+.oh-escalao:hover {
+  border-color: var(--oh-preto);
+}
+
+.oh-escalao.is-activo {
+  border-color: var(--oh-preto);
+  background: var(--oh-bruma);
+}
+
+.oh-escalao.is-activo::before {
+  opacity: 1;
+}
+
+.oh-escalao-valor {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--oh-preto);
+  font-variant-numeric: tabular-nums;
+}
+
+.oh-escalao.is-activo .oh-escalao-valor {
+  color: var(--oh-vermelho);
+}
+
+.oh-escalao-rotulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oh-preto);
+}
+
+.oh-escalao-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--oh-cinza);
+}
+
+/* ── Barra de filtros horizontal (sem sidebar) ── */
+.oh-explore-lista {
+  padding: var(--oh-8) 0 var(--oh-20);
+}
+
+.oh-barra-filtros {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  align-items: center;
+  gap: var(--oh-3);
+  padding: var(--oh-3);
+  background: var(--oh-bruma);
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+}
+
+.oh-campo {
+  position: relative;
+}
+
+.oh-campo .input-field {
+  width: 100%;
+  height: 48px;
+  font-size: 15px;
+  background: transparent;
+}
+
+.oh-campo-pesquisa .input-field {
+  padding-left: 30px;
+}
+
+.oh-campo-pesquisa > .icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--oh-cinza);
+  pointer-events: none;
+}
+
+.oh-campo select.input-field {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 24px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--oh-cinza) 50%),
+    linear-gradient(135deg, var(--oh-cinza) 50%, transparent 50%);
+  background-position: right 10px center, right 5px center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.oh-limpar {
+  background: none;
+  border: 0;
+  padding: 0 var(--oh-2);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--oh-vermelho);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.oh-limpar:hover {
+  color: var(--oh-vermelho-escuro);
+}
+
+/* ── Linha de resultados ── */
+.oh-linha-resultados {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--oh-3);
+  flex-wrap: wrap;
+  margin: var(--oh-6) 0 var(--oh-3);
+  padding-bottom: var(--oh-2);
+  border-bottom: 1px solid var(--oh-linha);
+}
+
+.oh-contador {
+  font-size: 14px;
+  color: var(--oh-cinza);
+}
+
+.oh-contador b {
+  color: var(--oh-preto);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.oh-nota-ordem {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--oh-cinza);
+}
+
+/* ── Grelha de empresas (a sidebar saiu, o conteúdo ganhou a largura toda) ── */
+.oh-grelha-empresas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--oh-3);
+  margin-top: var(--oh-4);
+}
+
+.oh-vazio {
+  text-align: center;
+  padding: var(--oh-10) var(--oh-3);
+  color: var(--oh-cinza);
+  border: 1px solid var(--oh-linha);
+  border-radius: var(--radius-lg);
+  margin-top: var(--oh-4);
+}
+
+/* ── Selo de escalão no cartão ── */
+.explore-card-top {
+  position: relative;
+}
+
+.oh-selo {
+  position: absolute;
+  top: var(--oh-2);
+  left: var(--oh-2);
+  z-index: 2;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid;
+}
+
+.oh-selo-pronta {
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+  color: #fff;
+}
+
+.oh-selo-activacao {
+  background: #fff;
+  border-color: var(--oh-preto);
+  color: var(--oh-preto);
+}
+
+.oh-selo-potencial {
+  background: #fff;
+  border-color: var(--oh-linha);
+  color: var(--oh-cinza);
+}
+
+/* ── Medidor de prontidão ── */
+.oh-prontidao {
+  margin-bottom: var(--oh-2);
+  padding-top: var(--oh-2);
+  border-top: 1px solid var(--oh-linha);
+}
+
+.oh-prontidao-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--oh-1);
+  margin-bottom: 8px;
+}
+
+.oh-prontidao-rotulo {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--oh-cinza);
+}
+
+.oh-prontidao-valor {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--oh-preto);
+  font-variant-numeric: tabular-nums;
+}
+
+.oh-prontidao-valor i {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--oh-cinza);
+}
+
+.oh-prontidao-barra {
+  height: 3px;
+  background: var(--oh-linha);
+  overflow: hidden;
+}
+
+.oh-prontidao-barra span {
+  display: block;
+  height: 100%;
+  background: var(--oh-preto);
+}
+
+[data-escalao="pronta"] .oh-prontidao-barra span {
+  background: var(--oh-vermelho);
+}
+
+[data-escalao="potencial"] .oh-prontidao-barra span {
+  background: var(--oh-cinza);
+}
+
+.oh-prontidao-falta {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--oh-cinza);
+}
+
+@media (max-width: 1099px) {
+  .oh-escaloes-grelha {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .oh-grelha-empresas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .oh-barra-filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .oh-campo-pesquisa {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .oh-escaloes-grelha,
+  .oh-grelha-empresas,
+  .oh-barra-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .oh-explore-topo {
+    padding: var(--oh-8) 0 var(--oh-6);
+  }
+}
+
+/* Cartão do directório alinhado à esquerda, como o resto da página */
+.explore-card-body {
+  text-align: left;
+  padding: var(--oh-3);
+}
+
+.explore-card-body .badge {
+  align-self: flex-start;
+}
+
+.explore-card-meta {
+  justify-content: flex-start;
+}
+
+.explore-card-top {
+  background: var(--oh-bruma);
+  border-bottom: 1px solid var(--oh-linha);
+}
+
+/* Marca de expositor da FACIM no cartão do directório */
+.oh-marca-facim {
+  position: absolute;
+  top: var(--oh-2);
+  right: var(--oh-2);
+  z-index: 2;
+  padding: 5px 10px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #fff;
+  background: var(--oh-ink);
+  border-radius: 999px;
+}
+
+/* ============================================================
+   CAMADA DE ANIMAÇÃO — cortina, cursor
+   (só entra em cena quando o GSAP carrega: .tem-gsap)
+   ============================================================ */
+
+.oh-cortina {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--oh-ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--oh-4);
+  will-change: transform;
+}
+
+.oh-cortina-marca {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.oh-cortina-marca em {
+  font-style: normal;
+  color: var(--oh-vermelho);
+}
+
+.oh-cortina-linha {
+  display: block;
+  width: min(260px, 40vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.oh-cortina-linha i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--oh-vermelho);
+  transform-origin: left center;
+}
+
+/* ── Cursor ── */
+.oh-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--oh-preto);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.35s var(--oh-ease), height 0.35s var(--oh-ease),
+    margin 0.35s var(--oh-ease), background-color 0.35s var(--oh-ease),
+    border-color 0.35s var(--oh-ease);
+  border: 1px solid transparent;
+  mix-blend-mode: normal;
+}
+
+.oh-cursor.is-activo {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  background: transparent;
+  border-color: var(--oh-vermelho);
+}
+
+.oh-cursor.is-media {
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  background: var(--oh-vermelho);
+  border-color: var(--oh-vermelho);
+}
+
+.oh-cursor-rotulo {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.25s var(--oh-ease);
+}
+
+.oh-cursor.is-media .oh-cursor-rotulo {
+  opacity: 1;
+}
+
+/* Com cursor próprio, o "Ver" das peças da galeria seria repetição */
+.tem-cursor-oholo .galeria-item-foto::before {
+  content: none;
+}
+
+/* Enquanto o Lenis manda no scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .oh-cursor {
+    display: none;
+  }
+}
+
+/* ============================================================
+   CARTÃO DO DIRECTÓRIO — capa fotográfica, como na FACIM
+   ============================================================ */
+
+.explore-card-top {
+  position: relative;
+  height: 196px;
+  background: var(--oh-bruma);
+  border-bottom: 1px solid var(--oh-linha);
+  overflow: hidden;
+  padding: 0;
+  display: block;
+}
+
+.explore-card-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s var(--oh-ease), filter 0.6s var(--oh-ease);
+  filter: saturate(0.78) contrast(1.04);
+}
+
+.explore-card:hover .explore-card-cover {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1);
+}
+
+/* Quando não há capa, entra o logótipo — mostra-se inteiro, centrado,
+   sobre fundo claro, em vez de cortado como uma fotografia */
+.explore-card-cover.cover-fallback-logo {
+  object-fit: contain;
+  padding: var(--oh-6);
+  background: #fff;
+  filter: none;
+}
+
+.explore-card:hover .explore-card-cover.cover-fallback-logo {
+  transform: scale(1.03);
+}
+
+/* Um véu subtil por baixo dos selos, para se lerem sobre qualquer foto */
+.explore-card-top::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 96px;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 12, 14, 0.42) 0%,
+    rgba(11, 12, 14, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.explore-card-top .oh-selo,
+.explore-card-top .oh-marca-facim {
+  z-index: 2;
+}
+
+/* ============================================================
+   HEADER — os mesmos estados em todas as páginas
+   ------------------------------------------------------------
+   O motion.js já põe as classes em qualquer página:
+     .is-scrolled  — passou dos 24px  (encolhe + mostra o fio)
+     .is-hidden    — está a descer    (recolhe para cima)
+     .is-over      — está por cima de um [data-hero-escuro]
+   Aqui só se traduzem esses estados para a paleta nova.
+   ============================================================ */
+
+.navbar {
+  transition: transform 0.5s var(--oh-ease), height 0.35s var(--oh-ease),
+    background-color 0.35s var(--oh-ease), box-shadow 0.35s var(--oh-ease),
+    border-color 0.35s var(--oh-ease);
+  will-change: transform;
+}
+
+.navbar-inner,
+.navbar-actions .btn {
+  transition: height 0.35s var(--oh-ease);
+}
+
+/* ── Passou o topo: encolhe, ganha vidro e mostra o fio ── */
+.navbar.is-scrolled {
+  height: 68px;
+  background-color: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom-color: transparent;
+  box-shadow: 0 1px 0 var(--oh-linha), 0 14px 34px -26px rgba(11, 12, 14, 0.4);
+}
+
+.navbar.is-scrolled .navbar-inner {
+  height: 68px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar.is-scrolled .navbar-actions .btn {
+  height: 38px;
+}
+
+/* ── Por cima de um hero escuro (facim.html e ficha da FACIM) ── */
+.navbar.is-over {
+  background-color: transparent;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.navbar.is-over .navbar-brand,
+.navbar.is-over .navbar-links a,
+.navbar.is-over .navbar-toggle {
+  color: #fff;
+}
+
+.navbar.is-over .navbar-brand .oh-hub {
+  color: var(--oh-vermelho);
+}
+
+.navbar.is-over .navbar-links a.active {
+  color: #fff;
+}
+
+/* O botão principal mantém-se vermelho sólido — sobre fotografia é o que
+   se lê melhor, e é o único ponto de cor que a marca permite */
+.navbar.is-over .btn-primary {
+  background-color: var(--oh-vermelho);
+  border: 0;
+  color: #fff;
+  backdrop-filter: none;
+}
+
+.navbar.is-over .btn-primary:hover {
+  background-color: var(--oh-vermelho-escuro);
+}
+
+.navbar.is-over .oh-btn-linha,
+.navbar.is-over .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.navbar.is-over .oh-btn-linha:hover,
+.navbar.is-over .btn-secondary:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--oh-preto);
+}
+
+/* Fio de progresso — vermelho, aparece assim que se sai do topo */
+.navbar-progresso {
+  background: var(--oh-vermelho);
+}
+
+/* ============================================================
+   HEADER NO TELEMÓVEL
+   ------------------------------------------------------------
+   Barra baixa e limpa; o menu abre como painel inteiro em Ink,
+   com os links em tamanho grande e as acções em baixo, ao
+   alcance do polegar.
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar-inner {
+    height: 64px;
+    padding: 0 var(--oh-gutter);
+    position: static;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .navbar.is-scrolled {
+    height: 60px;
+  }
+
+  .navbar.is-scrolled .navbar-inner {
+    height: 60px;
+  }
+
+  .navbar-brand {
+    font-size: 17px;
+    position: relative;
+    z-index: 70;
+  }
+
+  /* Os botões saem da barra e vão para o fundo do painel */
+  .navbar-actions {
+    display: none;
+  }
+
+  /* ── Botão do menu: duas barras que viram X ── */
+  .navbar-toggle {
+    display: flex;
+    position: relative;
+    z-index: 70;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    border-radius: 0;
+    background: none;
+    border: 0;
+    color: var(--oh-preto);
+  }
+
+  .navbar-toggle .icon {
+    display: none;
+  }
+
+  .navbar-toggle::before,
+  .navbar-toggle::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: transform 0.4s var(--oh-ease), width 0.4s var(--oh-ease);
+  }
+
+  .navbar-toggle::before {
+    transform: translateY(-4px);
+  }
+
+  .navbar-toggle::after {
+    width: 14px;
+    transform: translateY(4px);
+  }
+
+  .navbar.is-menu-aberto .navbar-toggle {
+    color: #fff;
+  }
+
+  .navbar.is-menu-aberto .navbar-toggle::before {
+    transform: rotate(45deg);
+  }
+
+  .navbar.is-menu-aberto .navbar-toggle::after {
+    width: 22px;
+    transform: rotate(-45deg);
+  }
+
+  .navbar.is-menu-aberto .navbar-brand {
+    color: #fff;
+  }
+
+  /* ── Painel ── */
+  .navbar-links {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    max-height: none;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    padding: 96px var(--oh-gutter) 200px;
+    background: var(--oh-ink);
+    border: 0;
+    box-shadow: none;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.65s var(--oh-ease), opacity 0.3s var(--oh-ease),
+      visibility 0.65s;
+  }
+
+  .navbar-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    clip-path: inset(0 0 0 0);
+  }
+
+  .navbar-links a {
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: clamp(30px, 8.5vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s var(--oh-ease), transform 0.5s var(--oh-ease),
+      color 0.3s;
+  }
+
+  .navbar-links.is-open a {
+    opacity: 1;
+    transform: none;
+  }
+
+  .navbar-links.is-open a:nth-of-type(1) {
+    transition-delay: 0.16s;
+  }
+  .navbar-links.is-open a:nth-of-type(2) {
+    transition-delay: 0.24s;
+  }
+  .navbar-links.is-open a:nth-of-type(3) {
+    transition-delay: 0.32s;
+  }
+  .navbar-links.is-open a:nth-of-type(4) {
+    transition-delay: 0.4s;
+  }
+
+  .navbar-links a.active {
+    color: var(--oh-vermelho);
+  }
+
+  /* o sublinhado do desktop não faz sentido aqui */
+  .navbar-links a::after {
+    display: none;
+  }
+
+  /* ── Acções, encostadas ao fundo do painel ── */
+  .navbar.is-menu-aberto .navbar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--oh-1);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 65;
+    padding: var(--oh-3) var(--oh-gutter) calc(var(--oh-4) + env(safe-area-inset-bottom));
+    background: linear-gradient(
+      to top,
+      var(--oh-ink) 68%,
+      rgba(11, 12, 14, 0) 100%
+    );
+  }
+
+  .navbar.is-menu-aberto .navbar-actions .btn {
+    width: 100%;
+    height: 52px;
+    justify-content: center;
+  }
+
+  .navbar.is-menu-aberto .navbar-actions .oh-btn-linha {
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+  }
+
+  /* Com o menu aberto o header não recolhe nem fica transparente */
+  .navbar.is-menu-aberto,
+  .navbar.is-menu-aberto.is-scrolled {
+    transform: none;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar.is-menu-aberto .navbar-progresso {
+    opacity: 0;
+  }
+
+  body.menu-aberto {
+    overflow: hidden;
+  }
+}
+
+/* Entre 901 e 1100 o header ainda aperta — os rótulos encurtam */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .navbar-actions .btn {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================================
+   TELEMÓVEL — o header é o mesmo em todas as páginas
+   ------------------------------------------------------------
+   No ecrã pequeno a barra não fica por cima do hero: é sempre
+   branca, com o wordmark preto, tal como no index. O modo
+   transparente sobre hero escuro fica só para o desktop, onde
+   há espaço para ele respirar.
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .navbar.is-over {
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--oh-linha);
+  }
+
+  .navbar.is-over.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: transparent;
+    box-shadow: 0 1px 0 var(--oh-linha), 0 14px 34px -26px rgba(11, 12, 14, 0.4);
+  }
+
+  .navbar.is-over .navbar-brand,
+  .navbar.is-over .navbar-toggle {
+    color: var(--oh-preto);
+  }
+
+  .navbar.is-over .navbar-brand .oh-hub {
+    color: var(--oh-vermelho);
+  }
+
+  /* Dentro do painel escuro, os links voltam a ser brancos */
+  .navbar.is-over .navbar-links a {
+    color: #fff;
+  }
+
+  .navbar.is-over .navbar-links a.active {
+    color: var(--oh-vermelho);
+  }
+
+  /* Com o painel aberto, o wordmark e o botão passam a branco em
+     qualquer página — o fundo por trás é sempre Ink */
+  .navbar.is-menu-aberto.is-over .navbar-brand,
+  .navbar.is-menu-aberto.is-over .navbar-toggle {
+    color: #fff;
+  }
+
+  /* O par de botões é igual em todo o lado: primário vermelho a toda a
+     largura, secundário com contorno branco por baixo */
+  .navbar.is-menu-aberto .navbar-actions .btn-primary {
+    background-color: var(--oh-vermelho);
+    border: 0;
+    color: #fff;
+  }
+
+  .navbar.is-menu-aberto.is-over .navbar-actions .oh-btn-linha {
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+  }
+}
+
+/* ============================================================
+   PAINEL DO TELEMÓVEL — os botões entram na coluna, logo a
+   seguir ao último item do menu
+   ------------------------------------------------------------
+   Antes o .navbar-actions estava preso ao fundo do ecrã, solto
+   dos links. Agora o painel é o próprio .navbar-inner em coluna:
+   links primeiro, botões a seguir, tudo no mesmo fluxo.
+   O fundo Ink passa para uma camada própria (.navbar::before),
+   para a abertura continuar a ser animada.
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* Camada de fundo do painel */
+  .navbar::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    background: var(--oh-ink);
+    z-index: 55;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.6s var(--oh-ease);
+  }
+
+  .navbar.is-menu-aberto::before {
+    clip-path: inset(0 0 0 0);
+    pointer-events: auto;
+  }
+
+  /* Painel: uma coluna só, com tudo no mesmo fluxo */
+  .navbar.is-menu-aberto .navbar-inner {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    max-width: none;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 92px var(--oh-gutter)
+      calc(var(--oh-6) + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* Marca e botão do menu ficam fixos na linha de topo */
+  .navbar.is-menu-aberto .navbar-brand {
+    position: fixed;
+    top: 0;
+    left: var(--oh-gutter);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    z-index: 70;
+  }
+
+  .navbar.is-menu-aberto .navbar-toggle {
+    position: fixed;
+    top: 10px;
+    right: calc(var(--oh-gutter) - 10px);
+    z-index: 70;
+  }
+
+  /* Os links deixam de ser o painel: passam a ser só a lista */
+  .navbar.is-menu-aberto .navbar-links {
+    position: static;
+    inset: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    overflow: visible;
+    clip-path: none;
+    z-index: auto;
+    justify-content: flex-start;
+  }
+
+  /* Os botões, logo a seguir ao último item */
+  .navbar.is-menu-aberto .navbar-actions {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: var(--oh-1);
+    margin-top: var(--oh-6);
+    padding: 0;
+    background: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s var(--oh-ease) 0.42s,
+      transform 0.5s var(--oh-ease) 0.42s;
+  }
+
+  .navbar.is-menu-aberto .navbar-links.is-open ~ .navbar-actions {
+    opacity: 1;
+    transform: none;
+  }
+
+  .navbar.is-menu-aberto .navbar-actions .btn {
+    width: 100%;
+    height: 52px;
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------------------
+   O motion.css tem, do desenho antigo (painel branco), a regra
+     .navbar.is-menu-aberto.is-over .navbar-links a { color: on-surface }
+   que agora pintava os links de preto sobre o painel Ink. Estas
+   regras têm a mesma especificidade e vêm depois, por isso ganham.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .navbar.is-menu-aberto .navbar-links a,
+  .navbar.is-menu-aberto.is-over .navbar-links a {
+    color: #fff;
+  }
+
+  .navbar.is-menu-aberto .navbar-links a.active,
+  .navbar.is-menu-aberto.is-over .navbar-links a.active {
+    color: var(--oh-vermelho);
+  }
+
+  .navbar.is-menu-aberto .navbar-brand,
+  .navbar.is-menu-aberto.is-over .navbar-brand,
+  .navbar.is-menu-aberto .navbar-toggle,
+  .navbar.is-menu-aberto.is-over .navbar-toggle {
+    color: #fff;
+  }
+
+  .navbar.is-menu-aberto .navbar-brand .oh-hub,
+  .navbar.is-menu-aberto.is-over .navbar-brand .oh-hub {
+    color: var(--oh-vermelho);
+  }
+}

@@ -21,6 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/oholo.css">
     <noscript>
       <style>
         /* Sem JavaScript, nada fica escondido à espera de uma animação */
@@ -38,20 +39,43 @@
   ══════════════════════════════════════════════════════ -->
   <header class="navbar">
     <div class="navbar-inner">
-      <a href="index.html" class="navbar-brand">OHOLO HUB</a>
+      <a href="index.html" class="navbar-brand"
+        >OHOLO <span class="oh-hub">HUB</span></a
+      >
 
       <button class="navbar-toggle" type="button" aria-label="Abrir menu"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span></button>
       <nav class="navbar-links">
-        <a href="explore.html">FENA</a>
+        <a href="explore.html">Empresas</a>
         <a href="servicos.html" class="active">Serviços</a>
         <a href="#">Categorias</a>
         <a href="#">Sobre</a>
         <a href="#">Contacto</a>
       </nav>
 
+
       <div class="navbar-actions">
-        <a href="#" class="text-label-md">Entrar</a>
-        <a href="#" class="btn btn-primary">Registar</a>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="abrirModalAgendamento()"
+        >
+          <span class="icon" style="width: 18px; height: 18px">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </span>
+          Agendar Reunião
+        </button>
+        <a href="facim.html" class="btn oh-btn-linha">
+          <span class="icon" style="width: 18px; height: 18px">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </span>
+          Vitrine FACIM 2026</a
+        >
       </div>
     </div>
     <span class="navbar-progresso"></span>
@@ -217,8 +241,10 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/qualificacao.js"></script>
   <script src="js/main.js"></script>
   <script src="js/motion.js"></script>
+    <script src="js/oholo-motion.js"></script>
   <script>
     inicializarServicos();
   </script>

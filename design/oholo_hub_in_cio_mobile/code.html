@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-PT"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OHOLO HUB - Conectando o Futuro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#dadada",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#848484",
+                      "secondary-fixed-dim": "#ffb4ac",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f3f3f3",
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1b1b",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "on-secondary-fixed": "#410003",
+                      "on-primary-fixed-variant": "#474747",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-high": "#e8e8e8",
+                      "surface": "#f9f9f9",
+                      "outline": "#7e7576",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#1b1b1b",
+                      "outline-variant": "#cfc4c5",
+                      "secondary-fixed": "#ffdad6",
+                      "surface-tint": "#5e5e5e",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "secondary-container": "#e32228",
+                      "on-surface-variant": "#4c4546",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "surface-container": "#eeeeee",
+                      "background": "#f9f9f9",
+                      "on-background": "#1b1b1b",
+                      "tertiary-fixed": "#e2e2e2",
+                      "primary-container": "#1b1b1b",
+                      "inverse-surface": "#303030",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-variant": "#e2e2e2",
+                      "secondary": "#bb0016",
+                      "tertiary": "#000000",
+                      "on-tertiary-container": "#848484",
+                      "on-secondary-fixed-variant": "#93000e",
+                      "on-secondary-container": "#fffbff",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "12px",
+                      "stack-md": "24px",
+                      "grid-columns": "12",
+                      "max-width": "1440px",
+                      "section-v-md": "140px",
+                      "stack-lg": "48px",
+                      "section-v-lg": "200px",
+                      "gutter-side": "80px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "body-main": ["Inter"],
+                      "caption": ["Inter"],
+                      "label-eyebrow": ["Inter"],
+                      "display-hero": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-main": ["18px", {"lineHeight": "1.65", "fontWeight": "400"}],
+                      "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "label-eyebrow": ["12px", {"lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600"}],
+                      "display-hero": ["clamp(48px, 8vw, 104px)", {"lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-lg": ["64px", {"lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Base styles forcing minimum padding for mobile viewing contexts */
+        body {
+            background-color: theme('colors.surface-container-lowest');
+            color: theme('colors.primary');
+            -webkit-font-smoothing: antialiased;
+        }
+        .hairline-b { border-bottom: 1px solid theme('colors.outline-variant'); opacity: 0.5; }
+        .hairline-t { border-top: 1px solid theme('colors.outline-variant'); opacity: 0.5; }
+        .hairline-all { border: 1px solid theme('colors.outline-variant'); opacity: 0.8; }
+        
+        /* Mobile Specific Overrides */
+        @media (max-width: 768px) {
+            .mobile-section-py { padding-top: 70px; padding-bottom: 70px; }
+            .mobile-px { padding-left: 24px; padding-right: 24px; }
+        }
+        
+        /* Hide scrollbar for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="min-h-screen font-body-main relative pb-16">
+<!-- Progress Indicator -->
+<div class="fixed top-[63px] left-0 h-[2px] bg-secondary z-[60] w-1/3"></div>
+<!-- Header (TopNavBar Adapted for Mobile) -->
+<header class="bg-surface-container-lowest/90 backdrop-blur-md fixed top-0 w-full h-[64px] flex justify-between items-center mobile-px z-50 border-b border-outline-variant/30">
+<a class="font-headline-md text-[20px] font-bold text-primary tracking-tighter uppercase" href="#">
+            OHOLO HUB
+        </a>
+<button aria-label="Menu" class="w-[40px] h-[40px] flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="menu" style="font-variation-settings: 'FILL' 0; font-size: 28px;">menu</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="pt-[120px] pb-12 mobile-px relative bg-surface-container-lowest hairline-b">
+<div class="flex flex-col gap-6">
+<p class="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-[0.16em]">A Plataforma Definitiva</p>
+<h1 class="font-display-hero text-display-hero text-primary leading-tight">
+                Conectando<br/>o Futuro<br/>de Negócios.
+            </h1>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-[90%] mt-2">
+                O ecossistema B2B líder em Moçambique. Descubra parceiros, aceda a dados de mercado e impulsione o seu crescimento na era digital.
+            </p>
+<div class="flex flex-col gap-4 mt-6">
+<button class="w-full h-[52px] bg-secondary text-on-secondary rounded font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-[#b0161c] transition-colors flex items-center justify-center gap-2">
+                    Explorar Hub
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full h-[52px] bg-transparent text-primary border border-primary rounded font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors">
+                    Saber Mais
+                </button>
+</div>
+</div>
+</section>
+<!-- Search Card (Vertical) -->
+<section class="py-12 mobile-px bg-surface">
+<div class="bg-surface-container-lowest p-6 rounded-lg hairline-all flex flex-col gap-6 relative">
+<h2 class="font-headline-md text-[24px] text-primary leading-tight">
+                Encontre Empresas &amp; Instituições
+            </h2>
+<div class="flex flex-col gap-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-[52px] pl-12 pr-4 border border-outline-variant/50 rounded bg-transparent focus:border-primary focus:ring-0 font-body-main text-body-main placeholder:text-on-surface-variant" placeholder="Pesquisar setor, empresa..." type="text"/>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="location_on">location_on</span>
+<select class="w-full h-[52px] pl-12 pr-4 border border-outline-variant/50 rounded bg-transparent focus:border-primary focus:ring-0 font-body-main text-body-main appearance-none text-on-surface-variant">
+<option>Maputo, Moçambique</option>
+<option>Beira</option>
+<option>Nampula</option>
+</select>
+</div>
+<button class="w-full h-[52px] bg-primary text-on-primary rounded font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:opacity-90 transition-opacity">
+                    Pesquisar
+                </button>
+</div>
+</div>
+</section>
+<!-- Stats (2x2 grid) -->
+<section class="py-12 mobile-px bg-surface-container-lowest hairline-b hairline-t">
+<div class="grid grid-cols-2 gap-y-10 gap-x-6">
+<div class="flex flex-col gap-2">
+<span class="font-display-hero text-[40px] text-secondary font-bold">250+</span>
+<span class="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase">Empresas Registadas</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-hero text-[40px] text-primary font-bold">12</span>
+<span class="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase">Setores Chave</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-hero text-[40px] text-primary font-bold">1.5M</span>
+<span class="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase">Investimento Mzn</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-hero text-[40px] text-primary font-bold">24/7</span>
+<span class="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase">Acesso Global</span>
+</div>
+</div>
+</section>
+<!-- FACIM Banner -->
+<section class="py-8 mobile-px bg-tertiary text-on-tertiary">
+<div class="flex flex-col">
+<div class="h-[240px] w-full bg-surface-variant mb-6 rounded overflow-hidden relative">
+<img alt="FACIM Exhibition" class="w-full h-full object-cover grayscale opacity-80" data-alt="A high-contrast, modern architectural shot of a massive exhibition center pavilion with structural steel lines and bright daylight. The scene represents an international trade fair environment like FACIM. The aesthetic is clean, industrial, and optimistic, utilizing a palette of deep greys, stark whites, and subtle metallic reflections. The composition is dynamic and expansive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe-TozZ3v58FZkaKSIuSXi08AiWf_X5UB3PmX1-usn0ADeTkkDErXdfs85waXe8zgmC4In0y7U401mMS-lJUIYziq-V13JJ0c_4iDRjr9X7EWnTm2WDr0gGKwBHwwdkOnwUix12aSUCqatwzXWAMl6jOkZuS_3KyWlSHLJLbYsZGEgysImhVqOXL1QMwnjODSwxl6tHNXpAU6uijOQO1AID4eCZVrQciD9HFRakCPbPT0Whn5oFUBJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary to-transparent opacity-60"></div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-[0.16em]">Destaque Exclusivo</span>
+<h3 class="font-headline-lg text-[40px] leading-none text-surface-bright">FACIM 2026</h3>
+<p class="font-body-main text-body-main text-outline-variant">
+                    A montra internacional de Moçambique. Prepare a sua empresa para o maior evento de negócios da região com o nosso portal dedicado.
+                </p>
+<button class="mt-4 w-full h-[52px] bg-surface-bright text-tertiary rounded font-label-eyebrow text-label-eyebrow uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors">
+                    Aceder Vitrine
+                    <span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Featured Companies (Horizontal Scroll) -->
+<section class="py-12 bg-surface-container-lowest hairline-b">
+<div class="mobile-px mb-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-[28px] text-primary">Empresas em Destaque</h2>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Parceiros estratégicos de alto impacto.</p>
+</div>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pl-6 pr-6 pb-4 no-scrollbar">
+<!-- Card 1 -->
+<div class="snap-start flex-none w-[280px] bg-surface-bright rounded-lg hairline-all p-6 flex flex-col gap-4 hover:border-primary transition-colors">
+<div class="w-12 h-12 bg-surface rounded flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="architecture">architecture</span>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary leading-tight">Karingana Construções</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">Líderes em infraestrutura pesada e desenvolvimento urbano sustentável.</p>
+<a class="mt-auto font-label-eyebrow text-label-eyebrow text-secondary uppercase hover:underline mt-4" href="#">Ver Perfil</a>
+</div>
+<!-- Card 2 -->
+<div class="snap-start flex-none w-[280px] bg-surface-bright rounded-lg hairline-all p-6 flex flex-col gap-4 hover:border-primary transition-colors">
+<div class="w-12 h-12 bg-surface rounded flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="eco">eco</span>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary leading-tight">AgriMoz Ventures</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">Inovação agrotecnológica focada na exportação de commodities premium.</p>
+<a class="mt-auto font-label-eyebrow text-label-eyebrow text-secondary uppercase hover:underline mt-4" href="#">Ver Perfil</a>
+</div>
+<!-- Card 3 -->
+<div class="snap-start flex-none w-[280px] bg-surface-bright rounded-lg hairline-all p-6 flex flex-col gap-4 hover:border-primary transition-colors">
+<div class="w-12 h-12 bg-surface rounded flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="account_balance">account_balance</span>
+</div>
+<h4 class="font-headline-md text-[20px] text-primary leading-tight">Banco Institucional</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">Serviços financeiros corporativos estruturados para grande capital.</p>
+<a class="mt-auto font-label-eyebrow text-label-eyebrow text-secondary uppercase hover:underline mt-4" href="#">Ver Perfil</a>
+</div>
+</div>
+</section>
+<!-- Gallery (1-col grid) -->
+<section class="py-12 mobile-px bg-surface">
+<h2 class="font-headline-md text-[28px] text-primary mb-8">Perspectivas</h2>
+<div class="flex flex-col gap-6">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden hairline-all">
+<img alt="Boardroom" class="w-full h-full object-cover grayscale" data-alt="A professional editorial-style photograph of a modern boardroom meeting in Maputo. Sophisticated executives are reviewing data on a sleek glass table. The lighting is cinematic, utilizing natural light from large windows contrasting with deep interior shadows. The color palette is minimal, focusing on stark whites, deep inks, and subtle skin tones. The mood is serious, authoritative, and visionary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS90w3CkLt6FEOyl3tILbIzjrUg4-hhh8ALyp8Lq5IG_If3H7XCoxR4nm2yoDY9fVs3alOSM_zANLMTMY7rzA0rC81dHCtq64CtbSQcwchfBdksgzjgjsCqOmjuxAAAic617jOA56u_HYah-5-k8AUT4MwH4JFBSPsLDyMrSUQKdcMvbFjLeibz_abLVdv_G-0q2tsK5ekPgwJfj-GPxpZ5E-zZ2mxh2OyandtzsBwxirQdDLJPfkp"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-primary to-transparent">
+<span class="font-label-eyebrow text-label-eyebrow text-surface-bright uppercase">Cimeira 2024</span>
+</div>
+</div>
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden hairline-all">
+<img alt="Architecture" class="w-full h-full object-cover grayscale" data-alt="An abstract, minimalist macro shot of architectural details in a new corporate building in Mozambique. The image focuses on the sharp geometric intersection of structural steel and expansive glass panels reflecting a clear sky. The visual style is highly editorial, emphasizing pure lines, high contrast, and a distinct lack of clutter. The overall feeling is one of precision, growth, and modern infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfmrUMV3Lsudy9ibvWex3yFN2MYE8iU04rOtR20QTklonvrkzDNc4eK5F4rVOQbJTezwEPRtpEBdRskqHr5YGXbUuRpYzVeyF1O7eo-D7sqXkY9ofypFwOUQ8LIFsGJKwhn4kug1DyBVNMK7WAS1X2rXiOljzF0qBRDNbQLz_yJICaZ1yiwERE5vk0z0teO96fbgYV-OAbhed1R04SxwkuYS-BcovsNOlGK0GLETpHZqVlvgHaTwUd"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-primary to-transparent">
+<span class="font-label-eyebrow text-label-eyebrow text-surface-bright uppercase">Infraestrutura</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 mobile-px bg-secondary text-on-secondary flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-[48px] mb-4" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<h2 class="font-display-hero text-[40px] leading-none mb-4">Pronto para<br/>expandir?</h2>
+<p class="font-body-main text-[16px] opacity-90 mb-8">
+            Junte-se à rede que define o panorama corporativo de Moçambique.
+        </p>
+<button class="w-full h-[52px] bg-surface-bright text-secondary rounded font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-surface-variant transition-colors shadow-none">
+            Criar Conta Gratuita
+        </button>
+</section>
+<!-- Footer (From JSON) -->
+<footer class="bg-tertiary text-on-tertiary relative w-full py-16 grid grid-cols-1 gap-10 mobile-px border-t border-outline/20">
+<div class="flex flex-col gap-6">
+<span class="font-display-hero text-[32px] text-surface-variant/20 uppercase tracking-tighter select-none leading-none">
+                OHOLO HUB
+            </span>
+<p class="font-body-main text-body-main text-outline-variant max-w-[280px]">
+                A plataforma editorial e institucional para o setor B2B em Moçambique.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-eyebrow text-label-eyebrow uppercase text-surface-bright opacity-50 tracking-widest">Navegação</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-main text-body-main text-on-tertiary-fixed-variant hover:text-on-tertiary transition-colors" href="#">Plataforma</a>
+<a class="font-body-main text-body-main text-on-tertiary-fixed-variant hover:text-on-tertiary transition-colors" href="#">Eventos</a>
+<a class="font-body-main text-body-main text-on-tertiary-fixed-variant hover:text-on-tertiary transition-colors" href="#">Contactos</a>
+</nav>
+</div>
+<div class="pt-8 border-t border-outline/20 mt-4">
+<p class="font-caption text-caption text-outline-variant">
+                © 2024 OHOLO HUB. Todos os direitos reservados.
+            </p>
+</div>
+</footer>
+</body></html>

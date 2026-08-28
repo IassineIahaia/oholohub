@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serviços - OHOLO HUB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#1b1b1b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e32228",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#410003",
+                        "on-tertiary-container": "#848484",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#303030",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "primary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#bb0016",
+                        "outline-variant": "#cfc4c5",
+                        "on-background": "#1b1b1b",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-side": "80px",
+                        "section-v-lg": "200px",
+                        "stack-sm": "12px",
+                        "section-v-md": "140px",
+                        "stack-lg": "48px",
+                        "grid-columns": "12",
+                        "max-width": "1440px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-hero": ["Inter"],
+                        "body-main": ["Inter"],
+                        "label-eyebrow": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "display-hero": ["clamp(48px, 8vw, 104px)", { "lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-main": ["18px", { "lineHeight": "1.65", "fontWeight": "400" }],
+                        "label-eyebrow": ["12px", { "lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Progress Indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 64px; /* Under the slim header */
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: theme('colors.secondary-container');
+            z-index: 51;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body class="antialiased font-body-main selection:bg-secondary-container selection:text-white">
+<!-- Scroll Progress Indicator -->
+<div id="scroll-progress"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center h-[64px] px-gutter-side bg-surface/80 dark:bg-primary/80 backdrop-blur-md border-b border-outline-variant relative after:absolute after:bottom-[-1px] after:left-0 after:h-[2px] after:w-1/3 after:bg-secondary-container transition-transform scale-100">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-on-primary" href="#">
+            OHOLO HUB
+        </a>
+<nav class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-container transition-all duration-300" href="#">Market</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-secondary-container font-bold border-b-2 border-secondary-container pb-1 transition-all duration-300" href="#">Insights</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-container transition-all duration-300" href="#">Capital</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-container transition-all duration-300" href="#">Institutional</a>
+</nav>
+<button class="bg-secondary-container text-white px-8 h-[52px] rounded-DEFAULT font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-[#B0161C] transition-colors flex items-center justify-center">
+            Connect
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[64px]">
+<!-- Hero Section -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter-side py-section-v-md min-h-[70vh] flex flex-col justify-center border-b border-[#E4E6E9]">
+<div class="max-w-4xl">
+<p class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-secondary-container mb-stack-md">
+                    O que fazemos
+                </p>
+<h1 class="font-display-hero text-display-hero text-primary mb-stack-lg">
+                    Serviços que preparam empresas para o mercado.
+                </h1>
+<button class="bg-secondary-container text-white px-8 h-[52px] rounded-DEFAULT font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-[#B0161C] transition-colors inline-flex items-center justify-center group">
+                    Fale com um Especialista
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Category Grid Section -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter-side py-section-v-md border-b border-[#E4E6E9]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-[#E4E6E9] rounded-[16px] overflow-hidden">
+<!-- Tile 1 -->
+<a class="group relative aspect-square p-stack-lg border-b lg:border-b-0 lg:border-r border-[#E4E6E9] bg-white hover:bg-[#17191C] transition-colors duration-300 flex flex-col justify-between" href="#estrategia">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors" data-icon="strategy">strategy</span>
+<span class="font-label-eyebrow text-label-eyebrow text-outline group-hover:text-outline-variant transition-colors">04 SERVIÇOS</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-white transition-colors mb-stack-sm">Estratégia &amp; Operações</h3>
+<div class="flex items-center text-secondary-container opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest">Explorar</span>
+<span class="material-symbols-outlined ml-2" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</a>
+<!-- Tile 2 -->
+<a class="group relative aspect-square p-stack-lg border-b lg:border-b-0 lg:border-r border-[#E4E6E9] bg-white hover:bg-[#17191C] transition-colors duration-300 flex flex-col justify-between" href="#tecnologia">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors" data-icon="memory">memory</span>
+<span class="font-label-eyebrow text-label-eyebrow text-outline group-hover:text-outline-variant transition-colors">06 SERVIÇOS</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-white transition-colors mb-stack-sm">Tecnologia &amp; Dados</h3>
+<div class="flex items-center text-secondary-container opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest">Explorar</span>
+<span class="material-symbols-outlined ml-2" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</a>
+<!-- Tile 3 -->
+<a class="group relative aspect-square p-stack-lg border-b md:border-b-0 md:border-r border-[#E4E6E9] bg-white hover:bg-[#17191C] transition-colors duration-300 flex flex-col justify-between" href="#financas">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors" data-icon="account_balance">account_balance</span>
+<span class="font-label-eyebrow text-label-eyebrow text-outline group-hover:text-outline-variant transition-colors">03 SERVIÇOS</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-white transition-colors mb-stack-sm">Finanças &amp; Capital</h3>
+<div class="flex items-center text-secondary-container opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest">Explorar</span>
+<span class="material-symbols-outlined ml-2" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</a>
+<!-- Tile 4 -->
+<a class="group relative aspect-square p-stack-lg bg-white hover:bg-[#17191C] transition-colors duration-300 flex flex-col justify-between" href="#compliance">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors" data-icon="gavel">gavel</span>
+<span class="font-label-eyebrow text-label-eyebrow text-outline group-hover:text-outline-variant transition-colors">05 SERVIÇOS</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary group-hover:text-white transition-colors mb-stack-sm">Risco &amp; Compliance</h3>
+<div class="flex items-center text-secondary-container opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<span class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest">Explorar</span>
+<span class="material-symbols-outlined ml-2" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<!-- Featured Services Section -->
+<section class="w-full max-w-[1440px] mx-auto py-section-v-md border-b border-[#E4E6E9]">
+<!-- Service 01 -->
+<div class="grid grid-cols-12 gap-stack-lg px-gutter-side mb-[100px] items-center" id="estrategia">
+<div class="col-span-12 lg:col-span-5 flex flex-col justify-center">
+<div class="font-headline-lg text-headline-lg text-outline-variant opacity-30 mb-stack-sm">01</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Reestruturação Corporativa</h2>
+<p class="font-body-main text-body-main text-on-surface-variant mb-stack-lg">
+                        Redesenhamos modelos operacionais para maximizar eficiência, reduzir custos e preparar a organização para escalabilidade no mercado local e regional.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Análise profunda da cadeia de valor.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Otimização de processos operacionais core.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Desenho organizacional orientado a resultados.</span>
+</li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-7">
+<div class="rounded-[16px] overflow-hidden border border-[#E4E6E9] aspect-[4/3]">
+<img alt="Reestruturação Corporativa" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated business setting in Maputo, Mozambique. Bright natural light illuminates a modern boardroom. A diverse group of professional executives review complex architectural and financial charts on a large glass table. Minimalist high-end office aesthetic with sharp contrasting shadows. Shot on medium format, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVBmcBF0PP40_5_uVN7xfdZl725TGhuyi4Dp6CrNUs9aHAmEcEU_aFIpL1P65nSkaya2aYbu1vAN8LdEUIDbbtvRpb2-9mlqEi5ZBLIGWDPPXoX0wgnZ3k7hu9oLcCQKdfE0qUpvr7TORKJOeRxK7JJcB0ry6aYtT6d8PB5QyZ47ubwfWo8CJbl-etiMFAa0sxMrzrYV1QUjjga69_pmvusYyvvlXD5vMWKDWCpZ1D_CRGlpR59qL"/>
+</div>
+</div>
+</div>
+<!-- Service 02 -->
+<div class="grid grid-cols-12 gap-stack-lg px-gutter-side items-center" id="tecnologia">
+<div class="col-span-12 lg:col-span-7 order-2 lg:order-1">
+<div class="rounded-[16px] overflow-hidden border border-[#E4E6E9] aspect-[4/3]">
+<img alt="Transformação Digital" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A clean, minimalist high-tech server room or data center, viewed through a glass wall. Soft, high-key lighting with cool blue and stark white tones, accented by a single vibrant red server status light. The composition focuses on precise geometry and lines, conveying security, modern infrastructure, and editorial elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvHkpvdg0Cn3930wCdVKM7qhDgFlgUcR8K4ym9qEwNfi4ByrVtOzhGugcqi4WH-rQChoWevPJZQbv4a3yxIAId9apouAeA5h6iYU7ehjmL-LApdzOaHN95S_OU65jJJWSOMZ2FdzG_O9M86pybQbSRDhC3yZFyyn6PwZK5ZtjeEdoHCqfEBmKq3B1fMSMU822wAC616I5CIqlRZpk8hGhRrVnQZmeo7FvdWPWgehpuk5hDQ789FWz0"/>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 flex flex-col justify-center order-1 lg:order-2">
+<div class="font-headline-lg text-headline-lg text-outline-variant opacity-30 mb-stack-sm">02</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Transformação Digital Estratégica</h2>
+<p class="font-body-main text-body-main text-on-surface-variant mb-stack-lg">
+                        Integramos tecnologias emergentes e análise de dados no núcleo do seu negócio para criar vantagens competitivas inquestionáveis.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Arquitetura de dados para Business Intelligence.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Auditoria e modernização de sistemas legados.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-container mr-3 mt-1" data-icon="check_circle">check_circle</span>
+<span class="font-body-main text-body-main text-primary">Implementação de IA aplicada a processos.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter-side py-section-v-md bg-surface-container-low border-b border-[#E4E6E9]">
+<div class="mb-stack-lg text-center max-w-2xl mx-auto">
+<p class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-secondary-container mb-stack-sm">Metodologia</p>
+<h2 class="font-headline-md text-headline-md text-primary">O Nosso Processo de Intervenção</h2>
+</div>
+<div class="relative mt-[80px]">
+<!-- Connecting Hairline -->
+<div class="absolute top-[24px] left-0 w-full h-[1px] bg-[#E4E6E9] hidden md:block z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-start bg-surface-container-low">
+<div class="w-[48px] h-[48px] rounded-full bg-white border border-[#E4E6E9] flex items-center justify-center font-headline-md text-primary mb-stack-md">1</div>
+<h3 class="font-body-main font-bold text-primary mb-2">Diagnóstico</h3>
+<p class="font-caption text-caption text-on-surface-variant">Avaliação rigorosa do estado atual, identificando fricções e oportunidades latentes.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-start bg-surface-container-low">
+<div class="w-[48px] h-[48px] rounded-full bg-white border border-[#E4E6E9] flex items-center justify-center font-headline-md text-primary mb-stack-md">2</div>
+<h3 class="font-body-main font-bold text-primary mb-2">Design</h3>
+<p class="font-caption text-caption text-on-surface-variant">Desenho de soluções estruturais ancoradas em dados empíricos e visão de mercado.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-start bg-surface-container-low">
+<div class="w-[48px] h-[48px] rounded-full bg-white border border-[#E4E6E9] flex items-center justify-center font-headline-md text-primary mb-stack-md">3</div>
+<h3 class="font-body-main font-bold text-primary mb-2">Execução</h3>
+<p class="font-caption text-caption text-on-surface-variant">Implementação gerida com precisão institucional e mitigação de risco contínua.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-start bg-surface-container-low">
+<div class="w-[48px] h-[48px] rounded-full bg-secondary-container text-white flex items-center justify-center font-headline-md mb-stack-md shadow-[0_0_0_8px_rgba(227,34,40,0.1)]">4</div>
+<h3 class="font-body-main font-bold text-primary mb-2">Escala</h3>
+<p class="font-caption text-caption text-on-surface-variant">Acompanhamento e otimização para garantir crescimento sustentável a longo prazo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing CTA -->
+<section class="w-full bg-[#17191C] px-gutter-side py-section-v-lg text-center">
+<div class="max-w-3xl mx-auto flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-secondary-container mb-stack-md icon-fill" data-icon="rocket_launch">rocket_launch</span>
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-lg">Pronto para escalar o impacto do seu negócio?</h2>
+<button class="bg-secondary-container text-white px-8 h-[52px] rounded-DEFAULT font-label-eyebrow text-label-eyebrow uppercase tracking-widest hover:bg-[#B0161C] transition-colors inline-flex items-center justify-center">
+                    Agendar Consultoria
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-gutter-side py-section-v-md grid grid-cols-12 gap-stack-md bg-primary dark:bg-surface-container-lowest border-t border-outline-variant pt-section-v-md">
+<!-- Brand / Watermark Area -->
+<div class="col-span-12 md:col-span-4 flex flex-col justify-between">
+<div>
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-primary" href="#">
+                    OHOLO HUB
+                </a>
+<p class="mt-4 font-caption text-caption text-outline-variant max-w-xs">
+                    Arquitetura institucional e excelência operacional para mercados emergentes.
+                </p>
+</div>
+<div class="mt-stack-lg">
+<p class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant">
+                    © 2024 OHOLO HUB. Institutional Integrity.
+                </p>
+</div>
+</div>
+<!-- Links Area -->
+<div class="col-span-12 md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-stack-md pt-4 md:pt-0">
+<div class="flex flex-col gap-4">
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors duration-200 hover:translate-x-1 inline-block w-fit" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-on-primary font-bold hover:translate-x-1 transition-transform duration-200 inline-block w-fit" href="#">Solutions</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors duration-200 hover:translate-x-1 inline-block w-fit" href="#">Regulatory</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors duration-200 hover:translate-x-1 inline-block w-fit" href="#">Contact</a>
+</div>
+</div>
+<!-- Watermark Background Text (Decorative) -->
+<div class="col-span-12 mt-section-v-md overflow-hidden pointer-events-none select-none">
+<p class="font-headline-lg text-[120px] leading-none font-black text-on-primary/5 uppercase tracking-tighter text-center whitespace-nowrap">
+                INSTITUTIONAL INTEGRITY
+            </p>
+</div>
+</footer>
+<script>
+        // Scroll Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        });
+    </script>
+</body></html>

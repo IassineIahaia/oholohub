@@ -122,22 +122,121 @@ function renderizarGaleriaFotos() {
     return;
   }
 
-  grid.innerHTML = GALERIA_FOTOS.map((foto, i) => `
-    <button type="button" class="galeria-item-foto ${tamanhoTileFoto(i)}" data-indice="${i}">
-      <img
-        src="images/galeria/${foto.arquivo}"
-        alt="${foto.legenda || "Foto OHOLO Hub"}"
-        loading="lazy"
-        onerror="this.closest('.galeria-item-foto').style.display='none'"
-      />
-      ${foto.legenda ? `<span class="galeria-item-foto-legenda"><span>${foto.legenda}</span></span>` : ""}
-    </button>
-  `).join("");
+  grid.innerHTML = GALERIA_FOTOS.map((foto, i) => {
+    const legenda = escaparHtml(foto.legenda || "");
+    const numero = String(i + 1).padStart(2, "0");
+
+    return `
+    <button
+      type="button"
+      class="galeria-item-foto ${tamanhoTileFoto(i)} is-a-carregar"
+      data-indice="${i}"
+      aria-label="Ampliar: ${legenda || "fotografia " + numero}"
+    >
+      <span class="galeria-media">
+        <img
+          src="images/galeria/${encodeURI(foto.arquivo)}"
+          alt="${legenda || "Fotografia do OHOLO Hub"}"
+          loading="${i < 4 ? "eager" : "lazy"}"
+          decoding="async"
+          fetchpriority="${i === 0 ? "high" : "auto"}"
+          draggable="false"
+        />
+      </span>
+      ${legenda ? `<span class="galeria-item-foto-legenda"><span>${legenda}</span></span>` : ""}
+    </button>`;
+  }).join("");
 
   grid.querySelectorAll(".galeria-item-foto").forEach((btn) => {
+    prepararEstadoDaImagem(btn);
     btn.addEventListener("click", () => {
       abrirLightboxFoto(parseInt(btn.getAttribute("data-indice"), 10));
     });
+  });
+}
+
+/* ── Escapar texto que vem dos dados antes de entrar no HTML ── */
+function escaparHtml(texto = "") {
+  return String(texto)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/* ── Estado de carregamento de cada peça ──
+   O tile reserva o espaço desde o início (a grelha define a altura), mostra
+   um esqueleto enquanto a imagem não chega, e revela-a quando estiver
+   descodificada. Se falhar, a peça sai da grelha em vez de ficar um buraco. */
+function prepararEstadoDaImagem(item) {
+  const img = item.querySelector("img");
+  if (!img) return;
+
+  const revelar = () => {
+    item.classList.remove("is-a-carregar");
+    item.classList.add("is-carregada");
+  };
+
+  const falhar = () => {
+    item.classList.remove("is-a-carregar");
+    item.remove();
+  };
+
+  if (img.complete) {
+    if (img.naturalWidth > 0) revelar();
+    else falhar();
+    return;
+  }
+
+  img.addEventListener("load", revelar, { once: true });
+  img.addEventListener("error", falhar, { once: true });
+}
+
+/* ── Miniaturas do YouTube ──
+   O maxresdefault nem sempre existe; quando falta, o YouTube devolve uma
+   imagem 120×90 cinzenta. Nesse caso troca-se pelo hqdefault, que existe
+   sempre. Só se desiste da peça se as duas falharem. */
+function prepararEstadoDoVideo(item) {
+  const img = item.querySelector("img");
+  if (!img) return;
+
+  const alternativa = img.getAttribute("data-alternativa");
+
+  const revelar = () => {
+    item.classList.remove("is-a-carregar");
+    item.classList.add("is-carregada");
+  };
+
+  const tentarAlternativa = () => {
+    if (alternativa && img.src !== alternativa) {
+      img.removeAttribute("data-alternativa");
+      img.src = alternativa;
+      return true;
+    }
+    return false;
+  };
+
+  const verificar = () => {
+    // 120px de largura = placeholder cinzento do YouTube
+    if (img.naturalWidth > 0 && img.naturalWidth <= 120) {
+      if (tentarAlternativa()) return;
+    }
+    if (img.naturalWidth === 0) {
+      if (tentarAlternativa()) return;
+      item.remove();
+      return;
+    }
+    revelar();
+  };
+
+  if (img.complete) {
+    verificar();
+    return;
+  }
+
+  img.addEventListener("load", verificar);
+  img.addEventListener("error", () => {
+    if (!tentarAlternativa()) item.remove();
   });
 }
 
@@ -187,19 +286,55 @@ function abrirLightboxFoto(indice) {
   _actualizarImagemLightbox();
 }
 
+/* O palco tem tamanho fixo e a imagem entra com object-fit: contain, por
+   isso a moldura nunca muda de tamanho entre fotografias — sejam verticais
+   ou horizontais. A troca é feita com um fade curto para não piscar. */
 function _actualizarImagemLightbox() {
   const foto = GALERIA_FOTOS[_lightboxIndiceActual];
   if (!foto) return;
+
   const img = document.getElementById("galeria-lightbox-img");
   const legenda = document.getElementById("galeria-lightbox-legenda");
   const contador = document.getElementById("galeria-lightbox-contador");
-  if (img) img.src = `images/galeria/${foto.arquivo}`;
+  const palco = img ? img.closest(".galeria-lightbox-conteudo") : null;
+
   if (legenda) legenda.textContent = foto.legenda || "";
   if (contador) {
     const n = String(_lightboxIndiceActual + 1).padStart(2, "0");
     const total = String(GALERIA_FOTOS.length).padStart(2, "0");
     contador.textContent = `${n} / ${total}`;
   }
+
+  if (!img) return;
+
+  const url = `images/galeria/${encodeURI(foto.arquivo)}`;
+  if (img.getAttribute("src") === url) return;
+
+  if (palco) palco.classList.add("is-a-trocar");
+
+  const seguinte = new Image();
+  seguinte.onload = () => {
+    img.src = url;
+    img.alt = foto.legenda || "Fotografia do OHOLO Hub";
+    if (palco) palco.classList.remove("is-a-trocar");
+  };
+  seguinte.onerror = () => {
+    if (palco) palco.classList.remove("is-a-trocar");
+  };
+  seguinte.src = url;
+
+  _precarregarVizinhas();
+}
+
+/* Deixa as fotografias anterior e seguinte já em cache */
+function _precarregarVizinhas() {
+  const total = GALERIA_FOTOS.length;
+  [-1, 1].forEach((passo) => {
+    const foto = GALERIA_FOTOS[(_lightboxIndiceActual + passo + total) % total];
+    if (!foto) return;
+    const pre = new Image();
+    pre.src = `images/galeria/${encodeURI(foto.arquivo)}`;
+  });
 }
 
 function navegarLightbox(passo) {
@@ -255,17 +390,36 @@ function renderizarGaleriaVideos() {
   const inicio = (_paginaVideoActual - 1) * VIDEOS_POR_PAGINA;
   const videosPagina = _videosValidosCache.slice(inicio, inicio + VIDEOS_POR_PAGINA);
 
-  grid.innerHTML = videosPagina.map((v, i) => `
-    <button type="button" class="galeria-item-video ${_paginaVideoActual === 1 && i === 0 ? "tile-lg" : ""}" data-indice="${inicio + i}">
-      <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="${v.titulo || "Vídeo OHOLO Hub"}" loading="lazy" />
-      <span class="galeria-video-play">
+  grid.innerHTML = videosPagina.map((v, i) => {
+    const titulo = escaparHtml(v.titulo || "");
+    const destaque = _paginaVideoActual === 1 && i === 0;
+
+    return `
+    <button
+      type="button"
+      class="galeria-item-video ${destaque ? "tile-lg" : ""} is-a-carregar"
+      data-indice="${inicio + i}"
+      aria-label="Ver o vídeo: ${titulo || "vídeo do OHOLO Hub"}"
+    >
+      <span class="galeria-media">
+        <img
+          src="https://img.youtube.com/vi/${v.id}/${destaque ? "maxresdefault" : "hqdefault"}.jpg"
+          data-alternativa="https://img.youtube.com/vi/${v.id}/hqdefault.jpg"
+          alt="${titulo || "Vídeo do OHOLO Hub"}"
+          loading="${i < 2 ? "eager" : "lazy"}"
+          decoding="async"
+          draggable="false"
+        />
+      </span>
+      <span class="galeria-video-play" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>
       </span>
-      ${v.titulo ? `<span class="galeria-item-video-legenda">${v.titulo}</span>` : ""}
-    </button>
-  `).join("");
+      ${titulo ? `<span class="galeria-item-video-legenda">${titulo}</span>` : ""}
+    </button>`;
+  }).join("");
 
   grid.querySelectorAll(".galeria-item-video").forEach((btn) => {
+    prepararEstadoDoVideo(btn);
     const indice = parseInt(btn.getAttribute("data-indice"), 10);
     btn.addEventListener("click", () => abrirModalVideo(_videosValidosCache[indice].id));
   });

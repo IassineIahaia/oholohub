@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OHOLO HUB - Interações e Sobreposições</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#000000",
+                      "tertiary": "#000000",
+                      "on-error": "#ffffff",
+                      "background": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-container-low": "#f3f3f3",
+                      "on-primary-fixed": "#1b1b1b",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-surface-variant": "#4c4546",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#e32228",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-secondary-fixed": "#410003",
+                      "on-tertiary-container": "#848484",
+                      "surface": "#f9f9f9",
+                      "inverse-surface": "#303030",
+                      "primary-fixed": "#e2e2e2",
+                      "outline": "#7e7576",
+                      "on-surface": "#1b1b1b",
+                      "on-secondary-fixed-variant": "#93000e",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "primary-container": "#1b1b1b",
+                      "surface-container": "#eeeeee",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#1b1b1b",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "secondary-fixed": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#ffb4ac",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-tint": "#5e5e5e",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary": "#bb0016",
+                      "outline-variant": "#cfc4c5",
+                      "on-background": "#1b1b1b",
+                      "surface-dim": "#dadada",
+                      "on-primary-container": "#848484",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-secondary-container": "#fffbff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter-side": "80px",
+                      "section-v-lg": "200px",
+                      "stack-sm": "12px",
+                      "section-v-md": "140px",
+                      "stack-lg": "48px",
+                      "grid-columns": "12",
+                      "max-width": "1440px",
+                      "stack-md": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-hero": ["Inter"],
+                      "body-main": ["Inter"],
+                      "label-eyebrow": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-lg": ["64px", {"lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "display-hero": ["clamp(48px, 8vw, 104px)", {"lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-main": ["18px", {"lineHeight": "1.65", "fontWeight": "400"}],
+                      "label-eyebrow": ["12px", {"lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600"}]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        /* Custom Custom Cursor Styles */
+        body {
+            cursor: none;
+        }
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #000000;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .custom-cursor.hover {
+            width: 60px;
+            height: 60px;
+            background-color: transparent;
+            border: 2px solid #E01F26; /* Using explicit red as requested for cursor */
+        }
+        
+        .custom-cursor-text {
+            color: #E01F26;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .custom-cursor.hover .custom-cursor-text {
+            opacity: 1;
+        }
+
+        /* Loading Screen Animation */
+        .loading-progress {
+            width: 0%;
+            animation: load 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        @keyframes load {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease forwards;
+            animation-delay: 2.6s;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; visibility: visible; }
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Form Input Styles */
+        .input-hairline {
+            border: none;
+            border-bottom: 1px solid #E4E6E9;
+            border-radius: 0;
+            padding: 12px 0;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+        .input-hairline:focus {
+            outline: none;
+            border-bottom-color: #E01F26;
+            box-shadow: none;
+        }
+        
+        /* Select specific styles */
+        select.input-hairline {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 16px;
+        }
+        
+        /* Modal Backdrop */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        
+        /* Scrollbar hiding for showcase */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary antialiased relative min-h-screen overflow-hidden">
+<!-- Custom Cursor -->
+<div class="custom-cursor" id="customCursor">
+<span class="custom-cursor-text">VER</span>
+</div>
+<!-- Initial Loading State -->
+<div class="fixed inset-0 z-[100] bg-primary flex flex-col items-center justify-center fade-out">
+<div class="font-headline-lg text-headline-lg font-black text-on-primary uppercase tracking-tighter mb-8">
+            OHOLO HUB
+        </div>
+<div class="w-64 h-[2px] bg-surface-tint overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-[#E01F26] loading-progress"></div>
+</div>
+</div>
+<!-- Showcase Container -->
+<main class="w-full h-screen relative flex items-center justify-center p-gutter-side">
+<!-- Abstract background pattern to serve as the 'page' underneath the modal -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#1b1b1b 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- Showcase Content (Behind Modal) -->
+<div class="relative z-10 text-center max-w-3xl hover-trigger">
+<h1 class="font-display-hero text-display-hero mb-stack-md text-primary">Interações Institucionais</h1>
+<p class="font-body-main text-body-main text-outline mb-stack-lg">Mova o cursor para ver a interação. O modal abaixo exemplifica o agendamento de reuniões, utilizando a linguagem visual de alta precisão do OHOLO HUB.</p>
+</div>
+<!-- 'Agendar Reunião' Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center modal-backdrop p-4">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-[560px] rounded-[16px] shadow-2xl relative overflow-hidden flex flex-col border border-outline-variant">
+<!-- Close Button -->
+<button aria-label="Fechar" class="absolute top-6 right-6 text-outline hover:text-primary transition-colors hover-trigger z-10">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<!-- Modal Header -->
+<div class="px-10 pt-10 pb-6 border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Agendar Reunião</h2>
+<p class="font-caption text-caption text-outline">Preencha os dados abaixo para solicitar um encontro estratégico.</p>
+</div>
+<!-- Modal Body -->
+<div class="px-10 py-8 overflow-y-auto max-h-[60vh]">
+<form class="flex flex-col gap-stack-md">
+<div class="grid grid-cols-2 gap-stack-md">
+<!-- Name -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">NOME COMPLETO</label>
+<input class="input-hairline font-body-main text-body-main text-primary placeholder:text-outline-variant hover-trigger" placeholder="Ex: João Silva" type="text"/>
+</div>
+<!-- Company -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">EMPRESA</label>
+<input class="input-hairline font-body-main text-body-main text-primary placeholder:text-outline-variant hover-trigger" placeholder="Ex: Corporação SA" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md">
+<!-- Email -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">EMAIL PROFISSIONAL</label>
+<input class="input-hairline font-body-main text-body-main text-primary placeholder:text-outline-variant hover-trigger" placeholder="joao@empresa.com" type="email"/>
+</div>
+<!-- Phone -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">TELEFONE</label>
+<input class="input-hairline font-body-main text-body-main text-primary placeholder:text-outline-variant hover-trigger" placeholder="+258 XX XXX XXXX" type="tel"/>
+</div>
+</div>
+<!-- Subject -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">ASSUNTO</label>
+<select class="input-hairline font-body-main text-body-main text-primary hover-trigger">
+<option disabled="" selected="" value="">Selecione um tópico</option>
+<option value="capital">Estruturação de Capital</option>
+<option value="market">Análise de Mercado</option>
+<option value="institutional">Relações Institucionais</option>
+<option value="other">Outro</option>
+</select>
+</div>
+<!-- Date/Time -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">DATA E HORA PREFERENCIAIS</label>
+<input class="input-hairline font-body-main text-body-main text-primary hover-trigger" type="datetime-local"/>
+</div>
+<!-- Message -->
+<div class="flex flex-col">
+<label class="font-label-eyebrow text-label-eyebrow text-outline mb-2">MENSAGEM (OPCIONAL)</label>
+<textarea class="input-hairline font-body-main text-body-main text-primary placeholder:text-outline-variant resize-none h-24 hover-trigger" placeholder="Descreva brevemente o objetivo da reunião..."></textarea>
+</div>
+</form>
+</div>
+<!-- Modal Footer -->
+<div class="px-10 py-8 bg-surface-container-low border-t border-outline-variant">
+<button class="w-full h-[52px] bg-[#E01F26] text-on-primary font-label-eyebrow text-label-eyebrow uppercase rounded-[4px] hover:bg-[#B0161C] transition-colors flex items-center justify-center hover-trigger">
+                        Confirmar Agendamento
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Custom Cursor Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('customCursor');
+            const hoverTriggers = document.querySelectorAll('.hover-trigger');
+
+            // Move cursor
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            // Handle hover states for interactive elements
+            hoverTriggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    cursor.classList.add('hover');
+                });
+                trigger.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('hover');
+                });
+            });
+            
+            // Hide custom cursor when leaving window
+            document.addEventListener('mouseout', (e) => {
+                if (e.relatedTarget === null) {
+                    cursor.style.display = 'none';
+                }
+            });
+            document.addEventListener('mouseover', () => {
+                cursor.style.display = 'flex';
+            });
+        });
+    </script>
+</body></html>

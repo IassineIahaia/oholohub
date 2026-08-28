@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-PT"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A Vitrine Digital da FACIM 2026 - OHOLO HUB</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#848484",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1b1b1b",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#410003",
+                        "on-primary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-container-high": "#e8e8e8",
+                        "surface": "#f9f9f9",
+                        "outline": "#7e7576",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#1b1b1b",
+                        "outline-variant": "#cfc4c5",
+                        "secondary-fixed": "#ffdad6",
+                        "surface-tint": "#5e5e5e",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-container": "#e32228",
+                        "on-surface-variant": "#4c4546",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-container": "#eeeeee",
+                        "background": "#f9f9f9",
+                        "on-background": "#1b1b1b",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#1b1b1b",
+                        "inverse-surface": "#303030",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#bb0016",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#848484",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-secondary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "grid-columns": "12",
+                        "max-width": "1440px",
+                        "section-v-md": "140px",
+                        "stack-lg": "48px",
+                        "section-v-lg": "200px",
+                        "gutter-side": "80px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Inter"],
+                        "body-main": ["Inter"],
+                        "caption": ["Inter"],
+                        "label-eyebrow": ["Inter"],
+                        "display-hero": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-main": ["18px", { "lineHeight": "1.65", "fontWeight": "400" }],
+                        "caption": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-eyebrow": ["12px", { "lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600" }],
+                        "display-hero": ["clamp(48px, 8vw, 104px)", { "lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Editorial Styling Rules */
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .hairline-b { border-bottom: 1px solid theme('colors.outline-variant' / 30%); }
+        .hairline-t { border-top: 1px solid theme('colors.outline-variant' / 30%); }
+        .hairline-y { border-top: 1px solid theme('colors.outline-variant' / 30%); border-bottom: 1px solid theme('colors.outline-variant' / 30%); }
+        
+        /* Progress Indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 64px; /* Just below header */
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: theme('colors.secondary');
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Split Text Reveal classes (controlled via intersection observer) */
+        .reveal-wrap { overflow: hidden; }
+        .reveal-text { transform: translateY(100%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .is-visible .reveal-text { transform: translateY(0); }
+
+        /* Custom Scrollbar for chips */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Accordion Expansion */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease-out;
+        }
+        .accordion-content.expanded { grid-template-rows: 1fr; }
+        .accordion-inner { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Progress Indicator -->
+<div id="scroll-progress"></div>
+<!-- SHARED COMPONENT: TopNavBar -->
+<!-- Applying: style_bg_color, style_component_shape, style_separation_logic, style_shadows_and_elevation, style_shell_layout -->
+<header class="fixed top-0 w-full h-[64px] bg-surface/80 backdrop-blur-md dark:bg-surface-container/80 border-b border-outline-variant/30 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-secondary after:w-full z-50">
+<div class="flex justify-between items-center px-gutter-side w-full max-w-max-width mx-auto h-full">
+<!-- Brand Logo -->
+<!-- Applying: style_brand_logo -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-surface-bright tracking-tighter" href="#">
+                OHOLO HUB
+            </a>
+<!-- Navigation Links -->
+<!-- Logic: Tab 2 "FACIM 2026" matches page intent. -->
+<nav class="hidden md:flex items-center gap-stack-md h-full pt-1">
+<a class="font-label-eyebrow text-label-eyebrow text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-2 py-1 rounded" href="#">
+                    Início
+                </a>
+<a class="font-label-eyebrow text-label-eyebrow text-primary dark:text-surface-bright font-bold border-b-2 border-secondary pb-1 px-2 py-1" href="#">
+                    FACIM 2026
+                </a>
+<a class="font-label-eyebrow text-label-eyebrow text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-2 py-1 rounded" href="#">
+                    FENA
+                </a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-stack-sm">
+<a class="font-label-eyebrow text-label-eyebrow hidden lg:block text-primary hover:text-secondary transition-colors" href="#">
+                    Vitrine FACIM 2026
+                </a>
+<button class="font-label-eyebrow text-label-eyebrow bg-secondary text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-[#B0161C] transition-colors h-[40px]">
+                    Agendar Reunião
+                </button>
+<button class="text-primary hover:text-secondary transition-colors flex items-center justify-center h-[40px] w-[40px]">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-[64px]">
+<!-- SECTION 1: DARK HERO -->
+<section class="relative bg-tertiary text-white pt-section-v-md pb-section-v-md overflow-hidden">
+<!-- Red radial glow top-right -->
+<div class="absolute -top-40 -right-40 w-[800px] h-[800px] bg-secondary opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
+<div class="w-full max-w-max-width mx-auto px-gutter-side relative z-10 grid grid-cols-12 gap-stack-md">
+<div class="col-span-12 lg:col-span-10">
+<p class="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-widest mb-stack-md">
+                        24.ª EDIÇÃO · MAPUTO · AGOSTO 2026
+                    </p>
+<h1 class="font-display-hero text-display-hero text-white mb-stack-lg leading-tight intersection-observer">
+<span class="reveal-wrap block"><span class="reveal-text block">A Vitrine Digital</span></span>
+<span class="reveal-wrap block"><span class="reveal-text block text-surface-variant">da Maior Feira</span></span>
+<span class="reveal-wrap block"><span class="reveal-text block">Internacional de Moçambique</span></span>
+</h1>
+</div>
+<div class="col-span-12 hairline-t pt-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-lg mb-stack-lg">
+<!-- Meta row of facts -->
+<div class="flex flex-wrap gap-stack-lg">
+<div>
+<p class="font-label-eyebrow text-label-eyebrow text-surface-variant uppercase mb-2">Expositores</p>
+<p class="font-headline-md text-headline-md font-bold">2.500+</p>
+</div>
+<div>
+<p class="font-label-eyebrow text-label-eyebrow text-surface-variant uppercase mb-2">Países</p>
+<p class="font-headline-md text-headline-md font-bold">35</p>
+</div>
+<div>
+<p class="font-label-eyebrow text-label-eyebrow text-surface-variant uppercase mb-2">Superfície</p>
+<p class="font-headline-md text-headline-md font-bold">50.000m²</p>
+</div>
+</div>
+<!-- Buttons -->
+<div class="flex gap-stack-sm w-full md:w-auto">
+<button class="bg-secondary text-white h-[52px] px-8 rounded flex items-center justify-center font-label-eyebrow text-label-eyebrow hover:bg-[#B0161C] transition-colors w-full md:w-auto">
+                            Explorar a Vitrine
+                        </button>
+<button class="border border-white text-white h-[52px] px-8 rounded flex items-center justify-center font-label-eyebrow text-label-eyebrow hover:bg-white hover:text-primary transition-colors w-full md:w-auto">
+                            Plano da Missão
+                        </button>
+</div>
+</div>
+<!-- Tabular countdown -->
+<div class="col-span-12 lg:col-span-6 bg-tertiary-container/50 border border-outline-variant/20 rounded-lg p-stack-md flex gap-stack-md justify-between items-center backdrop-blur-sm">
+<div class="text-center w-full">
+<span class="block font-headline-lg text-headline-lg font-bold text-secondary">284</span>
+<span class="block font-label-eyebrow text-label-eyebrow text-surface-variant mt-2">Dias</span>
+</div>
+<div class="w-[1px] h-12 bg-outline-variant/20"></div>
+<div class="text-center w-full">
+<span class="block font-headline-lg text-headline-lg font-bold text-white">14</span>
+<span class="block font-label-eyebrow text-label-eyebrow text-surface-variant mt-2">Horas</span>
+</div>
+<div class="w-[1px] h-12 bg-outline-variant/20"></div>
+<div class="text-center w-full">
+<span class="block font-headline-lg text-headline-lg font-bold text-white">32</span>
+<span class="block font-label-eyebrow text-label-eyebrow text-surface-variant mt-2">Minutos</span>
+</div>
+</div>
+</div>
+<!-- Infinite marquee -->
+<div class="absolute bottom-0 left-0 w-full bg-primary py-4 hairline-t">
+<div class="marquee-container">
+<div class="marquee-content flex gap-12 items-center font-headline-md text-headline-md text-surface-variant/40 tracking-tighter uppercase select-none">
+<span>Vodacom Moçambique</span>
+<span class="text-secondary">•</span>
+<span>Standard Bank</span>
+<span class="text-secondary">•</span>
+<span>Cervejas de Moçambique</span>
+<span class="text-secondary">•</span>
+<span>Hidroeléctrica de Cahora Bassa</span>
+<span class="text-secondary">•</span>
+<span>Portos e Caminhos de Ferro</span>
+<span class="text-secondary">•</span>
+<span>Vodacom Moçambique</span>
+<span class="text-secondary">•</span>
+<span>Standard Bank</span>
+<span class="text-secondary">•</span>
+<span>Cervejas de Moçambique</span>
+<span class="text-secondary">•</span>
+<span>Hidroeléctrica de Cahora Bassa</span>
+<span class="text-secondary">•</span>
+<span>Portos e Caminhos de Ferro</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: VITRINE DIGITAL -->
+<section class="bg-surface py-section-v-lg relative">
+<div class="w-full max-w-max-width mx-auto px-gutter-side">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-md hairline-b pb-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tighter">Empresas em Destaque</h2>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-2xl mt-4">Navegue pelas principais empresas confirmadas. Utilize os filtros para refinar a pesquisa por sector ou província.</p>
+</div>
+<div class="flex items-center gap-4">
+<a class="font-label-eyebrow text-label-eyebrow text-secondary hover:text-primary transition-colors flex items-center gap-2" href="#">
+                            Ver Diretório Completo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex flex-col lg:flex-row gap-stack-md mb-stack-lg items-center">
+<div class="relative w-full lg:w-1/3">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 h-[52px] bg-transparent border border-outline-variant rounded focus:border-primary focus:ring-0 outline-none font-body-main text-body-main transition-colors" placeholder="Pesquisar expositor..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar w-full lg:w-2/3 pb-2 lg:pb-0">
+<button class="px-6 h-[52px] rounded-full border border-primary bg-primary text-white font-label-eyebrow text-label-eyebrow whitespace-nowrap">Todos os Sectores</button>
+<button class="px-6 h-[52px] rounded-full border border-outline-variant bg-transparent text-primary hover:border-primary font-label-eyebrow text-label-eyebrow whitespace-nowrap transition-colors">Agronegócio</button>
+<button class="px-6 h-[52px] rounded-full border border-outline-variant bg-transparent text-primary hover:border-primary font-label-eyebrow text-label-eyebrow whitespace-nowrap transition-colors">Energia &amp; Minas</button>
+<button class="px-6 h-[52px] rounded-full border border-outline-variant bg-transparent text-primary hover:border-primary font-label-eyebrow text-label-eyebrow whitespace-nowrap transition-colors">Tecnologia</button>
+<button class="px-6 h-[52px] rounded-full border border-outline-variant bg-transparent text-primary hover:border-primary font-label-eyebrow text-label-eyebrow whitespace-nowrap transition-colors">Logística</button>
+</div>
+</div>
+<!-- 3-Column Grid with Staggered reveal layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] overflow-hidden group hover:border-primary transition-colors flex flex-col">
+<div class="w-full aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sophisticated corporate portrait of a modern industrial facility in Mozambique. The architectural composition features clean lines, expansive glass facades reflecting a bright blue sky, and state-of-the-art manufacturing equipment visible inside. The lighting is high-key and natural, creating a light-mode aesthetic that conveys transparency, innovation, and international standards. The color palette emphasizes pristine whites, metallic silvers, and subtle red branding accents to align with the overarching UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVqsGWqPADSWxnWdidNoBcMxDG7bDqZYYpTQ-WVedEQEskzNXrqsUQzJ2CARinaVIfQkmaM1RAjD4nIksQnZU3BnKNwamhIA_A2hpU7TrbXyN5mQoKYO_bQhuPyBU8gj1r49jRFrwtMKAJUrgZYni2BEom1k9userb7-mpy7IepRxS613jd2YDphGMLv8vTULUmI58soBW68XRo-LNzmPoGvegvYGy5nmzrmi9630LmnJ7twcg3srZ"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full font-label-eyebrow text-label-eyebrow text-primary">Maputo</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="font-label-eyebrow text-label-eyebrow text-secondary mb-2">Pavilhão 1 • Stand A12</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 text-[24px]">Indústrias Metálicas SA</h3>
+<p class="font-body-main text-body-main text-on-surface-variant line-clamp-3 mb-6">Líder nacional na transformação de aço estrutural para grandes obras de infraestrutura, apresentando novas soluções sustentáveis nesta edição.</p>
+<div class="mt-auto pt-4 hairline-t">
+<a class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary flex items-center gap-2 transition-colors" href="#">
+                                    Agendar B2B <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 (Staggered) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] overflow-hidden group hover:border-primary transition-colors flex flex-col lg:mt-12">
+<div class="w-full aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An editorial-style close-up photograph of advanced agricultural technology deployed in a field. The image highlights a precision drone hovering above vibrant green crops, with a shallow depth of field blurring the distant landscape. The lighting is early morning, casting long, elegant shadows and emphasizing textures. The aesthetic is clean, professional, and optimistic, utilizing a palette of natural greens, crisp whites, and sharp metallic tones that fit perfectly into a premium B2B digital platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD235eOLt4DSKKnwZZawA6lwb4t3Fmyc-B9wDPm6eS3DSjj656kUo_PsCI6DCu_HVu4nmVKSi9b-lb2Lc9IhQDmxYHNmGxSPLcpbo2m_I11IvlRyzwVCn1dc7DEAL-qZkIjgANxEvtkytAsb48TsQuVVhKfrq_P2TOwlw3YuIiP4o-O37aaI9vheADlfKVJnBR9V4YooWK6xTGOxc9rqc13AQLQ4IECw4JCOB6vbo79hhoJ_FGll2AA"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full font-label-eyebrow text-label-eyebrow text-primary">Nampula</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="font-label-eyebrow text-label-eyebrow text-secondary mb-2">Pavilhão 3 • Stand C04</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 text-[24px]">AgriTech Lúrio</h3>
+<p class="font-body-main text-body-main text-on-surface-variant line-clamp-3 mb-6">Soluções de agricultura de precisão desenhadas para o clima tropical, otimizando o uso da água em mais de 40% em explorações extensivas.</p>
+<div class="mt-auto pt-4 hairline-t">
+<a class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary flex items-center gap-2 transition-colors" href="#">
+                                    Agendar B2B <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-[16px] overflow-hidden group hover:border-primary transition-colors flex flex-col">
+<div class="w-full aspect-[4/3] overflow-hidden relative">
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-outline-variant">factory</span>
+</div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full font-label-eyebrow text-label-eyebrow text-primary">Sofala</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<p class="font-label-eyebrow text-label-eyebrow text-secondary mb-2">Pavilhão 2 • Stand B22</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 text-[24px]">Logística Beira-Corredor</h3>
+<p class="font-body-main text-body-main text-on-surface-variant line-clamp-3 mb-6">Integração de serviços portuários e ferroviários, criando rotas diretas para o hinterland com rastreio digital em tempo real.</p>
+<div class="mt-auto pt-4 hairline-t">
+<a class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary flex items-center gap-2 transition-colors" href="#">
+                                    Agendar B2B <span class="material-symbols-outlined text-[16px]">calendar_month</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: PLANTA DO PAVILHÃO -->
+<section class="bg-surface-container-low py-section-v-lg">
+<div class="w-full max-w-max-width mx-auto px-gutter-side">
+<div class="grid grid-cols-12 gap-stack-lg">
+<!-- Left: Interactive Map Mockup -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-high relative rounded border border-outline-variant/50 p-8 min-h-[600px] flex items-center justify-center overflow-hidden">
+<!-- Abstract Map Vectors -->
+<div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-2 p-12 opacity-50">
+<!-- Background Grid Lines -->
+<div class="col-span-6 row-span-1 border-b border-outline-variant"></div>
+<div class="col-span-6 row-span-1 border-b border-outline-variant"></div>
+<div class="col-span-6 row-span-1 border-b border-outline-variant"></div>
+</div>
+<div class="relative z-10 w-full h-full flex flex-col gap-4">
+<!-- Block 1 -->
+<div class="flex gap-4 h-1/3">
+<div class="w-2/3 bg-primary group hover:bg-secondary cursor-pointer transition-colors relative">
+<span class="absolute bottom-4 right-4 text-white font-label-eyebrow">PAVILHÃO 1</span>
+</div>
+<div class="w-1/3 bg-primary group hover:bg-secondary cursor-pointer transition-colors relative"></div>
+</div>
+<!-- Block 2 -->
+<div class="flex gap-4 h-1/3">
+<div class="w-1/4 border border-outline-variant border-dashed flex items-center justify-center text-outline-variant font-label-eyebrow">DISPONÍVEL</div>
+<div class="w-1/2 bg-primary group hover:bg-secondary cursor-pointer transition-colors relative">
+<span class="absolute bottom-4 right-4 text-white font-label-eyebrow">ÁREA VIP</span>
+</div>
+<div class="w-1/4 bg-primary group hover:bg-secondary cursor-pointer transition-colors relative"></div>
+</div>
+<!-- Block 3 -->
+<div class="flex gap-4 h-1/3">
+<div class="w-full bg-primary group hover:bg-secondary cursor-pointer transition-colors relative">
+<span class="absolute bottom-4 right-4 text-white font-label-eyebrow">PAVILHÃO INTERNACIONAL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Mini List -->
+<div class="col-span-12 lg:col-span-4 flex flex-col">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md">Planta Interativa</h2>
+<p class="font-body-main text-body-main text-on-surface-variant mb-stack-lg">Explore a disposição do recinto de Ricatla. Selecione um pavilhão para ver os expositores alocados.</p>
+<div class="flex flex-col flex-grow">
+<div class="group py-4 hairline-b cursor-pointer hover:pl-4 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary">Pavilhão 1: Indústria Nacional</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">arrow_outward</span>
+</div>
+</div>
+<div class="group py-4 hairline-b cursor-pointer hover:pl-4 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary">Pavilhão 2: Serviços &amp; Tecnologia</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">arrow_outward</span>
+</div>
+</div>
+<div class="group py-4 hairline-b cursor-pointer hover:pl-4 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-label-eyebrow text-label-eyebrow text-primary group-hover:text-secondary">Pavilhão Internacional</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary">arrow_outward</span>
+</div>
+</div>
+<div class="group py-4 hairline-b cursor-pointer hover:pl-4 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-label-eyebrow text-label-eyebrow text-outline-variant">Tendas B2B (Disponível)</h4>
+</div>
+</div>
+</div>
+<button class="mt-8 border border-primary text-primary h-[52px] px-8 rounded flex items-center justify-center font-label-eyebrow text-label-eyebrow hover:bg-primary hover:text-white transition-colors w-full">
+                            Descarregar PDF (2MB)
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PAINEL DE CONTEÚDOS -->
+<section class="bg-surface py-section-v-lg">
+<div class="w-full max-w-max-width mx-auto px-gutter-side">
+<div class="grid grid-cols-12 gap-stack-md">
+<div class="col-span-12 lg:col-span-4 mb-stack-md lg:mb-0">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tighter mb-4">Painel de Conteúdos</h2>
+<p class="font-body-main text-body-main text-on-surface-variant">Ciclo de conferências, debates setoriais e apresentações de inovação paralelos à exposição.</p>
+</div>
+<div class="col-span-12 lg:col-span-8 flex flex-col hairline-t">
+<!-- Accordion Item 1 -->
+<div class="accordion-item hairline-b">
+<button class="w-full py-stack-md flex justify-between items-start text-left group hover:bg-surface-container-lowest transition-colors px-4 -mx-4" onclick="toggleAccordion(this)">
+<div class="flex flex-col gap-2 w-[80%]">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary">26 Agosto, 10:00 - Auditório Principal</span>
+<h3 class="font-headline-md text-headline-md text-primary text-[28px] group-hover:text-secondary transition-colors">Fórum de Transição Energética e Sustentabilidade</h3>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary mt-1 icon-indicator transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-inner">
+<div class="pb-stack-md pt-2 px-4 -mx-4 flex flex-col md:flex-row gap-6">
+<p class="font-body-main text-body-main text-on-surface-variant md:w-2/3">Um debate fundamental sobre o papel de Moçambique no mercado global de energias limpas, os desafios da rede elétrica nacional e as oportunidades de investimento em projetos solares e eólicos. Painel com participação do Ministro dos Recursos Minerais e Energia e CEOs das principais multinacionais.</p>
+<div class="md:w-1/3 aspect-video bg-surface-container-high relative border border-outline-variant">
+<div class="absolute inset-0 flex items-center justify-center font-label-eyebrow text-outline-variant">Foto do Painel</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item hairline-b">
+<button class="w-full py-stack-md flex justify-between items-start text-left group hover:bg-surface-container-lowest transition-colors px-4 -mx-4" onclick="toggleAccordion(this)">
+<div class="flex flex-col gap-2 w-[80%]">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary">27 Agosto, 14:30 - Sala Rovuma</span>
+<h3 class="font-headline-md text-headline-md text-primary text-[28px] group-hover:text-secondary transition-colors">Aceleração Digital no Agronegócio</h3>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary mt-1 icon-indicator transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-inner">
+<div class="pb-stack-md pt-2 px-4 -mx-4 flex flex-col md:flex-row gap-6">
+<p class="font-body-main text-body-main text-on-surface-variant md:w-2/3">Apresentação de casos de estudo sobre a implementação de sensores IoT, mapeamento por satélite e plataformas de rastreabilidade na cadeia de valor de produtos agrícolas de exportação.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="accordion-item hairline-b">
+<button class="w-full py-stack-md flex justify-between items-start text-left group hover:bg-surface-container-lowest transition-colors px-4 -mx-4" onclick="toggleAccordion(this)">
+<div class="flex flex-col gap-2 w-[80%]">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary">28 Agosto, 09:00 - Tenda B2B</span>
+<h3 class="font-headline-md text-headline-md text-primary text-[28px] group-hover:text-secondary transition-colors">Pitch Investimento: Startups Moçambicanas</h3>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:text-secondary mt-1 icon-indicator transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<div class="accordion-inner">
+<div class="pb-stack-md pt-2 px-4 -mx-4 flex flex-col md:flex-row gap-6">
+<p class="font-body-main text-body-main text-on-surface-variant md:w-2/3">10 startups nacionais, previamente selecionadas, apresentam as suas soluções disruptivas a um painel de investidores institucionais e business angels focados no mercado africano.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PLANO DA MISSÃO (Timeline) -->
+<section class="bg-surface-bright py-section-v-lg relative overflow-hidden">
+<div class="w-full max-w-max-width mx-auto px-gutter-side relative">
+<div class="text-center mb-section-v-md">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tighter mb-4">Plano da Missão Empresarial</h2>
+<p class="font-body-main text-body-main text-on-surface-variant max-w-2xl mx-auto">Um itinerário estruturado para maximizar o ROI da sua participação, focado na geração de leads e parcerias estratégicas.</p>
+</div>
+<!-- Vertical Red Line -->
+<div class="absolute left-1/2 top-[200px] bottom-0 w-[1px] bg-secondary hidden lg:block transform -translate-x-1/2"></div>
+<div class="flex flex-col gap-section-v-md relative z-10">
+<!-- Timeline Node 1 (Left) -->
+<div class="flex flex-col lg:flex-row justify-between items-center w-full group">
+<div class="w-full lg:w-5/12 text-right pr-0 lg:pr-12 mb-8 lg:mb-0">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary block mb-2">FASE 1: PREPARAÇÃO (JAN - MAI 2026)</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Mapeamento de Oportunidades</h3>
+<p class="font-body-main text-body-main text-on-surface-variant">Identificação de perfis de compradores ideais e envio de teasers comerciais através da plataforma digital OHOLO HUB. Agendamento antecipado das reuniões chave.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 transform -translate-x-1/2 hidden lg:block outline outline-4 outline-surface-bright"></div>
+<div class="w-full lg:w-5/12 pl-0 lg:pl-12">
+<div class="aspect-video bg-surface-container border border-outline-variant relative overflow-hidden">
+<img class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A dynamic, high-angle shot of a bustling international trade exhibition floor. The scene captures executives in sharp business attire engaging in negotiations around sleek, minimalist exhibition stands. The environment is illuminated by bright, diffused exhibition lighting, avoiding harsh shadows. The visual style is premium and corporate, featuring a sophisticated color scheme of deep charcoal greys, bright white structural elements, and strategic flashes of red that guide the viewer's eye." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG4tQie-1XBflHjCKTJX0iNTyG-COYUTKOqx0b4sI3U_pcYnhXjS0wTk7LmVM52C_WGqFOE4mUHLFfCNY_mDfdgLeSXLl9aP8uToTac1bPkYFHnrTJU9AmEPS-vj9J2cpPGTB6eejSllh4g5YC5fDp40U6eFrf2ZJh1SivUwHUhY0ACbgXdbpWauN_bqd6U6xCgT7qh3BSgKaIBWZJS-Shrmpn2AHijXNY-PVIsQpqEB47xsZTK7iH"/>
+</div>
+</div>
+</div>
+<!-- Timeline Node 2 (Right) -->
+<div class="flex flex-col lg:flex-row-reverse justify-between items-center w-full group">
+<div class="w-full lg:w-5/12 text-left pl-0 lg:pl-12 mb-8 lg:mb-0">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary block mb-2">FASE 2: EXECUÇÃO (24 - 30 AGO 2026)</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Dias de Exibição e B2B</h3>
+<p class="font-body-main text-body-main text-on-surface-variant">Presença física em Ricatla. Execução da agenda de reuniões otimizada, participação nos painéis de conteúdo relevantes para o setor e networking de alto nível.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 transform -translate-x-1/2 hidden lg:block outline outline-4 outline-surface-bright"></div>
+<div class="w-full lg:w-5/12 pr-0 lg:pr-12">
+<div class="aspect-video bg-surface-container border border-outline-variant relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-outline-variant group-hover:text-secondary transition-colors duration-700">handshake</span>
+</div>
+</div>
+</div>
+<!-- Timeline Node 3 (Left) -->
+<div class="flex flex-col lg:flex-row justify-between items-center w-full group">
+<div class="w-full lg:w-5/12 text-right pr-0 lg:pr-12 mb-8 lg:mb-0">
+<span class="font-label-eyebrow text-label-eyebrow text-secondary block mb-2">FASE 3: FOLLOW-UP (SET - DEZ 2026)</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Consolidação de Parcerias</h3>
+<p class="font-body-main text-body-main text-on-surface-variant">Acompanhamento sistemático dos leads gerados, formalização de memorandos de entendimento (MoUs) e negociação final de contratos suportada pela inteligência de mercado da plataforma.</p>
+</div>
+<div class="w-4 h-4 bg-secondary rounded-full absolute left-1/2 transform -translate-x-1/2 hidden lg:block outline outline-4 outline-surface-bright"></div>
+<div class="w-full lg:w-5/12 pl-0 lg:pl-12">
+<div class="aspect-video bg-surface-container border border-outline-variant relative overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-outline-variant group-hover:text-secondary transition-colors duration-700">trending_up</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CLOSING CTA -->
+<section class="bg-tertiary text-white py-section-v-lg text-center relative px-gutter-side">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-stack-md">rocket_launch</span>
+<h2 class="font-display-hero text-display-hero mb-stack-md leading-tight">Garante o teu espaço na economia do futuro.</h2>
+<p class="font-body-main text-body-main text-surface-variant mb-stack-lg max-w-2xl">As reservas para stands prime e pacotes de patrocínio encerram em breve. Posicione a sua marca no centro das decisões corporativas de Moçambique.</p>
+<button class="bg-secondary text-white h-[64px] px-12 rounded flex items-center justify-center font-headline-md text-[20px] hover:bg-[#B0161C] transition-colors shadow-[0_0_40px_rgba(224,31,38,0.3)] hover:shadow-[0_0_60px_rgba(224,31,38,0.5)]">
+                    Reservar Posição Agora
+                </button>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<!-- Applying: style_bg_color, style_primary_color, style_component_shape, style_separation_logic, style_shell_layout, style_brand_logo -->
+<footer class="bg-tertiary dark:bg-black text-on-tertiary dark:text-surface-bright relative w-full py-section-v-md border-t border-outline/20">
+<div class="grid grid-cols-12 gap-stack-md px-gutter-side w-full max-w-max-width mx-auto">
+<div class="col-span-12 lg:col-span-4 flex flex-col justify-between h-full">
+<!-- Logic for styling links in footer: No specific active state needed here usually, just base and hover -->
+<ul class="flex flex-col gap-4 mb-stack-lg">
+<li><a class="font-label-eyebrow text-label-eyebrow text-on-tertiary-fixed-variant hover:text-on-tertiary transition-colors hover:opacity-80 transition-opacity focus:outline-none focus:border-b focus:border-secondary" href="#">Plataforma</a></li>
+<li><a class="font-label-eyebrow text-label-eyebrow text-secondary font-bold" href="#">Eventos</a></li> <!-- Implicitly marking Eventos as active contextually -->
+<li><a class="font-label-eyebrow text-label-eyebrow text-on-tertiary-fixed-variant hover:text-on-tertiary transition-colors hover:opacity-80 transition-opacity focus:outline-none focus:border-b focus:border-secondary" href="#">Contactos</a></li>
+</ul>
+<p class="font-caption text-caption text-on-tertiary-fixed-variant">
+                    © 2024 OHOLO HUB. Todos os direitos reservados.
+                </p>
+</div>
+<div class="col-span-12 lg:col-span-8 flex items-end justify-end">
+<span class="font-display-hero text-display-hero text-surface-variant/10 uppercase tracking-tighter select-none break-all text-right leading-none">
+                    OHOLO HUB
+                </span>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        });
+
+        // Intersection Observer for Split Text Reveal
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.intersection-observer').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Accordion Toggle
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.icon-indicator');
+            
+            // Close others (optional, comment out for independent accordions)
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                if(el !== content) {
+                    el.classList.remove('expanded');
+                    el.previousElementSibling.querySelector('.icon-indicator').innerText = 'add';
+                    el.previousElementSibling.querySelector('.icon-indicator').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.innerText = 'add';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('expanded');
+                icon.innerText = 'remove';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body></html>

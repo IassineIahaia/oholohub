@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=390, initial-scale=1.0" name="viewport"/>
+<title>Serviços - OHOLO HUB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#1b1b1b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e32228",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#410003",
+                        "on-tertiary-container": "#848484",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#303030",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "primary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#bb0016",
+                        "outline-variant": "#cfc4c5",
+                        "on-background": "#1b1b1b",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-side": "80px",
+                        "section-v-lg": "200px",
+                        "stack-sm": "12px",
+                        "section-v-md": "140px",
+                        "stack-lg": "48px",
+                        "grid-columns": "12",
+                        "max-width": "1440px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-hero": ["Inter"],
+                        "body-main": ["Inter"],
+                        "label-eyebrow": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "display-hero": ["clamp(48px, 8vw, 104px)", { "lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-main": ["18px", { "lineHeight": "1.65", "fontWeight": "400" }],
+                        "label-eyebrow": ["12px", { "lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { max-width: 390px; margin: 0 auto; overflow-x: hidden; }
+        .hairline { height: 1px; background-color: #E4E6E9; width: 100%; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-main antialiased relative pb-24">
+<!-- Header (Mobile specific adaptation of TopNavBar) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center h-16 px-6 bg-surface/90 glass-nav border-b border-[#E4E6E9]">
+<div class="font-headline-md text-[24px] font-bold tracking-tighter text-primary">OHOLO HUB</div>
+<button class="text-primary hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<div class="fixed top-16 w-full h-[2px] bg-secondary-container z-50"></div> <!-- Progress/Accent Line -->
+<!-- Main Content Canvas -->
+<main class="pt-24 px-6 flex flex-col gap-16 pb-16">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center gap-6 mt-8">
+<h1 class="font-display-hero text-[48px] text-primary">Our Services</h1>
+<p class="font-body-main text-on-surface-variant max-w-[300px]">Strategic financial solutions and market insights for the modern institutional investor in Mozambique.</p>
+<button class="bg-[#E01F26] hover:bg-[#B0161C] text-white font-label-eyebrow uppercase tracking-widest h-[52px] px-8 rounded flex items-center justify-center transition-colors mt-2">
+                Consult With Us
+            </button>
+</section>
+<div class="hairline"></div>
+<!-- Category Grid (2-Column Bento Style) -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md text-primary text-[28px]">Core Capabilities</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white border border-[#E4E6E9] rounded-[16px] p-5 flex flex-col gap-4 hover:border-[#17191C] transition-colors group">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:text-secondary-container transition-colors" data-icon="show_chart">show_chart</span>
+<div>
+<h3 class="font-headline-md text-[18px] text-primary mb-1">Market Analysis</h3>
+<p class="font-caption text-on-surface-variant line-clamp-2">Deep dive into local and regional trends.</p>
+</div>
+</div>
+<div class="bg-white border border-[#E4E6E9] rounded-[16px] p-5 flex flex-col gap-4 hover:border-[#17191C] transition-colors group">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:text-secondary-container transition-colors" data-icon="account_balance">account_balance</span>
+<div>
+<h3 class="font-headline-md text-[18px] text-primary mb-1">Capital Strategy</h3>
+<p class="font-caption text-on-surface-variant line-clamp-2">Structuring optimal financing pathways.</p>
+</div>
+</div>
+<div class="bg-white border border-[#E4E6E9] rounded-[16px] p-5 flex flex-col gap-4 hover:border-[#17191C] transition-colors group">
+<span class="material-symbols-outlined text-[32px] text-primary group-hover:text-secondary-container transition-colors" data-icon="gavel">gavel</span>
+<div>
+<h3 class="font-headline-md text-[18px] text-primary mb-1">Regulatory</h3>
+<p class="font-caption text-on-surface-variant line-clamp-2">Navigating complex compliance landscapes.</p>
+</div>
+</div>
+<div class="bg-white border border-[#E4E6E9] rounded-[16px] p-5 flex flex-col gap-4 hover:border-[#17191C] transition-colors group bg-primary">
+<span class="material-symbols-outlined text-[32px] text-white" data-icon="insights">insights</span>
+<div>
+<h3 class="font-headline-md text-[18px] text-white mb-1">Institutional</h3>
+<p class="font-caption text-surface-variant line-clamp-2">Bespoke advisory for large entities.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="hairline"></div>
+<!-- Featured Services (Stacked Image & Content) -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md text-primary text-[28px]">Featured Engagements</h2>
+<div class="flex flex-col gap-6">
+<article class="bg-white border border-[#E4E6E9] rounded-[16px] overflow-hidden flex flex-col">
+<div class="aspect-[4/3] w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="A high-end editorial photo of a modern corporate boardroom in Maputo, Mozambique. Bright, natural light floods in through floor-to-ceiling windows, casting soft shadows on a sleek glass conference table. The scene is minimalist and professional, utilizing a high-contrast black, white, and subtle red accent color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7EUOXFjKMl0i-4YyuLkVl6YXEjRC2Io86z-ogrF4jAjnMWRQNA8l2c2HrZVZsGJUMcFAcHSVOZmCaM3QbX9a7rXTk-InWez-jSy1nn_rg5BbmVtzZHht4YtrFDbwK07R9Wwo8F1P3Fna4wc3i-0FnndVVzKKNr9pOqfVQMzPqjF5pYCUp_eibwC9KKREsUUXt_QvA-Yyf5LuLMPpMuWdvBtsFnmH1hKlPVPPDOXerUBNUbmRQzy2i"/>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<span class="font-label-eyebrow text-secondary-container uppercase">Case Study</span>
+<h3 class="font-headline-md text-[22px] text-primary">Cross-Border Capital Structuring</h3>
+<p class="font-caption text-on-surface-variant">Facilitating complex multi-jurisdictional investments with precision and rigorous risk management.</p>
+<a class="font-label-eyebrow text-primary uppercase mt-2 flex items-center gap-1 hover:text-secondary-container transition-colors" href="#">Read Full Detail <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</article>
+<article class="bg-white border border-[#E4E6E9] rounded-[16px] overflow-hidden flex flex-col">
+<div class="aspect-[4/3] w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="An abstract, architectural close-up of a modern glass and steel building facade reflecting a clear blue sky. The composition is highly geometric and minimal, emphasizing clean, straight structural lines. The image is processed with a stark, high-contrast aesthetic fitting a luxury financial publication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgDLHKCMDcBR26mcd77g1Ad_gBJHH_wtzdUVHh0fQaIQlXbpMfvCiaDEsnfG45MNqYD3M6Y-ITuX1laYyYQg35rrD2xaOhaACaKw8-4EShV0wQG39CM5WO7umW_t6IV48YSx7MJVC8US8UNDRyslx_x8DMFeBe7ew4KdVcdYM4qELJsqImnnnDiPtIFhTTgOvRupQRATOCHqy2OPN10ZGMgUHKu_eu8D8q43nOJecYz1Z_ALYQjxYA"/>
+</div>
+<div class="p-6 flex flex-col gap-3">
+<span class="font-label-eyebrow text-secondary-container uppercase">Research</span>
+<h3 class="font-headline-md text-[22px] text-primary">Q3 Market Dynamics Report</h3>
+<p class="font-caption text-on-surface-variant">An authoritative analysis of emerging sector trends and liquidity shifts in the local ecosystem.</p>
+<a class="font-label-eyebrow text-primary uppercase mt-2 flex items-center gap-1 hover:text-secondary-container transition-colors" href="#">Download Insight <span class="material-symbols-outlined text-[16px]" data-icon="download">download</span></a>
+</div>
+</article>
+</div>
+</section>
+<div class="hairline"></div>
+<!-- Process (Vertical Numbered Steps) -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md text-primary text-[28px]">Our Methodology</h2>
+<div class="flex flex-col relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[1px] before:bg-[#E4E6E9]">
+<div class="flex gap-6 relative z-10 pb-8">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex-shrink-0 flex items-center justify-center font-label-eyebrow text-[14px]">01</div>
+<div class="flex flex-col gap-2 pt-1">
+<h4 class="font-headline-md text-[18px] text-primary">Discovery &amp; Audit</h4>
+<p class="font-caption text-on-surface-variant">Comprehensive evaluation of current standing, objectives, and market context.</p>
+</div>
+</div>
+<div class="flex gap-6 relative z-10 pb-8">
+<div class="w-8 h-8 rounded-full bg-white border border-[#E4E6E9] text-primary flex-shrink-0 flex items-center justify-center font-label-eyebrow text-[14px]">02</div>
+<div class="flex flex-col gap-2 pt-1">
+<h4 class="font-headline-md text-[18px] text-primary">Strategic Framework</h4>
+<p class="font-caption text-on-surface-variant">Developing tailored blueprints aligning capital needs with regulatory realities.</p>
+</div>
+</div>
+<div class="flex gap-6 relative z-10">
+<div class="w-8 h-8 rounded-full bg-white border border-[#E4E6E9] text-primary flex-shrink-0 flex items-center justify-center font-label-eyebrow text-[14px]">03</div>
+<div class="flex flex-col gap-2 pt-1">
+<h4 class="font-headline-md text-[18px] text-primary">Execution</h4>
+<p class="font-caption text-on-surface-variant">Rigorous implementation with continuous monitoring and adaptive guidance.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Specific) -->
+<nav class="fixed bottom-0 w-full h-[72px] bg-white border-t border-[#E4E6E9] flex justify-around items-center px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-eyebrow text-[10px]">Market</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary-container font-bold border-t-2 border-secondary-container pt-2 -mt-2" href="#">
+<span class="material-symbols-outlined" data-icon="work" data-weight="fill" style="font-variation-settings: 'FILL' 1;">work</span>
+<span class="font-label-eyebrow text-[10px]">Serviços</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+<span class="font-label-eyebrow text-[10px]">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-eyebrow text-[10px]">Connect</span>
+</a>
+</nav>
+</body></html>

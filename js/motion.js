@@ -144,7 +144,7 @@
   const progresso = $(".navbar-progresso");
   const rail = $(".secoes-rail");
   const fita = $(".secoes-fita");
-  const heroEscuro = $("[data-hero-escuro]");
+  let heroEscuro = $("[data-hero-escuro]");
 
   let elementosParallax = [];
   let ligacoesSeccao = [];
@@ -155,6 +155,9 @@
   let seccaoActual = "";
 
   function medir() {
+    // o hero escuro pode ser injectado por JS (fichas de empresa)
+    heroEscuro = $("[data-hero-escuro]");
+
     // Altura real do header — o CSS usa-a para o scroll-padding e para a fita
     if (navbar) {
       document.documentElement.style.setProperty(
@@ -185,7 +188,13 @@
     const alturaDoc = document.documentElement.scrollHeight - window.innerHeight;
 
     /* ── Header ── */
-    if (navbar) {
+    // Quando a camada GSAP assume o header, esta parte fica de fora
+    // para as duas não se pisarem (ver js/oholo-motion.js).
+    const headerDoGsap = document.documentElement.classList.contains(
+      "tem-header-gsap",
+    );
+
+    if (navbar && !headerDoGsap) {
       navbar.classList.toggle("is-scrolled", y > 24);
 
       const menuAberto = navbar.classList.contains("is-menu-aberto");

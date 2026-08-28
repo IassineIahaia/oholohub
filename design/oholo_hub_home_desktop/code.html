@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OHOLO HUB - Preparamos Negócios. Conectamos Mercados.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d7dae1",
+                        "inverse-on-surface": "#eef1f8",
+                        "on-tertiary-fixed-variant": "#464749",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-background": "#181c21",
+                        "on-tertiary-fixed": "#1b1c1e",
+                        "surface-container-low": "#f1f4fb",
+                        "secondary-container": "#e32228",
+                        "tertiary-container": "#1b1c1e",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface": "#f7f9ff",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f7f9ff",
+                        "on-surface": "#181c21",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2d3136",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "outline": "#7e7576",
+                        "on-secondary-fixed": "#410003",
+                        "surface-variant": "#dfe3e9",
+                        "surface-container-high": "#e5e8ef",
+                        "secondary": "#bb0016",
+                        "primary": "#000000",
+                        "inverse-primary": "#c6c6c6",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9ff",
+                        "surface-container": "#ebeef5",
+                        "surface-tint": "#5e5e5e",
+                        "on-primary-container": "#848484",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "surface-container-highest": "#dfe3e9",
+                        "on-secondary-container": "#fffbff",
+                        "outline-variant": "#cfc4c5",
+                        "tertiary-fixed": "#e3e2e5",
+                        "secondary-fixed": "#ffdad6",
+                        "on-surface-variant": "#4c4546",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary": "#000000",
+                        "tertiary-fixed-dim": "#c7c6c9",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#848386",
+                        "mist": "#F4F5F7",
+                        "line": "#E5E5E5",
+                        "ink": "#111111"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "hairline": "1px",
+                        "gutter": "24px",
+                        "max_width": "1440px",
+                        "margin": "80px",
+                        "columns": "12"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Newsreader"],
+                        "display-lg": ["Newsreader"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Newsreader"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-lg": ["19px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["17px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling areas to keep the premium feel */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden selection:bg-secondary selection:text-white">
+<!-- PART 1: HEADER & HERO -->
+<!-- TopNavBar (From Shared Components) -->
+<header class="fixed top-0 w-full h-[80px] z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center px-margin max-w-max_width mx-auto transition-transform duration-300">
+<!-- Brand -->
+<a class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary dark:text-primary-fixed flex items-center gap-1" href="#">
+            OHOLO <span class="text-secondary">HUB</span>
+</a>
+<!-- Navigation -->
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="font-body-md text-body-md h-full flex items-center text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary relative top-[1px] hover:text-secondary transition-colors duration-200" href="#">Início</a>
+<a class="font-body-md text-body-md h-full flex items-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary hover:text-secondary transition-colors duration-200" href="#">FACIM 2026</a>
+<a class="font-body-md text-body-md h-full flex items-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary hover:text-secondary transition-colors duration-200" href="#">FENA</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex gap-4 items-center">
+<a class="font-label-sm text-label-sm uppercase text-primary hover:text-secondary transition-colors duration-200 border border-transparent hover:border-line px-4 py-2 rounded" href="#">
+                Vitrine FACIM 2026
+            </a>
+<a class="font-label-sm text-label-sm uppercase bg-primary text-on-primary hover:bg-secondary transition-colors duration-200 px-6 py-2 rounded shadow-sm" href="#">
+                Agendar Reunião
+            </a>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Scroll Progress Bar -->
+<div class="absolute bottom-[-1px] left-0 h-[2px] bg-secondary w-[8%]"></div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-screen min-h-[700px] flex items-center justify-center pt-[80px] bg-ink overflow-hidden group">
+<!-- Hero Background -->
+<div class="absolute inset-0 w-full h-full" data-alt="A sweeping, cinematic wide shot of a modern, technologically advanced agricultural facility at dawn. The scene features lush green crops fading into the distance under a vast, clear sky, symbolizing growth and potential. The lighting is high-key and optimistic, casting long, soft shadows. The overall aesthetic is clean, premium, and sophisticated, relying on deep blacks, crisp whites, and subtle earthy greens to convey a modern B2B editorial authority." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-2i0zWl09A4lCOubups1QFev29ltpt_rtcBY4_j0wKVXQTk4GakOg2Z_DC47jZ81wnJom9iE4umhgXGZ5Y0I6YkGFAjUEjoqO78-ixhnt6jBOvHEYpM81qHWzlsVqQs9gwmghZHexuOwxtpRRGnonqxRbrHFQfv4sydSbAf3v5pYhPZvsWKbbtWuqqDu4Fvkpza2wwPsfNLvV0C-4BjVlsOehSiUqNQT-z4aB7EukdZFc_TQ-D9iI')"></div>
+<!-- Scrim / Gradient -->
+<div class="absolute inset-0 bg-gradient-to-tr from-ink/90 via-ink/40 to-transparent"></div>
+<!-- Content Grid -->
+<div class="relative w-full max-w-max_width mx-auto px-margin grid grid-cols-12 gap-gutter h-full pb-20">
+<!-- Col 1 (Empty for alignment) -->
+<div class="hidden md:block col-span-1"></div>
+<!-- Col 2 Content -->
+<div class="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col justify-center h-full self-center mt-[10vh]">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-surface uppercase tracking-widest">AVANÇA O TEU NEGÓCIO</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-surface mb-6 leading-[1.1]">
+                    Preparamos Negócios.<br/>
+<span class="font-display-lg text-display-lg italic relative inline-block">
+                        Conectamos Mercados.
+                        <span class="absolute bottom-2 left-0 w-full h-[3px] bg-secondary"></span>
+</span>
+</h1>
+<p class="font-body-lg text-body-lg text-surface/78 mb-10 max-w-2xl">
+                    A plataforma central para o desenvolvimento do agronegócio e feiras comerciais. Descubra oportunidades, aceda a serviços especializados e expanda a sua presença no mercado nacional e internacional.
+                </p>
+<div class="flex flex-wrap items-center gap-4">
+<a class="bg-secondary text-white font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-red-800 transition-colors" href="#">
+                        Explorar Empresas
+                    </a>
+<a class="border border-line/30 text-surface font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-surface/10 transition-colors" href="#">
+                        Falar Connosco
+                    </a>
+</div>
+</div>
+</div>
+<!-- Hero Details (Absolute positioning) -->
+<!-- Vertical Scroll Indicator -->
+<div class="absolute bottom-12 left-margin hidden md:flex flex-col items-center gap-4 z-10">
+<span class="font-label-sm text-label-sm text-surface uppercase" style="writing-mode: vertical-rl; transform: rotate(180deg);">SCROLL</span>
+<div class="w-[1px] h-12 bg-surface/30 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1/2 bg-surface animate-[slideDown_2s_ease-in-out_infinite]"></div>
+</div>
+</div>
+<!-- Slide Counter & Controls -->
+<div class="absolute bottom-12 right-margin z-10 flex items-center gap-6">
+<div class="font-label-sm text-label-sm text-surface">
+<span class="text-white">01</span> <span class="text-surface/50">/ 05</span>
+</div>
+<!-- Progress Segments -->
+<div class="hidden md:flex gap-2">
+<div class="w-8 h-[2px] bg-secondary"></div>
+<div class="w-8 h-[2px] bg-surface/30"></div>
+<div class="w-8 h-[2px] bg-surface/30"></div>
+<div class="w-8 h-[2px] bg-surface/30"></div>
+<div class="w-8 h-[2px] bg-surface/30"></div>
+</div>
+<!-- Circular Arrows -->
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-surface/30 flex items-center justify-center text-surface hover:bg-surface/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-surface/30 flex items-center justify-center text-surface hover:bg-surface/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- PART 2: SEARCH, STATS & FACIM -->
+<div class="relative z-20">
+<!-- Search Card (Overlapping Hero) -->
+<div class="max-w-[1100px] mx-auto px-margin md:px-0 -mt-[72px] relative">
+<div class="bg-white border border-line rounded p-8 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col md:flex-row gap-4 mb-6">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-14 pl-12 pr-4 border-b border-t-0 border-l-0 border-r-0 border-line bg-transparent font-body-md text-on-surface focus:ring-0 focus:border-primary transition-colors placeholder:text-outline/70" placeholder="Procurar empresas, serviços ou sectores..." type="text"/>
+</div>
+<button class="bg-secondary text-white font-label-sm text-label-sm uppercase px-8 h-14 rounded hover:bg-red-800 transition-colors shrink-0 whitespace-nowrap">
+                        Pesquisar Agora
+                    </button>
+</div>
+<div class="flex flex-wrap gap-2 items-center">
+<span class="font-label-sm text-label-sm text-outline uppercase mr-2">Sugestões:</span>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Agricultura</a>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Energia</a>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Logística</a>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Tecnologia</a>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Indústria Transformadora</a>
+<a class="px-3 py-1.5 bg-mist text-on-surface-variant font-label-sm text-[11px] rounded-[2px] hover:bg-line transition-colors" href="#">Serviços Financeiros</a>
+</div>
+</div>
+</div>
+<!-- Stats Strip -->
+<div class="bg-white border-y border-line mt-12 py-16">
+<div class="max-w-max_width mx-auto px-margin">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-line">
+<div class="flex flex-col items-center text-center px-4 py-4 md:py-0">
+<span class="w-2 h-2 rounded-full bg-secondary mb-4"></span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[64px] font-bold text-primary mb-2">48</h3>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">EMPRESAS VERIFICADAS</p>
+</div>
+<div class="flex flex-col items-center text-center px-4 py-4 md:py-0">
+<span class="w-2 h-2 rounded-full bg-secondary mb-4"></span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[64px] font-bold text-primary mb-2">120</h3>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">SERVIÇOS CATALOGADOS</p>
+</div>
+<div class="flex flex-col items-center text-center px-4 py-4 md:py-0">
+<span class="w-2 h-2 rounded-full bg-secondary mb-4"></span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[64px] font-bold text-primary mb-2">11</h3>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">PROVÍNCIAS COBERTAS</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FACIM Band (Full Bleed) -->
+<section class="w-full bg-ink flex flex-col md:flex-row min-h-[600px]">
+<!-- Left Content (7 columns equivalent) -->
+<div class="w-full md:w-[58.33%] p-margin flex flex-col justify-center">
+<div class="max-w-xl ml-auto md:mr-12">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-surface uppercase tracking-widest">DESTAQUE FEIRA INTERNACIONAL</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-surface mb-6">
+                    19 empresas preparadas para a <span class="italic text-secondary">FACIM 2026</span>
+</h2>
+<p class="font-body-md text-body-md text-surface/70 mb-10">
+                    Acompanhe a preparação das empresas nacionais para o maior certame de negócios do país. Conheça as inovações, os produtos em destaque e agende reuniões B2B exclusivas com os expositores do Pavilhão OHOLO.
+                </p>
+<!-- Countdown -->
+<div class="flex items-center gap-4 mb-10">
+<div class="text-center">
+<span class="block font-display-lg-mobile text-[32px] text-surface font-semibold">142</span>
+<span class="font-label-sm text-[10px] text-surface/50 uppercase">Dias</span>
+</div>
+<span class="text-secondary font-display-lg-mobile text-[32px] mb-4">:</span>
+<div class="text-center">
+<span class="block font-display-lg-mobile text-[32px] text-surface font-semibold">08</span>
+<span class="font-label-sm text-[10px] text-surface/50 uppercase">Horas</span>
+</div>
+<span class="text-secondary font-display-lg-mobile text-[32px] mb-4">:</span>
+<div class="text-center">
+<span class="block font-display-lg-mobile text-[32px] text-surface font-semibold">45</span>
+<span class="font-label-sm text-[10px] text-surface/50 uppercase">Minutos</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<a class="bg-surface text-primary font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-surface-dim transition-colors" href="#">
+                        Visitar Vitrine Virtual
+                    </a>
+<a class="border border-surface/30 text-surface font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-surface/10 transition-colors" href="#">
+                        Saber mais sobre a feira
+                    </a>
+</div>
+</div>
+</div>
+<!-- Right Image (5 columns equivalent) -->
+<div class="w-full md:w-[41.67%] min-h-[400px] md:min-h-full relative overflow-hidden bg-primary">
+<!-- Duotone effect achieved via overlay and mix-blend modes if actual duotone image is unavailable, using a standard image here -->
+<div class="absolute inset-0 w-full h-full mix-blend-luminosity opacity-80" data-alt="A dynamic, duotone (deep red and stark white) photograph of a bustling international trade fair. Professionals in sharp modern attire are engaged in deep conversation around a sleek exhibition booth. The lighting is architectural and dramatic, emphasizing the scale and professionalism of the event. The aesthetic is highly corporate, energetic, and visually striking, adhering to a minimalist B2B editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6tc7MAilafd6Td4YrivLWej0eENe-WOGJdwm3u2hYsWIFYwjIK7lIjmG_GlD1eCsbJuilzjIApngjXa5tOe3rpsxcv7UMNzmZISY0rnqN90fyJPXS9nA9DyVFoeGdR_4743Mmb753ilW-7BLX5nIXPKiNvABZfoTx_TcW0aS4h0KYxa9-J5pOYNEpzCLoQdPG2MXpLzMSjnNhNxBAJ-ly0lCltwcJaYq4wPqC6kqdEvUeU0jDFPXx')"></div>
+<div class="absolute inset-0 bg-secondary mix-blend-multiply opacity-40"></div>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent to-ink md:to-ink w-[10%]"></div>
+</div>
+</section>
+<!-- PART 3: FEATURED & GALLERY -->
+<!-- Featured Section -->
+<section class="bg-white py-24 relative overflow-hidden">
+<div class="max-w-max_width mx-auto px-margin relative">
+<!-- Margin Section Number -->
+<div class="absolute left-4 top-0 hidden xl:block">
+<span class="font-label-sm text-label-sm text-outline/40" style="writing-mode: vertical-rl;">03 / 05</span>
+</div>
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-line pb-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">REDE DE PARCEIROS</span>
+</div>
+<div class="flex items-center gap-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">Empresas em Destaque</h2>
+<div class="hidden md:block w-12 h-[2px] bg-secondary self-center mt-2"></div>
+</div>
+</div>
+<a class="group flex items-center gap-2 mt-4 md:mt-0 font-label-sm text-label-sm uppercase text-primary hover:text-secondary transition-colors" href="#">
+                    Ver todas 
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Horizontal Scroll Row -->
+<div class="flex overflow-x-auto hide-scrollbar gap-6 pb-8 snap-x">
+<!-- Card 1 -->
+<div class="min-w-[320px] md:min-w-[380px] border border-line rounded flex flex-col group snap-start cursor-pointer hover:border-primary transition-colors">
+<div class="h-48 relative overflow-hidden rounded-t bg-mist">
+<div class="absolute inset-0 w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist shot of modern agricultural machinery operating in a vast, geometric field. The image is bright and high-contrast, featuring crisp details and a light-mode editorial aesthetic. The colors are muted, focusing on structural lines and the efficiency of modern agribusiness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc7KjdE5vtSviE-GZC3goopjg1PTrbT1zt0coY5FrsO_kzwiwYk8JTD1hcSfmjan_bkHx8WvAFZga1NqedTrBBlbcq-u3O8ZRDf12R-PyE-GDTlM0a3KpMpU6UMN_iIPP17pW2IWkdUGba664t_vXPynmzhcZYZhmsmNdqqZampfoYU__cmN_tVK6Y8Odwf57zLCPX6xzV2WQXIgmU_0-LNXArIfzfCImtkEhhdXL4tr_AjGFZQGe-')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-[2px] font-label-sm text-[10px] uppercase text-primary">Agroindústria</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-[22px] font-semibold text-primary leading-tight">Fazenda Boa Vista</h3>
+<div class="w-10 h-10 rounded border border-line flex items-center justify-center bg-white shrink-0">
+<span class="font-label-sm text-[10px] font-bold">FBV</span>
+</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-6 line-clamp-2">Produção sustentável de cereais e oleaginosas com certificação internacional de qualidade.</p>
+<div class="mt-auto flex items-center justify-between border-t border-line pt-4">
+<div class="flex items-center gap-2 text-outline font-label-sm text-[11px] uppercase">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Huíla
+                            </div>
+<span class="material-symbols-outlined text-secondary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[320px] md:min-w-[380px] border border-line rounded flex flex-col group snap-start cursor-pointer hover:border-primary transition-colors">
+<div class="h-48 relative overflow-hidden rounded-t bg-mist">
+<div class="absolute inset-0 w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A highly stylized, minimal photograph of a sleek, modern logistics warehouse interior. Symmetrical rows of high shelving recede into the bright, white background. The image emphasizes order, scale, and high-end corporate efficiency, using a restrained palette of whites, cool grays, and structural blacks." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC77MupgQvD9VPGfh0gSEzrOkgibQLHfVQpJj1vA9LWyXHESUQCpY0SRBRwxyYQaBZROHHgj1bwwwJFX7I0tGWQt1uBjN4WDdoIb_TO_N32WKsqs1CjfWF7y-_lsn9cAYn_1QXYFSObMxQkjA9cjqfIWmhOG3ggpy9JGsaydkAZYjar5Mn7QBbBB5u5QKGJDeEpFSZH5aGqlBN4CozwwJBEW0bs7gmvfeJX1mPkMk4D0dfbD0dU6seu')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-[2px] font-label-sm text-[10px] uppercase text-primary">Logística</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-[22px] font-semibold text-primary leading-tight">TransNacional SA</h3>
+<div class="w-10 h-10 rounded border border-line flex items-center justify-center bg-white shrink-0">
+<span class="font-label-sm text-[10px] font-bold">TN</span>
+</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-6 line-clamp-2">Soluções integradas de transporte e armazenamento refrigerado para o sector alimentar.</p>
+<div class="mt-auto flex items-center justify-between border-t border-line pt-4">
+<div class="flex items-center gap-2 text-outline font-label-sm text-[11px] uppercase">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Luanda
+                            </div>
+<span class="material-symbols-outlined text-secondary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[320px] md:min-w-[380px] border border-line rounded flex flex-col group snap-start cursor-pointer hover:border-primary transition-colors">
+<div class="h-48 relative overflow-hidden rounded-t bg-mist">
+<div class="absolute inset-0 w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of advanced solar panels arrayed in a geometric pattern, gleaming under bright sunlight. The image is crisp, modern, and optimistic, adhering to a premium light-mode aesthetic. The focus is on technological innovation and clean energy within a corporate B2B context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs9x0QxC9K59coXgiTbyqJ27MvlZ-_SpY6c7k8r8Koxp-7f7ZCBB0_diSBIRk1n7qk1VwfVHXm40iAGAsQxCNDaoVAESfGhCGt__w9NnY1hkyYy3CuHfo0n8tWWxrhfVAiL72rOhMYTrjEQ70I5-HG_r1Vfem3oF9G5pnGUCjimpbF7TBCd6J11_fqdf_zHkZKhEzqVG7DkJh0lh2b0fbQIlQpkxoIcz5AcKp141yFeeQhP3sKjfiV')"></div>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-[2px] font-label-sm text-[10px] uppercase text-primary">Energia</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-[22px] font-semibold text-primary leading-tight">EcoPower Lda</h3>
+<div class="w-10 h-10 rounded border border-line flex items-center justify-center bg-white shrink-0">
+<span class="font-label-sm text-[10px] font-bold">EP</span>
+</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-6 line-clamp-2">Implementação de sistemas de energia renovável para operações industriais de grande escala.</p>
+<div class="mt-auto flex items-center justify-between border-t border-line pt-4">
+<div class="flex items-center gap-2 text-outline font-label-sm text-[11px] uppercase">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Benguela
+                            </div>
+<span class="material-symbols-outlined text-secondary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 4 (Partial for scroll hint) -->
+<div class="min-w-[320px] md:min-w-[380px] border border-line rounded flex flex-col group snap-start cursor-pointer hover:border-primary transition-colors opacity-50 pointer-events-none">
+<div class="h-48 relative overflow-hidden rounded-t bg-mist"></div>
+<div class="p-6 flex-grow flex flex-col justify-center items-center">
+<span class="font-label-sm text-label-sm uppercase text-outline">Deslize para ver mais</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="bg-mist py-24">
+<div class="max-w-max_width mx-auto px-margin">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">MEMÓRIA DESCRITIVA</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Galeria</h2>
+</div>
+<!-- Tabs -->
+<div class="flex gap-8 border-b border-line mt-6 md:mt-0">
+<button class="pb-3 font-label-sm text-label-sm uppercase text-primary border-b-2 border-secondary relative top-[1px]">Fotografias</button>
+<button class="pb-3 font-label-sm text-label-sm uppercase text-outline hover:text-primary transition-colors">Vídeos</button>
+</div>
+</div>
+<!-- Editorial Asymmetric Grid -->
+<div class="grid grid-cols-12 gap-4 auto-rows-[200px]">
+<!-- Large Feature (Cols 1-7, Rows 1-2) -->
+<div class="col-span-12 md:col-span-7 row-span-2 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A wide, sweeping landscape view of a vast, modern agricultural plantation under a bright, high-key sky. The image emphasizes scale and precise, geometric planting lines. The aesthetic is clean and premium, utilizing deep blacks, stark whites, and subtle natural tones, fitting for a high-end corporate editorial." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKp62GlLt0_xTf310rk52-5ikRMqoJGzsJzEu6gJ5EEGXyFN1lJ9ly1e5KWpXyhPJvP6v8588ZUA51jtLfufc_hBiQkbAMG8coC3XEGKziKB2YmhWVqqEK9E5vmQqnKg1iksxxTLJGt6C5lF3hCJELDKkvgURWcfnx2cBDxg0pPKEr-2R_rWuDk_cWmvLRhSFCoKL8EJ71d1R78HYlSsjyo10TevgeDxpWLM5wNf9JK5HwiME_4p1k')"></div>
+</div>
+<!-- Top Right 1 (Cols 8-12, Row 1) -->
+<div class="col-span-12 sm:col-span-6 md:col-span-5 row-span-1 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, highly detailed shot of hands exchanging a professional contract over a sleek, minimalist glass table. The lighting is bright and directional, creating sharp, modern shadows. The color palette is strictly neutral (blacks, whites, grays) to convey trust, precision, and B2B authority." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2vclooVNoS3aJBDCJvRJMYHd4ip3pRzDFXdwSEhCqA3QjnnBDI-0FDoYwJq3eC0zaT8Uv8TLXWsx7VFmsXbxQdLHI-HC4pCtZuVUWNcX2HIBHp3aBm885C_OYhZ6pFUsPN1LjQL1sR3aL0V8B_Y7Qr7mASUxDkIt7h04nTpLRh80xucreBSp6DieM3eLpC6F2-lMkpDFW7wyCN4dbjlm56exSLQssxifnYcUUjFq8IpmF-B18z2e7')"></div>
+</div>
+<!-- Bottom Right 2 (Cols 8-12, Row 2) -->
+<div class="col-span-12 sm:col-span-6 md:col-span-5 row-span-1 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="An abstract, architectural shot of a modern convention center exterior featuring glass and steel components. The composition is minimalist and strictly geometric. The image uses a stark, high-contrast light-mode style, emphasizing corporate scale and premium structural design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAStHAk_3YnWcww3PYfmbkWlzzl2OiLf7-Bcp59Qyk1nW9sbxyEhLBeFt43yMuX0PTlutMxbskSypfS9MU6n9fS4Ft_fBY6zriHnjOLmZ_z2cPqhoiC4MK6Qdrr9IOByXPQ3LxFumVLZmBghWaRwWHjUNKyPgq-wrmR8YWX8FrH1y0p7HjKnlmaF5noA1uK-YRJbA_e3SWwIoMjdZBv4g1bfN9I7ePo_wof8_2mowbLSaAFkJ02w1Bc')"></div>
+</div>
+<!-- Bottom Row 1 (Cols 1-4, Row 3) -->
+<div class="col-span-12 sm:col-span-4 row-span-1 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A sharp, modern portrait of an executive presenting data on a digital screen in a bright, white boardroom. The focus is on the professionalism and the clear, minimalist interface of the data. The lighting is pristine, reinforcing a premium, authoritative editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIHlNB5WZWDMpeBqZgzO1PoXx5I7UVeGK2uV6mMtJ93MzLGva0wWlyPXhlG7DUqNCFzGpAOKnaj8xlY8WiwqVjH3mrGLq_lmOVZx-HocbfpFFDyyr6Qk0GBQkyVtHW1TA1vRXcxzFd3IS9DXjckVC7Ez5nyBgAABDjKLglJjaas5aQusbsWr_Hcr6bFBX0G5LIXmlzFVY_RyJ7F-Jn3yH4PxbnK9EiTCM9rAFvQRgnC_wKSMLMog_6')"></div>
+</div>
+<!-- Bottom Row 2 (Cols 5-8, Row 3) -->
+<div class="col-span-12 sm:col-span-4 row-span-1 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist overhead shot of precision agricultural drones resting on a clean, geometric concrete surface. The image is highly technical and modern, using a restrained palette of grays, whites, and metallic tones to highlight innovation in agribusiness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-pWorYv7pcpHTwG7VVzMrlED4rDsJMQd7HiXGLm8dYAp7xdZgBqqOJ58wse9UmVNqcqhQbiDfnzrCX_S6F2bqRBIm1m9e_3PNPweh3eYDuPhvnm-JNq4LkhSru5ee3uOdbBvYWWk7dpKWHTS83J18bKk3cTBUpTGaFJIyjVv42QeKdIfhnoInPv9k5szJ3caAUrJaQui4mDlXBTYsi92VQRUUx2y_skOHkrprNX5NGjHpUk1_b1Ff')"></div>
+</div>
+<!-- Bottom Row 3 (Cols 9-12, Row 3) -->
+<div class="col-span-12 sm:col-span-4 row-span-1 relative group overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A detailed, macro shot of freshly harvested, premium coffee beans arranged in a neat, orderly pattern on a white surface. The image is stark and high-contrast, focusing on texture and quality. It evokes a sense of refined, high-end agricultural commerce." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKDC9uebO3qxJ1skHuJjyR3muK5KaM_0xAu1UsXNv9s-u3OaDPBPXXt5E1OezHn2Ippjy0PIBOpW7hQXHFqS5wWwLxzOBt6vgGNV1szc0MoC68-40N3--ZDKEjQiG2IiR4QIq_rWkfpOcfS_6Xv5OZl3DxkeWvOmNAsbinMU-5y81Br5_4p8S9ElGOt4ada-kgXXOyRpwwtCjpxhHvXyWMOv3HdaXpOt-DH7UR61OO-XPoaUoQd17y')"></div>
+</div>
+</div>
+<div class="flex justify-end mt-8">
+<a class="group flex items-center gap-2 font-label-sm text-label-sm uppercase text-primary hover:text-secondary transition-colors border-b border-primary pb-1 hover:border-secondary" href="#">
+                    Ver toda a galeria 
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- PART 4: CTA & FOOTER -->
+<!-- Closing CTA -->
+<section class="relative bg-ink py-32 overflow-hidden flex items-center justify-center border-t border-line/20">
+<!-- Watermark Background -->
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
+<span class="font-display-lg text-[25vw] font-bold text-white leading-none whitespace-nowrap overflow-hidden tracking-tighter">OHOLO</span>
+</div>
+<div class="relative z-10 max-w-3xl mx-auto px-margin text-center">
+<div class="w-12 h-[1px] bg-secondary mx-auto mb-10"></div>
+<div class="flex items-center justify-center gap-3 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-surface uppercase tracking-widest">JUNTE-SE À PLATAFORMA</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-8">
+                Pronto para <span class="italic font-display-lg text-[48px] font-normal text-surface">Avançar</span> o Teu Negócio?
+            </h2>
+<p class="font-body-md text-body-md text-surface/70 mb-12 max-w-xl mx-auto">
+                Registe a sua empresa, aceda a oportunidades exclusivas e posicione-se estrategicamente no ecossistema de negócios de Angola.
+            </p>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="bg-secondary text-white font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-red-800 transition-colors" href="#">
+                    Registar Empresa
+                </a>
+<a class="border border-surface/30 text-surface font-label-sm text-label-sm uppercase px-8 py-4 rounded hover:bg-surface/10 transition-colors" href="#">
+                    Falar com um Consultor
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer (From Shared Components) -->
+<footer class="relative w-full pt-20 pb-10 bg-primary dark:bg-surface-container-lowest grid grid-cols-12 gap-gutter px-margin max-w-max_width mx-auto flat no shadows bg-primary dark:bg-surface-container-lowest text-surface dark:text-on-surface Default editorial transitions">
+<!-- Giant Texture Wordmark -->
+<div class="col-span-12 mb-16 relative overflow-hidden h-32 flex items-center">
+<span class="font-display-lg text-display-lg text-on-tertiary-fixed-variant/20 dark:text-on-tertiary-fixed-variant/10 uppercase tracking-tighter w-full text-center whitespace-nowrap">
+                OHOLO HUB
+            </span>
+</div>
+<!-- 4 Columns -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 border-b border-surface/10 pb-16">
+<!-- Col 1: Mission/Socials -->
+<div class="flex flex-col">
+<a class="font-headline-lg text-headline-lg font-bold tracking-tighter text-surface mb-6 flex items-center gap-1" href="#">
+                    OHOLO <span class="text-secondary">HUB</span>
+</a>
+<p class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant mb-8 max-w-[250px]">
+                    Preparamos negócios e conectamos mercados através da inteligência de dados e plataformas B2B de excelência.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-surface/20 flex items-center justify-center text-surface hover:border-secondary hover:text-secondary-fixed-dim transition-all" href="#">
+<span class="font-label-sm text-label-sm">IN</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface/20 flex items-center justify-center text-surface hover:border-secondary hover:text-secondary-fixed-dim transition-all" href="#">
+<span class="font-label-sm text-label-sm">FB</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface/20 flex items-center justify-center text-surface hover:border-secondary hover:text-secondary-fixed-dim transition-all" href="#">
+<span class="font-label-sm text-label-sm">IG</span>
+</a>
+</div>
+</div>
+<!-- Col 2: Plataforma -->
+<div class="flex flex-col">
+<h4 class="font-label-sm text-label-sm uppercase text-surface mb-6 tracking-widest">Plataforma</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Diretório de Empresas</a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Catálogo de Serviços</a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Insights &amp; Dados</a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Registo de Parceiro</a></li>
+</ul>
+</div>
+<!-- Col 3: Eventos -->
+<div class="flex flex-col">
+<h4 class="font-label-sm text-label-sm uppercase text-surface mb-6 tracking-widest">Eventos</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all flex items-center gap-2" href="#">FACIM 2026 <span class="px-2 py-0.5 bg-secondary text-white text-[9px] rounded-sm font-bold uppercase">Brevemente</span></a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">FENA - Feira Nacional</a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Fóruns Regionais</a></li>
+<li><a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant hover:text-secondary-fixed-dim transition-all" href="#">Arquivo de Eventos</a></li>
+</ul>
+</div>
+<!-- Col 4: Contacto -->
+<div class="flex flex-col">
+<h4 class="font-label-sm text-label-sm uppercase text-surface mb-6 tracking-widest">Contacto</h4>
+<ul class="flex flex-col gap-4">
+<li class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant">
+                        Rua Rainha Ginga, Edifício CIF ONE,<br/>Luanda, Angola
+                    </li>
+<li>
+<a class="font-body-md text-body-md text-surface hover:text-secondary-fixed-dim transition-all border-b border-surface/30 pb-1" href="mailto:info@oholohub.ao">info@oholohub.ao</a>
+</li>
+<li class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant mt-2">
+                        +244 923 000 000
+                    </li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="col-span-12 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant text-sm">
+                © 2024 OHOLO HUB. Todos os direitos reservados.
+            </p>
+<div class="flex flex-wrap gap-6">
+<a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant text-sm hover:text-secondary-fixed-dim transition-all" href="#">Termos e Condições</a>
+<a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant text-sm hover:text-secondary-fixed-dim transition-all" href="#">Política de Privacidade</a>
+<a class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant text-sm hover:text-secondary-fixed-dim transition-all" href="#">Cookies</a>
+</div>
+</div>
+</footer>
+</body></html>

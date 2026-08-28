@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OHOLO HUB - Explorar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-fixed": "#1b1b1b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#e32228",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary-fixed": "#410003",
+                        "on-tertiary-container": "#848484",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#303030",
+                        "primary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#93000e",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "primary-container": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4ac",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#bb0016",
+                        "outline-variant": "#cfc4c5",
+                        "on-background": "#1b1b1b",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-side": "80px",
+                        "section-v-lg": "200px",
+                        "stack-sm": "12px",
+                        "section-v-md": "140px",
+                        "stack-lg": "48px",
+                        "grid-columns": "12",
+                        "max-width": "1440px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-hero": ["Inter"],
+                        "body-main": ["Inter"],
+                        "label-eyebrow": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "caption": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "display-hero": ["clamp(48px, 8vw, 104px)", { "lineHeight": "0.95", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-main": ["18px", { "lineHeight": "1.65", "fontWeight": "400" }],
+                        "label-eyebrow": ["12px", { "lineHeight": "1", "letterSpacing": "0.16em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; color: #1b1b1b; }
+        .hairline { height: 1px; background-color: #e2e2e2; width: 100%; }
+        .hairline-v { width: 1px; background-color: #e2e2e2; height: 100%; }
+    </style>
+</head>
+<body class="antialiased font-body-main text-on-background bg-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center h-16 px-gutter-side bg-surface/80 dark:bg-primary/80 backdrop-blur-md border-b border-outline-variant relative after:absolute after:bottom-[-1px] after:left-0 after:h-[2px] after:w-1/3 after:bg-secondary-container">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-on-primary" href="#">
+                OHOLO HUB
+            </a>
+<div class="hidden md:flex gap-6">
+<a class="font-label-eyebrow text-label-eyebrow tracking-widest text-secondary-container font-bold border-b-2 border-secondary-container pb-1 hover:text-secondary transition-all duration-300" href="#">Market</a>
+<a class="font-label-eyebrow text-label-eyebrow tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:text-secondary transition-all duration-300" href="#">Insights</a>
+<a class="font-label-eyebrow text-label-eyebrow tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:text-secondary transition-all duration-300" href="#">Capital</a>
+<a class="font-label-eyebrow text-label-eyebrow tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors hover:text-secondary transition-all duration-300" href="#">Institutional</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-eyebrow text-label-eyebrow tracking-widest bg-primary text-on-primary h-[52px] px-8 rounded-DEFAULT scale-95 active:opacity-80 transition-transform">
+                Connect
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-v-lg px-gutter-side max-w-max-width mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-section-v-md text-center max-w-4xl mx-auto">
+<p class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-outline mb-stack-md">Ecossistema</p>
+<h1 class="font-display-hero text-display-hero text-primary mb-stack-lg">Explore o Ecossistema Empresarial de Moçambique</h1>
+<!-- Search Bar -->
+<div class="relative max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-[64px] pl-12 pr-32 bg-surface-container-lowest border border-surface-variant rounded-DEFAULT focus:border-primary focus:ring-0 font-body-main text-body-main placeholder-outline" placeholder="Pesquisar empresas, sectores ou palavras-chave..." type="text"/>
+<button class="absolute right-2 top-2 h-[48px] px-6 bg-secondary text-on-primary font-label-eyebrow text-label-eyebrow rounded-DEFAULT hover:bg-[#B0161C] transition-colors">
+                    PESQUISAR
+                </button>
+</div>
+</section>
+<div class="hairline mb-stack-lg"></div>
+<!-- Directory Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Sidebar Filters -->
+<aside class="col-span-3 sticky top-24 self-start space-y-stack-md">
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-primary">Filtros</h3>
+<button class="font-label-eyebrow text-label-eyebrow text-secondary hover:underline">Limpar filtros</button>
+</div>
+<!-- Sector Filter -->
+<div class="space-y-4">
+<h4 class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-outline">Sector</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">Agricultura</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">Energia</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">Tecnologia</span>
+</label>
+</div>
+</div>
+<div class="hairline"></div>
+<!-- Province Filter -->
+<div class="space-y-4">
+<h4 class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-outline">Província</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">Maputo</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">Cabo Delgado</span>
+</label>
+</div>
+</div>
+<div class="hairline"></div>
+<!-- Certifications -->
+<div class="space-y-4">
+<h4 class="font-label-eyebrow text-label-eyebrow uppercase tracking-widest text-outline">Certificações</h4>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-secondary border-surface-variant rounded-DEFAULT focus:ring-secondary cursor-pointer" type="checkbox"/>
+<span class="font-body-main text-body-main text-on-background group-hover:text-primary">ISO 9001</span>
+</label>
+</div>
+</aside>
+<!-- Results Area -->
+<section class="col-span-9">
+<!-- Results Header -->
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Resultados</h2>
+<p class="font-body-main text-body-main text-outline mt-2">142 empresas encontradas</p>
+</div>
+<div class="flex items-center gap-4">
+<select class="bg-surface-container-lowest border border-surface-variant rounded-DEFAULT font-caption text-caption h-[40px] pl-4 pr-10 focus:border-primary focus:ring-0">
+<option>Relevância</option>
+<option>A-Z</option>
+<option>Z-A</option>
+</select>
+<div class="flex border border-surface-variant rounded-DEFAULT overflow-hidden h-[40px]">
+<button class="px-3 bg-surface-container-lowest hover:bg-surface-variant text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</button>
+<div class="w-[1px] bg-surface-variant"></div>
+<button class="px-3 bg-surface hover:bg-surface-variant text-outline transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Filters -->
+<div class="flex gap-2 mb-stack-lg flex-wrap">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 border border-secondary text-secondary rounded-full font-caption text-caption bg-surface-container-lowest">
+                        Energia
+                        <button class="hover:text-primary transition-colors flex items-center"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</span>
+</div>
+<!-- Cards Grid -->
+<div class="grid grid-cols-3 gap-6 mb-stack-lg">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden hover:border-[#17191C] transition-colors group">
+<div class="aspect-[4/3] bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern industrial energy facility in Mozambique during golden hour, wide shot, warm cinematic lighting, minimal composition, high contrast between the glowing facility lights and the deep blue twilight sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcXYYzfRw37jB39p0rYVrsWZ1ILdoySC8ACHtXlFwlflfWmEPQ7WkpJn6BsoLP11_12crwzq1y3Fs2Msocj3tQax5IRjkdwEK3wCrFitcJI5TU6Pc0b7-0hJzub3birrd3myv7gV0rSIDO1LbV7tWT5SUg1lCzgMIcVSbWeU0H6v7up-yHeesOLpHJ4-cc0ZrUJ2bvpRpv1qSR6cCtDROKncd0zRE6l6cw8qBVVLQSdKabnz1p7GVr"/>
+</div>
+<div class="p-6">
+<p class="font-label-eyebrow text-label-eyebrow text-outline uppercase tracking-widest mb-2">Energia</p>
+<h3 class="font-headline-md text-headline-md text-primary text-[24px] mb-4">MZN Energy Solutions</h3>
+<div class="flex items-center gap-2 text-outline mb-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-caption text-caption">Maputo</span>
+</div>
+<div class="hairline mb-4"></div>
+<a class="font-label-eyebrow text-label-eyebrow text-primary hover:text-secondary uppercase tracking-widest flex items-center gap-2" href="#">
+                                Ver Perfil <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden hover:border-[#17191C] transition-colors group">
+<div class="aspect-[4/3] bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern agribusiness processing plant in a rural landscape, bright daylight, architectural photography style, clean white structures contrasting with vibrant green agricultural fields, minimal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuxtVmACkB-i4Q5eDaoeENqn-n_nVMWf0yqnpLE4sLUo9RBe1wddl_3kEIErxdqQgnv7cS2yeIG7QmgUgcY9Wrim_nNdoVE1J7sNvEwlDcNqUTpxG8Tcd5Jl0uyjIZvtEKAUr41gVu-OH_9PDyUq2BDOvhu9_674qTyk1ed675YVfIJ0E9DjcyIgXCau9iJO_8QMrBsj9FWfX9Zu6ruqFE7_XaxhtWnk8I0zu4Ocgl2niKaUQTD4gf"/>
+</div>
+<div class="p-6">
+<p class="font-label-eyebrow text-label-eyebrow text-outline uppercase tracking-widest mb-2">Agricultura</p>
+<h3 class="font-headline-md text-headline-md text-primary text-[24px] mb-4">AgriCorp Moz</h3>
+<div class="flex items-center gap-2 text-outline mb-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-caption text-caption">Nampula</span>
+</div>
+<div class="hairline mb-4"></div>
+<a class="font-label-eyebrow text-label-eyebrow text-primary hover:text-secondary uppercase tracking-widest flex items-center gap-2" href="#">
+                                Ver Perfil <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden hover:border-[#17191C] transition-colors group">
+<div class="aspect-[4/3] bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract visualization of digital data flows in a corporate server room, cool blue and black color palette with sharp red accents, high-tech aesthetic, minimal depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOS3kL7FVkZ1Y0fUpF3JI0oH3tuDLpwW8SAIreKdyXGxw19BuuKfKIANcYtfF67qf256lWaRFDjAFxG3-rZVCdxPxHiM1cvcRWIu42HiyNkiI3dFNLQlFLjBZ36bGtJZDFkSU0jyEZ2mIV2-a6B8qjE0ZimnjbnDC_pMCB4Mh_XBWRHYlA1_G7-5gw3L4es5bcYcNxoqUsX2_owvxAULNGShqViMHT54k2Qq92XRlwr0NQ0uRJkNgy"/>
+</div>
+<div class="p-6">
+<p class="font-label-eyebrow text-label-eyebrow text-outline uppercase tracking-widest mb-2">Tecnologia</p>
+<h3 class="font-headline-md text-headline-md text-primary text-[24px] mb-4">TechHub Data</h3>
+<div class="flex items-center gap-2 text-outline mb-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-caption text-caption">Maputo</span>
+</div>
+<div class="hairline mb-4"></div>
+<a class="font-label-eyebrow text-label-eyebrow text-primary hover:text-secondary uppercase tracking-widest flex items-center gap-2" href="#">
+                                Ver Perfil <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mt-stack-lg">
+<button class="w-10 h-10 flex items-center justify-center text-outline hover:text-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center font-caption text-caption text-on-primary bg-secondary rounded-DEFAULT">1</button>
+<button class="w-10 h-10 flex items-center justify-center font-caption text-caption text-outline hover:text-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center font-caption text-caption text-outline hover:text-primary transition-colors">3</button>
+<span class="text-outline">...</span>
+<button class="w-10 h-10 flex items-center justify-center font-caption text-caption text-outline hover:text-primary transition-colors">12</button>
+<button class="w-10 h-10 flex items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-gutter-side py-section-v-md grid grid-cols-12 gap-stack-md bg-primary dark:bg-surface-container-lowest border-t border-outline-variant pt-section-v-md opacity-100 hover:opacity-80">
+<div class="col-span-12 flex justify-between items-start">
+<div class="font-headline-lg text-headline-lg font-black text-on-primary/10 uppercase tracking-tighter">
+                OHOLO HUB
+            </div>
+<div class="flex gap-8">
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors hover:translate-x-1 transition-transform duration-200" href="#">About Us</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors hover:translate-x-1 transition-transform duration-200" href="#">Solutions</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors hover:translate-x-1 transition-transform duration-200" href="#">Regulatory</a>
+<a class="font-label-eyebrow text-label-eyebrow uppercase text-outline-variant hover:text-on-primary transition-colors hover:translate-x-1 transition-transform duration-200" href="#">Contact</a>
+</div>
+</div>
+<div class="col-span-12 mt-stack-lg">
+<p class="font-caption text-caption text-on-primary dark:text-on-surface opacity-50">© 2024 OHOLO HUB. Institutional Integrity.</p>
+</div>
+</footer>
+</body></html>
